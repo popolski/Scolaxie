@@ -1,0 +1,486 @@
+:root {
+    --v2-ink: var(--gx-encre, #30343d);
+    --v2-muted: var(--gx-encre-douce, #62666e);
+    --v2-bg: var(--gx-fond, #f2ecc4);
+    --v2-paper: rgba(255, 255, 255, 0.94);
+    /* Aliase sur --gx-bordure du socle : #eadcae en dur divergeait du
+       #dacfa1 utilise par School Monsters et Fast Games sur ce meme role. */
+    --v2-border: var(--gx-bordure, #dacfa1);
+    --v2-teal: var(--gx-action, #0b756a);
+    --v2-teal-bright: var(--gx-app-fasteval, #12baa6);
+    /* Le portail n'appartient a aucune application ; son propre chrome
+       (bouton, survols, icones, anneaux de focus) ne doit pas emprunter le
+       turquoise de Fast Eval. --v2-marine vient du logo Scolaxie lui-meme :
+       93 % de ses pixels, et un contraste de 11,6 a 13,9:1 sur les quatre
+       fonds du site, mesure le 04/09/2026. --v2-teal reste utilise sur la
+       carte Fast Eval du tableau de bord : elle, a raison, porte sa
+       propre couleur d'application. */
+    --v2-marine: #1c246b;
+    /* Replis alignes sur le socle, meme raison que --v2-border plus haut :
+       #12a997, #f15f49, #7541a8 et #d99300 en dur divergeaient des valeurs
+       reellement servies par galaxie-tokens.css, que cette page charge deja. */
+    --v2-coral: var(--gx-app-fastgames, #e76f51);
+    --v2-purple: var(--gx-app-schoolmonsters, #7b4bb7);
+    --v2-yellow: var(--gx-app-clicetmots, #efae1c);
+    /* L'ENCRE, PAS LE LISERE. Le socle le dit deja de l'ambre : magnifique en
+       aplat, illisible en texte. Les titres des cartes Clic & Mots et Fast
+       Games portaient quand meme la couleur d'application, soit 2,0:1 et
+       3,1:1 sur la surface du portail - sous les 4,5:1 exiges, et le seul
+       vrai defaut releve par la proposition du 08/09/2026. L'ambre reutilise
+       --gx-accent-encre du socle, son pendant textuel deja mesure a 4,6:1 ;
+       le corail n'en avait aucun, d'ou cette valeur locale (7,1:1). Les deux
+       liseres, eux, gardent la couleur vive : c'est leur usage legitime. */
+    --v2-yellow-encre: var(--gx-accent-encre, #9b6b00);
+    --v2-coral-encre: #963b25;
+    --v2-danger: var(--gx-erreur, #8a2f2a);
+    --v2-shadow: 0 18px 50px rgba(79, 65, 22, 0.14), 0 3px 10px rgba(79, 65, 22, 0.08);
+    --v2-shadow-soft: 0 8px 24px rgba(79, 65, 22, 0.1);
+    --v2-radius-lg: 24px;
+    --v2-radius-md: 16px;
+    color: var(--v2-ink);
+    font-family:var(--gx-police);
+    background: var(--v2-bg);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--v2-ink);
+    background: var(--gx-halo, none), var(--v2-bg);
+}
+
+body::before {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    content: "";
+    pointer-events: none;
+    opacity: 0.18;
+    background-image:
+        linear-gradient(115deg, transparent 48%, rgba(218, 171, 37, 0.18) 49%, transparent 50%),
+        radial-gradient(circle, rgba(218, 171, 37, 0.22) 1px, transparent 1px);
+    background-size: 180px 180px, 32px 32px;
+    mask-image: linear-gradient(to bottom, #000, transparent 85%);
+}
+
+button, input, select { font: inherit; }
+a { color: inherit; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.skip-link {
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    z-index: 100;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    color: #fff;
+    background: var(--v2-marine);
+    transform: translateY(-150%);
+}
+
+.skip-link:focus { transform: translateY(0); }
+
+:focus-visible {
+    outline: 3px solid var(--v2-marine);
+    outline-offset: 3px;
+}
+
+.brand img { display: block; width: 100%; height: auto; }
+
+
+.eyebrow {
+    margin: 0 0 8px;
+    color: var(--v2-marine);
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* Connexion */
+.login-layout {
+    width: min(560px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 34px 0 24px;
+}
+
+.brand-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.brand-login img { width: min(280px, 62vw); }
+
+.login-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    overflow: hidden;
+    border: 1px solid var(--v2-border);
+    border-left: 3px solid var(--v2-marine);
+    border-radius: var(--gx-rayon-carte, 12px);
+    background: var(--v2-paper);
+    box-shadow: none;
+}
+
+
+.login-form-panel { padding: clamp(34px, 5vw, 60px); }
+
+.login-form-panel h1 {
+    margin: 0 0 26px;
+    font-size: clamp(1.7rem, 3vw, 2.2rem);
+    letter-spacing: -0.035em;
+}
+
+.alert {
+    display: grid;
+    gap: 3px;
+    padding: 12px 15px;
+    margin: 0 0 18px;
+    border: 1px solid #e8d092;
+    border-radius: 12px;
+    color: #725314;
+    background: #fff8df;
+    font-size: 0.9rem;
+}
+
+.alert-error {
+    border-color: #ebc6c2;
+    color: var(--v2-danger);
+    background: #fff2f0;
+}
+
+.role-picker { padding: 0; margin: 0 0 20px; border: 0; }
+.role-picker legend, .field > label { margin-bottom: 8px; font-weight: 600; }
+
+.role-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.role-option { cursor: pointer; }
+.role-option input { position: absolute; opacity: 0; pointer-events: none; }
+
+.role-option > span {
+    display: flex;
+    box-sizing: border-box;
+    height: 56px;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 56px;
+    gap: 10px;
+    padding: 8px 14px;
+    border: 1px solid #d6d0c0;
+    border-radius: 12px;
+    background: #fff;
+    transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+.role-option b { display: none; margin-left: auto; }
+.role-option input:checked + span {
+    border: 2px solid var(--v2-marine);
+    color: var(--v2-marine);
+    background: #eef0f7;
+    box-shadow: inset 0 0 0 1px rgba(28, 36, 107, 0.08);
+}
+.role-option input:checked + span b {
+    display: grid;
+    width: 24px;
+    height: 24px;
+    place-items: center;
+    border-radius: 50%;
+    color: #fff;
+    background: var(--v2-marine);
+    font-size: 0.75rem;
+}
+.role-option-teacher input:checked + span {
+    border-color: #d89a10;
+    color: #715000;
+    background: #fff8e7;
+    box-shadow: inset 0 0 0 1px rgba(216, 154, 16, 0.08);
+}
+.role-option-teacher input:checked + span b { background: #d89a10; }
+.role-option input:focus-visible + span { outline: 3px solid var(--v2-marine); outline-offset: 3px; }
+.role-symbol {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    place-items: center;
+    border-radius: 10px;
+}
+.role-symbol svg {
+    width: 21px;
+    height: 21px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.role-symbol-student { color: #087f73; background: #ddf5f1; }
+.role-symbol-teacher { color: #8c6100; background: #fff0bf; }
+
+.field { display: grid; margin: 0 0 18px; }
+.field input, .field select {
+    width: 100%;
+    min-height: 52px;
+    padding: 12px 15px;
+    border: 1px solid #ccc5b3;
+    border-radius: 11px;
+    color: var(--v2-ink);
+    background: #fff;
+}
+.field input:hover, .field select:hover { border-color: #9c9480; }
+.field input:focus, .field select:focus { border-color: var(--v2-marine); box-shadow: 0 0 0 3px rgba(28, 36, 107, 0.14); outline: none; }
+.field input::placeholder { color: var(--v2-muted); }
+
+.password-field { position: relative; }
+.password-field input { padding-right: 54px; }
+.password-toggle {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: grid;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    border: 0;
+    border-radius: 9px;
+    color: var(--v2-muted);
+    background: transparent;
+    cursor: pointer;
+}
+.password-toggle:hover { color: var(--v2-marine); background: #eef2f9; }
+.password-toggle svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.password-toggle .pwd-icon-eye-off { display: none; }
+.password-toggle[aria-pressed="true"] .pwd-icon-eye { display: none; }
+.password-toggle[aria-pressed="true"] .pwd-icon-eye-off { display: block; }
+
+.primary-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 54px;
+    gap: 12px;
+    padding: 12px 20px;
+    border: 0;
+    border-radius: 12px;
+    color: #fff;
+    background: linear-gradient(135deg, var(--v2-marine), #10173f);
+    box-shadow: 0 8px 18px rgba(28, 36, 107, 0.22);
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.primary-button:hover { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(28, 36, 107, 0.28); }
+.primary-button:active { transform: translateY(0); }
+.login-help { margin: 16px 0 0; color: var(--v2-muted); font-size: 0.85rem; text-align: center; }
+
+/* Tableau de bord */
+.topbar {
+    /* 100px, comme .gx-entete du socle sur les quatre applications : le
+       bandeau du portail doit avoir la meme hauteur que les leurs.
+
+       Plein largeur ajoute le 06/09/2026, meme astuce que .gx-entete
+       (position:relative + left:50% + width:100cqw + marge negative) :
+       sans elle, le fond du bandeau s'arretait avant le bord droit reel
+       de la fenetre et laissait apparaitre le fond de page (--v2-bg) dans
+       la gouttiere reservee par scrollbar-gutter:stable - visible surtout
+       depuis que le tableau de bord est plus court (vide du haut resserre
+       le meme jour) et ne montre presque plus de vrai ascenseur. 100cqw et
+       non 100vw : ce dernier compte la largeur de l'ascenseur, voir le
+       commentaire equivalent sur .gx-entete. Le contexte de container-query
+       necessaire vient de galaxie-tokens.css
+       (html:has(body.dashboard-page)), etendu le meme jour pour ce cas :
+       le tableau de bord connecte n'a jamais porte de classe gx-app-*.
+       z-index:5 ajoute au meme titre que .gx-entete le 05/09/2026 : sans
+       lui le popover de compte (z-index:30) restait piege par le
+       backdrop-filter ci-dessous des qu'un element de page posait un
+       z-index positif - jamais rencontre ici faute d'avoir ete corrige en
+       meme temps que le socle. */
+    position: relative;
+    left: 50%;
+    z-index: 5;
+    box-sizing: border-box;
+    width: 100cqw;
+    margin-left: -50cqw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: var(--gx-bandeau-hauteur, 76px);
+    padding: 12px max(24px, calc((100vw - 1440px) / 2));
+    border-bottom: 3px solid var(--v2-marine);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 3px 14px rgba(79, 65, 22, 0.06);
+    backdrop-filter: blur(12px);
+}
+.brand-dashboard { display: inline-flex; min-height: 44px; align-items: center; padding: 2px 4px; border-radius: 10px; }
+/* 58px -> 76px le 06/09/2026 : deuxieme signalement de le responsable technique sur la meme
+   taille apres celui du 04/09 (deja monte une fois depuis un plus petit
+   format). Aperçu compare avant deploiement (logo seul agrandi contre logo
+   agrandi + vide du tableau de bord resserre, voir .dashboard plus bas) :
+   choix de le responsable technique, la combinaison des deux. */
+.brand-dashboard img { width: auto; height: var(--gx-logo-hauteur, 45px); }
+.topbar-fil { display: flex; flex: 1; align-items: center; gap: 9px; color: var(--v2-muted); font-size: 0.9rem; }
+.topbar-fil strong { color: var(--v2-ink); font-weight: 600; }
+.topbar-actions { display: flex; align-items: center; gap: 12px; }
+/* Cartouche de compte : plus de copie ici depuis le 04/09/2026. Les regles
+   .user-menu, .user-avatar, .user-texte, .gx-entete-role et .user-popover
+   viennent maintenant uniquement du socle (galaxie-tokens.css, deja charge
+   par cette page), qui ne les scope plus a .gx-entete pour cette raison
+   precise. Ne pas les redefinir ici : c'est exactement ce qui avait cause
+   les ecarts de bordure, de graisse, de badge et de z-index trouves et
+   corriges un par un dans les lots precedents du meme jour. `.user-role`
+   est devenu `.gx-entete-role` dans index.php, comme les quatre
+   applications : ce n'etait qu'un nom de classe distinct pour la meme
+   pastille, jamais une difference volontaire.
+
+   Deux differences volontaires du portail, conservees : l'avatar en marine
+   plutot qu'en turquoise (le portail n'appartient a aucune application, cf.
+   lot du 04/09/2026 sur sa couleur propre), et le decoupage prenom/nom qui
+   permet de ne masquer que le nom de famille sur mobile. */
+.user-avatar { color: var(--v2-marine); }
+.user-popover .logout-link { color: var(--v2-danger); border-top: 1px solid #eee8d8; }
+
+/* La grille garde le même poids pour chaque application. */
+.dashboard-page {background:var(--v2-bg);}
+.dashboard-page::before {display:none;}
+.dashboard {width:min(1224px,100%);margin:0 auto;padding:32px 32px 46px;}
+.dashboard-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 28px; margin-bottom: 28px; }
+.dashboard-heading-copy { min-width: 0; }
+/* Marine deja propre au portail (--v2-marine) : pose ici explicitement sur
+   le titre, comme sur --gx-titre des quatre applications (05/09/2026), au
+   lieu d'heriter de --v2-ink qui reste l'encre neutre du corps de texte. */
+.dashboard-heading h1 { margin: 0; color: var(--v2-marine); font-size: clamp(1.8rem, 3.4vw, 2.625rem); font-weight:600; overflow-wrap:anywhere; line-height: 1.17; letter-spacing: -0.045em; }
+.dashboard-heading-copy > p:last-child { margin: 10px 0 0; color: var(--v2-muted); font-size: clamp(0.95rem, 1.5vw, 1.1rem); }
+.dashboard-date { display: grid; flex: 0 0 auto; gap: 3px; margin: 0; color: var(--v2-muted); font-size: 0.82rem; line-height: 1.35; text-align: right; }
+.dashboard-date span:first-child { color: var(--v2-ink); font-weight: 600; }
+.dashboard-alert { max-width: 720px; }
+.dashboard-grid { display: block; }
+
+.app-list {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;}
+.app-card {
+    --app-accent:var(--v2-teal-bright);
+    --app-encre:#095f57;
+    display:flex;
+    flex-direction:column;
+    min-width:0;
+    min-height:220px;
+    gap:16px;
+    padding:26px 28px 22px;
+    border:1px solid var(--v2-border);
+    border-left:3px solid var(--app-accent);
+    border-radius:var(--gx-rayon-carte,12px);
+    background:#fffdf6;
+    box-shadow:0 4px 0 #30343d04;
+    text-decoration:none;
+    transition:border-color 160ms ease,box-shadow 160ms ease;
+}
+.app-card:hover {border-color:var(--app-accent);box-shadow:0 8px 20px #30343d0d;}
+.app-logo {display:flex;align-items:center;width:112px;height:58px;}
+.app-logo img {display:block;width:112px;height:58px;object-fit:contain;object-position:left center;}
+.app-card strong {display:block;color:var(--v2-ink);font-size:23px;font-weight:600;line-height:1.25;}
+.app-card small {display:block;margin-top:8px;color:var(--v2-muted);font-size:14px;line-height:1.55;}
+.app-action {display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:4px;color:var(--app-encre);font-size:13px;font-weight:500;}
+.app-action b {display:grid;place-items:center;flex:0 0 32px;height:32px;border-radius:50%;background:color-mix(in srgb,var(--app-accent) 14%,white);font-size:19px;font-weight:500;}
+.app-card.school {--app-accent:var(--v2-purple);--app-encre:#633795;}
+.app-card.clic {--app-accent:var(--v2-yellow);--app-encre:#795100;}
+.app-card.games {--app-accent:var(--v2-coral);--app-encre:var(--v2-coral-encre);}
+
+/* LA LIGNE DU JOUR, 06/09/2026. Le portail ne disait rien d'autre que le
+   prenom ; il porte maintenant les deux seuls chiffres qui existent REELLEMENT
+   pour la classe, et il les prend dans la connexion qu'index.php ouvre deja
+   pour relire est_admin - pas une connexion de plus.
+   POURQUOI PAS UNE LIGNE PAR CARTE, l'idee de depart : le releve des tables la
+   condamne. School Monsters n'a AUCUNE table d'activite - sa seule table est
+   `droitsite`, les droits d'acces ; ses lecons sont des pages statiques, rien
+   n'enregistre qu'un eleve en a ouvert une. Et Clic & Mots vit dans une AUTRE
+   base. Une ligne sur deux cartes seulement aurait fait une rangee bancale.
+   Une ligne de CLASSE, elle, n'appartient a aucune application.
+   Elle reste discrete a dessein : le portail ne doit pas se donner de carte
+   dominante ni de hierarchie artificielle (regle du 04/09/2026), et elle
+   disparait completement quand la journee n'a encore rien produit - un rang de
+   zeros n'apprend rien a personne. */
+.jour { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 26px; margin: -8px 0 26px; padding: 14px 18px; border: 1px solid var(--v2-border); border-left: 4px solid var(--v2-marine); border-radius: 14px; background: var(--v2-paper); }
+.jour-titre { color: var(--v2-muted); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.jour-item { display: flex; align-items: baseline; gap: 8px; }
+.jour-chiffre { color: var(--v2-marine); font-size: 1.5rem; font-weight: 700; line-height: 1; }
+.jour-libelle { color: var(--v2-muted); font-size: 0.92rem; }
+
+.dashboard-footer { display: flex; justify-content: space-between; gap: 20px; padding: 20px 4px 0; color: var(--v2-muted); font-size: 0.82rem; }
+.dashboard-footer a { display: inline-flex; align-items: center; min-height: 44px; }
+.dashboard-footer a:hover { color: var(--v2-marine); }
+
+/* État de déconnexion */
+.spinner { display: inline-block; width: 42px; height: 42px; border: 4px solid #dcdfec; border-top-color: var(--v2-marine); border-radius: 50%; animation: spin 800ms linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 1024px) {
+    .login-layout { width: min(560px, calc(100% - 32px)); }
+    .login-card { grid-template-columns: minmax(0, 1fr); }
+    .login-form-panel { padding: 36px; }
+}
+
+@media (max-width:760px) {
+    .dashboard {padding:28px 20px;}
+    .dashboard-heading {display:block;}
+    .dashboard-date {display:none;}
+    .app-list {grid-template-columns:1fr;}
+    .app-card {min-height:0;padding:19px;}
+}
+
+@media (max-width: 740px) {
+    body::before { display: none; }
+    .login-layout { width: min(560px, calc(100% - 24px)); padding-top: 20px; }
+    .brand-login { margin-bottom: 16px; }
+    .brand-login img { width: min(210px, 56vw); }
+    .login-card { display: block; overflow: visible; }
+    .login-form-panel { padding: 26px 24px 28px; }
+    .login-form-panel h1 { margin-bottom: 20px; font-size: 1.55rem; }
+    .topbar { min-height: 72px; padding: 10px 14px; }
+    .brand-dashboard img { height: 40px; max-width:112px; object-fit:contain; }
+    .topbar-fil { display: none; }
+    .user-nom, .user-texte .gx-entete-role { display: none; }
+    .user-texte strong { max-width: 116px; }
+    .user-menu summary { padding-right: 8px; }
+    .dashboard-footer { flex-direction: column; gap: 8px; }
+}
+
+@media (max-width: 430px) {
+    .role-options { grid-template-columns: 1fr; }
+    .role-option > span { justify-content: flex-start; }
+    .login-form-panel { padding: 24px 18px 26px; }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+}
+
+@media print {
+    .topbar, .dashboard-footer { display: none; }
+    body { background: #fff; }
+    .dashboard { width: 100%; padding: 0; }
+}

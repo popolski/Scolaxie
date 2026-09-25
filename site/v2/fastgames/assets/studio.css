@@ -1,0 +1,38 @@
+.sv-onglets { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; margin-top: 16px; border-bottom: 2px solid var(--fg-bordure); }
+.sv-onglets a { display: flex; box-sizing: border-box; min-height: 44px; align-items: center; justify-content: center; padding: 4px 8px; border: 1px solid var(--fg-bordure); border-bottom: 0; border-radius: 10px 10px 0 0; background: #fffdf8; color: var(--fg-encre); font-weight: 700; line-height: 1.15; text-align: center; text-decoration: none; }
+.sv-onglets a[aria-current] { border-color: var(--fg-corail); background: #fbece6; color: var(--gx-titre); }
+.sv-periodes { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin-top: 10px; }
+.sv-periodes span { margin-right: 6px; color: var(--fg-encre); font-weight: 700; }
+.sv-periodes a { display: inline-flex; box-sizing: border-box; min-height: 44px; align-items: center; padding: 4px 10px; border: 1px solid var(--fg-bordure); border-radius: 8px; background: #fffdf8; color: var(--fg-encre); text-decoration: none; }
+.sv-periodes a[aria-current] { border-color: var(--fg-corail); background: #fbece6; font-weight: 700; }
+.sv-filtres { margin-top: 16px; }
+.sv-lien-eleve { display: inline-flex; min-height: 44px; align-items: center; color: var(--fg-turquoise-fonce); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.sv-onglets a:focus-visible, .sv-periodes a:focus-visible, .sv-lien-eleve:focus-visible { outline: 3px solid var(--gx-titre); outline-offset: 2px; }
+.fg-suivi .fg-indicateurs { margin: 14px 0 18px; gap: 10px; }
+/* Le socle impose les espacements des cartes dans cette couche : les ajuster ici évite de toucher aux autres écrans. */
+@layer gx-contrats { .fg-suivi .fg-indicateurs article { gap: 5px !important; padding: 12px 14px !important; } }
+.fg-suivi .fg-indicateurs strong { margin: 0; font-size: 1.6rem; line-height: 1.1; }
+.fg-suivi .fg-indicateurs small { font-size: .7rem; line-height: 1.25; }
+
+@media (max-width: 480px) {
+  @layer gx-contrats { .fg-suivi .fg-indicateurs article { padding: 10px !important; } }
+  .fg-suivi .fg-indicateurs article { min-height: 90px; }
+  .fg-suivi .fg-indicateurs strong { font-size: 1.3rem; }
+}
+
+@media (max-width: 719px) {
+  .sv-onglets { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sv-onglets a { border-bottom: 1px solid var(--fg-bordure); border-radius: 10px; }
+  .sv-periodes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .sv-periodes span { grid-column: 1 / -1; }
+  .sv-periodes a { justify-content: center; padding-inline: 4px; font-size: .82rem; text-align: center; }
+  .fg-suivi .gx-tableau-cadre { overflow: visible; }
+  .fg-suivi .sv-table, .fg-suivi .sv-table tbody, .fg-suivi .sv-table tr { display: block; width: 100%; }
+  .fg-suivi .sv-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .fg-suivi .sv-table th:nth-child(2) { display: table-cell; }
+  .fg-suivi .sv-table tr { margin: 0 0 12px; padding: 5px 12px; border: 1px solid var(--fg-bordure); border-radius: 10px; background: #fff; }
+  .fg-suivi .sv-table td, .fg-suivi .sv-table td:nth-child(2) { display: flex; min-height: 44px; align-items: center; gap: 10px; width: 100%; padding: 6px 0; border-top: 1px solid #ece7d6; overflow-wrap: anywhere; }
+  .fg-suivi .sv-table td:first-child { border-top: 0; }
+  .fg-suivi .sv-table td[data-label]::before { content: attr(data-label); flex: 0 0 42%; color: var(--fg-texte); font-size: .78rem; font-weight: 700; }
+  .fg-suivi .sv-table td[colspan]::before { content: none; }
+}

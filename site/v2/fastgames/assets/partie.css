@@ -1,0 +1,43 @@
+/* Le cadre de partie reste distinct du style partagé des autres pages. */
+.fg-jeu { display: block; max-width: 1160px; }
+.fg-partie-entete { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 18px; margin-bottom: 22px; }
+.fg-partie-sortie { white-space: nowrap; }
+.fg-partie-titre { min-width: 0; color: var(--fg-encre); font-size: clamp(1.15rem, 2vw, 1.5rem); line-height: 1.3; }
+.fg-partie-progression { display: grid; justify-items: end; gap: 7px; color: var(--fg-encre); font-size: .9rem; font-weight: 700; white-space: nowrap; }
+.fg-partie-points { display: flex; gap: 5px; }
+.fg-partie-points[hidden] { display: none; }
+.fg-partie-points span { width: 10px; height: 10px; border: 1px solid var(--fg-turquoise-fonce); border-radius: 50%; background: transparent; }
+.fg-partie-points .est-courant { background: var(--fg-turquoise-fonce); }
+.fg-partie-corps { display: grid; grid-template-columns: minmax(0, 1fr); gap: 22px; align-items: start; }
+.fg-jeu .fg-aide-jeu { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.fg-jeu #fg-consigne { color: var(--fg-encre); font-size: 1.0625rem; font-weight: 600; letter-spacing: normal; line-height: 1.5; text-transform: none; }
+
+.fg-jeu .fg-reponse { flex-wrap: wrap; }
+.fg-correction-etiquettes { display: flex; flex-basis: 100%; flex-wrap: wrap; gap: 6px; }
+.fg-correction-etiquette { display: inline-flex; align-items: center; gap: 5px; border-radius: 6px; padding: 3px 7px; background: #fff; color: #145c48; font-size: .8rem; font-weight: 800; line-height: 1.35; }
+.fg-reponse.est-faux { border-style: dashed; }
+.fg-reponse.est-faux .fg-correction-etiquette { color: #762d22; }
+.fg-correction-etiquette svg { flex: none; }
+
+.fg-jeu .fg-resultat h1 { color: var(--fg-encre); }
+.fg-jeu .fg-resultat-actions { flex-direction: column; align-items: center; }
+.fg-jeu .fg-resultat-actions a { width: min(100%, 360px); min-height: 44px; }
+.fg-jeu .fg-resultat-actions .fg-bouton-principal { min-height: 56px; font-size: 1.08rem; }
+.fg-jeu #fg-enregistrement[role="alert"] { display: block; color: #762d22; font-weight: 700; }
+
+/* Quatre catégories de tri occupent deux rangées égales sur écran large. */
+@media (min-width: 720px) {
+    .fg-jeu .fg-reponses-tri:has(> .fg-reponse:nth-child(4):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1100px) {
+    .fg-partie-corps { grid-template-columns: minmax(0, 1fr) 230px; gap: 28px; }
+    .fg-jeu .fg-aide-jeu { display: block; }
+}
+@media (max-width: 719px) {
+    .fg-jeu .fg-reponses-tri:has(> .fg-reponse:nth-child(4):last-child) { grid-template-columns: minmax(0, 1fr); }
+    .fg-partie-entete { grid-template-columns: minmax(0, 1fr) auto; gap: 8px 12px; }
+    .fg-partie-sortie { grid-column: 1; grid-row: 1; justify-self: start; }
+    .fg-partie-progression { grid-column: 2; grid-row: 1; font-size: .78rem; }
+    .fg-partie-titre { grid-column: 1 / -1; grid-row: 2; }
+    .fg-jeu .fg-aide-jeu { display: block; }
+}

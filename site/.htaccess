@@ -1,0 +1,5 @@
+Options -Indexes
+RewriteEngine On
+RewriteRule ^(portail|fasteval|fastgames|schoolmonsters)/(.*)$ v2/$1/$2 [L]
+RewriteRule ^galaxie-tokens\.css$ v2/galaxie-tokens.css [L]
+ErrorDocument 404 /v2/portail/404.php

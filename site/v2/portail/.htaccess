@@ -1,0 +1,16 @@
+Options -Indexes
+RewriteEngine On
+
+# Le dossier V2 ne duplique pas les ressources pédagogiques lourdes. Lorsqu'un
+# média n'existe pas dans la copie, Apache le sert depuis l'application stable.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(portail|fasteval|fastgames|schoolmonsters|clicetmots)/(.*\.(?:png|jpe?g|gif|webp|mp3|m4a|mp4|pdf))$ /$1/$2 [L,NC]
+
+DirectoryIndex index.php index.html
+
+# Lot 5 (04/09/2026) : sans cette ligne, une adresse absente affiche la page
+# 404 par defaut d'Apache, en anglais. portail/404.php reprend le bandeau et
+# le gabarit d'etat vide du site, pour les cinq surfaces (regle posee a la
+# racine de /v2/).
+ErrorDocument 404 /v2/portail/404.php

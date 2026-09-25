@@ -1,0 +1,4558 @@
+body {
+  background-color: #413f3b;
+  font-family: "Comic Sans Ms";
+}
+
+.sombre {
+  opacity: 0.2;
+}
+
+a {
+  text-decoration: none;
+  color: #413f3b;
+}
+
+.clair {
+  opacity: 1;
+}
+
+div {
+  position: relative;
+}
+
+div.haut {
+  height: 150px;
+}
+
+div.haut1 {
+  height: 210px;
+}
+
+
+div.bas {
+  height: 200px;
+  margin-bottom: 50px;
+}
+
+
+div.bas1 {
+  height: 155px;
+   margin-bottom: 50px;
+  
+}
+
+
+.periode {
+  color: white;
+  font-size: 1.3em;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.text1 p {
+  color: white;
+  font-size: 2em;
+
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+a.text1 {
+  color: white;
+  font-size: 2em;
+  margin-top: 10px;
+}
+
+.text2 p {
+  color: #413f3b;
+  font-size: 1.5em;
+
+  text-align: center;
+  border-radius: 10px;
+  width: 150px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+}
+
+.color1 p {
+  background-color: #e1ce9a;
+}
+
+.color2 p {
+  background-color: #a3a7a7;
+}
+
+.text3 {
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+
+.text4 p {
+  color: white;
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+.text4bis p {
+  color: white;
+  font-size: 2.3em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+.text4bis2 p {
+  color: #D19275;
+  font-size: 2.3em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.text4bis3 p {
+  color: "grandrose";
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+
+.text5 p {
+  padding-right: 80px;
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 0px;
+}
+
+.text6 p {
+  padding-left: 80px;
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 0px;
+}
+
+.text7 p a {
+  display: block;
+  text-align: center;
+  font-size: 1em;
+  color: white;
+}
+
+.text8 p a {
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+  color: white;
+}
+
+p .grand {
+  font-size: 2em;
+}
+
+.text11 p {
+  color: white;
+  font-size: 2.5em;
+  margin-left: 200px;
+  margin-bottom: 50px;
+}
+
+.titre {
+  font-size: 1em;
+
+  margin-top: 20px;
+}
+
+.titre1 {
+  font-size: 1em;
+  margin-top: 0px;
+}
+
+.titre_d {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.titre_d1 {
+  text-align: right;
+  margin-top: 0px;
+}
+
+.titre-g {
+  font-size: 1.5em;
+  padding-left: 10px;
+  transition: all;
+  transition-duration: 0.5s;
+}
+
+
+.titre-g1 {
+  font-size: 1.5em;
+  padding-left: 150px;
+  transition: all;
+  transition-duration: 0.5s;
+}
+
+
+.titre-d {
+  font-size: 1.5em;
+  transition: all;
+  transition-duration: 0.5s;
+  text-align: right;
+}
+
+.math {
+  font-size: 1.9em;
+  color: #413f3b;
+  background-color: #f3d617;
+  text-align: center;
+  border-radius: 15px;
+  width: 350px;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.franc {
+  font-size: 1.9em;
+  color: #413f3b;
+  background-color: #ed7f10;
+  text-align: center;
+  border-radius: 15px;
+  width: 340px;
+  margin-left: 110px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.bleu a, .bleu {
+  color: blue;
+}
+
+.bleuunite a, .bleuunite {
+  color: #4169E1;
+}
+
+.rougedizaine a, .rougedizaine {
+  color: #B22222;
+}
+
+.vertcentaine a, .vertcentaine {
+  color: #228B22;
+}
+
+
+.bleuinformatique a,.bleuinformatique{
+    color:#1c90fc;
+}
+
+.rouge a, .rouge {
+  color: red;
+}
+
+.rougeanglais a,.rougeanglais{
+    color:#DE1824;
+}
+
+.vert a, .vert {
+  color: greenyellow;
+}
+
+.vertlecture a, .vertlecture{
+     color:#308C58;
+
+}
+
+.jaune a, .jaune {
+  color: #fcd21c;
+}
+
+.mauve a, .mauve {
+  color: violet;
+}
+
+.lila a, .lila{
+     color:#D8BFD8;
+}
+
+.orange a, .orange {
+  color: #ed7f10;
+}
+
+.rose a, .rose {
+  color: #fc5d5d;
+}
+
+.marronoral a, .marronoral{
+     color:#D19275;
+
+}
+
+.noir a, .noir {
+  color: black;
+}
+
+.gris a,.gris{
+    color:#DCDCDC;
+}
+
+a img.boug_hg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60%;
+  transition-property: width;
+  transition-duration: 0.5s;
+}
+
+a img.boug_hg:hover {
+  width: 70%;
+}
+
+
+a img.boug_hg1 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 55%;
+  transition-property: width;
+  transition-duration: 0.5s;
+}
+
+a img.boug_hg1:hover {
+  width: 65%;
+}
+
+
+a img.boug_hg2 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 72%;
+  transition-property: width;
+  transition-duration: 0.5s;
+}
+
+a img.boug_hg2:hover {
+  width: 82%;
+}
+
+
+
+a img.boug_hg3 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 42%;
+  transition-property: width;
+  transition-duration: 0.5s;
+}
+
+a img.boug_hg3:hover {
+  width: 52%;
+}
+
+
+a img.boug_hg4 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 58%;
+  transition-property: width;
+  transition-duration: 0.5s;
+}
+
+a img.boug_hg4:hover {
+  width: 68%;
+}
+
+a img.boug_hg5 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 59%;
+  transition-property: width;
+  transition-duration: 0.5s;
+}
+
+a img.boug_hg5:hover {
+  width: 69%;
+}
+
+a img.boug_hg6 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 64%;
+  transition-property: width;
+  transition-duration: 0.5s;
+}
+
+a img.boug_hg6:hover {
+  width: 74%;
+}
+
+a img.boug_hg7 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 80%;
+  transition-property: width;
+  transition-duration: 0.5s;
+}
+
+a img.boug_hg7:hover {
+  width: 90%;
+}
+
+a img.boug_hd {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 60%;
+  transition-property: width;
+  transition-duration: 0.5s;
+}
+
+a img.boug_hd:hover {
+  width: 70%;
+}
+
+a img.boug_hd1 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 65%;
+  transition-property: width;
+  transition-duration: 0.5s;
+}
+
+a img.boug_hd1:hover {
+  width: 75%;
+}
+
+
+a img.boug_hd2 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 53%;
+  transition-property: width;
+  transition-duration: 0.5s;
+}
+
+a img.boug_hd2:hover {
+  width: 63%;
+}
+
+
+a img.boug_hd3 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  transition-property: width;
+  transition-duration: 0.5s;
+}
+
+a img.boug_hd3:hover {
+  width: 60%;
+}
+
+a img.boug_hd4 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 40%;
+  transition-property: width;
+  transition-duration: 0.5s;
+}
+
+a img.boug_hd4:hover {
+  width: 50%;
+}
+
+a img.boug_hd5 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 67%;
+  transition-property: width;
+  transition-duration: 0.5s;
+}
+
+a img.boug_hd5:hover {
+  width: 77%;
+}
+
+a img.boug_hd6 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 63%;
+  transition-property: width;
+  transition-duration: 0.5s;
+}
+
+a img.boug_hd6:hover {
+  width: 73%;
+}
+
+a img.boug_hd7 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 80%;
+  transition-property: width;
+  transition-duration: 0.5s;
+}
+
+a img.boug_hd7:hover {
+  width: 90%;
+}
+
+.retour {
+  color: white;
+  font-size: 1.3em;
+  margin-left: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+a img.boug_bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60%;
+  transition-property: width;
+  transition-duration: 0.5s;
+}
+
+a img.boug_bg:hover {
+  width: 70%;
+}
+
+a img.boug_bd {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60%;
+  transition-property: width;
+  transition-duration: 0.5s;
+}
+
+a img.boug_bd:hover {
+  width: 70%;
+}
+
+
+.text10 p {
+  color: white;
+  font-size: 1.5em;
+
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.petitblanc {
+  color: white;
+  font-size: 0.8em;
+}
+
+.grandrose {
+  color: #fc5d5d;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.blanc {
+  color: white;
+}
+
+.grandorange {
+  color: #ed7f10;
+  font-size: 2em;
+  text-align: center;
+}
+
+.qloto {
+  margin-top: 40px;
+}
+
+.imgdecal {
+  text-align: right;
+}
+
+.adieu {
+  background-color: #413f3b;
+  border: none;
+  opacity: 0;
+}
+
+.adieu:focus {
+  border: none;
+}
+
+.text12 p {
+  color: white;
+  font-size: 2.5em;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.bouton {
+  font-size: 1em;
+  background-color: #fc5d5d;
+  color: white;
+  margin-left: 30px;
+  border: 10px solid #fc5d5d;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.bouton1 {
+  font-size: 1em;
+  background-color: #fc5d5d;
+  color: white;
+  border: 10px solid #fc5d5d;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.bouton:hover {
+  background-color: #fc7d7d;
+  border: 10px solid #fc7d7d;
+}
+
+.bouton1:hover {
+  background-color: #fc7d7d;
+  border: 10px solid #fc7d7d;
+}
+
+.bouton2 {
+  font-size: 1em;
+  background-color: red;
+  color: white;
+  border: 10px solid red;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.bouton2:hover {
+  background-color: #ed8f10;
+  border: 10px solid #ed8f10;
+}
+
+.bouton3 {
+  font-size: 1em;
+  background-color: blue;
+  color: white;
+  border: 10px solid blue;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.bouton3:hover {
+  background-color: #77b5fe;
+  border: 10px solid #77b5fe;
+}
+
+.text13 p {
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+.text14 p {
+  color: white;
+  font-size: 1.2em;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+#div1 {
+  height: 10px;
+  cursor: pointer;
+}
+
+.boite {
+  width: 130px;
+  border: 3px solid white;
+  border-radius: 3px;
+  height: 80px;
+  overflow: scroll;
+}
+
+.box {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 150px;
+}
+
+.box1 {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+
+.scorebon {
+  color: green;
+  text-align: center;
+  font-size: 1em;
+}
+
+.scorefaux {
+  color: red;
+  text-align: center;
+  font-size: 1em;
+}
+
+.boite1 {
+  margin-top: 20px;
+  border: 3px solid white;
+  border-radius: 3px;
+  height: 30px;
+}
+
+.text15 {
+  color: white;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.text16 {
+  color: white;
+  font-size: 1.2em;
+  text-align: center;
+  margin-top: 50px;
+}
+.text19 {
+  color: white;
+  font-size: 0.9em;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.text17 p {
+  color: white;
+  font-size: 1.5em;
+  text-align: left;
+  margin-top: 25px;
+  margin-bottom: 0px;
+}
+
+.input {
+  width: 140px;
+  height: 30px;
+  font-size: 1.5em;
+  font-family: "Comic Sans Ms";
+}
+
+.input1 {
+  width: 460px;
+  height: 30px;
+  font-size: 1.5em;
+  font-family: "Comic Sans Ms";
+}
+
+.input2 {
+  color: red;
+  width: 140px;
+  height: 30px;
+  font-size: 1.5em;
+  font-family: "Comic Sans Ms";
+}
+
+.pull {
+  cursor: pointer;
+}
+
+.imgcentre {
+  text-align: center;
+}
+
+.imggauche {
+  text-align: left;
+}
+
+.input3 {
+  width: 37px;
+  font-size: 0.7em;
+  font-family: "Comic Sans Ms";
+}
+
+.text18 {
+  text-align: left;
+  color: white;
+  margin-top: 60px;
+  font-size: 1.2em;
+}
+
+.argent {
+  text-align: center;
+  margin: 2px;
+}
+
+.clair {
+  opacity: 100%;
+  cursor: pointer;
+}
+
+.sombre {
+  opacity: 20%;
+  cursor: pointer;
+}
+
+.img_clic {
+  text-align: right;
+  cursor: pointer;
+}
+
+.text20 {
+  color: white;
+  text-align: center;
+  font-size: 2em;
+  margin-top: 13px;
+}
+
+.decal_haut {
+  margin-top: 150px;
+}
+
+.center{
+  margin: auto;
+  width: 30%;
+  display:block;
+}
+
+.fondecole{
+  width: 920px;
+  height: 1100px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../img-140/fondrentree.png");
+   background-position: center;
+  background-size: 960px 1300px;
+  color: #000000;
+  padding: 0.6em;
+  font-size: 32px;
+ text-align: center;
+}
+
+.fondautomne{
+  width: 920px;
+  height: 1100px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img-140/fondautomne.png");
+   background-position: center;
+  background-size: 960px 1300px;
+  color: #e0cda9;
+  padding: 0.6em;
+  font-size: 32px;
+ text-align: center;
+}
+
+
+
+.motautomne{
+  color: white;
+}
+
+
+
+.centercoupon{
+  margin: auto;
+  width: 49%;
+  display:block;
+}
+
+
+.rentree {
+  cursor: pointer;
+  color: #606060;
+}
+
+.automne {
+  cursor: pointer;
+  color: #F1C40F;
+}
+
+
+.fonddifference{
+  width: 920px;
+  height: 1250px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)), url("../img-140/fonddifference.png");
+   background-position: center;
+  background-size: 960px 1300px;
+  color: #57442F;
+  padding: 0.6em;
+  font-size: 29px;
+ text-align: center;
+}
+
+.difference {
+  cursor: pointer;
+  color: #B15F12;
+}
+
+
+.fondnoel{
+  width: 905px;
+  height: 1250px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url("../img-140/fondnoel.png");
+   background-position: center;
+  background-size: 960px 1300px;
+  color: #60C18C;
+  padding: 0.6em;
+  font-size: 44px;
+ text-align: center;
+}
+
+.noel {
+  cursor: pointer;
+  color: #CE1111;
+}
+
+
+.fondecureuil{
+  width: 920px;
+  height: 1250px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url("../img-140/fondecureuil.png");
+   background-position: center;
+  background-size: 960px 1300px;
+  color: #CCF0E1;
+  padding: 0.6em;
+  font-size: 38px;
+ text-align: center;
+}
+
+.ecureuil {
+  cursor: pointer;
+  color: #6BB697;
+}
+
+.fondmontagne{
+  width: 910px;
+  height: 1250px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url("../img-140/fondmontagne.png");
+   background-position: center;
+  background-size: 960px 1300px;
+  color: #FCFFFE;
+  padding: 0.6em;
+  font-size: 38px;
+ text-align: center;
+}
+
+.fondecole,
+.fondautomne,
+.fonddifference,
+.fondnoel,
+.fondecureuil,
+.fondmontagne {
+  width: min(920px, 100%);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.montagne {
+  cursor: pointer;
+  color: #65CCAB;
+}
+
+/* Portail School Monsters : cohérence visuelle avec FastEval */
+body.page-portail,
+body.page-portail.theme-clair {
+  background:#f2ecc4;
+  color:#30343d;
+  font-family:Arial,sans-serif;
+}
+
+.portail-header {
+  max-width:1068px;
+  margin:0 auto 32px;
+  padding:24px 20px 0;
+  text-align:center;
+}
+
+.portail-logo {
+  display:block;
+  width:min(500px,100%);
+  height:auto;
+  margin:0 auto 12px;
+}
+
+.portail-header h1 {
+  margin:0 0 5px;
+  color:#30343d;
+  font-family:Arial,sans-serif;
+  font-size:2rem;
+  font-weight:400;
+}
+
+.portail-header p {
+  margin:0;
+  color:#777;
+  font-size:1rem;
+}
+
+.portail-actions {
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.portail-bouton {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:40px;
+  padding:8px 15px;
+  border-radius:9px;
+  text-decoration:none;
+  font-size:.88rem;
+  transition:background .18s,border-color .18s,transform .18s;
+}
+
+.portail-bouton-secondaire {
+  color:#30343d !important;
+  background:rgba(255,255,255,.58);
+  border:1px solid rgba(48,52,61,.14);
+}
+
+.portail-bouton-secondaire:hover {
+  color:#30343d !important;
+  background:rgba(255,255,255,.85);
+  border-color:rgba(22,184,170,.55);
+  transform:translateY(-2px);
+}
+
+.portail-menu-enseignant {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:14px;
+  margin-top:10px;
+}
+
+.portail-carte {
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  width:288px;
+  min-height:92px;
+  box-sizing:border-box;
+  padding:18px 42px 18px 20px;
+  overflow:hidden;
+  color:#30343d;
+  background:rgba(255,255,255,.58);
+  border:1px solid rgba(48,52,61,.12);
+  border-radius:14px;
+  box-shadow:0 5px 14px rgba(0,0,0,.07);
+  text-decoration:none;
+  transition:background .18s,border-color .18s,box-shadow .18s,transform .18s;
+}
+
+.portail-carte::before {
+  content:"";
+  position:absolute;
+  left:0;
+  top:18px;
+  bottom:18px;
+  width:5px;
+  background:#efa900;
+  border-radius:0 5px 5px 0;
+}
+
+.portail-carte::after {
+  content:"›";
+  position:absolute;
+  right:18px;
+  top:50%;
+  color:#d99a00;
+  font-size:28px;
+  transform:translateY(-52%);
+}
+
+.portail-carte:hover {
+  color:#30343d;
+  background:rgba(255,255,255,.84);
+  border-color:rgba(239,169,0,.55);
+  box-shadow:0 8px 18px rgba(0,0,0,.09);
+  transform:translateY(-3px);
+}
+
+/* Trois domaines, trois couleurs. L'ambre reste a l'administration ;
+   les lecons prennent le turquoise d'action, celui des boutons de retour. */
+.portail-carte-lecons::before { background:var(--gx-app-schoolmonsters,#7b4bb7); }
+.portail-carte-lecons::after { color:var(--gx-app-schoolmonsters,#7b4bb7); }
+.portail-carte-lecons:hover { border-color:rgba(11,117,106,.55); }
+
+/* L'editeur : un troisieme domaine, une troisieme couleur. Le mauve le
+   distingue de l'administration (ambre) et des lecons (turquoise). */
+.portail-carte-editeur::before { background:#7a5aa8; }
+.portail-carte-editeur::after { color:#7a5aa8; }
+.portail-carte-editeur:hover { border-color:rgba(122,90,168,.55); }
+
+/* Une carte annoncee mais pas encore ouverte. Elle dit ou l'on ira, sans
+   laisser croire qu'on peut y aller : pas de chevron, pas de survol. */
+/* Le mot « bientot » est plus large que le chevron qu'il remplace :
+   sans cette reserve, il passe par-dessus la description. */
+.portail-carte-bientot { opacity:.62; cursor:default; padding-right:86px; }
+.portail-carte-bientot::before { background:rgba(48,52,61,.3); }
+.portail-carte-bientot::after {
+  content:"bient\00F4 t";
+  right:16px;
+  color:#8a8677;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  transform:translateY(-50%);
+}
+.portail-carte-bientot:hover {
+  background:rgba(255,255,255,.58);
+  border-color:rgba(48,52,61,.12);
+  box-shadow:0 5px 14px rgba(0,0,0,.07);
+  transform:none;
+}
+
+.portail-carte-titre {font-size:16px;font-weight:600;line-height:1.25;}
+.portail-carte-description {margin-top:5px;color:#777;font-size:13px;line-height:1.25;}
+
+.page-portail .container_12 {
+  width:min(1068px,calc(100% - 24px));
+}
+
+/* Le cartouche d'accueil du socle est cadre a 960 px. C'est juste pour Fast Eval
+   et Clic & Mots, dont la page d'entree fait 940. School Monsters, lui, n'utilise
+   pas ce gabarit : son accueil est bati sur la grille, passee a 1068 px le
+   31/08/2026. Sans cette regle, le cartouche restait 108 px plus etroit que le
+   contenu juste en dessous. Corrige ici plutot que dans le socle, pour ne pas
+   deplacer le cartouche des deux autres sites. */
+.page-portail .gx-cartouche-acceuil {
+  width: min(1068px, calc(100% - 24px));
+}
+
+.niveaux-school-monsters {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px;
+  width:100% !important;
+  margin:0 !important;
+  padding-bottom:40px;
+}
+
+.bloc-niveau {
+  position:relative;
+  padding:22px;
+  overflow:hidden;
+  background:rgba(255,255,255,.58);
+  border:1px solid rgba(48,52,61,.12);
+  border-radius:14px;
+  box-shadow:0 5px 14px rgba(0,0,0,.07);
+}
+
+.bloc-niveau::before {
+  content:"";
+  position:absolute;
+  left:0;
+  top:22px;
+  bottom:22px;
+  width:5px;
+  border-radius:0 5px 5px 0;
+}
+
+.bloc-ce1::before {background:#16b8aa;}
+.bloc-ce2::before {background:#efa900;}
+
+.entete-niveau {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:18px;
+}
+
+.pastille-niveau {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:54px;
+  height:54px;
+  flex:0 0 54px;
+  border-radius:50%;
+  color:#fff;
+  font-size:17px;
+  font-weight:bold;
+}
+
+.bloc-ce1 .pastille-niveau {background:#16b8aa;}
+.bloc-ce2 .pastille-niveau {background:#efa900;}
+.entete-niveau h2 {margin:0 0 3px;color:#30343d;font:600 20px/1.2 Arial,sans-serif;}
+.entete-niveau p {margin:0;color:#777;font:13px/1.3 Arial,sans-serif;}
+
+.grille-periodes {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:11px;
+}
+
+/* Une periode qui n'est pas ouverte pour cet eleve : visible mais eteinte.
+   Elle est rendue en <span> et non en <a>, donc rien a cliquer ; le
+   pointer-events la met aussi hors de portee du survol, sinon la carte se
+   soulevait sous la souris en promettant quelque chose qui n'arrive pas.
+   Le degrise leger plutot qu'un noir et blanc complet : la mascotte reste
+   reconnaissable, l'eleve voit ce qui l'attend. Demande de le responsable technique, 31/08/2026. */
+.carte-periode-fermee {
+  border-style:dashed;
+  background:rgba(255,255,255,.45);
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Accueil enseignant : meme rythme que Fast Eval. La personnalite de School
+   Monsters reste dans le violet et les contenus, pas dans une architecture
+   de page differente pour une action equivalente. */
+body.page-espace-enseignant .sm-dashboard {
+  margin-top:0;
+  padding-top:30px;
+  width:min(1072px,calc(100% - 40px));
+}
+.sm-actions-groupes {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;}
+.sm-actions-groupes h2 {margin:0 0 16px;color:#5f636b;font:600 14px/1.5 var(--gx-police,Lexend,Arial,sans-serif);}
+.sm-actions-groupes nav {display:grid;gap:14px;}
+@media(max-width:760px){.sm-actions-groupes{grid-template-columns:minmax(0,1fr);}}
+body:is(.page-espace-enseignant,.page-choix-periodes) .sm-entete-actuel {
+  order:2;
+  color:var(--gx-app-schoolmonsters,#7b4bb7);
+  font-size:.9rem;
+  font-weight:600;
+}
+body.page-espace-enseignant .sm-accueil-hero {
+  box-sizing:border-box;
+  min-height:190px;
+  margin-bottom:30px;
+  padding:28px 42px;
+  background:linear-gradient(104deg,#fffdf8 0%,#fffdf8 62%,#eee5fb 100%);
+}
+body.page-espace-enseignant .sm-accueil-hero-logo {
+  position:absolute;
+  top:50%;
+  right:52px;
+  display:grid;
+  width:104px;
+  height:104px;
+  place-items:center;
+  padding:10px;
+  border:2px solid rgba(123,75,183,.34);
+  border-radius:32px;
+  background:rgba(255,255,255,.62);
+  transform:translateY(-50%) rotate(4deg);
+}
+body.page-espace-enseignant .sm-accueil-hero-logo img {width:86px;height:auto;}
+body.page-espace-enseignant .sm-actions-accueil {grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 20px;align-items:stretch;}
+body.page-espace-enseignant .sm-action-secondaire {
+  box-sizing:border-box;
+  height:74px;
+  min-height:74px;
+  padding:14px 40px 14px 18px;
+  border-left:4px solid #7b4bb7;
+  border-radius:14px;
+}
+body.page-espace-enseignant .sm-action-secondaire .sm-action-texte {gap:0;}
+body.page-espace-enseignant .sm-action-secondaire .sm-action-texte strong {font-size:.98rem;}
+body.page-espace-enseignant .sm-action-secondaire .sm-action-texte>span {
+  margin-top:3px;
+  font-size:.82rem;
+  line-height:1.35;
+}
+body.page-espace-enseignant .sm-action-secondaire .sm-action-fleche {
+  right:16px;
+  color:#12baa6;
+  font-size:1.6rem;
+  font-weight:300;
+}
+body.page-espace-enseignant .sm-action-secondaire .sm-action-fleche {color:#7b4bb7;}
+body.page-espace-enseignant .sm-action-secondaire:hover {border-left-color:#7b4bb7;}
+body.page-espace-enseignant .sm-action-lecons {grid-column:1;}
+body.page-espace-enseignant :is(.sm-action-eleves,.sm-action-editeur) {
+  grid-column:2;
+  border-left-color:var(--gx-role,#efa900);
+}
+body.page-espace-enseignant :is(.sm-action-eleves,.sm-action-editeur) .sm-action-fleche {color:#a96f00;}
+body.page-espace-enseignant :is(.sm-action-eleves,.sm-action-editeur):hover {
+  border-color:var(--gx-role,#efa900);
+  border-left-color:var(--gx-role,#efa900);
+}
+
+@media(max-width:720px){
+  body:is(.page-espace-enseignant,.page-choix-periodes) .sm-entete-actuel {display:none;}
+  body.page-espace-enseignant .sm-dashboard {padding-top:22px;}
+  body.page-espace-enseignant .sm-accueil-hero {min-height:0;padding:26px 24px;border-radius:19px;}
+  body.page-espace-enseignant .sm-accueil-hero-logo {display:none;}
+  body.page-espace-enseignant .sm-actions-accueil {grid-template-columns:1fr;}
+  body.page-espace-enseignant :is(.sm-action-lecons,.sm-action-eleves,.sm-action-editeur) {grid-column:auto;}
+  body.page-espace-enseignant .sm-action-secondaire {height:auto;}
+}
+
+/* Une leçon commence par son activité, pas par une mascotte. Les anciennes
+   règles très spécifiques réagrandissaient encore l'image après le compactage
+   et la faisaient chevaucher la barre des exercices. */
+@media(min-width:721px){
+  html body.sm-lecon-page .container_12>:is(.text4,.text4bis){
+    height:72px!important;
+    min-height:72px!important;
+    margin:0 0 18px!important;
+    padding:27px 28px 12px!important;
+    overflow:hidden!important;
+    border-radius:19px!important;
+  }
+  html body.sm-lecon-page .container_12>:is(.text4,.text4bis)+.grid_2{
+    display:none!important;
+  }
+  /* Certaines leçons mettent une partie du titre dans un span. Ce fragment
+     reste un titre et doit donc garder le bleu institutionnel, pas le violet
+     historique de School Monsters. */
+  html body.sm-lecon-page .container_12>:is(.text4,.text4bis) p,
+  html body.sm-lecon-page .container_12>:is(.text4,.text4bis) p span{
+    color:var(--gx-titre,#1c246b)!important;
+  }
+}
+
+/* Hierarchie validee le 05/09/2026 : une lecon n'est pas un ecran
+   d'accueil. Ces regles tardives gagnent sur les anciens selecteurs :has()
+   et gardent le contenu pedagogique au-dessus de la ligne de flottaison. */
+@media(min-width:721px){
+  html body.sm-lecon-page:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)) .container_12>:is(.text4,.text4bis){height:72px!important;min-height:72px!important;padding:28px 132px 14px 28px!important;}
+  html body.sm-lecon-page:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)) .container_12>:is(.text4,.text4bis)+.grid_2{right:22px!important;width:90px!important;height:72px!important;min-height:72px!important;}
+  html body.sm-lecon-page:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)) .container_12>:is(.text4,.text4bis)+.grid_2::before{display:none;}
+}
+@media(min-width:721px) and (max-width:980px){body.page-espace-enseignant .sm-action-secondaire{height:auto;min-height:94px;}}
+
+.carte-periode-fermee img {
+  opacity:.38;
+  filter:grayscale(.7);
+}
+
+.carte-periode-fermee > span {
+  color:#4b5563;
+}
+
+.carte-periode .carte-periode-etat {
+  display:inline-flex;
+  min-height:24px;
+  align-items:center;
+  justify-content:center;
+  margin-top:4px;
+  padding:3px 8px;
+  border-radius:999px;
+  background:#f0ede2;
+  color:#5f5a48;
+  font:600 12px/1.2 Arial,sans-serif;
+  text-align:center;
+}
+
+.carte-periode {
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  min-height:166px;
+  padding:12px 10px 11px;
+  overflow:hidden;
+  color:#30343d;
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(48,52,61,.1);
+  border-radius:11px;
+  text-decoration:none;
+  transition:background .18s,border-color .18s,box-shadow .18s,transform .18s;
+}
+
+.carte-periode:nth-child(5) {
+  grid-column:1 / -1;
+  width:calc(50% - 6px);
+  justify-self:center;
+}
+
+.carte-periode img {
+  display:block;
+  width:100%;
+  height:120px;
+  object-fit:contain;
+}
+
+.carte-periode span {
+  color:#30343d;
+  font:600 14px/1.2 Arial,sans-serif;
+}
+
+.carte-periode:hover {
+  color:#30343d;
+  background:#fff;
+  border-color:rgba(22,184,170,.45);
+  box-shadow:0 7px 15px rgba(0,0,0,.08);
+  transform:translateY(-3px);
+}
+
+.bloc-ce2 .carte-periode:hover {border-color:rgba(239,169,0,.5);}
+
+@media(max-width:600px){
+  .portail-header{padding-top:16px;margin-bottom:24px;}
+  .portail-logo{width:min(390px,100%);}
+  .portail-header h1{font-size:1.45rem;}
+  .niveaux-school-monsters{grid-template-columns:1fr;gap:15px;}
+  .bloc-niveau{padding:19px;}
+  .carte-periode{min-height:145px;}
+  .carte-periode img{height:100px;}
+}
+/* ========================================================================== */
+/* Harmonisation 2026 des pages d'exercices                                  */
+/* La présence du trio retour + .text4 + mascotte limite ces règles aux      */
+/* anciennes pages pédagogiques, sans toucher au portail ni à l'administration. */
+/* ========================================================================== */
+
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)),
+body.theme-clair:has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) {
+  min-height: 100vh;
+  margin: 0;
+  padding: 28px 18px 48px;
+  background: #f2ecc4 !important;
+  color: #2c2822;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) *,
+body.theme-clair:has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) * {
+  box-sizing: border-box;
+}
+
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 {
+  position: relative;
+  width: min(1068px, 100%) !important;
+  margin: 0 auto !important;
+}
+
+/* ---------------------------------------------------------------------
+   CE QUI RESTE DU RATTRAPAGE DE 2026
+   ---------------------------------------------------------------------
+   Cette section compensait `body { min-width:960px }`, pose par 960.css : la
+   page ne pouvait pas retrecir, la bande debordait a droite et le titre tombait
+   a cote du centre visible. Mesure de l'epoque a 885 px : 57 px de debordement.
+
+   960.css a ete supprime le 31/08/2026 et la grille est passee en CSS Grid. Ont
+   donc ete retires, chacun mesure separement sur huit pages temoins : la remise
+   a zero du min-width, les sept largeurs de colonne en pourcentage - les pistes
+   de la grille les donnent deja - et le float du titre, inerte sur un element
+   de grille. Aucun des trois ne changeait le rendu.
+
+   Ce qui reste ci-dessous sert encore : la borne sur les images, et la mise en
+   forme du cartouche unique.
+   --------------------------------------------------------------------- */
+
+/* Certaines pages posent une largeur en dur sur leurs images, par exemple
+   460 px pour les coupons d'anglais dans une colonne qui n'en fait plus que
+   404 une fois la page retrecie. La hauteur suit, sinon l'image se
+   deformerait. Les images du bandeau ont leurs propres bornes en
+   !important et ne sont pas concernees. */
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* Un seul cartouche pour le retour, le titre et la mascotte. */
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis) {
+  /* Le titre se cale sur la meme ligne que le bouton de retour et le
+     monstre, qui sont deja centres dans leur case. En bloc, il se collait
+     en haut de la sienne et passait 26 px au-dessus d'eux. */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Cette largeur est neutralisee par grille.css, qui laisse la piste faire le
+     travail. Les deux se repondent : essayer de retirer les deux d'un coup,
+     mesure le 31/08/2026, casse le cartouche unique - il se scinde en trois
+     cartes et le titre passe sur deux lignes, a cause de la marge laterale
+     ci-dessous. Ne pas y toucher sans remesurer. */
+  width: calc(100% - 340px) !important;
+  min-height: 0;
+  margin: 0 10px 22px !important;
+  padding: 18px 20px;
+  background: rgba(255, 255, 255, .72);
+  border: 1px solid rgba(184, 177, 138, .72);
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(55, 49, 36, .07);
+}
+
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis) > p {
+  /* Les 15 px du bas dataient de l'epoque ou la liste des pistes audio
+     suivait le titre dans le meme bloc. Elle est passee dans la barre du
+     lecteur : cette marge ne fait plus que decaler le titre vers le haut. */
+  margin: 0;
+  color: #2c2822 !important;
+  font-size: clamp(25px, 3.2vw, 36px) !important;
+  line-height: 1.18;
+}
+
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis) > p span {
+  color: #0e9789 !important;
+}
+
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_2:first-child {
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left !important;
+  width: 140px !important;
+  min-height: 0;
+  margin: 0 10px !important;
+  padding: 12px 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis) + .grid_2 {
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left !important;
+  width: 140px !important;
+  min-height: 0;
+  margin: 0 10px !important;
+  padding: 8px 0;
+  background: transparent;
+}
+
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_2:first-child a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 108px;
+  min-height: 48px;
+  padding: 7px 10px;
+  border-radius: 9px;
+  background: #12baa6;
+  color: #fff !important;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: 0 3px 10px rgba(14, 151, 137, .18);
+}
+
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_2:first-child a::after {
+  content: "retour";
+  margin-left: 7px;
+}
+
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_2:first-child a img {
+  display: block;
+  max-width: 35px !important;
+  max-height: 35px !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_2:first-child .retour {
+  display: none;
+}
+
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis) + .grid_2 img {
+  display: block;
+  max-width: 96px !important;
+  max-height: 104px !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* ---------------------------------------------------------------------
+   LE TITRE, CENTRE SUR CE QUI SE VOIT
+   ---------------------------------------------------------------------
+   Le titre est centre sur la bande au pixel pres. Ce qui se voyait quand
+   meme, c'est que le bouton de retour fait toujours 108 px alors que le
+   monstre va de 46 a 138 px suivant la page. Les deux etant centres dans
+   leur case de 150 px, le blanc a gauche du titre et celui a droite
+   differaient d'un quart de cet ecart, soit jusqu'a 15 px : assez pour que
+   l'oeil voie le titre pousse d'un cote.
+
+   Aucune largeur de bouton ne rattrape les deux extremes a la fois : la
+   caler sur les plus gros monstres degrade les 76 pages a petit monstre.
+   Le monstre, lui, se reconnait a son image, donc le rattrapage s'ecrit
+   une fois par monstre. Table produite par mesure des images, pas a la
+   main : voir centrage_titre.py.
+
+   rattrapage = (108 - largeur du monstre) / 2, du cote qui manque
+   --------------------------------------------------------------------- */
+@media (min-width: 701px) {
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis):has(+ .grid_2 img[src*="img-140/01-2.png"])
+    { padding-left: 26px; }   /* monstre 97 px, 47 page(s) */
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis):has(+ .grid_2 img[src*="img-140/03-2.png"])
+    { padding-left: 34px; }   /* monstre 81 px, 47 page(s) */
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis):has(+ .grid_2 img[src*="img-140/04-2.png"])
+    { padding-left: 51px; }   /* monstre 46 px, 32 page(s) */
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis):has(+ .grid_2 img[src*="img-140/02-2.png"])
+    { padding-left: 44px; }   /* monstre 59 px, 25 page(s) */
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis):has(+ .grid_2 img[src*="img-140/05-2.png"])
+    { padding-left: 22px; }   /* monstre 104 px, 24 page(s) */
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis):has(+ .grid_2 img[src*="img-140/08-2.png"])
+    { padding-left: 27px; }   /* monstre 94 px, 21 page(s) */
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis):has(+ .grid_2 img[src*="img-140/06-2.png"])
+    { padding-right: 30px; }   /* monstre 129 px, 21 page(s) */
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis):has(+ .grid_2 img[src*="img-140/redaction.png"])
+    { padding-right: 22px; }   /* monstre 113 px, 21 page(s) */
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis):has(+ .grid_2 img[src*="img-140/oral.png"])
+    { padding-right: 22px; }   /* monstre 112 px, 20 page(s) */
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis):has(+ .grid_2 img[src*="img-140/07-2.png"])
+    { padding-left: 48px; }   /* monstre 51 px, 19 page(s) */
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis):has(+ .grid_2 img[src*="img-140/nessie.png"])
+    { padding-right: 35px; }   /* monstre 138 px, 14 page(s) */
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis):has(+ .grid_2 img[src*="img-140/informatique.png"])
+    { padding-left: 32px; }   /* monstre 83 px, 12 page(s) */
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis):has(+ .grid_2 img[src*="img-140/monde.png"])
+    { padding-left: 27px; }   /* monstre 94 px, 11 page(s) */
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis):has(+ .grid_2 img[src*="img-140/brouette.png"])
+    { padding-left: 22px; }   /* monstre 104 px, 7 page(s) */
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis):has(+ .grid_2 img[src*="img-140/alphabet.png"])
+    { padding-left: 22px; }   /* monstre 104 px, 3 page(s) */
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis):has(+ .grid_2 img[src*="img-140/euro.png"])
+    { padding-left: 22px; }   /* monstre 104 px, 2 page(s) */
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis):has(+ .grid_2 img[src*="img-140/ecoute.png"])
+    { padding-left: 22px; }   /* monstre 104 px, 1 page(s) */
+  /* Les pages de loto n'ont pas de monstre a droite du titre mais le bouton
+     d'ecoute, rendu a 104 px. */
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis):has(+ .grid_2 img[src*="img-140/ecoute.png"])
+    { padding-left: 22px; }   /* bouton 104 px, 7 page(s) */
+}
+
+/* ---------------------------------------------------------------------
+   LA BARRE DES PISTES AUDIO
+   ---------------------------------------------------------------------
+   Les boutons vivaient dans le bloc de titre. Sur une fiche a quatre
+   exercices, ce bloc montait a 173 px quand le bouton de retour en faisait
+   72 : les trois morceaux du bandeau ne pouvaient plus s'aligner, et une
+   hauteur commune faisait deborder les boutons sous la carte.
+
+   Ils forment maintenant leur propre bande, sous le bandeau : les pistes a
+   gauche, la piste en cours et le lecteur a droite. Le bloc de titre ne
+   contient plus que le titre, et le bandeau se referme d'un seul tenant.
+   --------------------------------------------------------------------- */
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_12.text10:has(> .gx-pistes) {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 18px;
+  row-gap: 6px;
+  float: none !important;
+  width: 100% !important;
+  margin: 0 0 22px !important;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, .72);
+  border: 1px solid rgba(184, 177, 138, .72);
+  border-radius: 14px;
+  text-align: left;
+}
+
+/* Les pistes tiennent toute la colonne de gauche, sur autant de lignes
+   qu'il en faut : certaines fiches en comptent quarante-deux. */
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_12.text10:has(> .gx-pistes) > .gx-pistes {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  min-width: 0;
+}
+
+/* Deux formes coexistent dans les fiches : les boutons enveloppes dans un
+   <p>, et, sur la page du cycle de vie, poses directement dans le div. */
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .gx-pistes,
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .gx-pistes > p {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+}
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .gx-pistes > p {
+  flex: 1 1 100%;
+}
+
+/* L'outil de reglage des pages, ajoute par le script pour l'enseignante,
+   prend sa propre ligne plutot que de s'intercaler entre deux pistes. */
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .gx-pistes .reglage-sauts {
+  flex: 1 1 100%;
+  margin: 0;
+}
+
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .gx-pistes .btn-audio-quiz {
+  min-height: 44px;
+  margin: 0 !important;
+  padding: 7px 12px;
+  border: 1px solid #b8b18a;
+  border-radius: 8px;
+  background: #fff;
+  color: #2c2822;
+  font-family: var(--gx-police, "Lexend", system-ui, "Segoe UI", Arial, sans-serif);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .gx-pistes .btn-audio-quiz:hover,
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .gx-pistes .btn-audio-quiz:focus-visible {
+  border-color: var(--gx-app-schoolmonsters, #7b4bb7);
+  background: #f1eafb;
+}
+
+/* La piste chargee dans le lecteur se voit au premier coup d'oeil. C'est le
+   jeton d'action, et non le turquoise de marque : du blanc dessus tient le
+   contraste (5,6 pour 1 au lieu de 2,4). */
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .gx-pistes .btn-audio-quiz.actif {
+  border-color: transparent;
+  background: var(--gx-app-schoolmonsters, #7b4bb7);
+  color: #fff;
+}
+
+/* Le nom de la piste en cours, ecrit par le script dans #LaQuestion. Le
+   libelle seul ne disait pas de quoi il parlait, d'ou la mention devant. */
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_12.text10:has(> .gx-pistes) > #LaQuestion {
+  grid-column: 2;
+  grid-row: 1;
+  /* Sur une fiche a quarante pistes, la colonne de gauche fait 370 px de
+     haut : sans cela le nom flotterait au quart et le lecteur aux trois
+     quarts. Les deux se rejoignent au milieu. */
+  align-self: end;
+  margin: 0 !important;
+  color: var(--gx-encre-douce, #5f636b) !important;
+  font-size: 13.5px !important;
+  font-weight: 600;
+  text-align: right;
+}
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_12.text10:has(> .gx-pistes) > #LaQuestion::before {
+  content: "En écoute : ";
+  font-weight: 400;
+}
+
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_12.text10:has(> .gx-pistes) > p {
+  margin: 0 !important;
+  color: var(--gx-encre, #30343d) !important;
+  font-size: 1em;
+}
+
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_12.text10:has(> .gx-pistes) > p:has(audio) {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+}
+
+/* Sept fiches d'informatique portent un <p><br/></p> de calage en fin de
+   barre. Il n'affiche rien et ouvrirait une ligne vide dans la grille. */
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_12.text10:has(> .gx-pistes) > p:not(#LaQuestion):not(:has(audio)) {
+  display: none;
+}
+
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_12.text10:has(> .gx-pistes) audio {
+  display: block;
+  height: 38px;
+}
+
+/* Sous 760 px, la colonne de droite passerait sous les 200 px : tout
+   revient en une seule colonne. */
+@media (max-width: 760px) {
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_12.text10:has(> .gx-pistes) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_12.text10:has(> .gx-pistes) > .gx-pistes,
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_12.text10:has(> .gx-pistes) > #LaQuestion,
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_12.text10:has(> .gx-pistes) > p:has(audio) {
+    grid-column: 1;
+    grid-row: auto;
+    text-align: left;
+  }
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_12.text10:has(> .gx-pistes) audio {
+    width: 100%;
+  }
+}
+
+/* Les pages qui ont un lecteur sans liste de pistes gardent leur mise en
+   forme d'origine : rien a aligner, donc rien a encadrer. */
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .clear + .grid_12.text10:not(:has(> .gx-pistes)) {
+  float: none !important;
+  width: 100% !important;
+  margin: 0 0 16px !important;
+  padding: 8px 0 14px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  text-align: center;
+}
+
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .clear + .grid_12.text10:not(:has(> .gx-pistes)) p {
+  margin: 5px 0;
+  color: #2c2822 !important;
+}
+
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) audio {
+  max-width: 100%;
+}
+
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) iframe {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+
+/* Les blocs pleine largeur se cadrent sur le bandeau. La grille 960 leur
+   donne 10 px de marge de chaque cote ; le bandeau, le lecteur audio et le
+   document en iframe n'en ont plus depuis qu'ils sont d'un seul tenant, si
+   bien que les videos et les textes des fiches d'anglais rentraient de 10 px
+   par rapport au cadre juste au-dessus. Les colonnes (grid_6, grid_4...)
+   gardent leurs marges : ce sont elles qui font les gouttieres. */
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_12 {
+  box-sizing: border-box;
+  /* Le flottant est conserve. Il venait de 960.css, ou ces cases etaient
+     declarees en display:inline - vieux contournement du bug de double marge
+     d'IE6 - et ou c'etait lui qui les repassait en bloc. Cette feuille a
+     disparu le 31/08/2026, mais le flottant reste utile ici : le retirer et
+     forcer display:block ecrasait le display:grid des grilles de vignettes,
+     qui retombaient sur une colonne. */
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_12:has(> iframe) {
+  position: relative;
+  float: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_12:has(> iframe)::before { content:none; }
+
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_12 > iframe {
+  display: block;
+  width: 100% !important;
+  height: clamp(540px, 72vh, 820px) !important;
+  border: 1px solid #d8d1aa !important;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(55, 49, 36, .10);
+}
+
+@media (max-width: 700px) {
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)),
+  body.theme-clair:has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) {
+    padding: 14px 10px 32px;
+  }
+
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis) {
+    width: calc(100% - 220px) !important;
+    min-height: 0;
+    margin: 0 5px 16px !important;
+    padding: 14px 10px;
+  }
+
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_2:first-child {
+    width: 95px !important;
+    min-height: 0;
+    margin: 0 5px !important;
+    padding: 8px 0;
+  }
+
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis) + .grid_2 {
+    width: 95px !important;
+    min-height: 0;
+    margin: 0 5px !important;
+    padding: 8px 0;
+  }
+
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_2:first-child a {
+    min-width: 80px;
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_2:first-child a img {
+    max-width: 27px !important;
+    max-height: 27px !important;
+  }
+
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis) + .grid_2 img {
+    max-width: 70px !important;
+    max-height: 78px !important;
+  }
+
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis) button {
+    min-height: 32px;
+    padding: 6px 9px;
+    font-size: 12px;
+  }
+}
+
+/* Jeux d'ordre alphabétique : cartes et zones de classement. */
+body:has(#bouton_data):has(#bouton_test) .container_12 > .grid_6 {
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+
+body:has(#bouton_data):has(#bouton_test) .bouton1 {
+  min-width: 126px;
+  min-height: 42px;
+  padding: 9px 15px;
+  border: 1px solid #0e9789;
+  border-radius: 9px;
+  background: #12baa6;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+  box-shadow: 0 3px 10px rgba(14, 151, 137, .18);
+}
+
+body:has(#bouton_data):has(#bouton_test) .bouton1:hover,
+body:has(#bouton_data):has(#bouton_test) .bouton1:focus-visible {
+  border-color: #087e73;
+  background: #0e9789;
+}
+
+body:has(#bouton_data):has(#bouton_test) :is(#alea1, #alea2, #alea3, #alea4, #alea5) {
+  min-height: 54px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #d8d1aa;
+  border-radius: 9px;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(55, 49, 36, .08);
+  cursor: grab;
+}
+
+body:has(#bouton_data):has(#bouton_test) :is(#alea1, #alea2, #alea3, #alea4, #alea5):active {
+  cursor: grabbing;
+}
+
+body:has(#bouton_data):has(#bouton_test) :is(#alea1, #alea2, #alea3, #alea4, #alea5) p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  margin: 0;
+  padding: 6px;
+  color: #2c2822;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+body:has(#bouton_data):has(#bouton_test) .boite1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  height: auto;
+  margin-top: 8px;
+  padding: 4px;
+  border: 2px dashed #0e9789;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, .62);
+  color: #2c2822;
+  box-sizing: border-box;
+}
+
+body:has(#bouton_data):has(#bouton_test) .boite1 p {
+  margin: 0;
+  color: #2c2822;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: grab;
+}
+
+body:has(#bouton_data):has(#bouton_test) .boite1 p:active { cursor: grabbing; }
+
+body:has(#bouton_data):has(#bouton_test) .text16 {
+  min-height: 48px;
+  margin-top: 22px;
+  padding: 8px 10px;
+  border: 1px solid #d8d1aa;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, .72);
+  color: #2c2822;
+  box-sizing: border-box;
+}
+
+body:has(#bouton_data):has(#bouton_test) .text16 p {
+  margin: 0;
+  color: #2c2822;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 30px;
+}
+
+body:has(#bouton_data):has(#bouton_test) #essai_bon {
+  border-color: #8bc9a2;
+}
+
+body:has(#bouton_data):has(#bouton_test) #essai_mauvais {
+  border-color: #e7a2a9;
+}
+
+/* Menu des lotos sonores. */
+.liste-lotos {
+  float: none !important;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 10px;
+  width: min(760px, 100%) !important;
+  margin: 10px auto 0 !important;
+}
+
+.liste-lotos p {
+  margin: 0 !important;
+}
+
+.liste-lotos p:last-child {
+  grid-column: 1 / -1;
+  width: calc(50% - 5px);
+  justify-self: center;
+}
+
+.liste-lotos p a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 9px 14px;
+  border: 1px solid #d8d1aa;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, .92);
+  color: #2c2822 !important;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: border-color .15s, background .15s, transform .15s;
+}
+
+.liste-lotos p a:hover,
+.liste-lotos p a:focus-visible {
+  border-color: #12baa6;
+  background: #fff;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 620px) {
+  .liste-lotos { grid-template-columns: 1fr; }
+  .liste-lotos p:last-child { grid-column: auto; width: 100%; }
+}
+
+/* Exercices des lotos sonores. */
+body.loto-sons .container_12 > .grid_12.text10 {
+  display: none;
+}
+
+body.loto-sons .container_12 > .grid_2:has(span[id^="Q"]),
+body.loto-sons .container_12 > .qloto,
+body.loto-sons .container_12 > .qloto + .grid_2,
+body.loto-sons .container_12 > .qloto + .grid_2 + .grid_2 {
+  display: flex;
+  align-items: center;
+  min-height: 82px;
+  margin-top: 7px !important;
+  margin-bottom: 7px !important;
+  box-sizing: border-box;
+}
+
+body.loto-sons .container_12 > .grid_2:has(span[id^="Q"]) {
+  justify-content: center;
+  width: 12% !important;
+  margin-left: 12.5% !important;
+  margin-right: 0 !important;
+}
+
+body.loto-sons span[id^="Q"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 62px;
+  border: 1px solid #d8d1aa;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .9);
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(55, 49, 36, .07);
+  transition: border-color .15s, transform .15s;
+}
+
+body.loto-sons span[id^="Q"]:hover,
+body.loto-sons span[id^="Q"]:focus-visible {
+  border-color: #12baa6;
+  transform: translateY(-1px);
+}
+
+body.loto-sons span[id^="Q"] img {
+  width: auto !important;
+  max-width: 52px;
+  max-height: 52px;
+}
+
+body.loto-sons .container_12 > .qloto:has(input[id^="rep"]) {
+  width: 48% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 0 8px;
+}
+
+body.loto-sons input[id^="rep"] {
+  width: 100%;
+  height: 44px;
+  padding: 8px 12px;
+  border: 1px solid #b8b18a;
+  border-radius: 8px;
+  background: #fff;
+  color: #2c2822;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+body.loto-sons input[id^="rep"]:focus {
+  border-color: #0e9789;
+  outline: 3px solid rgba(18, 186, 166, .16);
+}
+
+body.loto-sons input[id^="rep"]:disabled {
+  background: rgba(255, 255, 255, .72);
+  color: #736d5c;
+  cursor: not-allowed;
+}
+
+body.loto-sons .container_12 > .qloto:has(button) {
+  justify-content: center;
+  width: 14% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+body.loto-sons .qloto button {
+  min-width: 86px;
+  min-height: 42px;
+  padding: 8px 13px;
+  border: 1px solid #0e9789;
+  border-radius: 8px;
+  background: #12baa6;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: capitalize;
+  cursor: pointer;
+  box-shadow: 0 3px 9px rgba(14, 151, 137, .16);
+}
+
+body.loto-sons .qloto button:hover,
+body.loto-sons .qloto button:focus-visible {
+  background: #0e9789;
+}
+
+body.loto-sons .container_12 > .qloto + .grid_2 {
+  justify-content: center;
+  width: 6.5% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+body.loto-sons .container_12 > .qloto + .grid_2 + .grid_2 {
+  justify-content: center;
+  width: 7% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+body.loto-sons .qloto + .grid_2 p,
+body.loto-sons .qloto + .grid_2 + .grid_2 p,
+body.loto-sons .grid_2:has(span[id^="Q"]) p {
+  margin: 0;
+  text-align: center;
+}
+
+body.loto-sons img[id^="check"] {
+  width: auto !important;
+  max-width: 48px;
+  max-height: 48px;
+}
+
+body.loto-sons img[id^="indice"] {
+  width: auto !important;
+  max-width: 118px;
+  max-height: 70px;
+}
+
+body.loto-sons .container_12 > .grid_3.imgdecal:last-of-type,
+body.loto-sons .container_12 > .grid_3.imgdecal:last-of-type + .text12 {
+  margin-top: 24px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background: rgba(255, 255, 255, .72);
+}
+
+body.loto-sons .text12 p {
+  margin: 16px 0;
+  color: #2c2822;
+  font-size: 24px;
+}
+
+@media (max-width: 700px) {
+  body.loto-sons .container_12 > .grid_2:has(span[id^="Q"]) { width: 18% !important; margin-left: 0 !important; }
+  body.loto-sons .container_12 > .qloto:has(input[id^="rep"]) { width: 54% !important; }
+  body.loto-sons .container_12 > .qloto:has(button) { width: 28% !important; }
+  body.loto-sons .container_12 > .qloto + .grid_2,
+  body.loto-sons .container_12 > .qloto + .grid_2 + .grid_2 {
+    min-height: 42px;
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+  }
+  body.loto-sons .container_12 > .qloto + .grid_2 { width: 50% !important; }
+  body.loto-sons .container_12 > .qloto + .grid_2 + .grid_2 { width: 50% !important; }
+}
+
+/* Jeux pour enrichir le lexique. */
+.lien-jeu-lexique {
+  clear: both;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: min(720px, calc(100% - 40px));
+  margin: 26px auto 14px;
+  padding: 15px 18px;
+  border: 1px solid #d8d1aa;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .9);
+  color: #2c2822 !important;
+  text-decoration: none !important;
+  box-shadow: 0 5px 16px rgba(55, 49, 36, .08);
+  box-sizing: border-box;
+  transition: border-color .15s, transform .15s, box-shadow .15s;
+}
+
+.lien-jeu-lexique:hover,
+.lien-jeu-lexique:focus-visible {
+  border-color: #12baa6;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(14, 151, 137, .13);
+}
+
+.lien-jeu-lexique img {
+  width: auto !important;
+  max-width: 86px;
+  max-height: 76px;
+}
+
+.lien-jeu-lexique span { flex: 1; }
+.lien-jeu-lexique strong,
+.lien-jeu-lexique small { display: block; }
+.lien-jeu-lexique strong { color: #0e9789; font-size: 20px; margin-bottom: 4px; }
+.lien-jeu-lexique small { color: #575143; font-size: 15px; line-height: 1.35; }
+.lien-jeu-lexique b {
+  padding: 9px 13px;
+  border-radius: 8px;
+  background: #12baa6;
+  color: #fff;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.consigne-jeu-lexique {
+  clear: both;
+  width: min(760px, calc(100% - 40px));
+  margin: 0 auto 10px;
+  padding: 11px 14px;
+  border-left: 5px solid #12baa6;
+  border-radius: 0 8px 8px 0;
+  background: rgba(255, 255, 255, .74);
+  color: #2c2822;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.imprimer-resultats {
+  display: block;
+  min-height: 42px;
+  margin: 0 auto 14px;
+  padding: 8px 15px;
+  border: 1px solid #0e9789;
+  border-radius: 9px;
+  background: #12baa6;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(14, 151, 137, .18);
+}
+
+.imprimer-resultats:hover,
+.imprimer-resultats:focus-visible { background: #0e9789; }
+.imprimer-resultats[hidden] { display: none; }
+
+body.jeu-lexique .container_12 > .grid_12.text10 {
+  display: none;
+}
+
+body.jeu-lexique .container_12 > .grid_4:has(#bouton),
+body.jeu-lexique #div1,
+body.jeu-lexique .container_12 > .zone-dictionnaire,
+body.jeu-lexique #bon,
+body.jeu-lexique #mauvais {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 76px;
+  height: 76px;
+  margin-top: 8px !important;
+  margin-bottom: 20px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  box-sizing: border-box;
+}
+
+body.jeu-lexique .container_12 > .zone-dictionnaire {
+  padding: 0 6px;
+}
+
+body.jeu-lexique .container_12 > .grid_4:has(#bouton) {
+  width: 178px !important;
+  margin-left: 10px !important;
+  margin-right: 6px !important;
+}
+body.jeu-lexique #div1 {
+  flex-direction: column;
+  gap: 4px;
+  width: 274px !important;
+  margin-left: 6px !important;
+  margin-right: 6px !important;
+  min-height: 76px;
+  padding: 8px 10px;
+  border: 2px dashed #0e9789;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .72);
+}
+
+body.jeu-lexique #div1 p {
+  margin: 0;
+  color: #2c2822;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: grab;
+}
+
+body.jeu-lexique .reste-mots {
+  display: block;
+  color: #6b6555;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+body.jeu-lexique .mot-erreur { animation: secousse-mot .28s linear 2; }
+
+@keyframes secousse-mot {
+  0%, 100% { transform: translateX(0); }
+  33% { transform: translateX(-5px); }
+  66% { transform: translateX(5px); }
+}
+
+body.jeu-lexique #bouton {
+  width: 100%;
+  min-height: 76px;
+  margin: 0 !important;
+  padding: 9px 15px;
+  border: 1px solid #0e9789;
+  border-radius: 9px;
+  background: #12baa6;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(14, 151, 137, .18);
+  box-sizing: border-box;
+}
+
+body.jeu-lexique #bouton:hover,
+body.jeu-lexique #bouton:focus-visible { background: #0e9789; }
+
+body.jeu-lexique #bouton:disabled {
+  border-color: #aaa58f;
+  background: #c4c0ac;
+  color: #615d50;
+  cursor: default;
+  box-shadow: none;
+}
+
+body.jeu-lexique .container_12 > .zone-dictionnaire {
+  width: 100px !important;
+  margin-left: 6px !important;
+  margin-right: 6px !important;
+}
+body.jeu-lexique #bon,
+body.jeu-lexique #mauvais {
+  width: 170px !important;
+  margin-left: 6px !important;
+  margin-right: 6px !important;
+}
+
+body.jeu-lexique #mauvais { margin-right: 10px !important; }
+
+body.jeu-lexique .bouton-dictionnaire {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  width: calc(100% - 10px);
+  height: 76px;
+  padding: 5px;
+  border: 1px solid #d8d1aa;
+  border-radius: 10px;
+  background: #fff;
+  color: #2c2822;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.05;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+body.jeu-lexique .bouton-dictionnaire:hover,
+body.jeu-lexique .bouton-dictionnaire:focus-visible {
+  border-color: #12baa6;
+  background: #f8fffd;
+}
+
+body.jeu-lexique .bouton-dictionnaire img {
+  width: auto !important;
+  max-width: 40px;
+  max-height: 40px;
+}
+
+body.jeu-lexique #bon,
+body.jeu-lexique #mauvais {
+  min-height: 76px;
+  height: 76px;
+  padding: 8px;
+  border: 1px solid #d8d1aa;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, .78);
+  color: #2c2822;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+}
+
+body.jeu-lexique #bon { border-color: #8bc9a2; }
+body.jeu-lexique #mauvais { border-color: #e7a2a9; }
+
+body.jeu-lexique .container_12 > .grid_2:has(> p.box1 > img:not([title])) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 132px;
+  padding: 10px;
+  border: 1px solid #d8d1aa;
+  border-bottom: 0;
+  border-radius: 11px 11px 0 0;
+  background: rgba(255, 255, 255, .86);
+  box-sizing: border-box;
+}
+
+body.jeu-lexique .container_12 > .grid_2:has(> p.box1 > img:not([title])) p { margin: 0; text-align: center; }
+body.jeu-lexique .container_12 > .grid_2:has(> p.box1 > img:not([title])) img {
+  width: auto !important;
+  max-width: 122px;
+  max-height: 108px;
+}
+
+body.jeu-lexique .container_12 > .grid_2:has(> .boite) {
+  display: grid;
+  grid-template-rows: 30px 86px 30px 86px;
+  gap: 4px;
+  min-height: 0;
+  height: 268px;
+  margin-top: 0 !important;
+  padding: 10px;
+  border: 1px solid #d8d1aa;
+  border-top: 0;
+  border-radius: 0 0 11px 11px;
+  background: rgba(255, 255, 255, .86);
+  box-sizing: border-box;
+}
+
+body.jeu-lexique .container_12 > .grid_2:has(> .boite) p.box1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  margin: 0;
+  text-align: center;
+}
+
+body.jeu-lexique .container_12 > .grid_2:has(> .boite) p.box1 img {
+  width: auto !important;
+  max-width: 28px;
+  max-height: 28px;
+}
+
+body.jeu-lexique .boite {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  gap: 4px;
+  width: 100%;
+  min-height: 0;
+  height: 86px;
+  margin: 0;
+  padding: 4px;
+  border: 2px dashed #0e9789;
+  border-radius: 8px;
+  background: #f8fffd;
+  color: #2c2822;
+  font-size: 14px;
+  font-weight: 600;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+body.jeu-lexique .boite .mot-classe {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  margin: 0;
+  padding: 4px 7px;
+  border: 1px solid #8bc9a2;
+  border-radius: 999px;
+  background: #eaf7ee;
+  color: #24643a;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.15;
+  box-sizing: border-box;
+}
+
+body.jeu-lexique .boite:has(> .mot-classe:nth-child(3)) {
+  gap: 2px;
+}
+
+body.jeu-lexique .boite:has(> .mot-classe:nth-child(3)) .mot-classe {
+  min-height: 20px;
+  padding: 1px 4px;
+  font-size: 10px;
+}
+
+body.jeu-lexique .boite:has(> .mot-classe:nth-child(5)) {
+  gap: 1px;
+}
+
+body.jeu-lexique .boite:has(> .mot-classe:nth-child(5)) .mot-classe {
+  min-height: 15px;
+  padding: 0 3px;
+  font-size: 8px;
+}
+
+@media (max-width: 760px) {
+  .lien-jeu-lexique { gap: 10px; padding: 12px; }
+  .lien-jeu-lexique img { max-width: 62px; max-height: 58px; }
+  .lien-jeu-lexique strong { font-size: 17px; }
+  .lien-jeu-lexique small { font-size: 13px; }
+  .lien-jeu-lexique b { padding: 8px 10px; font-size: 13px; }
+  body.jeu-lexique .container_12 > .grid_4:has(#bouton),
+  body.jeu-lexique #div1 {
+    width: 50% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  body.jeu-lexique .container_12 > .zone-dictionnaire,
+  body.jeu-lexique #bon,
+  body.jeu-lexique #mauvais {
+    width: 33.3333% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  body.jeu-lexique .container_12 > .grid_2:has(> p.box1 > img:not([title])),
+  body.jeu-lexique .container_12 > .grid_2:has(> .boite) { width: calc(33.3333% - 20px) !important; }
+}
+
+/* Imagiers sonores - vocabulaire P2 CE1. */
+body.imagier-vocabulaire { padding-bottom:45px; background:#f2ecc4; color:#2c2822; font-family:Arial,Helvetica,sans-serif; }
+body.imagier-vocabulaire .container_12:first-of-type .text10 { margin-top:12px; padding:12px; border:1px solid #d8d1aa; border-radius:11px; background:rgba(255,255,255,.8); box-sizing:border-box; text-align:center; }
+body.imagier-vocabulaire .container_12:first-of-type iframe { display:block; min-height:560px; border:1px solid #d8d1aa !important; border-radius:12px; background:#fff; box-shadow:0 5px 16px rgba(55,49,36,.08); }
+body.imagier-vocabulaire .container_12:nth-of-type(2) { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; align-items:stretch; margin-top:22px; }
+body.imagier-vocabulaire .container_12:nth-of-type(2) > .grid_12 { grid-column:1 / -1; float:none; width:auto; margin:0; }
+body.imagier-vocabulaire .container_12:nth-of-type(2) > .grid_3 { float:none; width:auto; margin:0; padding:9px; border:1px solid #d8d1aa; border-radius:12px; background:rgba(255,255,255,.86); box-shadow:0 4px 12px rgba(55,49,36,.07); box-sizing:border-box; }
+body.imagier-vocabulaire .container_12:nth-of-type(2) > .grid_3:not(:has(.carte-imagier)) { display:none; }
+body.imagier-vocabulaire .container_12:nth-of-type(2) > .clear,
+body.imagier-vocabulaire .container_12:nth-of-type(2) > br,
+body.imagier-vocabulaire .container_12:nth-of-type(2) > p:empty { display:none; }
+body.imagier-vocabulaire .text4bis3 { padding:16px; border:1px solid #d8d1aa; border-radius:12px; background:rgba(255,255,255,.82); box-sizing:border-box; }
+body.imagier-vocabulaire .text4bis3 p { margin:0; color:#2c2822; font-size:18px; line-height:1.45; }
+body.imagier-vocabulaire .aide-imagier { grid-column:1 / -1; display:flex; align-items:center; justify-content:space-between; gap:15px; padding:12px 16px; border-left:5px solid #12baa6; border-radius:0 9px 9px 0; background:#fff; color:#2c2822; box-sizing:border-box; }
+body.imagier-vocabulaire .aide-imagier span { color:#676151; font-size:14px; }
+body.imagier-vocabulaire .carte-imagier { position:relative; display:flex; align-items:center; justify-content:center; width:100%; min-height:190px; border:2px solid transparent; border-radius:9px; background:#fff; cursor:pointer; overflow:hidden; box-sizing:border-box; transition:transform .15s,border-color .15s,box-shadow .15s; }
+body.imagier-vocabulaire .carte-imagier::after { content:'🔊 Écouter'; position:absolute; right:7px; bottom:7px; padding:5px 8px; border-radius:999px; background:rgba(18,186,166,.94); color:#fff; font-size:12px; font-weight:700; }
+body.imagier-vocabulaire .carte-imagier:hover,
+body.imagier-vocabulaire .carte-imagier:focus-visible { border-color:#12baa6; outline:none; transform:translateY(-2px); box-shadow:0 6px 15px rgba(14,151,137,.16); }
+body.imagier-vocabulaire .carte-imagier.son-en-lecture { border-color:#efa900; background:#fff9e8; }
+body.imagier-vocabulaire .carte-imagier img { display:block; width:100% !important; height:190px !important; object-fit:contain; }
+@media(max-width:800px){
+  body.imagier-vocabulaire .container_12:nth-of-type(2) { grid-template-columns:repeat(2,minmax(0,1fr)); padding:0 10px; box-sizing:border-box; }
+  body.imagier-vocabulaire .aide-imagier { align-items:flex-start; flex-direction:column; }
+}
+@media(max-width:480px){
+  body.imagier-vocabulaire .container_12:nth-of-type(2) { grid-template-columns:1fr; }
+}
+
+@media print {
+  @page { size: landscape; margin: 8mm; }
+
+  body.jeu-lexique,
+  body.jeu-lexique.theme-clair {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body.jeu-lexique .container_12 {
+    display: grid !important;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  body.jeu-lexique .container_12 > * { display: none !important; }
+
+  /* Le titre est réaffiché : sans lui, la feuille imprimée ne dit pas de
+     quel exercice il s'agit, ce qui la rend inclassable une fois détachée
+     de l'écran. Il occupe une ligne à lui seul, au-dessus des images. */
+  body.jeu-lexique .container_12 > :is(.text4, .text4bis) {
+    display: block !important;
+    grid-column: 1 / -1;
+    grid-row: 1;
+    width: auto !important;
+    min-height: 0 !important;
+    margin: 0 0 5px !important;
+    padding: 0 !important;
+    background: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    text-align: center;
+  }
+
+  body.jeu-lexique .container_12 > :is(.text4, .text4bis) p,
+  body.jeu-lexique .container_12 > :is(.text4, .text4bis) p span {
+    margin: 0 !important;
+    color: #000 !important;
+    font-size: 15pt !important;
+    line-height: 1.25;
+  }
+
+  body.jeu-lexique .container_12 > .grid_2:has(> p.box1 > img:not([title])) {
+    display: flex !important;
+    grid-row: 2;
+    width: auto !important;
+    min-height: 118px;
+    margin: 0 3px !important;
+    padding: 6px;
+    break-inside: avoid;
+  }
+
+  body.jeu-lexique .container_12 > .grid_2:has(> .boite) {
+    display: grid !important;
+    grid-row: 3;
+    width: auto !important;
+    height: 250px;
+    margin: 0 3px !important;
+    padding: 7px;
+    break-inside: avoid;
+  }
+
+  body.jeu-lexique .container_12 > .grid_2:has(> p.box1 > img:not([title])) img {
+    max-width: 112px;
+    max-height: 98px;
+  }
+}
+
+/* Jeu des stratégies de calcul. */
+body.jeu-calcul .calcul-contenu {
+  clear: both;
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+body.jeu-calcul .methodes-calcul,
+body.jeu-calcul .exercice-calcul {
+  margin: 0 0 18px;
+  padding: 20px;
+  border: 1px solid #d8d1aa;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .78);
+  box-shadow: 0 5px 16px rgba(55, 49, 36, .07);
+}
+
+body.jeu-calcul .methodes-calcul h1,
+body.jeu-calcul .exercice-calcul h2 {
+  margin: 0;
+  color: #2c2822;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  text-align: center;
+}
+
+body.jeu-calcul .methodes-calcul h1 { margin-bottom: 16px; font-size: 20px; }
+
+body.jeu-calcul .grille-methodes {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+body.jeu-calcul .carte-methode {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 150px;
+  margin: 0;
+  padding: 14px 10px 11px;
+  border: 1px solid #d8d1aa;
+  border-radius: 10px;
+  background: #fff;
+  color: #2c2822;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.25;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: border-color .15s, background .15s, transform .15s;
+}
+
+body.jeu-calcul .carte-methode:hover,
+body.jeu-calcul .carte-methode:focus-visible {
+  border-color: #12baa6;
+  background: #f8fffd;
+  transform: translateY(-2px);
+}
+
+body.jeu-calcul .carte-methode.methode-active {
+  border: 2px solid #0e9789;
+  background: #eaf8f5;
+  box-shadow: 0 0 0 3px rgba(18, 186, 166, .13);
+}
+
+body.jeu-calcul .carte-methode > img {
+  width: auto;
+  max-width: 92px;
+  max-height: 86px;
+}
+
+body.jeu-calcul .carte-methode strong { min-height: 35px; display: flex; align-items: center; }
+
+body.jeu-calcul .methode-favorite {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+}
+
+body.jeu-calcul .methode-favorite img { width: 22px; height: 22px; object-fit: contain; }
+
+body.jeu-calcul .aide-methode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 16px;
+}
+
+body.jeu-calcul .aide-methode:has([hidden]:first-child):has(audio[hidden]) { margin-top: 0; }
+body.jeu-calcul #support_visuel { max-width: min(520px, 65%); max-height: 270px; object-fit: contain; }
+body.jeu-calcul #source { max-width: 310px; }
+
+/* Jeu de la marchande. */
+body.jeu-marchande .container_12 { padding-bottom: 40px; }
+
+body.jeu-marchande .container_12 > .grid_1:empty,
+body.jeu-marchande .container_12 > .grid_1:has(> p:empty),
+body.jeu-marchande .container_12 > .grid_2:has(> p:empty) { display:none; }
+
+body.jeu-marchande .container_12 > .grid_2:has(#chargement) {
+  width: 180px;
+  min-height: 166px;
+  margin: 10px 10px 0;
+  padding: 12px;
+  border: 1px solid #d8d1aa;
+  border-radius: 12px;
+  background: rgba(255,255,255,.82);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+body.jeu-marchande #chargement {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  width:100% !important;
+  min-height:112px;
+  margin:0 auto 8px;
+  padding:9px;
+  border:0;
+  border-radius:10px;
+  background:#eaf8f5;
+  color:#0e786d;
+  font:700 14px/1.2 Arial,sans-serif;
+  cursor:pointer;
+  transition:transform .15s, background .15s;
+}
+body.jeu-marchande #chargement img { width:auto !important; max-width:76px; max-height:66px; }
+body.jeu-marchande #chargement:hover { background:#d8f3ee; transform:translateY(-2px); }
+body.jeu-marchande .container_12 > .grid_2:has(#chargement) p { margin:0; }
+body.jeu-marchande .container_12 > .grid_2:has(#chargement) p:last-child img { width:auto !important; max-width:48px; }
+
+body.jeu-marchande .container_12 > .grid_1:has(> .imgcentre) {
+  width: 170px;
+  min-height:166px;
+  margin:10px 10px 0;
+  padding:12px 10px;
+  border:1px solid #d8d1aa;
+  border-radius:12px;
+  background:rgba(255,255,255,.88);
+  box-sizing:border-box;
+  text-align:center;
+}
+body.jeu-marchande .imgcentre { display:flex; align-items:center; justify-content:center; height:105px; margin:0 0 7px; }
+body.jeu-marchande .imgcentre img { width:auto !important; max-width:135px; max-height:100px; }
+body.jeu-marchande .text19 { margin:0; color:#0e9789; font:700 19px/1.2 Arial,sans-serif; }
+
+body.jeu-marchande .container_12 > .grid_2:has(#bouton_data) {
+  clear:left;
+  width:180px;
+  margin:10px;
+  text-align:center;
+}
+body.jeu-marchande .container_12 > .grid_2:has(#bouton_data) p { margin:0; }
+body.jeu-marchande #bouton_data,
+body.jeu-marchande #recalcul,
+body.jeu-marchande #afich_billet,
+body.jeu-marchande #reload {
+  min-height:42px;
+  margin:0 !important;
+  padding:9px 14px;
+  border:1px solid #0e9789;
+  border-radius:9px;
+  background:#12baa6;
+  color:#fff;
+  font:700 14px/1.2 Arial,sans-serif;
+  cursor:pointer;
+  box-shadow:0 3px 10px rgba(14,151,137,.18);
+}
+body.jeu-marchande #bouton_data { width:100%; }
+body.jeu-marchande #bouton_data::first-letter { text-transform:uppercase; }
+
+body.jeu-marchande .container_12 > .grid_1:has(> [id^="q"]) {
+  width:170px;
+  margin:10px;
+  text-align:center;
+}
+body.jeu-marchande [id^="q"] {
+  min-height:42px;
+  margin:0;
+  padding:10px;
+  border:1px solid #d8d1aa;
+  border-radius:9px;
+  background:#fff;
+  color:#2c2822;
+  font:700 18px/1.2 Arial,sans-serif;
+  box-sizing:border-box;
+}
+body.jeu-marchande #nom_total { margin:10px 0; font:700 18px/42px Arial,sans-serif; text-align:center; }
+
+body.jeu-marchande #calcul,
+body.jeu-marchande #monnaie {
+  clear:both;
+  margin:18px 10px;
+  padding:18px;
+  border:1px solid #d8d1aa;
+  border-radius:12px;
+  background:rgba(255,255,255,.82);
+  box-shadow:0 5px 16px rgba(55,49,36,.07);
+  overflow:hidden;
+}
+body.jeu-marchande #calcul:empty,
+body.jeu-marchande #monnaie:empty { display:none; }
+body.jeu-marchande #calcul .grid_2 { width:100px; margin:0 8px; text-align:center; }
+body.jeu-marchande #calcul .grid_1 { width:65px; margin:0 5px; text-align:center; }
+body.jeu-marchande #calcul .grid_2 img { max-width:72px; }
+body.jeu-marchande #calcul .grid_1 img { max-width:28px; }
+body.jeu-marchande .input3 {
+  width:58px;
+  height:42px;
+  padding:6px;
+  border:1px solid #bdb58e;
+  border-radius:8px;
+  background:#fff;
+  color:#2c2822;
+  font:700 17px Arial,sans-serif;
+  text-align:center;
+  box-sizing:border-box;
+}
+body.jeu-marchande .input3:focus { outline:3px solid rgba(18,186,166,.2); border-color:#12baa6; }
+body.jeu-marchande .input3:disabled { background:#f3f0df; }
+body.jeu-marchande .grid12 { clear:both; width:auto; margin:10px; text-align:center; }
+body.jeu-marchande #texte_paiment { color:#2c2822; font:600 16px/1.4 Arial,sans-serif; }
+
+body.jeu-marchande #monnaie .grid_4 {
+  width:calc(33.333% - 20px);
+  min-height:105px;
+  margin:5px 10px;
+  padding:10px;
+  border:1px solid #e0dac0;
+  border-radius:10px;
+  background:#fff;
+  box-sizing:border-box;
+  text-align:center;
+}
+body.jeu-marchande .argent { display:flex; align-items:center; justify-content:center; gap:12px; min-height:80px; margin:0; }
+body.jeu-marchande .argent img { width:auto !important; max-width:120px; max-height:72px; cursor:pointer; transition:opacity .15s, transform .15s; }
+body.jeu-marchande .argent img:hover { transform:translateY(-2px); }
+body.jeu-marchande .argent img.sombre { opacity:.28; }
+body.jeu-marchande .img_clic img { width:auto !important; max-width:90px; padding:10px 18px; border-radius:9px; background:#12baa6; cursor:pointer; }
+
+@media(max-width:760px){
+  body.jeu-marchande .container_12 > .grid_2:has(#chargement),
+  body.jeu-marchande .container_12 > .grid_1:has(> .imgcentre) { width:calc(50% - 20px); }
+  body.jeu-marchande #monnaie .grid_4 { width:calc(50% - 20px); }
+}
+
+body.jeu-calcul .entete-exercice-calcul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+body.jeu-calcul .entete-exercice-calcul h2 { margin-bottom: 5px; text-align: left; font-size: 22px; }
+body.jeu-calcul .entete-exercice-calcul p { margin: 0; color: #575143; font-size: 15px; }
+
+body.jeu-calcul .progression-calcul {
+  margin-left: auto;
+  padding: 8px 12px;
+  border: 1px solid #d8d1aa;
+  border-radius: 999px;
+  background: #fff;
+  color: #575143;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+body.jeu-calcul .nouveau-calcul {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 155px;
+  min-height: 48px;
+  margin: 0;
+  padding: 7px 12px;
+  border: 1px solid #0e9789;
+  border-radius: 9px;
+  background: #12baa6;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+body.jeu-calcul .nouveau-calcul img { width: 38px; height: 38px; object-fit: contain; }
+body.jeu-calcul .nouveau-calcul:hover,
+body.jeu-calcul .nouveau-calcul:focus-visible { background: #0e9789; }
+body.jeu-calcul .nouveau-calcul[hidden] { display: none; }
+
+body.jeu-calcul .zone-calcul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  min-height: 112px;
+  padding: 16px;
+  border: 2px solid #d8d1aa;
+  border-radius: 11px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+body.jeu-calcul .strategie-demandee {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 170px;
+  min-height: 92px;
+  padding: 6px;
+  border: 1px solid #d8d1aa;
+  border-radius: 9px;
+  background: #f7f4df;
+  box-sizing: border-box;
+}
+
+body.jeu-calcul .strategie-demandee-images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 54px;
+}
+
+body.jeu-calcul .strategie-demandee > strong {
+  color: #2c2822;
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+body.jeu-calcul .strategie-demandee :is(.grid_1, .grid_2) {
+  float: none !important;
+  width: auto !important;
+  margin: 0 !important;
+}
+
+body.jeu-calcul .strategie-demandee p { margin: 0; }
+body.jeu-calcul .strategie-demandee img { width: auto !important; max-width: 58px; max-height: 58px; }
+
+body.jeu-calcul .calcul-operation,
+body.jeu-calcul .signe-egal {
+  margin: 0;
+  color: #2c2822;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+body.jeu-calcul .saisie-calcul {
+  width: 138px;
+  height: 48px;
+  margin: 0;
+  padding: 7px 10px;
+  border: 1px solid #b8b18a;
+  border-radius: 8px;
+  background: #fff;
+  color: #2c2822;
+  font-size: 23px;
+  font-weight: 700;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+body.jeu-calcul .champ-calcul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  color: #575143;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+body.jeu-calcul .champ-calcul[hidden] { display: none; }
+
+body.jeu-calcul .saisie-calcul:focus { border-color: #0e9789; outline: 3px solid rgba(18, 186, 166, .16); }
+body.jeu-calcul .resultat-calcul { width: auto; max-width: 54px; max-height: 54px; }
+
+body.jeu-calcul .message-calcul {
+  min-height: 24px;
+  margin: 12px 0 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #2c2822;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+body.jeu-calcul .message-calcul:empty { padding: 0; }
+body.jeu-calcul .message-reussite { border: 1px solid #8bc9a2; background: #eaf7ee; color: #24643a; }
+body.jeu-calcul .message-erreur { border: 1px solid #e7a2a9; background: #fff0f1; color: #a51f2d; }
+body.jeu-calcul .message-information { border: 1px solid #8fc9c1; background: #eaf8f5; color: #17685f; }
+
+/* Jeu guidé de conjugaison - P2 CE1. */
+body.jeu-conjugaison { padding:24px 14px 45px; background:#f2ecc4; color:#2c2822; font-family:Arial,Helvetica,sans-serif; }
+.jeu-conjugaison-page { width:min(1040px,100%); margin:0 auto; }
+/* Meme carte que le bandeau des fiches : memes 150 px de part et d'autre,
+   meme hauteur de 132, meme blanc, meme filet de sable, pas d'ombre. */
+.jeu-conjugaison-entete { position:relative; display:grid; grid-template-columns:150px 1fr 150px; align-items:center; gap:18px; min-height:132px; padding:0 18px; border:1px solid rgba(184,177,138,.72); border-radius:14px; background:rgba(255,255,255,.72); box-shadow:none; box-sizing:border-box; }
+.jeu-conjugaison-entete > div { text-align:center; }
+/* Encre et non turquoise, et la taille exacte du titre des fiches. */
+.jeu-conjugaison-entete h1 { margin:0; color:var(--gx-encre,#30343d); font-family:'Lexend', system-ui, Arial, sans-serif; font-size:clamp(24px,3.2vw,36px); font-weight:500; line-height:1.18; }
+.jeu-conjugaison-entete p { margin:5px 0 0; color:var(--gx-encre-douce,#5f636b); font-size:16px; }
+/* Le turquoise d'action, pas le turquoise de marque : blanc dessus, 5,6
+   pour 1 au lieu de 2,4. Et en ligne comme sur les fiches, pas en colonne. */
+.jeu-conjugaison-retour { justify-self:center; display:flex; align-items:center; justify-content:center; gap:7px; min-width:108px; min-height:48px; padding:7px 10px; border-radius:9px; background:var(--gx-app-schoolmonsters,#7b4bb7); color:#fff !important; font-size:14px; font-weight:700; line-height:1; text-decoration:none !important; box-shadow:0 2px 6px rgba(9,95,87,.22); }
+.jeu-conjugaison-retour img { width:auto; max-width:35px; max-height:35px; }
+.jeu-conjugaison-mascotte { justify-self:center; width:auto; max-width:138px; max-height:104px; }
+.jeu-conjugaison-consigne { margin:18px auto; padding:12px 15px; border-left:5px solid #12baa6; border-radius:0 9px 9px 0; background:rgba(255,255,255,.82); font-size:16px; line-height:1.4; }
+body.jeu-conjugaison #cache { position:absolute; width:1px; height:1px; opacity:0; pointer-events:none; }
+.jeu-conjugaison-grille { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:15px; }
+.etape-conjugaison { position:relative; min-height:420px; padding:18px; border:1px solid #d8d1aa; border-radius:13px; background:rgba(255,255,255,.84); box-shadow:0 5px 15px rgba(55,49,36,.07); box-sizing:border-box; text-align:center; }
+.numero-etape { position:absolute; top:11px; left:11px; display:flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; background:#efa900; color:#fff; font-size:16px; font-weight:700; }
+.etape-conjugaison > img:not(.icone-cachee) { display:block; width:auto; height:72px; max-width:100px; margin:0 auto 5px; object-fit:contain; }
+.etape-conjugaison > img[src=""] { visibility:hidden; }
+.etape-conjugaison h2 { margin:4px 0 12px; color:#2c2822; font-size:21px; }
+.etape-conjugaison button,.phrase-conjugaison button { min-height:42px; padding:9px 15px; border:1px solid #0e9789; border-radius:9px; background:#12baa6; color:#fff; font-size:15px; font-weight:700; cursor:pointer; }
+.etape-conjugaison button[hidden],.phrase-conjugaison button[hidden] { display:none; }
+.mot-pioche { display:flex; align-items:center; justify-content:center; min-height:58px; margin:14px 0; padding:8px; border:2px dashed #12a899; border-radius:9px; background:#f8fffd; font-size:22px; font-weight:700; }
+.mot-pioche p { margin:0; }
+.etape-conjugaison label { display:block; margin:12px 0 6px; color:#575143; font-size:14px; font-weight:700; }
+.ligne-reponse { display:flex; align-items:center; justify-content:center; gap:8px; min-height:48px; }
+.ligne-reponse input,.phrase-conjugaison input { width:min(175px,100%); height:44px; padding:7px 10px; border:1px solid #b8b18a; border-radius:8px; background:#fff; color:#2c2822; font-size:20px; text-align:center; box-sizing:border-box; }
+.ligne-reponse input:focus,.phrase-conjugaison input:focus { border-color:#12baa6; outline:3px solid rgba(18,186,166,.16); }
+.ligne-reponse img { width:auto; max-width:42px; max-height:42px; }
+.ligne-reponse .pictogramme-reponse { width:42px; height:42px; object-fit:contain; border-radius:6px; }
+.ligne-reponse img[src=""] { display:none; }
+.icone-cachee { display:none; }
+.etape-terminaison #choisir_pull { min-height:22px; margin:8px 0; color:#575143; font-size:16px; font-weight:700; }
+.choix-terminaisons { display:grid; grid-template-columns:repeat(3,1fr); gap:7px; min-height:128px; margin:8px 0; }
+.choix-terminaisons img { width:100%; max-width:72px; height:58px; margin:auto; object-fit:contain; cursor:pointer; border-radius:8px; transition:transform .15s,background .15s; }
+.choix-terminaisons img[src=""] { visibility:hidden; }
+.choix-terminaisons img:hover { transform:translateY(-2px); background:#eaf8f5; }
+.choix-terminaisons .pull-texte { display:flex; align-items:center; justify-content:center; width:100%; max-width:72px; height:58px; margin:auto; padding:0; border:1px solid #8fc9c1; border-radius:8px; background:#eaf8f5; color:#17685f; font-size:18px; font-weight:700; cursor:pointer; }
+.choix-terminaisons .pull-texte[hidden] { display:none; }
+.ligne-reponse .valider-etape,.phrase-saisie .valider-etape { min-height:40px; padding:7px 11px; }
+.message-etape { min-height:20px; margin:8px 0 0; font-size:13px; font-weight:700; line-height:1.35; }
+.message-etape:empty { min-height:0; margin:0; }
+.message-etape.message-correct { color:#247044; }
+.message-etape.message-erreur { color:#b12935; }
+.phrase-conjugaison { position:relative; display:grid; grid-template-columns:105px minmax(190px,1fr) minmax(280px,2fr) 50px 110px; align-items:center; gap:12px; margin-top:16px; padding:18px; border:1px solid #d8d1aa; border-radius:13px; background:rgba(255,255,255,.86); box-shadow:0 5px 15px rgba(55,49,36,.07); }
+.phrase-conjugaison > div { position:relative; display:flex; align-items:center; justify-content:center; gap:7px; min-height:62px; }
+.phrase-conjugaison > div .numero-etape { position:static; flex:0 0 30px; }
+.phrase-conjugaison > div img { width:auto; max-width:58px; max-height:58px; }
+.phrase-conjugaison label strong,.phrase-conjugaison label small { display:block; }
+.phrase-conjugaison label small { margin-top:4px; color:#6c6758; }
+.phrase-conjugaison input { width:100%; text-align:left; }
+.phrase-saisie { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:8px; }
+.phrase-saisie .message-etape { grid-column:1 / -1; }
+.phrase-conjugaison > img { width:auto; max-width:44px; max-height:44px; }
+.phrase-conjugaison > img[src=""] { display:none; }
+
+@media(max-width:760px){
+  /* Sous 760 px, memes proportions que le bandeau des fiches. */
+  .jeu-conjugaison-entete { grid-template-columns:95px 1fr 95px; gap:10px; padding:0 10px; min-height:0; }
+  .jeu-conjugaison-retour { justify-self:center; min-width:80px; min-height:44px; padding:6px; font-size:12px; }
+  .jeu-conjugaison-retour img { max-width:27px; max-height:27px; }
+  .jeu-conjugaison-mascotte { max-width:70px; max-height:78px; }
+  .jeu-conjugaison-entete p { font-size:17px; }
+  .jeu-conjugaison-grille { grid-template-columns:1fr; }
+  .etape-conjugaison { min-height:0; }
+  .phrase-conjugaison { grid-template-columns:55px 1fr 44px; }
+  .phrase-conjugaison label { grid-column:2 / 4; }
+  .phrase-conjugaison input { grid-column:1 / 4; }
+}
+
+@media (max-width: 760px) {
+  body.jeu-calcul .methodes-calcul,
+  body.jeu-calcul .exercice-calcul { padding: 14px; }
+  body.jeu-calcul .grille-methodes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  body.jeu-calcul .carte-methode:last-child { grid-column: 1 / -1; width: calc(50% - 5px); justify-self: center; }
+  body.jeu-calcul .entete-exercice-calcul { flex-direction: column; text-align: center; }
+  body.jeu-calcul .entete-exercice-calcul h2 { text-align: center; }
+  body.jeu-calcul .progression-calcul { margin-left: 0; }
+  body.jeu-calcul .aide-methode { flex-direction: column; }
+  body.jeu-calcul #support_visuel { max-width: 100%; }
+  body.jeu-calcul .zone-calcul { padding: 12px 8px; }
+  body.jeu-calcul .calcul-operation,
+  body.jeu-calcul .signe-egal { font-size: 24px; }
+  body.jeu-calcul .saisie-calcul { width: 112px; }
+}
+/* Le dictionnaire - vocabulaire P2 CE1. */
+body.page-dictionnaire { padding:24px 14px 45px; background:#f2ecc4; color:#2c2822; font-family:Arial,Helvetica,sans-serif; }
+.page-dictionnaire-contenu { width:min(1040px,100%); margin:0 auto; }
+.page-dictionnaire-entete { display:grid; grid-template-columns:150px 1fr 150px; align-items:center; gap:18px; min-height:132px; padding:0 18px; border:1px solid rgba(184,177,138,.72); border-radius:14px; background:rgba(255,255,255,.72); box-shadow:none; box-sizing:border-box; }
+.page-dictionnaire-entete > div { text-align:center; }
+.page-dictionnaire-entete h1 { margin:0; color:var(--gx-encre,#30343d); font-family:'Lexend', system-ui, Arial, sans-serif; font-size:clamp(24px,3.2vw,36px); font-weight:500; line-height:1.18; }
+.page-dictionnaire-entete p { margin:5px 0 0; color:var(--gx-encre-douce,#5f636b); font-size:16px; }
+.page-dictionnaire-retour { justify-self:center; display:flex; align-items:center; justify-content:center; gap:7px; min-width:108px; min-height:48px; padding:7px 10px; border-radius:9px; background:var(--gx-app-schoolmonsters,#7b4bb7); color:#fff !important; font-size:14px; font-weight:700; line-height:1; text-decoration:none !important; box-shadow:0 2px 6px rgba(9,95,87,.22); }
+.page-dictionnaire-retour img { width:auto; max-width:35px; max-height:35px; }
+.page-dictionnaire-mascotte { justify-self:center; width:auto; max-width:138px; max-height:104px; }
+.sommaire-dictionnaire,.document-dictionnaire { margin-top:16px; padding:18px; border:1px solid #d8d1aa; border-radius:13px; background:rgba(255,255,255,.84); box-shadow:0 5px 15px rgba(55,49,36,.07); }
+.sommaire-dictionnaire h2,.document-dictionnaire h2 { margin:0 0 14px; color:#2c2822; font-size:21px; text-align:center; }
+.boutons-dictionnaire { display:flex; flex-wrap:wrap; justify-content:center; gap:9px; }
+.boutons-dictionnaire button { min-height:42px; padding:9px 13px; border:1px solid #b8b18a; border-radius:9px; background:#fff; color:#2c2822; font-size:15px; font-weight:700; cursor:pointer; transition:border-color .15s,background .15s,transform .15s; }
+.boutons-dictionnaire button:hover,.boutons-dictionnaire button:focus-visible,.boutons-dictionnaire button.actif { border-color:#12baa6; outline:none; background:#eaf8f5; transform:translateY(-1px); }
+.lecteur-dictionnaire { display:grid; grid-template-columns:1fr minmax(260px,360px); align-items:center; gap:18px; margin-top:16px; padding:16px 20px; border-left:5px solid #12baa6; border-radius:0 12px 12px 0; background:#fff; box-shadow:0 4px 13px rgba(55,49,36,.06); }
+.lecteur-dictionnaire > div { display:flex; flex-direction:column; gap:4px; }
+.lecteur-dictionnaire span { color:#0e9789; font-size:14px; font-weight:700; }
+.lecteur-dictionnaire strong { font-size:18px; }
+.lecteur-dictionnaire audio { width:100%; }
+.document-dictionnaire iframe { display:block; width:100%; height:620px; border:1px solid #d8d1aa; border-radius:10px; background:#fff; }
+@media(max-width:700px){
+  .page-dictionnaire-entete { grid-template-columns:95px 1fr 95px; gap:10px; padding:0 10px; min-height:0; }
+  .page-dictionnaire-retour { justify-self:center; min-width:80px; min-height:44px; padding:6px; font-size:12px; }
+  .page-dictionnaire-retour img { max-width:27px; max-height:27px; }
+  .page-dictionnaire-mascotte { max-width:70px; max-height:78px; }
+  .lecteur-dictionnaire { grid-template-columns:1fr; }
+  .document-dictionnaire iframe { height:500px; }
+}
+
+/* Lecteurs vidéo communs : dimensions fluides et cartes cohérentes. */
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) video {
+  display:block;
+  width:100% !important;
+  height:auto !important;
+  max-height:72vh;
+  aspect-ratio:16 / 9;
+  border-radius:10px;
+  background:#242424;
+  object-fit:contain;
+}
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.grid_4,.grid_6,.grid_12):has(> video) {
+  padding:10px;
+  border:1px solid rgba(184,177,138,.72);
+  border-radius:14px;
+  background:rgba(255,255,255,.72);
+  box-shadow:none;
+  box-sizing:border-box;
+}
+
+/* La carte se soude au cartouche qui l'annonce : celui-ci ferme le haut,
+   elle ferme le bas, et le filet est continu. */
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.grid_4, .grid_6, .grid_12):has(> p:is(.bleu, .lila, .vert, .rougeanglais, .gris, .orange, .grandorange)) ~ :is(.grid_4, .grid_6, .grid_12):has(> video) {
+  border-top:0;
+  border-radius:0 0 14px 14px;
+}
+@media(max-width:760px){
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.grid_4,.grid_6,.grid_12):has(> video) {
+    float:none;
+    width:calc(100% - 20px) !important;
+    margin:10px;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   LE TITRE D'UNE VIDEO POSEE NUE DANS LA PAGE
+   ---------------------------------------------------------------------
+   Ces titres ne sont pas dans la meme case que leur video : ils occupent
+   une case de la rangee du dessus. Ils portaient un aplat turquoise plein,
+   trop dur a cote de la vignette qu'il annonce.
+
+   Ils prennent le meme cartouche que sur les cartes d'informatique, de
+   geometrie et du cycle de vie, et se soudent a la video : arrondis en haut
+   pour le titre, en bas pour la video, filet continu, aucun blanc entre les
+   deux. Une carte unique, sans toucher au balisage.
+   --------------------------------------------------------------------- */
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.grid_4, .grid_6, .grid_12) > p:is(.bleu, .lila, .vert, .rougeanglais, .gris, .orange, .grandorange) {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-height:46px;
+  margin:12px 0 0 !important;
+  padding:11px 14px;
+  border:1px solid rgba(184,177,138,.72);
+  border-bottom-color:rgba(184,177,138,.5);
+  border-radius:14px 14px 0 0;
+  background:rgba(255,255,255,.72);
+  color:#30343d !important;
+  font-family:Lexend, Arial, Helvetica, sans-serif;
+  font-size:16px;
+  font-weight:600;
+  line-height:1.3;
+  text-align:center !important;
+  box-sizing:border-box;
+  box-shadow:none;
+}
+
+/* Le meme petit triangle que sur les cartes : il dit lecture et garde la
+   couleur de la suite, sans aplat. Dessine en CSS, donc sans dependance a
+   une police d'emoji. */
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.grid_4, .grid_6, .grid_12) > p:is(.bleu, .lila, .vert, .rougeanglais, .gris, .orange, .grandorange)::before {
+  content:"";
+  flex:0 0 auto;
+  width:0;
+  height:0;
+  border-style:solid;
+  border-width:6px 0 6px 10px;
+  border-color:transparent transparent transparent var(--gx-app-schoolmonsters,#7b4bb7);
+}
+
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.grid_4, .grid_6, .grid_12) > p:is(.bleu, .lila, .vert, .rougeanglais, .gris, .orange, .grandorange) * {
+  color:inherit !important;
+}
+
+/* La video qui suit un titre s'y raccorde. Le selecteur ne peut pas
+   designer la case d'en dessous depuis le titre, mais il peut partir du
+   titre et atteindre les cases suivantes : une video posee avant tout
+   titre garde donc son cadre complet. */
+
+
+/* --------------------------------------------------------------------
+   Réglage des pages du document, pour l'enseignante uniquement
+   Le petit champ n'apparait qu'après un clic sur « Régler les pages » :
+   en temps normal, la fiche reste exactement comme les élèves la voient.
+   -------------------------------------------------------------------- */
+
+.reglage-sauts{
+	display:flex;
+	align-items:center;
+	gap:10px;
+	flex-wrap:wrap;
+	margin:0 0 10px;
+}
+.reglage-bascule{
+	background:#fff;
+	border:1px dashed #b8b18a;
+	border-radius:8px;
+	padding:5px 11px;
+	font-size:13px;
+	font-weight:600;
+	color:#5d5a48;
+	cursor:pointer;
+}
+.reglage-bascule:hover,.reglage-bascule:focus-visible{ border-color:#12baa6; color:#0d8f80; }
+.reglage-bascule.actif{ background:#12baa6; border-style:solid; border-color:#0d8f80; color:#fff; }
+
+.reglage-etat{ font-size:12.5px; color:#6b6857; }
+.reglage-etat.succes{ color:#0d8f80; }
+.reglage-etat.echec{ color:#a93226; font-weight:bold; }
+
+.reglage-page{
+	width:58px;
+	height:30px;
+	margin:0 8px 0 -4px;
+	padding:2px 6px;
+	border:1px solid #12baa6;
+	border-radius:7px;
+	font-size:13px;
+	text-align:center;
+	vertical-align:middle;
+}
+
+
+/* =====================================================================
+   HARMONISATION 2026-08-29 — EN-TÊTE DES PAGES DE MATIÈRE
+   ---------------------------------------------------------------------
+   Bloc ajouté EN FIN DE FICHIER, volontairement.
+
+   L'en-tête de ces 110 pages est commandé par les règles « body:has(...) »
+   plus haut, qui portent des !important. Plutôt que d'aller y toucher ligne
+   par ligne — plusieurs déclarations y sont identiques à d'autres endroits
+   du fichier, et une retouche au mauvais endroit passerait inaperçue — on
+   redéclare ici ce qu'on veut changer, avec les mêmes sélecteurs.
+   Étant en fin de fichier, ce bloc gagne à spécificité égale.
+
+   POUR REVENIR EN ARRIÈRE : supprimer ce bloc, rien d'autre.
+
+   Les valeurs de repli (après la virgule dans var()) permettent aux pages
+   qui ne chargent pas encore galaxie-tokens.css d'en profiter quand même.
+   ===================================================================== */
+
+/* Le titre passe à la police commune. C'est le texte le plus vu de la page,
+   et le seul endroit où la cohérence se remarque : le corps des activités
+   reste sur l'ancienne feuille. */
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis) > p {
+  color: var(--gx-encre, #30343d) !important;
+  font-family: 'Lexend', system-ui, Arial, sans-serif !important;
+  font-weight: 500 !important;
+}
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis) > p span {
+  color: #684393 !important;
+}
+
+/* Blanc sur le turquoise de marque ne donne que 2,4 pour 1 : illisible pour
+   un CE1. Le jeton d'action est le même turquoise, assombri juste assez. */
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_2:first-child a {
+  background: var(--gx-app-schoolmonsters, #7b4bb7) !important;
+}
+
+/* La mascotte de la matière : 96 px, c'était une vignette. Elle est le
+   personnage de la page. Bornée en hauteur pour rester dans la bande. */
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis) + .grid_2 img {
+  max-width: 138px !important;
+  /* Borne a la hauteur utile de la bande : 132 moins les bordures et les
+     marges interieures. Au-dela, la mascotte depassait sous la carte. */
+  max-height: 104px !important;
+}
+
+
+/* Le passage en force qui tenait le bandeau a 960 px a ete retire le
+   31/08/2026 : ces pages font desormais 1068 px comme les deux autres sites, le
+   bandeau n'a donc plus a etre retreci pour s'aligner sur elles. Il reprend la
+   largeur du socle, par .gx-entete-cadree. */
+
+/* ---------------------------------------------------------------------
+   UN SEUL CARTOUCHE : retour + titre + mascotte
+   ---------------------------------------------------------------------
+   Avant, seul le TITRE avait une carte ; le bouton retour et la mascotte
+   flottaient nus de part et d'autre, sur fond transparent. D'où l'impression
+   que le retour était « tout seul à gauche » et la mascotte posée à côté.
+
+   Les trois blocs se rejoignent maintenant en une bande continue : la carte
+   commence au retour, se poursuit derrière le titre, et se ferme sur la
+   mascotte. Aucun changement de balisage, seulement des bordures et des
+   angles répartis entre les trois.
+   --------------------------------------------------------------------- */
+
+/* La bande vaut pour toutes ces pages, fiches comprises. Elle a d'abord ete
+   ecartee des fiches : leur bloc de titre portait aussi la liste des boutons
+   audio, qui debordait sous la carte des que la hauteur etait fixee. Les
+   boutons ont ete sortis du titre et places dans la barre du lecteur, juste
+   en dessous ; le bloc de titre ne contient plus que le titre. */
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_2:first-child,
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis),
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis) + .grid_2 {
+  box-sizing: border-box !important;
+  margin: 0 0 22px !important;
+  background: rgba(255, 255, 255, .72) !important;
+  border: 1px solid rgba(184, 177, 138, .72) !important;
+  border-radius: 0 !important;
+  height: 132px !important;
+  /* L'ombre portee du titre dessinait deux traits verticaux aux jointures :
+     etant encadre par les deux autres blocs, son ombre se voyait de chaque
+     cote et redonnait a la bande l'air d'etre en trois morceaux. La bordure
+     exterieure suffit a poser la carte. */
+  box-shadow: none !important;
+}
+
+/* Le premier ferme à gauche, le dernier à droite, et les bordures
+   mitoyennes disparaissent pour que la bande soit d'un seul tenant. */
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_2:first-child {
+  width: 150px !important;
+  border-right: 0 !important;
+  border-radius: 14px 0 0 14px !important;
+}
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis) {
+  width: calc(100% - 300px) !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+}
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis) + .grid_2 {
+  width: 150px !important;
+  border-left: 0 !important;
+  border-radius: 0 14px 14px 0 !important;
+}
+
+/* Le bouton de retour n'a plus besoin d'un aplat de couleur : il est
+   maintenant DANS la carte, et un pavé turquoise y ferait concurrence au
+   titre. Il prend le cartouche clair du socle, le même que les boutons de
+   la barre du haut. Le monstre suffit à le rendre reconnaissable. */
+body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_2:first-child a {
+  /* Turquoise remis a la demande de le responsable technique, pour juger de l'effet une fois
+     le bouton DANS la bande. C'est le jeton d'action et non le turquoise de
+     marque : blanc dessus, 5,6 pour 1 au lieu de 2,4. */
+  background: var(--gx-app-schoolmonsters, #7b4bb7) !important;
+  border: 0 !important;
+  color: #fff !important;
+  box-shadow: 0 2px 6px rgba(9, 95, 87, .22) !important;
+}
+
+@media (max-width: 700px) {
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis) + .grid_2 {
+    width: 118px !important;
+  }
+  body:where(:not(.sm-liste-page)):has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis) + .grid_2 img {
+    max-width: 104px !important;
+    max-height: 88px !important;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   La galerie de videos
+   ---------------------------------------------------------------------
+   Une seule galerie pour toutes les lecons. Elle remplace les deux blocs
+   jumeaux ecrits page par page dans matiere.css (« videos-geometrie » et
+   « videos-cycle-vie ») : ils ne differaient que par le nombre de colonnes
+   et le format de l'image, deux choses qui sont maintenant des reglages.
+
+   Le nombre de colonnes est porte par une classe, parce que l'enseignante
+   le choisit dans l'editeur : une video par ligne pour une demonstration,
+   deux ou trois pour une serie courte. En dessous de 800 px, tout repasse
+   sur une colonne : les cartes a trois de front deviennent illisibles sur
+   un telephone. */
+.gx-videos {
+  float: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+  margin: 10px 0 28px;
+}
+/* Une seule video occupe toute la largeur, comme avant la conversion, et
+   garde ses proportions d'origine : lui imposer le 16/9 ajouterait des
+   bandes noires aux videos filmees en 4/3. Le format n'est impose que dans
+   les grilles, ou il sert a aligner les cartes entre elles. */
+.gx-videos-1 { grid-template-columns: 1fr; }
+.gx-videos-1 .gx-video video { aspect-ratio: auto; }
+.gx-videos-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.gx-videos-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.gx-videos-4 .gx-video h2 { padding: 9px 10px; font-size: 14px; }
+
+.gx-video {
+  overflow: hidden;
+  display: grid;
+  /* Le titre occupe la rangee souple, la video la rangee fixe : les cartes
+     d'une meme ligne ont des titres de longueurs differentes, et c'est la
+     zone de titre qui absorbe l'ecart. Sans cela, les videos ne demarrent
+     pas a la meme hauteur d'une carte a l'autre. */
+  grid-template-rows: 1fr auto;
+  border: 1px solid rgba(184, 177, 138, .72);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .72);
+}
+.gx-video h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 0;
+  margin: 0;
+  padding: 11px 14px;
+  border-bottom: 1px solid rgba(184, 177, 138, .5);
+  background: transparent;
+  color: #30343d;
+  font: 600 16px/1.3 Lexend, Arial, sans-serif;
+  text-align: center;
+  text-wrap: balance;
+}
+/* Le petit triangle « lecture » devant le titre : il dit d'un coup d'oeil
+   que la carte est une video, sans ajouter de mot a lire. */
+.gx-video h2::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 10px;
+  border-color: transparent transparent transparent var(--gx-app-schoolmonsters,#7b4bb7);
+}
+.gx-video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #222;
+  object-fit: contain;
+}
+/* Une carte sans titre garde les memes bords : c'est la video qui devient
+   le haut de la carte. */
+.gx-video-nu { grid-template-rows: auto; }
+
+@media (max-width: 1100px) {
+  .gx-videos-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 800px) {
+  .gx-videos,
+  .gx-videos-3,
+  .gx-videos-4 {
+    grid-template-columns: 1fr;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Les illustrations d'une lecon
+   ---------------------------------------------------------------------
+   Meme principe que la galerie de videos : une grille, un nombre de
+   colonnes, et tout repasse sur une colonne sur un petit ecran. Les pages
+   ecrites a la main posaient « width="460px" height="300px" » sur chaque
+   image, ou la classe « centercoupon » pour les centrer a 49 % ; la grille
+   fait les deux, et laisse l'image garder ses proportions. */
+.gx-images {
+  float: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  justify-items: center;
+  align-items: start;
+  width: 100%;
+  margin: 10px 0 24px;
+}
+.gx-images-1 { grid-template-columns: 1fr; }
+.gx-images-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.gx-images-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.gx-images img {
+  display: block;
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  border-radius: 12px;
+}
+@media (max-width: 800px) {
+  .gx-images,
+  .gx-images-3,
+  .gx-images-4 {
+    grid-template-columns: 1fr;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   L'intertitre d'une lecon
+   ---------------------------------------------------------------------
+   La meme carte que le titre d'une video, mais sans video dessous : elle est
+   donc arrondie des quatre cotes. Elle annonce une partie de la lecon, pas
+   une video, et n'a pas le petit triangle de lecture. */
+.gx-section {
+  margin: 20px 0 12px;
+  padding: 11px 16px;
+  border: 1px solid rgba(184, 177, 138, .72);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .72);
+  color: #30343d;
+  font: 600 17px/1.35 Lexend, Arial, sans-serif;
+  text-align: center;
+  text-wrap: balance;
+}
+
+/* ========================================================================== */
+/* Refonte School Monsters V2 — espaces d’entrée                              */
+/* La maquette Codex devient ici le langage de référence : grande accroche,   */
+/* surfaces opaques, actions hiérarchisées et mascottes au service du repère. */
+/* ========================================================================== */
+
+body.page-espace-enseignant,
+body.page-choix-periodes {
+  --gx-largeur-page: 1440px;
+  min-height:100vh;
+  --gx-halo-teinte: rgba(18,186,166,.10);
+  background: var(--gx-halo), var(--gx-fond);
+  color:var(--gx-encre,#30343d);
+}
+
+.sm-page {
+  width:min(1440px,calc(100% - 48px));
+  margin:0 auto;
+  padding:0 0 56px;
+}
+
+.sm-hero {
+  position:relative;
+  display:flex;
+  align-items:center;
+  min-height:118px;
+  margin-bottom:24px;
+  padding:20px 30px;
+  overflow:hidden;
+  border:1px solid rgba(218,207,161,.9);
+  border-radius:24px;
+  background:var(--gx-surface,#fffdf6);
+  box-shadow:0 12px 32px rgba(58,48,20,.08);
+}
+
+.sm-hero::before {
+  content:"";
+  position:absolute;
+  inset:0 auto 0 0;
+  width:7px;
+  background:var(--gx-app-schoolmonsters,#7b4bb7);
+}
+
+.sm-hero-contenu {position:relative;z-index:1;max-width:820px;}
+.sm-surtitre {
+  margin:0 0 9px;
+  color:#664097;
+  font:600 .78rem/1.2 var(--gx-police,Lexend,Arial,sans-serif);
+  letter-spacing:.11em;
+  text-transform:uppercase;
+}
+.sm-hero h1 {
+  margin:0;
+  color:var(--gx-titre,#1c246b);
+  font:600 clamp(1.8rem,3.2vw,2.7rem)/1.08 var(--gx-police,Lexend,Arial,sans-serif);
+  letter-spacing:-.035em;
+  text-wrap:balance;
+}
+.sm-hero-contenu>p:last-child {
+  max-width:62ch;
+  margin:14px 0 0;
+  color:#555e6c;
+  font-size:clamp(.98rem,1.4vw,1.18rem);
+  line-height:1.55;
+}
+.sm-hero-mascotte {
+  position:absolute;
+  right:28px;
+  bottom:4px;
+  width:108px;
+  height:108px;
+  object-fit:contain;
+  filter:drop-shadow(0 12px 11px rgba(48,52,61,.12));
+}
+
+.sm-actions {display:grid;gap:18px;}
+.sm-action {
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  min-height:116px;
+  padding:24px 72px 24px 26px;
+  color:#172238;
+  border:1px solid #dacfa1;
+  border-radius:19px;
+  background:#fffdf8;
+  box-shadow:0 8px 22px rgba(58,48,20,.07);
+  text-decoration:none;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+.sm-action:hover {color:#172238;transform:translateY(-3px);box-shadow:0 14px 28px rgba(58,48,20,.11);}
+/* Lot 7 (04/09/2026) : l'anneau turquoise en dur ici court-circuitait
+   l'anneau unique du lot 4 (encre + halo blanc) sur .carte-periode, un
+   element bien reel d'acceuil.php - une specificite de classe bat le
+   :focus-visible nu du socle. Retire, .carte-periode reprend l'anneau
+   commun a toute la galaxie. */
+.sm-action-icone {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:54px;
+  height:54px;
+  flex:0 0 54px;
+  border-radius:16px;
+  color:var(--gx-app-schoolmonsters,#7b4bb7);
+  background:color-mix(in srgb, var(--gx-app-schoolmonsters,#7b4bb7) 12%, #fff);
+  font-size:1.45rem;
+  font-weight:600;
+}
+.sm-action-texte {display:flex;flex-direction:column;align-items:flex-start;gap:4px;}
+.sm-action-texte small {color:#5f636b;font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;}
+.sm-action-texte strong {font-size:clamp(1.12rem,1.7vw,1.42rem);line-height:1.2;}
+.sm-action-texte>span {color:#5f636b;font-size:.9rem;line-height:1.45;}
+.sm-action-fleche {position:absolute;right:28px;top:50%;font-size:1.8rem;font-weight:500;transform:translateY(-50%);}
+.sm-action-principale {
+  min-height:146px;
+  color:#fff;
+  border-color:var(--gx-app-schoolmonsters,#7b4bb7);
+  background:linear-gradient(105deg,var(--gx-app-schoolmonsters,#7b4bb7),#9868cf);
+  box-shadow:0 15px 32px rgba(123,75,183,.22);
+}
+.sm-action-principale:hover {color:#fff;border-color:#684393;background:linear-gradient(105deg,#684393,#7b4bb7);}
+.sm-action-principale .sm-action-icone {color:#fff;background:rgba(255,255,255,.15);}
+.sm-action-principale .sm-action-texte small,
+.sm-action-principale .sm-action-texte>span {color:rgba(255,255,255,.86);}
+.sm-action-principale .sm-action-texte strong {font-size:clamp(1.55rem,2.4vw,2rem);}
+.sm-actions-secondaires {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}
+.sm-action-eleves .sm-action-icone {color:#9b6b00;background:#fff2c7;}
+.sm-action-eleves:hover {border-color:#d6a92f;}
+.sm-action-editeur .sm-action-icone {color:#684393;background:#f0e7fb;}
+.sm-action-editeur:hover {border-color:#8b63bc;}
+
+.sm-periodes-hero {min-height:118px;padding-right:180px;}
+.sm-periodes-hero .sm-hero-contenu>p:last-child {margin-top:10px;}
+.sm-hero-niveaux {
+  position:absolute;
+  right:30px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.sm-hero-niveaux span {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:54px;
+  height:54px;
+  border-radius:18px;
+  color:#fff;
+  background:#16b8aa;
+  box-shadow:0 10px 22px rgba(22,184,170,.2);
+  font-size:1.15rem;
+  font-weight:600;
+  transform:rotate(-4deg);
+}
+.sm-hero-niveaux span+span {background:#efa900;box-shadow:0 10px 22px rgba(239,169,0,.2);transform:rotate(4deg);}
+.sm-message-acces {width:100%;margin:0 0 18px;}
+
+/* Accueil : les périodes restent lisibles dans deux listes de niveaux. */
+.page-choix-periodes .sm-periodes {box-sizing:border-box;width:min(1136px,100%);padding:32px 32px 46px;}
+.page-choix-periodes .niveaux-school-monsters {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;padding:0;}
+.page-choix-periodes .bloc-niveau {min-width:0;padding:24px;border:1px solid var(--gx-bordure,#dacfa1);border-top:4px solid var(--gx-app-schoolmonsters,#7b4bb7);border-radius:20px;background:#fffdf6;box-shadow:none;}
+.page-choix-periodes .bloc-niveau::before {display:none;}
+.page-choix-periodes .entete-niveau {margin-bottom:18px;}
+.page-choix-periodes .pastille-niveau {width:48px;height:48px;flex-basis:48px;background:#eee7f7;color:#633795;}
+.page-choix-periodes .entete-niveau h2 {color:var(--gx-titre,#1c246b);font:600 21px/1.25 var(--gx-police,Lexend,Arial,sans-serif);}
+.page-choix-periodes .entete-niveau p {margin-top:4px;color:#5f636b;font:400 13px/1.5 var(--gx-police,Lexend,Arial,sans-serif);}
+.page-choix-periodes .grille-periodes {grid-template-columns:minmax(0,1fr);gap:12px;}
+.page-choix-periodes .carte-periode,
+.page-choix-periodes .carte-periode:nth-child(5) {
+  box-sizing:border-box;display:grid;grid-template-columns:56px minmax(0,1fr) auto;grid-template-rows:auto;
+  align-items:center;gap:16px;width:auto;grid-column:auto;justify-self:stretch;
+  min-height:92px;padding:14px 16px;border-color:#ddd3e9;border-radius:12px;
+  background:#f5f0fa;box-shadow:none;transition:border-color .15s,background .15s;
+}
+.page-choix-periodes .carte-periode-mascotte {display:flex;align-items:center;justify-content:center;height:60px;}
+.page-choix-periodes .carte-periode img {width:56px;height:60px;object-fit:contain;}
+.page-choix-periodes .carte-periode-texte {display:flex;flex-direction:column;align-items:flex-start;gap:3px;font-family:var(--gx-police,Lexend,Arial,sans-serif);text-align:left;}
+.page-choix-periodes .carte-periode-texte strong {color:#30343d;font-size:14px;font-weight:500;line-height:1.3;}
+.page-choix-periodes .carte-periode-texte small {color:#5f636b;font-size:11px;line-height:1.4;}
+.page-choix-periodes .carte-periode-fleche {display:grid;place-items:center;width:32px;height:32px;color:#633795;font-size:22px;}
+.page-choix-periodes .carte-periode:hover {border-color:#7b4bb7;background:#eee7f7;box-shadow:none;transform:none;}
+.page-choix-periodes .carte-periode-fermee,
+.page-choix-periodes .carte-periode-fermee:nth-child(5) {opacity:1;background:#f5f3eb;border-color:#e1ddcc;}
+.page-choix-periodes .carte-periode-fermee .carte-periode-etat {margin:0;padding:0;background:transparent;color:#5f636b;}
+@media(max-width:760px){
+  .page-choix-periodes .sm-periodes {padding:28px 20px;}
+  .page-choix-periodes .niveaux-school-monsters {grid-template-columns:minmax(0,1fr);}
+}
+@media(max-width:720px){
+  .sm-page{width:min(100% - 24px,1440px);padding-bottom:32px;}
+  .sm-hero{min-height:0;padding:26px 24px;border-radius:19px;}
+  .sm-hero h1{font-size:clamp(1.8rem,8vw,2.45rem);}
+  .sm-hero-mascotte,.sm-hero-niveaux{display:none;}
+  .sm-periodes-hero{padding-right:24px;}
+  .sm-actions-secondaires{grid-template-columns:1fr;}
+  .sm-action{padding:20px 58px 20px 18px;gap:14px;}
+  .sm-action-principale{min-height:132px;}
+  .sm-action-icone{width:46px;height:46px;flex-basis:46px;border-radius:13px;}
+}
+@media(max-width:430px){
+  .sm-hero{padding:23px 20px;}
+  .sm-action{align-items:flex-start;}
+  .sm-action-texte>span{font-size:.82rem;}
+}
+
+/* Refonte des leçons rendues par inclusions/lecon-modele.php. */
+/* Le cartouche est le menu .user-menu rendu par le socle commun. Il doit
+   occuper l'espace restant et rester à droite du bandeau School Monsters. */
+body.gx-app-schoolmonsters .gx-entete .user-menu{margin-left:auto!important;}
+body.sm-lecon-page{
+  --gx-largeur-page:1440px;
+  min-height:100vh;
+  margin:0;
+  padding:0 18px 56px!important;
+  color:#172238;
+  --gx-halo-teinte: rgba(123,75,183,.10);
+  background: var(--gx-halo), var(--gx-fond) !important;
+}
+.sm-lecon-page>.gx-entete{width:min(1440px,100%);}
+html body.sm-lecon-page:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis))>.container_12{
+  position:relative;
+  width:min(1440px,100%)!important;
+  max-width:none!important;
+  margin:0 auto!important;
+}
+.sm-lecon-page .container_12>.grid_2:first-child{display:none!important;}
+.sm-lecon-page .container_12>:is(.text4,.text4bis){
+  position:relative!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  width:100%!important;
+  max-width:none!important;
+  grid-column:1/-1!important;
+  height:72px!important;
+  min-height:72px!important;
+  margin:0 0 18px!important;
+  padding:28px 132px 14px 28px!important;
+  overflow:hidden;
+  border:1px solid #dacfa1!important;
+  border-radius:24px!important;
+  background:linear-gradient(106deg,#fffdf8 0%,#fffdf8 62%,#eee4fb 100%)!important;
+  box-shadow:0 12px 32px rgba(58,48,20,.08)!important;
+  text-align:left!important;
+}
+.sm-lecon-page .container_12>:is(.text4,.text4bis)::before{content:"Leçon";position:absolute;left:28px;top:12px;color:#664097;font-size:.68rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;}
+.sm-lecon-page .container_12>:is(.text4,.text4bis)::after{content:"";position:absolute;inset:0 auto 0 0;width:7px;border-radius:19px 0 0 19px;background:#7b4bb7;}
+/* Signale par le responsable technique : le titre d'une lecon AVEC mascotte restait en 600 et
+   clamp(1.35rem..2rem) au lieu du contrat commun (2rem/800) du "Contrat
+   commun des cartouches d'introduction, 06/09/2026" plus bas dans ce fichier
+   - meme piege :has() que le rayon corrige le meme jour : ce selecteur,
+   plus specifique, gagnait en silence sur le verrou final sm-lecon-page qui
+   pose deja 2rem/800!important. Valeurs alignees ici plutot que de dupliquer
+   une quatrieme fois la meme regle. */
+html body.sm-lecon-page:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)) .container_12>:is(.text4,.text4bis) p{margin:0!important;color:var(--gx-titre,#1c246b)!important;font-family:Lexend,Arial,sans-serif!important;font-size:2rem!important;font-weight:800!important;line-height:1.1!important;letter-spacing:-.03em;text-align:left!important;}
+.sm-lecon-page .container_12>:is(.text4,.text4bis) p span{color:#684393!important;}
+.sm-lecon-page .container_12>:is(.text4,.text4bis)+.grid_2{
+  position:absolute!important;
+  z-index:2;
+  top:0!important;
+  right:22px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:90px!important;
+  max-width:none!important;
+  grid-column:auto!important;
+  height:72px!important;
+  min-height:72px!important;
+  margin:0!important;
+  padding:10px!important;
+  border:0!important;
+  background:transparent!important;
+}
+.sm-lecon-page .container_12>:is(.text4,.text4bis)+.grid_2 img{max-width:72px!important;max-height:72px!important;width:auto!important;height:auto!important;filter:drop-shadow(0 8px 8px rgba(48,52,61,.12));}
+html body.sm-lecon-page:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)) .container_12>:is(.text4,.text4bis){
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  grid-column:1/-1!important;
+  width:100%!important;
+  margin:0 0 18px!important;
+}
+html body.sm-lecon-page:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)) .container_12>:is(.text4,.text4bis)+.grid_2{
+  position:absolute!important;
+  top:0!important;
+  right:54px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  grid-column:auto!important;
+  width:205px!important;
+  height:220px!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+/* La mascotte ne doit pas redevenir une troisieme colonne blanche. L'ancien
+   bandeau assemblait retour, titre et image en trois cases et son selecteur
+   :has(), plus specifique, conservait encore le fond de la case de droite.
+   Elle flotte maintenant dans le degrade du cartouche, sur un repere leger
+   qui reprend le langage des grands cartouches de la V2. */
+html body.sm-lecon-page:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)) .container_12>:is(.text4,.text4bis)+.grid_2::before{
+  content:"";
+  position:absolute;
+  width:154px;
+  height:154px;
+  border:2px solid rgba(123,75,183,.3);
+  border-radius:46px;
+  background:rgba(255,255,255,.46);
+  transform:rotate(4deg);
+}
+html body.sm-lecon-page:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)) .container_12>:is(.text4,.text4bis)+.grid_2 img{
+  position:relative;
+  z-index:1;
+  max-width:142px!important;
+  max-height:142px!important;
+  filter:drop-shadow(0 12px 11px rgba(48,52,61,.13));
+}
+.sm-lecon-page .container_12>.text10{
+  float:none!important;
+  width:100%!important;
+  max-width:none!important;
+  margin:0 0 16px!important;
+  padding:21px 24px!important;
+  border:1px solid #dacfa1!important;
+  border-radius:18px!important;
+  background:#fffdf8!important;
+  box-shadow:0 8px 22px rgba(58,48,20,.07)!important;
+}
+.sm-lecon-page .gx-pistes{border-color:#e2d9b7!important;border-radius:14px!important;background:#faf8f0!important;}
+.sm-lecon-page .btn-audio-quiz{min-height:44px;border-radius:11px!important;}
+.sm-lecon-page iframe{display:block;width:100%;border:1px solid #dacfa1!important;border-radius:18px!important;background:#fff;box-shadow:0 8px 22px rgba(58,48,20,.07);}
+.sm-lecon-page .gx-video,.sm-lecon-page .gx-section,.sm-lecon-page .gx-images img{border-color:#dacfa1;background:#fffdf8;box-shadow:0 7px 20px rgba(58,48,20,.06);}
+@media(max-width:720px){
+  body.sm-lecon-page{padding:0 10px 36px!important;}
+  .sm-lecon-page .container_12>:is(.text4,.text4bis){display:block!important;height:auto!important;min-height:0!important;padding:27px 21px!important;border-radius:19px!important;}
+  .sm-lecon-page .container_12>:is(.text4,.text4bis)::before{position:static;display:block;margin-bottom:8px;}
+  .sm-lecon-page .container_12>:is(.text4,.text4bis) p{margin:0!important;font-size:clamp(1.9rem,9vw,2.7rem)!important;}
+  .sm-lecon-page .container_12>:is(.text4,.text4bis)+.grid_2{display:none!important;}
+  .sm-lecon-page .container_12>.text10{padding:17px 14px!important;}
+  /* Les variantes :has() historiques ont une specificite superieure aux
+     regles mobiles ci-dessus. Les repeter ici empeche la mascotte de passer
+     devant le titre sur un petit ecran. */
+  html body.sm-lecon-page:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)) .container_12>:is(.text4,.text4bis){
+    display:block!important;
+    height:auto!important;
+    min-height:0!important;
+    padding:27px 21px!important;
+    border-radius:19px!important;
+  }
+  html body.sm-lecon-page:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)) .container_12>:is(.text4,.text4bis)::before{
+    position:static!important;
+    display:block!important;
+    margin-bottom:8px!important;
+  }
+  html body.sm-lecon-page:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)) .container_12>:is(.text4,.text4bis) p{
+    margin:0!important;
+    font-size:clamp(1.9rem,9vw,2.7rem)!important;
+  }
+  html body.sm-lecon-page:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)) .container_12>:is(.text4,.text4bis)+.grid_2{
+    display:none!important;
+  }
+}
+
+/* Verrou final : les anciennes règles de leçon sont volontairement très
+   spécifiques. Ce bloc doit rester à la fin de la feuille pour gagner sur
+   leurs variations et garder un simple cartouche de contexte. */
+@media(min-width:721px){
+  html body.sm-lecon-page:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)) .container_12>:is(.text4,.text4bis){
+    height:72px!important;
+    min-height:72px!important;
+    margin:0 0 18px!important;
+    padding:27px 28px 12px!important;
+    overflow:hidden!important;
+    border-radius:19px!important;
+  }
+  html body.sm-lecon-page:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)) .container_12>:is(.text4,.text4bis) p,
+  html body.sm-lecon-page:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)) .container_12>:is(.text4,.text4bis) p span{
+    color:var(--gx-titre,#1c246b)!important;
+  }
+  html body.sm-lecon-page:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)) .container_12>:is(.text4,.text4bis)+.grid_2{
+    display:none!important;
+  }
+}
+
+/* Les 48 leçons historiques non encore rendues par le modèle ont le même
+   squelette titre / lecteur / document. Elles reçoivent donc le contexte de
+   72 px de la maquette, sans modifier leurs scripts audio, leurs onglets ou
+   leurs documents. Les pages de matière gardent leur cartouche propre grâce
+   à l'exclusion de leur liste d'activités .text7. */
+@media(min-width:721px){
+  html body.gx-app-schoolmonsters:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)):not(:has(.container_12 > .text7)) .container_12{
+    position:relative;
+    width:min(1440px,100%)!important;
+    max-width:none!important;
+    margin:0 auto!important;
+  }
+  html body.gx-app-schoolmonsters:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)):not(:has(.container_12 > .text7)) .container_12>.grid_2:first-child{
+    display:none!important;
+  }
+  html body.gx-app-schoolmonsters:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)):not(:has(.container_12 > .text7)) .container_12>:is(.text4,.text4bis){
+    position:relative!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    justify-content:flex-start!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:82px!important;
+    margin:0 0 18px!important;
+    padding:34px 28px 14px!important;
+    /* etait overflow:visible + rayon 19px : ce selecteur (:has() de mascotte
+       imbrique dans :not(:has())) est plus specifique que le verrou final
+       sm-lecon-page du 06/09 et gagnait donc en silence sur les lecons AVEC
+       mascotte, en gardant l'ancien rayon pendant que le lisere ::after
+       (regle finale, non concurrencee sur ce point precis) etait deja passe
+       a 22px - d'ou le bord gauche desaligne signale le 07/09. */
+    overflow:hidden!important;
+    box-sizing:border-box!important;
+    border:1px solid #dacfa1!important;
+    border-radius:22px!important;
+    background:linear-gradient(106deg,#fffdf8 0%,#fffdf8 62%,#eee4fb 100%)!important;
+    box-shadow:0 12px 32px rgba(58,48,20,.08)!important;
+    text-align:left!important;
+  }
+  html body.gx-app-schoolmonsters:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)):not(:has(.container_12 > .text7)) .container_12>:is(.text4,.text4bis)::before{
+    content:"Leçon";
+    position:absolute;
+    left:28px;
+    top:12px;
+    color:#664097;
+    font:600 .68rem/1 Lexend,Arial,sans-serif;
+    letter-spacing:.11em;
+    text-transform:uppercase;
+  }
+  html body.gx-app-schoolmonsters:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)):not(:has(.container_12 > .text7)) .container_12>:is(.text4,.text4bis)::after{
+    content:"";
+    position:absolute;
+    inset:0 auto 0 0;
+    width:7px;
+    /* etait 19px : la largeur reelle (6px) vient d'une regle !important
+       ailleurs, mais ce rayon n'a pas d'equivalent !important pour les pages
+       sans classe sm-lecon-page (ex. jeu-calcul) - il gagnait donc seul et
+       ne suivait plus le rayon du cartouche (corrige juste au-dessus a 22px
+       pour ce meme selecteur). */
+    border-radius:22px 0 0 22px;
+    background:#7b4bb7;
+  }
+  html body.gx-app-schoolmonsters:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)):not(:has(.container_12 > .text7)) .container_12>:is(.text4,.text4bis) p,
+  html body.gx-app-schoolmonsters:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)):not(:has(.container_12 > .text7)) .container_12>:is(.text4,.text4bis) p span{
+    margin:0!important;
+    color:var(--gx-titre,#1c246b)!important;
+    /* etait 600/clamp(..2rem) : encore le meme :has() plus specifique que le
+       contrat commun (2rem/800) plus bas dans ce fichier - signale par
+       le responsable technique en comparant matiere et lecon. */
+    font:800 2rem/1.15 Lexend,Arial,sans-serif!important;
+    letter-spacing:-.025em!important;
+    text-align:left!important;
+  }
+  html body.gx-app-schoolmonsters:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)):not(:has(.container_12 > .text7)) .container_12>:is(.text4,.text4bis)+.grid_2{
+    display:none!important;
+  }
+}
+@media(max-width:720px){
+  html body.gx-app-schoolmonsters:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)):not(:has(.container_12 > .text7)) .container_12>.grid_2:first-child,
+  html body.gx-app-schoolmonsters:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)):not(:has(.container_12 > .text7)) .container_12>:is(.text4,.text4bis)+.grid_2{
+    display:none!important;
+  }
+  html body.gx-app-schoolmonsters:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)):not(:has(.container_12 > .text7)) .container_12>:is(.text4,.text4bis){
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0 0 16px!important;
+    padding:26px 21px!important;
+    /* meme correctif qu'en desktop : rayon aligne sur le lisere (22px). */
+    overflow:hidden!important;
+    border-radius:22px!important;
+  }
+  html body.gx-app-schoolmonsters:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)):not(:has(.container_12 > .text7)) .container_12>:is(.text4,.text4bis)::before{
+    position:static;
+    display:block;
+    margin-bottom:8px;
+  }
+  html body.gx-app-schoolmonsters:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)):not(:has(.container_12 > .text7)) .container_12>:is(.text4,.text4bis) p,
+  html body.gx-app-schoolmonsters:has(.container_12 > .grid_2:first-child + :is(.text4,.text4bis)):not(:has(.container_12 > .text7)) .container_12>:is(.text4,.text4bis) p span{
+    color:var(--gx-titre,#1c246b)!important;
+    font-size:clamp(1.75rem,8vw,2.45rem)!important;
+  }
+}
+
+/* Certaines leçons historiques appellent un ancien bloc de retour qui n'est
+   plus fourni par la V2. Leur titre devient alors le premier enfant du
+   conteneur, et non le frère suivant une colonne .grid_2. Le premier sélecteur
+   ne les atteignait donc jamais. Cette variante cible uniquement une vraie
+   leçon (pas une matière, qui porte toujours .text7) et conserve les médias,
+   le lecteur PDF et les scripts pédagogiques tels quels. */
+@media(min-width:721px){
+  html body.gx-app-schoolmonsters:not(:has(.container_12 > .text7)) .container_12 > .text4{
+    position:relative!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    justify-content:flex-start!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:82px!important;
+    margin:0 0 18px!important;
+    padding:34px 28px 14px!important;
+    overflow:visible!important;
+    box-sizing:border-box!important;
+    border:1px solid #dacfa1!important;
+    border-radius:19px!important;
+    background:linear-gradient(106deg,#fffdf8 0%,#fffdf8 62%,#eee4fb 100%)!important;
+    box-shadow:0 12px 32px rgba(58,48,20,.08)!important;
+    text-align:left!important;
+  }
+  html body.gx-app-schoolmonsters:not(:has(.container_12 > .text7)) .container_12 > .text4::before{
+    content:"Leçon";
+    position:absolute;
+    left:28px;
+    top:12px;
+    color:#664097;
+    font:600 .68rem/1 Lexend,Arial,sans-serif;
+    letter-spacing:.11em;
+    text-transform:uppercase;
+  }
+  html body.gx-app-schoolmonsters:not(:has(.container_12 > .text7)) .container_12 > .text4::after{
+    content:"";
+    position:absolute;
+    inset:0 auto 0 0;
+    width:7px;
+    /* meme correctif : rayon aligne sur le cartouche (22px). */
+    border-radius:22px 0 0 22px;
+    background:#7b4bb7;
+  }
+  html body.gx-app-schoolmonsters:not(:has(.container_12 > .text7)) .container_12 > .text4 p,
+  html body.gx-app-schoolmonsters:not(:has(.container_12 > .text7)) .container_12 > .text4 p span{
+    margin:0!important;
+    width:100%!important;
+    color:var(--gx-titre,#1c246b)!important;
+    /* meme correctif que la variante avec mascotte : 800/2rem. */
+    font:800 2rem/1.15 Lexend,Arial,sans-serif!important;
+    letter-spacing:-.025em!important;
+    text-align:left!important;
+  }
+  html body.gx-app-schoolmonsters:not(:has(.container_12 > .text7)) .container_12 > .text4 + .grid_2{
+    display:none!important;
+  }
+}
+
+/* Les imagiers historiques sont de vraies leçons visuelles. Leur ancien
+   empilement flottant posait les photos directement sur le fond et rognait
+   les titres longs dans la ligne de 72 px. La structure ci-dessous s'active
+   uniquement lorsqu'un second conteneur porte .text4bis3 : les autres leçons
+   conservent donc leur gabarit compact. */
+html body.gx-app-schoolmonsters:has(.container_12 > .text4bis3){
+  color:#4b4f59!important;
+}
+html body.gx-app-schoolmonsters:has(.container_12 > .text4bis3) .container_12{
+  width:min(1440px,100%)!important;
+  max-width:none!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+html body.gx-app-schoolmonsters:has(.container_12 > .text4bis3) .container_12:first-of-type > .text4{
+  position:relative!important;
+  float:none!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  justify-content:flex-start!important;
+  width:100%!important;
+  height:auto!important;
+  min-height:116px!important;
+  margin:0 0 18px!important;
+  padding:34px 30px 16px!important;
+  overflow:visible!important;
+  box-sizing:border-box!important;
+  border:1px solid #dacfa1!important;
+  border-radius:19px!important;
+  background:linear-gradient(106deg,#fffdf8 0%,#fffdf8 62%,#eee4fb 100%)!important;
+  box-shadow:0 12px 32px rgba(58,48,20,.08)!important;
+  text-align:left!important;
+}
+html body.gx-app-schoolmonsters:has(.container_12 > .text4bis3) .container_12:first-of-type > .text4::before{
+  content:"Leçon";
+  position:absolute;
+  left:30px;
+  top:12px;
+  color:#664097;
+  font:600 .68rem/1 Lexend,Arial,sans-serif;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+}
+html body.gx-app-schoolmonsters:has(.container_12 > .text4bis3) .container_12:first-of-type > .text4::after{
+  content:"";
+  position:absolute;
+  inset:0 auto 0 0;
+  width:7px;
+  border-radius:19px 0 0 19px;
+  background:#7b4bb7;
+}
+html body.gx-app-schoolmonsters:has(.container_12 > .text4bis3) .container_12:first-of-type > .text4 p,
+html body.gx-app-schoolmonsters:has(.container_12 > .text4bis3) .container_12:first-of-type > .text4 p span{
+  width:100%!important;
+  margin:0!important;
+  color:#1c246b!important;
+  font:600 clamp(1.45rem,2.4vw,2rem)/1.12 Lexend,Arial,sans-serif!important;
+  letter-spacing:-.03em!important;
+  text-align:left!important;
+}
+html body.gx-app-schoolmonsters:has(.container_12 > .text4bis3) .container_12:first-of-type > .text10{
+  float:none!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex-wrap:wrap!important;
+  gap:12px 22px!important;
+  width:100%!important;
+  margin:0 0 18px!important;
+  padding:16px 20px!important;
+  border:1px solid #dacfa1!important;
+  border-left:4px solid #7b4bb7!important;
+  border-radius:18px!important;
+  background:#fffdf8!important;
+  box-shadow:0 8px 22px rgba(58,48,20,.07)!important;
+}
+html body.gx-app-schoolmonsters:has(.container_12 > .text4bis3) .container_12:first-of-type > .text10 #LaQuestion{
+  margin:0!important;
+  color:#1c246b!important;
+  font:600 1.05rem/1.35 Lexend,Arial,sans-serif!important;
+}
+html body.gx-app-schoolmonsters:has(.container_12 > .text4bis3) .container_12:first-of-type > .text10 p{
+  margin:0!important;
+}
+html body.gx-app-schoolmonsters:has(.container_12 > .text4bis3) .container_12:first-of-type > .grid_12:not(.text10){
+  float:none!important;
+  width:100%!important;
+  margin:0!important;
+}
+html body.gx-app-schoolmonsters:has(.container_12 > .text4bis3) .container_12:first-of-type iframe{
+  display:block!important;
+  width:100%!important;
+  border:1px solid #dacfa1!important;
+  border-radius:18px!important;
+  background:#fff!important;
+  box-shadow:0 8px 22px rgba(58,48,20,.07)!important;
+}
+html body.gx-app-schoolmonsters .container_12:has(> .text4bis3){
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:18px!important;
+  align-items:stretch!important;
+  margin-top:24px!important;
+}
+html body.gx-app-schoolmonsters .container_12:has(> .text4bis3) > .text4bis3{
+  grid-column:1/-1!important;
+  float:none!important;
+  width:auto!important;
+  margin:0!important;
+  padding:18px 22px!important;
+  border:1px solid #dacfa1!important;
+  border-left:4px solid #7b4bb7!important;
+  border-radius:18px!important;
+  background:#fffdf8!important;
+  box-shadow:0 8px 22px rgba(58,48,20,.07)!important;
+}
+html body.gx-app-schoolmonsters .container_12:has(> .text4bis3) > .text4bis3 p{
+  margin:0!important;
+  color:#1c246b!important;
+  font:600 clamp(1.05rem,1.8vw,1.3rem)/1.4 Lexend,Arial,sans-serif!important;
+  text-align:left!important;
+}
+html body.gx-app-schoolmonsters .container_12:has(> .text4bis3) > .grid_3{
+  float:none!important;
+  width:auto!important;
+  margin:0!important;
+  padding:8px!important;
+  overflow:hidden!important;
+  border:1px solid #dacfa1!important;
+  border-left:4px solid #7b4bb7!important;
+  border-radius:16px!important;
+  background:#fff!important;
+  box-shadow:0 7px 18px rgba(58,48,20,.07)!important;
+}
+html body.gx-app-schoolmonsters .container_12:has(> .text4bis3) > .grid_3 span{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:100%!important;
+  height:100%!important;
+  border-radius:10px!important;
+  background:#fff!important;
+}
+html body.gx-app-schoolmonsters .container_12:has(> .text4bis3) > .grid_3 img{
+  display:block!important;
+  width:100%!important;
+  height:clamp(170px,15vw,228px)!important;
+  border-radius:10px!important;
+  object-fit:contain!important;
+}
+html body.gx-app-schoolmonsters .container_12:has(> .text4bis3) > :is(.clear,br),
+html body.gx-app-schoolmonsters .container_12:has(> .text4bis3) > p:empty{
+  display:none!important;
+}
+@media(max-width:900px){
+  html body.gx-app-schoolmonsters .container_12:has(> .text4bis3){grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+}
+@media(max-width:520px){
+  html body.gx-app-schoolmonsters:has(.container_12 > .text4bis3) .container_12:first-of-type > .text4{min-height:0!important;padding:25px 20px!important;}
+  html body.gx-app-schoolmonsters:has(.container_12 > .text4bis3) .container_12:first-of-type > .text10{align-items:stretch!important;justify-content:flex-start!important;padding:15px!important;}
+  html body.gx-app-schoolmonsters .container_12:has(> .text4bis3){grid-template-columns:1fr!important;gap:13px!important;}
+  html body.gx-app-schoolmonsters .container_12:has(> .text4bis3) > .grid_3 img{height:auto!important;max-height:260px!important;}
+}
+@media(max-width:720px){
+  html body.gx-app-schoolmonsters:not(:has(.container_12 > .text7)) .container_12 > .text4{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0 0 16px!important;
+    padding:26px 21px!important;
+    border-radius:19px!important;
+  }
+  html body.gx-app-schoolmonsters:not(:has(.container_12 > .text7)) .container_12 > .text4::before{
+    position:static;
+    display:block;
+    margin-bottom:8px;
+  }
+  html body.gx-app-schoolmonsters:not(:has(.container_12 > .text7)) .container_12 > .text4 p,
+  html body.gx-app-schoolmonsters:not(:has(.container_12 > .text7)) .container_12 > .text4 p span{
+    color:var(--gx-titre,#1c246b)!important;
+    font-size:clamp(1.75rem,8vw,2.45rem)!important;
+  }
+  html body.gx-app-schoolmonsters:not(:has(.container_12 > .text7)) .container_12 > .text4 + .grid_2{
+    display:none!important;
+  }
+}
+
+/* Sur l'accueil des périodes, le retour vers l'espace enseignant appartient
+   au fil d'Ariane. Le socle masque normalement tous les maillons sauf le
+   dernier sur téléphone ; cette exception conserve ce retour utile sans
+   recréer la troisième rangée de l'ancien bouton encadré. */
+@media(max-width:720px){
+  body.page-choix-periodes.gx-enseignant .gx-entete .fil > .sm-fil-retour-espace{
+    display:inline-flex;
+  }
+  body.page-choix-periodes.gx-enseignant .gx-entete .fil > .sm-fil-retour-separateur{
+    display:inline;
+  }
+}
+
+/* Contrat commun des cartouches d'introduction, 06/09/2026. Les ecrans de
+   choix reprennent la ligne de titre commune ; les lecons gardent seulement
+   leur hauteur compacte afin de laisser le support pedagogique visible. */
+body.gx-app-schoolmonsters .sm-hero{
+  box-sizing:border-box;
+  min-height:144px;
+  padding:24px 40px;
+  border-radius:22px;
+}
+body.gx-app-schoolmonsters .sm-hero::before{width:6px;}
+body.gx-app-schoolmonsters .sm-hero h1{
+  font-size:2.2rem;
+  font-weight:800;
+  line-height:1.15;
+  letter-spacing:-.025em;
+}
+body.gx-app-schoolmonsters .sm-hero-contenu>p:first-child{
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.14em;
+}
+body.gx-app-schoolmonsters .sm-hero-contenu>p:last-child{
+  margin-top:8px;
+  font-size:.95rem;
+  line-height:1.45;
+}
+body.gx-app-schoolmonsters .sm-hero-mascotte{
+  top:50%;
+  right:40px;
+  bottom:auto;
+  box-sizing:border-box;
+  width:92px;
+  height:92px;
+  padding:10px;
+  border:2px solid rgba(123,75,183,.34);
+  border-radius:26px;
+  background:rgba(255,255,255,.68);
+  object-fit:contain;
+  transform:translateY(-50%) rotate(4deg);
+}
+html body.gx-app-schoolmonsters:not(:has(.container_12 > .text7)) .container_12 > .text4{
+  border-radius:22px!important;
+}
+html body.gx-app-schoolmonsters:not(:has(.container_12 > .text7)) .container_12 > .text4::after{
+  width:6px!important;
+}
+html body.gx-app-schoolmonsters:not(:has(.container_12 > .text7)) .container_12 > .text4::before{
+  font-size:.78rem!important;
+  font-weight:800!important;
+  letter-spacing:.14em!important;
+}
+html body.gx-app-schoolmonsters:not(:has(.container_12 > .text7)) .container_12 > .text4 p,
+html body.gx-app-schoolmonsters:not(:has(.container_12 > .text7)) .container_12 > .text4 p span{
+  margin-left:0!important;
+  font-size:2rem!important;
+  font-weight:800!important;
+  line-height:1.15!important;
+  letter-spacing:-.025em!important;
+  text-align:left!important;
+}
+html body.sm-lecon-page .container_12 > :is(.text4,.text4bis){
+  overflow:hidden!important;
+  border-radius:22px!important;
+}
+html body.sm-lecon-page .container_12 > :is(.text4,.text4bis)::after{
+  width:6px!important;
+  border-radius:22px 0 0 22px!important;
+}
+html body.sm-lecon-page .container_12 > :is(.text4,.text4bis)::before{
+  font-size:.78rem!important;
+  font-weight:800!important;
+  letter-spacing:.14em!important;
+}
+html body.sm-lecon-page .container_12 > :is(.text4,.text4bis) p,
+html body.sm-lecon-page .container_12 > :is(.text4,.text4bis) p span{
+  font-size:2rem!important;
+  font-weight:800!important;
+  line-height:1.15!important;
+  letter-spacing:-.025em!important;
+  text-align:left!important;
+}
+@media(max-width:720px){
+  body.gx-app-schoolmonsters .sm-hero{padding:18px 20px;border-radius:22px;}
+  body.gx-app-schoolmonsters .sm-hero h1{font-size:1.5rem;}
+  html body.gx-app-schoolmonsters:not(:has(.container_12 > .text7)) .container_12 > .text4{border-radius:22px!important;}
+  html body.gx-app-schoolmonsters:not(:has(.container_12 > .text7)) .container_12 > .text4 p,
+  html body.gx-app-schoolmonsters:not(:has(.container_12 > .text7)) .container_12 > .text4 p span{font-size:1.5rem!important;}
+  html body.sm-lecon-page .container_12 > :is(.text4,.text4bis){overflow:hidden!important;border-radius:22px!important;}
+  html body.sm-lecon-page .container_12 > :is(.text4,.text4bis) p,
+  html body.sm-lecon-page .container_12 > :is(.text4,.text4bis) p span{font-size:1.5rem!important;}
+}
+
+/* Accueils fg3 : les mascottes restent attachées aux périodes. */
+body.gx-app-schoolmonsters .sm-hero { min-height:0; padding:0; margin:28px 0 24px; border:0; border-radius:0; background:none; box-shadow:none; }
+body.gx-app-schoolmonsters .sm-hero::before { display:none; }
+body.gx-app-schoolmonsters .sm-hero h1 { font-size:clamp(1.75rem,3vw,2.5rem); }
+.page-choix-periodes .sm-page,.page-espace-enseignant .sm-page { max-width:1160px; padding-top:0; }
+.page-choix-periodes .bloc-niveau { padding:0; border:0; background:none; box-shadow:none; }
+.page-choix-periodes .carte-periode,
+.page-choix-periodes .carte-periode:nth-child(5) { border-left:3px solid var(--gx-filet); background:var(--gx-surface); }
+.page-choix-periodes .carte-periode-texte strong { font-size:1.125rem; }
+.page-choix-periodes .carte-periode-texte small { font-size:.875rem; }
+.sm-actions-groupes>section { padding:24px; border:1px solid var(--gx-bordure); border-top:3px solid var(--gx-filet); border-radius:12px; background:var(--gx-surface); }
+.sm-actions-groupes h2 { color:var(--gx-titre); font-size:1.25rem; }
+.sm-actions-groupes .gx-carte-accueil { min-height:100px; border-radius:12px; }
+/* Les activités historiques gardent leur grille pédagogique ; seul le cadre rejoint fg3. */
+body.sm-activite-page #contenu { width:min(1160px,calc(100% - 32px))!important; max-width:1160px!important; margin:28px auto!important; }
+body.sm-activite-page #contenu>.grid_2:first-child { display:none!important; }
+body.sm-activite-page #contenu>:is(.text4,.text4bis) { position:relative!important; float:none!important; display:flex!important; align-items:center!important; justify-content:flex-start!important; width:100%!important; height:auto!important; min-height:72px!important; padding:0 85px 0 0!important; margin:0 0 24px!important; background:none!important; border:0!important; border-radius:0!important; box-shadow:none!important; }
+body.sm-activite-page #contenu>:is(.text4,.text4bis)::before,body.sm-activite-page #contenu>:is(.text4,.text4bis)::after { display:none!important; }
+body.sm-activite-page #contenu>:is(.text4,.text4bis) :is(h1,p),body.sm-activite-page #contenu>:is(.text4,.text4bis) :is(h1,p) span { margin:0!important; font:600 clamp(1.75rem,3vw,2.5rem)/1.2 var(--gx-police)!important; text-align:left!important; }
+body.sm-activite-page #contenu>:is(.text4,.text4bis)+.grid_2 { position:absolute!important; top:0!important; right:0!important; width:72px!important; height:72px!important; min-height:0!important; border:0!important; background:none!important; box-shadow:none!important; padding:0!important; }
+body.sm-activite-page #contenu>:is(.text4,.text4bis)+.grid_2 img { width:64px!important; max-height:64px!important; object-fit:contain; }
+body.sm-activite-page #contenu>:is(.text4,.text4bis)+.grid_2::before { display:none!important; }
+body.sm-activite-page #contenu button { min-height:44px; }
+body.sm-activite-page #contenu iframe { max-width:100%; border-radius:12px!important; }
+@media(max-width:720px) { body.sm-activite-page #contenu>:is(.text4,.text4bis) { padding:0!important; min-height:0!important; } body.sm-activite-page #contenu>:is(.text4,.text4bis)+.grid_2 { display:none!important; } }
+/* Signale par le responsable technique le 16/09/2026 : les activites historiques (poesies,
+   discours, imagiers, lotos...) restaient sur le fond sombre d'origine, parce
+   que le fond commun n'etait pose que sur les lecons converties
+   (sm-lecon-page) et les pages de matiere. Meme fond ici ; le titre, reuni a
+   sa mascotte par titre-pedagogique.js, reprend toute la largeur au lieu de
+   ses 8 colonnes d'origine. Les textes ecrits pour le fond sombre (blanc,
+   jaune, tons pales) sont fonces pour rester lisibles sur le creme ; les
+   boutons et cartes, qui ont leur propre fond, ne changent pas. */
+body.sm-activite-page { min-height:100vh; color:#172238; --gx-halo-teinte:rgba(123,75,183,.10); background:var(--gx-halo),var(--gx-fond)!important; }
+body.sm-activite-page #contenu>.sm-lecon-titre { grid-column:1/-1!important; width:auto!important; }
+@media(min-width:721px) { body.sm-activite-page.sm-liste-page #contenu>.sm-lecon-titre { grid-column:1/span 12!important; } }
+body.sm-activite-page #contenu>[class*="grid_"]:has(>span>img,>img) { text-align:center; }
+body.sm-activite-page #contenu img { max-width:100%; height:auto; }
+body.sm-activite-page #contenu :is(.text10,.text10 p),
+body.sm-activite-page #contenu>.grid_6>p:not([class]) { color:var(--gx-titre,#1c246b)!important; }
+body.sm-activite-page #contenu>:not(.sm-lecon-titre) .marronoral,
+body.sm-activite-page #contenu>.marronoral { color:#8f4c2c!important; }
+body.sm-activite-page #contenu .rose { color:#c0392b!important; }

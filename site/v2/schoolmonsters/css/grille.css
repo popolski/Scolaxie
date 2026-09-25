@@ -1,0 +1,153 @@
+/* Grille de School Monsters, remplaçante de 960.css.
+   ---------------------------------------------------------------------------
+   Écrite le 31/08/2026. Elle garde EXACTEMENT les mêmes noms de classes, pour
+   qu'aucune des 259 pages n'ait à être modifiée : on échange un <link>, pas du
+   HTML.
+
+   Ce qu'elle abandonne volontairement, parce que c'était mesuré comme mort :
+   tout le système 16 colonnes, alpha, omega, push_*, pull_*, prefix_*,
+   suffix_*, et les largeurs grid_7, 9, 10, 11, 13, 14, 15, 16. Zéro emploi dans
+   tout le site. Le fichier passe de 10 641 octets à moins de 2 000.
+
+   Ce qu'elle corrige :
+   - plus de `body{min-width:960px}`, qui imposait une barre de défilement
+     horizontale sur tablette et sur téléphone. C'est le vrai gain, et il est
+     pour les élèves ;
+   - plus de `display:inline` + `float:left`, le contournement d'Internet
+     Explorer 6, et donc plus rien à rattraper avec des `clear`.
+
+   La géométrie a d'abord repris celle des flottants au pixel près : conteneur
+   de 960 px, 12 colonnes de 80 px sans gouttière, marges de 10 px sur les
+   blocs. Le conteneur est passé à 1068 px le 31/08/2026, la largeur commune aux
+   trois sites, une fois 960.css supprimé ; les proportions, elles, n'ont pas
+   bougé. */
+
+.container_12 {
+  /* 1068 px, la largeur commune aux trois sites, puis la largeur de la fenêtre
+     moins 24 px. Tant que 960.css existait, School Monsters était tenu à 960 et
+     son bandeau devait suivre : c'est ce qui faisait que sa longueur différait
+     de Fast Éval et de Clic & Mots.
+
+     Le `min()` est aussi ce qui permet à la page de rétrécir. Six pages
+     débordaient encore de 199 px à 800 de large et de 399 px à 600 : les autres
+     étaient déjà rattrapées par style1.css depuis 2026. */
+  width: min(1068px, calc(100% - 24px));
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  display: grid;
+  /* Douze colonnes de 80 px et AUCUNE gouttière, la séparation venant des
+     marges de 10 px posées sur les blocs eux-mêmes. C'est la géométrie exacte
+     des flottants : un `grid_N` mesure 80N - 20, soit 60, 140, 220, 300, 380,
+     460, 620, 940 comme avant.
+
+     Pourquoi pas un `gap: 20px`, qui serait plus naturel : parce que style1.css
+     colle les trois blocs du cartouche des pages de matière avec un
+     `margin: 0 !important` pour n'en faire qu'une seule carte. Une gouttière de
+     grille ne se laisse pas annuler par une marge : les trois blocs restaient
+     séparés et le titre se cassait sur trois lignes. Constaté au pilote du
+     31/08/2026. Avec des marges, les règles de cartouche de style1.css
+     continuent de fonctionner sans être touchées. */
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.container_12 > [class*="grid_"] {
+  margin: 0 10px;
+}
+
+/* Les blocs imbriqués : 529 `grid_*` du site vivent dans un `grid_12`, pas
+   directement dans le conteneur.
+
+   Le `:has(> [class*="grid_"])` n'est pas un raffinement : sans lui, le `grid_12`
+   qui enveloppe une LISTE devient lui aussi une grille de 12 colonnes, et ses
+   lignes se rangent côte à côte au lieu de s'empiler. Constaté au premier essai
+   du pilote, le 31/08/2026, sur P1_CE2_orthographe.php. */
+.container_12 .grid_12:has(> [class*="grid_"]) {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.container_12 .grid_12:has(> [class*="grid_"]) > [class*="grid_"] {
+  margin: 0 10px;
+}
+
+.container_12 .grid_1  { grid-column: span 1; }
+.container_12 .grid_2  { grid-column: span 2; }
+.container_12 .grid_3  { grid-column: span 3; }
+.container_12 .grid_4  { grid-column: span 4; }
+.container_12 .grid_5  { grid-column: span 5; }
+.container_12 .grid_6  { grid-column: span 6; }
+.container_12 .grid_8  { grid-column: span 8; }
+.container_12 .grid_12 { grid-column: span 12; }
+
+/* TOUT CE QUI N'EST PAS UNE COLONNE PREND TOUTE LA LARGEUR.
+   ---------------------------------------------------------------------
+   Sous les flottants, un enfant du conteneur sans classe « grid_ » etait un
+   bloc ordinaire : il prenait la largeur entiere, et c'est ce que le contenu
+   attend toujours. En grille, faute de placement, il tombe sur UNE colonne, et
+   il ne se contente pas d'y etre etroit : `1fr` ne descend pas sous la largeur
+   minimale de son contenu, donc c'est lui qui gonfle la colonne 1 et comprime
+   toutes les autres.
+
+   Trouve le 31/08/2026 sur P1_CE1_vocabulaire.php, signale par le responsable technique : le
+   cartouche de matiere y etait disloque, le bouton retour repousse vers le
+   centre et le titre casse sur trois lignes. Mesure : la colonne 1 faisait
+   624 px et les onze autres 40 px, la faute a une <section> hors grille placee
+   bien plus bas dans la page. Le cartouche n'y etait pour rien - c'est le
+   piege, le symptome apparait tres loin de sa cause.
+
+   47 pages avaient un enfant hors grille portant du contenu : consignes de jeu,
+   sections d'exercices, et surtout les `container_12` imbriques des fiches. */
+.container_12 > *:not([class*="grid_"]),
+.container_12 .grid_12:has(> [class*="grid_"]) > *:not([class*="grid_"]) {
+  grid-column: 1 / -1;
+}
+
+/* Il n'y a plus de flottant à rattraper. Les 561 `<div class="clear">` du site
+   restent en place et ne font simplement plus rien : les retirer imposerait de
+   toucher aux 259 fichiers, ce que ce chantier veut justement éviter. */
+.clear {
+  display: none;
+}
+
+/* Sous 640 px, une grille de 12 colonnes ne veut plus rien dire : les blocs
+   passent les uns sous les autres. Sans cette règle, un `grid_2` ferait 20 px
+   de large sur un téléphone. */
+@media (max-width: 640px) {
+  .container_12 {
+    grid-template-columns: 1fr;
+  }
+  .container_12 .grid_12:has(> [class*="grid_"]) {
+    grid-template-columns: 1fr;
+  }
+  .container_12 .grid_1,
+  .container_12 .grid_2,
+  .container_12 .grid_3,
+  .container_12 .grid_4,
+  .container_12 .grid_5,
+  .container_12 .grid_6,
+  .container_12 .grid_8,
+  .container_12 .grid_12 {
+    grid-column: span 1;
+  }
+}
+
+/* Le cartouche des pages de matière : retour + titre + mascotte, collés en une
+   seule carte par style1.css, qui y pose une largeur en `calc(100% - 300px)`
+   calculée pour les flottants, où `100%` désignait le conteneur. En grille,
+   `100%` désigne la colonne : le titre rétrécissait et un blanc s'ouvrait avant
+   la mascotte. On laisse donc les pistes faire le travail, 2 + 8 + 2 colonnes.
+
+   Le `html` en tête donne à ces règles une spécificité supérieure à celle de
+   style1.css, qui pèse (0,4,1) à cause de son `:has()` et pose ses largeurs en
+   `!important`.
+
+   Ces deux règles se répondent. Retirer les deux d'un coup, essayé et mesuré le
+   31/08/2026, casse le cartouche unique : il se scinde en trois cartes et le
+   titre passe sur deux lignes, à cause de la marge latérale que style1.css pose
+   par ailleurs. Ne pas y toucher sans remesurer. */
+html body:has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > .grid_2:first-child,
+html body:has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis),
+html body:has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis)) .container_12 > :is(.text4, .text4bis) + .grid_2 {
+  width: auto !important;
+}

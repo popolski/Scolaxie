@@ -1,0 +1,139 @@
+*{box-sizing:border-box;}
+body{
+  --gx-largeur-page:1440px;
+  margin:0;
+  min-height:100vh;
+  color:#172238;
+  --gx-halo-teinte: rgba(123,75,183,.10);
+    background: var(--gx-halo), var(--gx-fond);
+  font-family:Lexend,system-ui,"Segoe UI",Arial,sans-serif;
+}
+.page-periode{width:min(1072px,calc(100% - 40px));margin:0 auto;padding:0 0 56px;}
+.page-periode>.gx-entete{width:100%;}
+/* Le cartouche de compte est le menu .user-menu du socle commun. Sur les
+   pages de période, ce bandeau possède en plus le fil d’Ariane : le compte
+   doit néanmoins rester collé à droite, comme sur les autres écrans. */
+body.gx-app-schoolmonsters .page-periode>.gx-entete .user-menu{margin-left:auto!important;}
+.sm-fil-ariane{display:flex;align-items:center;gap:10px;color:#6b7280;font-size:.86rem;}
+.sm-fil-ariane strong{color:#684393;font-weight:600;}
+
+.sm-hero{
+  position:relative;
+  display:flex;
+  align-items:center;
+  min-height:118px;
+  margin-bottom:22px;
+  padding:20px 30px;
+  overflow:hidden;
+  border:1px solid #dacfa1;
+  border-radius:24px;
+  background:var(--gx-surface,#fffdf6);
+  box-shadow:0 12px 32px rgba(58,48,20,.08);
+}
+.sm-hero::before{content:"";position:absolute;inset:0 auto 0 0;width:7px;background:#7b4bb7;}
+.sm-hero-contenu{position:relative;z-index:1;}
+.sm-surtitre{display:flex;align-items:center;gap:10px;margin:0 0 9px;color:#664097;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;}
+.sm-hero h1{margin:0;color:var(--gx-titre,#1c246b);font-size:clamp(1.85rem,3.4vw,2.75rem);font-weight:600;line-height:1.08;letter-spacing:-.04em;}
+.sm-hero-contenu>p:last-child{margin:8px 0 0;color:#555e6c;font-size:1rem;line-height:1.45;}
+.sm-hero-mascotte{position:absolute;right:28px;bottom:5px;width:108px;height:108px;object-fit:contain;filter:drop-shadow(0 10px 9px rgba(48,52,61,.12));}
+.badge-niveau{display:inline-flex;align-items:center;justify-content:center;min-width:52px;height:34px;padding:0 12px;border-radius:999px;color:#fff;font-size:.82rem;font-weight:600;letter-spacing:.03em;}
+.badge-niveau.ce1{background:#0d9488}.badge-niveau.ce2{background:#c98700;}
+
+.bloc-matieres{position:relative;margin-bottom:18px;padding:24px 26px 26px;overflow:hidden;background:#fffdf8;border:1px solid #dacfa1;border-radius:19px;box-shadow:0 8px 22px rgba(58,48,20,.07);}
+.bloc-matieres::before{content:"";position:absolute;left:0;top:24px;bottom:24px;width:6px;border-radius:0 6px 6px 0;}
+.groupe-maths::before{background:#16b8aa}.groupe-francais::before{background:#efa900}.groupe-autres::before{background:#7b4bb7}
+.entete-groupe{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:19px;}
+.entete-groupe .sm-surtitre{margin-bottom:5px;}
+.entete-groupe h2{margin:0;color:var(--gx-titre,#1c246b);font-size:1.38rem;font-weight:600;line-height:1.2;}
+.entete-groupe>span{padding:6px 11px;border-radius:999px;background:#f1eee1;color:#5f636b;font-size:.75rem;font-weight:600;white-space:nowrap;}
+.grille-matieres{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;}
+.groupe-autres .grille-matieres{grid-template-columns:repeat(2,minmax(0,1fr));}
+.carte-matiere{position:relative;display:grid;grid-template-columns:68px 1fr 38px;align-items:center;gap:14px;min-height:104px;padding:15px;color:#172238;background:#fff;border:1px solid #e2d9b7;border-radius:15px;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;}
+.carte-matiere-icone{display:flex;align-items:center;justify-content:center;width:68px;height:68px;border-radius:16px;background:#edf8f5;overflow:hidden;}
+.carte-matiere-icone img{display:block;width:60px;height:60px;object-fit:contain;}
+.groupe-francais .carte-matiere-icone{background:#fff5d8}.groupe-autres .carte-matiere-icone{background:#f2ebfb}
+.carte-matiere-texte{display:flex;flex-direction:column;gap:5px;min-width:0;}
+.carte-matiere-texte strong{font-size:.98rem;line-height:1.25;}
+.carte-matiere-texte small{color:#5f636b;font-size:.76rem;line-height:1.4;}
+.carte-matiere-fleche{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;color:#0b756a;border:1px solid rgba(11,117,106,.26);background:#fff;font-size:1.25rem;}
+.carte-matiere:hover{color:#172238;border-color:#16b8aa;box-shadow:0 10px 20px rgba(48,52,61,.09);}
+.groupe-francais .carte-matiere:hover{border-color:#efa900}.groupe-autres .carte-matiere:hover{border-color:#7b4bb7}
+.carte-matiere:focus-visible{outline:3px solid #0b756a;outline-offset:3px;}
+
+@media(max-width:1180px){
+  .grille-matieres,.groupe-autres .grille-matieres{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:720px){
+  .page-periode{width:min(100% - 24px,1440px);padding-bottom:32px;}
+  .sm-fil-ariane{order:7;width:100%;}
+  .sm-hero{min-height:0;padding:26px 24px;border-radius:19px;}
+  .sm-hero-mascotte{display:none;}
+  .sm-hero h1{font-size:clamp(2rem,10vw,3rem);}
+  .bloc-matieres{padding:21px 16px;}
+}
+@media(max-width:560px){
+  .grille-matieres,.groupe-autres .grille-matieres{grid-template-columns:1fr;}
+  .carte-matiere{grid-template-columns:58px 1fr 34px;gap:11px;min-height:92px;padding:12px;}
+  .carte-matiere-icone{width:58px;height:58px;border-radius:13px;}
+  .carte-matiere-icone img{width:52px;height:52px;}
+  .entete-groupe{align-items:flex-start;}
+}
+
+/* Contrat commun des cartouches d'introduction, 06/09/2026. */
+body.gx-app-schoolmonsters .sm-hero{
+  min-height:144px;
+  padding:24px 40px;
+  border-radius:22px;
+}
+body.gx-app-schoolmonsters .sm-hero::before{width:6px;}
+body.gx-app-schoolmonsters .sm-surtitre{
+  margin-bottom:0;
+  font-size:.78rem;
+  font-weight:600;
+  letter-spacing:.14em;
+}
+body.gx-app-schoolmonsters .sm-hero h1{
+  margin-top:5px;
+  font-size:2.2rem;
+  font-weight:600;
+  line-height:1.15;
+  letter-spacing:-.025em;
+}
+body.gx-app-schoolmonsters .sm-hero-contenu>p:last-child{
+  margin-top:8px;
+  font-size:.95rem;
+  line-height:1.45;
+}
+body.gx-app-schoolmonsters .sm-hero-mascotte{
+  top:50%;
+  right:40px;
+  bottom:auto;
+  width:92px;
+  height:92px;
+  padding:10px;
+  border:2px solid rgba(123,75,183,.34);
+  border-radius:26px;
+  background:rgba(255,255,255,.68);
+  transform:translateY(-50%) rotate(4deg);
+}
+@media(max-width:720px){
+  body.gx-app-schoolmonsters .sm-hero{padding:18px 20px;border-radius:22px;}
+  body.gx-app-schoolmonsters .sm-hero h1{font-size:1.5rem;}
+}
+
+.sm-domaines {display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px;}
+.sm-domaines a {display:flex;align-items:center;min-height:44px;padding:8px 16px;border:1px solid #ddd3e9;border-radius:12px;background:#fffdf6;color:#633795;text-decoration:none;}
+.bloc-matieres {scroll-margin-top:20px;}
+
+/* Domaines fg3 : sommaire et cartes compactes dans l’ordre pédagogique. */
+.page-periode { max-width:1160px; }
+body.gx-app-schoolmonsters .sm-hero { min-height:72px; padding:0 96px 0 0; margin:28px 0 24px; border:0; border-radius:0; background:none; box-shadow:none; }
+body.gx-app-schoolmonsters .sm-hero::before { display:none; }
+body.gx-app-schoolmonsters .sm-hero h1 { font-size:clamp(1.75rem,3vw,2.5rem); }
+body.gx-app-schoolmonsters .sm-hero-mascotte { right:0; width:clamp(72px,8vw,108px); height:clamp(72px,8vw,108px); padding:0; border:0; border-radius:0; background:none; transform:translateY(-50%); }
+.bloc-matieres { padding:24px; border-radius:12px; border-top:3px solid var(--gx-filet); box-shadow:none; }
+.grille-matieres,.groupe-autres .grille-matieres { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.carte-matiere { min-height:92px; border-radius:10px; }
+.carte-matiere-icone { width:54px; height:54px; }
+.carte-matiere-icone img { width:48px; height:48px; }
+@media(max-width:600px) { .grille-matieres,.groupe-autres .grille-matieres { grid-template-columns:1fr; } .bloc-matieres { padding:18px 14px; } }

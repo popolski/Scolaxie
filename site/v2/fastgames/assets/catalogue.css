@@ -1,0 +1,28 @@
+.fg-catalogue .mj-outils{grid-template-columns:minmax(0,1fr) auto;align-items:center}
+.fg-filtre-type{align-self:end;min-width:170px}
+.fg-filtre-type summary{display:flex;align-items:center;min-height:44px;padding:10px 14px;border:1px solid var(--fg-bordure);border-radius:10px;cursor:pointer;font-size:.88rem;font-weight:700;color:var(--fg-titre)}
+.fg-filtre-type label{margin-top:10px}
+.fg-catalogue .mj-resultats{margin:0}
+.fg-cartes-jeux{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-top:14px}
+.fg-carte-jeu{display:flex;align-items:center;gap:14px;min-width:0;min-height:110px;padding:16px;border:1px solid var(--fg-bordure);border-left:4px solid var(--fg-corail);border-radius:14px;background:#fffdf8;color:var(--fg-titre);text-decoration:none;box-shadow:0 6px 16px rgba(58,48,20,.06)}
+.fg-carte-jeu:hover{background:#fff8f5;transform:translateY(-2px)}
+.fg-carte-jeu:focus-visible,.fg-filtre-type summary:focus-visible{outline:3px solid var(--gx-focus-anneau);outline-offset:3px;box-shadow:0 0 0 5px var(--gx-focus-halo)}
+.fg-carte-jeu-icone{display:grid;place-items:center;flex:0 0 56px;width:56px;height:56px;border-radius:14px;background:#fbece6;color:#a84233}
+.fg-carte-jeu-icone svg{width:29px;height:29px}
+.fg-carte-jeu.mj-ton-turquoise{border-left-color:var(--fg-turquoise-fonce)}
+.fg-carte-jeu.mj-ton-turquoise .fg-carte-jeu-icone{background:#daf5f1;color:var(--fg-turquoise-fonce)}
+.fg-carte-jeu.mj-ton-ambre{border-left-color:#b38000}
+.fg-carte-jeu.mj-ton-ambre .fg-carte-jeu-icone{background:#ffecad;color:#765700}
+.fg-carte-jeu.mj-ton-vert{border-left-color:#308b52}
+.fg-carte-jeu.mj-ton-vert .fg-carte-jeu-icone{background:#dcf3e6;color:#1c6e37}
+.fg-carte-jeu-texte{display:flex;flex:1;flex-direction:column;gap:4px;min-width:0;overflow-wrap:anywhere}
+.fg-carte-jeu-texte strong{font-size:.9375rem;line-height:1.35}
+.fg-carte-jeu-texte small{font-size:.78rem;line-height:1.4;color:var(--fg-texte)}
+.fg-carte-jeu>b{font-size:1.5rem;color:var(--fg-corail)}
+.fg-catalogue [hidden]{display:none!important}
+@media(min-width:1100px){.fg-catalogue{grid-template-columns:220px minmax(0,1fr)}.fg-matieres{grid-template-columns:minmax(0,1fr)}.fg-catalogue-contenu h2{margin-top:8px}}
+@media(min-width:1450px){.fg-cartes-jeux{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:720px) and (max-width:1099px){.fg-matieres{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:719px){.fg-matieres{grid-template-columns:repeat(2,minmax(0,1fr))}.fg-rubriques{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px}.fg-rubriques button{white-space:nowrap;flex:none}.fg-carte-jeu-icone{flex-basis:48px;width:48px;height:48px}.fg-catalogue .mj-outils{grid-template-columns:minmax(0,1fr)}.fg-filtre-type{justify-self:start}}
+@media(max-width:719px){body.gx-enseignant .gx-ligne-titre-description,body.gx-enseignant .fg-choix-niveau>span{display:none}body.gx-enseignant .fg-matiere-lien{min-height:48px;padding:6px}body.gx-enseignant .fg-catalogue-contenu{padding-top:6px}body.gx-enseignant .fg-catalogue .mj-outils{gap:4px;padding-bottom:12px}body.gx-enseignant .fg-catalogue .mj-groupe{margin-top:0}}
+@media(max-width:719px){body.gx-enseignant .fg-catalogue .mj-outils{grid-template-columns:minmax(0,1fr) auto}body.gx-enseignant .fg-catalogue .mj-outils>label{grid-column:1/-1}body.gx-enseignant .fg-catalogue .mj-resultats{grid-column:2;grid-row:2;align-self:center}}

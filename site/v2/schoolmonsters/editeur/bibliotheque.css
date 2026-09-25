@@ -1,0 +1,70 @@
+/* Limite a la bibliotheque : ne pas changer l'atelier ni ses commandes de sauvegarde. */
+.ed-bibliotheque .ed-tete {
+  position: relative; top: 0; width: 100%; margin: 0; border-radius: 0;
+  box-shadow: none;
+}
+.ed-bibliotheque .ed-accueil {
+  min-height: 0; padding: 16px 22px; margin-bottom: 14px;
+  border-radius: 18px; box-shadow: none;
+}
+.ed-bibliotheque .ed-accueil::after { display: none; }
+.ed-bibliotheque .ed-accueil h1 {
+  max-width: none; font-size: clamp(1.5rem, 2.5vw, 2rem); line-height: 1.2;
+}
+.ed-bibliotheque :is(h1,h2,h3),
+.ed-bibliotheque .ed-matiere h3 a,
+.ed-bibliotheque .ed-titre-lecon { color: var(--gx-titre, #1c246b); }
+.ed-bibliotheque .ed-intro { max-width: none; margin-top: 6px; }
+.ed-bibliotheque .ed-bilan { margin: 0 0 12px; }
+.ed-bibliotheque .ed-commandes { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 12px; }
+.ed-bibliotheque .ed-aide {
+  border: 1px solid #dacfa1; border-left: 4px solid #7b4bb7;
+  border-radius: 14px; background: #fffdf8;
+}
+.ed-bibliotheque .ed-aide summary {
+  min-height: 44px; padding: 11px 16px; cursor: pointer; color: #1c246b; font-weight: 600;
+}
+.ed-bibliotheque .ed-mode-emploi { border: 0; box-shadow: none; }
+.ed-bibliotheque .ed-filtres {
+  position: static; margin-top: 14px; border-left: 4px solid #7b4bb7;
+  background: #fffdf8; backdrop-filter: none;
+}
+.ed-bibliotheque .ed-puce,
+.ed-bibliotheque .ed-coche { min-height: 44px; }
+.ed-bibliotheque .ed-coche { display: inline-flex; align-items: center; }
+.ed-bibliotheque .ed-periode { margin-top: 20px; border-left: 4px solid #7b4bb7; }
+.ed-bibliotheque .ed-cartes { grid-template-columns: repeat(auto-fit, minmax(min(100%,285px),1fr)); }
+.ed-bibliotheque .ed-cartes a { min-height: 74px; border-left: 4px solid #7b4bb7; }
+.ed-bibliotheque .ed-matiere h3 a { display: inline-flex; align-items: center; min-height: 44px; }
+.ed-bibliotheque :is(a,button,input,summary):focus-visible { outline: 3px solid #1c246b; outline-offset: 3px; }
+.ed-bibliotheque [hidden] { display: none !important; }
+@media (max-width: 720px) {
+  .ed-bibliotheque .ed-accueil { padding: 14px 16px; }
+  .ed-bibliotheque .ed-cartes { grid-template-columns: minmax(0,1fr); }
+  .ed-bibliotheque .ed-recherche { min-width: 0; width: 100%; }
+}
+
+/* Matieres repliables : 58 lecons par periode, la liste ouverte en entier etait illisible. */
+.ed-bibliotheque .ed-matiere { margin: 0; border-bottom: 1px solid var(--gx-bordure, #dacfa1); }
+.ed-bibliotheque .ed-matiere > summary {
+  display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 4px 0;
+  cursor: pointer; list-style: none; color: var(--gx-titre, #1c246b);
+  font-size: 13px; font-weight: 600; letter-spacing: .11em; text-transform: uppercase;
+}
+.ed-bibliotheque .ed-matiere > summary::-webkit-details-marker { display: none; }
+.ed-bibliotheque .ed-matiere > summary::before {
+  content: ""; width: 7px; height: 7px; margin: 0 4px 0 2px;
+  border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg); transition: transform .15s;
+}
+.ed-bibliotheque .ed-matiere[open] > summary::before { transform: rotate(45deg); }
+.ed-bibliotheque .ed-matiere > summary span {
+  padding: 0 7px; border-radius: 999px; background: var(--ed-creux, #efe8cc);
+  font-size: 11px; font-weight: 500; letter-spacing: 0;
+}
+.ed-bibliotheque .ed-matiere > summary:hover { color: #7b4bb7; }
+.ed-bibliotheque .ed-lien-liste {
+  display: inline-flex; align-items: center; min-height: 44px;
+  color: #664097; font-size: 13px; font-weight: 500;
+}
+.ed-bibliotheque .ed-matiere[open] { padding-bottom: 12px; }

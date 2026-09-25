@@ -1,0 +1,1259 @@
+/* Socle partagé de Scolaxie : jetons et composants des cinq espaces. */
+
+/* Les contrats validés priment les feuilles historiques, même chargées après
+   le socle. La couche évite une course à la spécificité entre applications. */
+@layer gx-etats, gx-contrats;
+
+:root{
+
+  /* ---- Fonds ------------------------------------------------------
+     Le creme est la seule couleur que les trois sites partagent deja
+     a l'identique. Le portail SSO utilise #f7f0c8, tres legerement
+     plus clair : on retient #f2ecc4, majoritaire (Fast Eval, Clic &
+     Mots, galaxie.css). --------------------------------------------- */
+  --gx-fond: #f2ecc4;
+
+  /* Fond uni : la hiérarchie vient des surfaces et des espacements. */
+  --gx-halo: none;
+
+  /* Blanc chaud du portail SSO, prefere au rgba(255,255,255,.58) des
+     cartes actuelles : une carte translucide change de teinte selon ce
+     qu'il y a dessous, donc son texte n'a pas toujours le meme
+     contraste. Ici la surface est opaque, donc previsible. */
+  --gx-surface: #fffdf6;
+
+  /* Creme sur blanc chaud = 1.17:1. C'est bien trop faible pour que
+     l'oeil voie le bord d'une carte : la bordure n'est pas decorative,
+     elle est structurelle. */
+  --gx-bordure: #dacfa1;
+  --gx-bordure-douce: rgba(48,52,61,.12);
+
+  /* ---- Encre ------------------------------------------------------ */
+  --gx-encre: #30343d;        /* 10.4:1 sur creme */
+
+  /* Le gris secondaire actuel (#777) tombe a 3.75:1 sur le creme :
+     sous le minimum de 4.5:1 pour du texte courant. Assombri. */
+  --gx-encre-douce: #5f636b;  /* 5.0:1 sur creme */
+
+  /* Marine du logo Scolaxie, reserve aux GRANDS TITRES uniquement (jamais
+     au texte courant, ni aux boutons, ni aux surtitres deja colores par
+     application) : rappel de marque valide par l’enseignante le 05/09/2026, sur
+     une proposition plus large (encre neutre remplacee partout) jugee trop
+     concurrente de la couleur propre de chaque application et donc ecartee.
+     Meme valeur que --v2-marine du portail (staging-portail-v2/style.css),
+     qui garde sa propre copie locale plutot que de dependre de ce jeton. */
+  --gx-titre: #1c246b;        /* 12 a 14:1 sur creme, mesure au lot marine du 04/09 */
+
+  /* ---- Marque et action -------------------------------------------
+     DEUX TURQUOISE, ET C'EST VOULU.
+     Le turquoise historique #12baa6 est l'identite de la maison, mais
+     du blanc pose dessus ne donne que 2.4:1 : le libelle des boutons
+     principaux est aujourd'hui difficile a lire, y compris pour un
+     adulte. On garde donc #12baa6 pour tout ce qui n'est PAS du texte
+     (liseres, pastilles, filets, survols) et on descend d'un cran pour
+     le remplissage des boutons. La valeur retenue existe deja dans
+     Clic & Mots sous le nom brand-700 : ce n'est pas une couleur
+     nouvelle, c'est une couleur qu'on cesse de reserver aux details. */
+  --gx-marque: #12baa6;
+  --gx-action: #0b756a;         /* blanc dessus : 5.6:1 */
+  --gx-action-survol: #095f57;  /* blanc dessus : 7.5:1 */
+  --gx-action-encre: #095f57;   /* pour un lien turquoise sur creme */
+
+  /* ---- Accent chaud -----------------------------------------------
+     L'ambre est magnifique en aplat et illisible en texte : 1.6:1 sur
+     le creme. Deux jetons distincts pour ne plus confondre les deux
+     usages. */
+  --gx-accent: #efae1c;         /* aplats, liseres, pastilles */
+  --gx-accent-encre: #9b6b00;   /* le texte equivalent, 4.6:1 sur surface */
+
+  /* Le marqueur de compte enseignant ou administrateur. Valeur choisie par
+     le responsable technique le 31/08/2026, reprise du badge de administration-enseignants.php.
+     Elle est a trois unites de --gx-accent, difference invisible a l'oeil :
+     si l'un des deux doit bouger un jour, les faire bouger ensemble.
+     ATTENTION au sens de lecture : ceci est un APLAT, pas une encre. Du blanc
+     dessus ne donne que 2.0:1 - c'etait le defaut du badge d'origine. Le texte
+     pose dessus est de l'encre, qui donne 6.1:1. */
+  --gx-role: #efa900;
+
+  /* ---- Couleur propre a chaque application -------------------------
+     Elle sert de lisere de carte, de pastille et de reperage. Jamais
+     de grand aplat : c'est ce qui distingue une suite d'un patchwork. */
+  --gx-app-fasteval: #12baa6;
+  --gx-app-schoolmonsters: #7b4bb7;  /* 5.9:1 en blanc dessus */
+  --gx-app-clicetmots: #efae1c;
+  --gx-app-fastgames: #e76f51;       /* le corail, quatrieme application */
+  --gx-action-schoolmonsters:var(--gx-app-schoolmonsters);
+  --gx-action-clicetmots:var(--gx-accent-encre);
+  --gx-action-fastgames:color-mix(in srgb,var(--gx-app-fastgames) 72%,black);
+
+
+  /* --gx-filet : la couleur du filet de 3 px sous le bandeau, posee par
+     application sur le body. Chaque body porte deja gx-app-fasteval,
+     gx-app-schoolmonsters ou gx-app-fastgames pour sa typographie ; on
+     reutilise le meme crochet plutot que d en ajouter un nouveau. */
+/* Pas de prefixe "body" : les trois apps PHP posent gx-app-* sur <body>,
+   mais Clic & Mots (React) le pose sur une div racine, pas sur <body> lui
+   meme. Le selecteur nu marche dans les deux cas - trouve le 04/09/2026
+   en construisant la grille d'accueil du lot 6, quand --gx-filet restait
+   invisible sur les nouvelles cartes de Clic & Mots (son bandeau, lui,
+   contourne deja le probleme en lisant --gx-app-clicetmots directement). */
+.gx-app-fasteval{--gx-filet: var(--gx-app-fasteval);}
+.gx-app-schoolmonsters{--gx-filet: var(--gx-app-schoolmonsters);}
+.gx-app-fastgames{--gx-filet: var(--gx-app-fastgames);}
+.gx-app-clicetmots{--gx-filet: var(--gx-app-clicetmots);}
+
+  /* ---- Etats -------------------------------------------------------
+     Memes quatre couleurs partout, pour que « vert » veuille dire la
+     meme chose sur les trois sites. */
+  --gx-succes: #1c6e37;
+  --gx-succes-fond: #e8f4e9;
+  --gx-alerte: #a15c00;
+  --gx-alerte-fond: #fdf1dd;
+  --gx-erreur: #8a2f2a;
+  --gx-erreur-fond: #fbeeed;
+  --gx-info: #095f57;
+  --gx-info-fond: #e6f4f2;
+
+  /* Un seul anneau de focus pour toute la galaxie : encre + halo blanc.
+     Le halo est ce qui compte, pas l'encre : sans lui, l'anneau se perd
+     sur un fond sombre ou un bouton de couleur. Avec lui il tient sur
+     le creme, le blanc des cartes, un bouton turquoise ou violet. */
+  --gx-focus-anneau: #30343d;
+  --gx-focus-halo: #fff;
+
+  /* ---- Geometrie ---------------------------------------------------
+     Une seule echelle, multiples de 4. Les valeurs de rayon sont la
+     moyenne de ce qui existe deja : 10 px cote champ, 14 px cote carte
+     (Fast Eval fait 9/14, le portail 10/20). */
+  --gx-esp-1: 4px;
+  --gx-esp-2: 8px;
+  --gx-esp-3: 12px;
+  --gx-esp-4: 16px;
+  --gx-esp-6: 24px;
+  --gx-esp-8: 32px;
+  --gx-esp-12: 48px;
+
+  --gx-rayon-champ: 10px;
+  --gx-rayon-carte: 12px;
+  --gx-rayon-pilule: 999px;
+
+  --gx-ombre-carte: 0 4px 12px rgba(0,0,0,.05);
+  --gx-ombre-relief: 0 9px 19px rgba(0,0,0,.09);
+
+  /* Le portail garde son cadre. Les applications choisissent leur largeur
+     selon le contenu : lecture, grille ou travail sur plusieurs panneaux. */
+  --gx-largeur: 1160px;
+  --gx-focus: 880px;
+  --gx-bandeau-hauteur: 76px;
+  --gx-logo-hauteur: 45px;
+  --gx-large: 1440px;
+  --gx-riche: 1600px;
+
+  /* Cible tactile minimale, pour un doigt de CE1 sur tablette. */
+  --gx-touche: 44px;
+
+  /* ---- Typographie -------------------------------------------------
+     Lexend est deja chargee par Clic & Mots. La pile de repli compte
+     autant que la police elle-meme : si Google Fonts ne repond pas, la
+     page doit rester lisible, pas retomber sur du Times. */
+  --gx-police: "Lexend", system-ui, "Segoe UI", Arial, sans-serif;
+
+  /* Echelle en rem, jamais en vw. Fast Eval declare aujourd'hui
+     body{font-size:2vw} : sur un ecran de 1920 px le texte fait 38 px,
+     sur un telephone de 360 px il fait 7 px. C'est la cause premiere
+     des ecarts de taille d'une page a l'autre. */
+  --gx-t-micro: .8125rem;   /* 13px - legendes, aides */
+  --gx-t-petit: .875rem;    /* 14px - sous-titres, tableaux denses */
+  --gx-t-base: 1rem;        /* 16px - texte courant */
+  --gx-t-moyen: 1.125rem;   /* 18px - texte eleve */
+  --gx-t-titre-2: 1.3125rem;/* 21px - titre de section */
+  --gx-t-titre-1: 1.75rem;  /* 28px - titre de page */
+}
+
+/* ====================================================================
+   DEUX DENSITES, UNE SEULE IDENTITE
+   Le meme composant, ecrit une fois, se resserre cote enseignant et
+   s'elargit cote eleve. On ne duplique pas les classes : on change
+   trois variables sur le <body>.
+   ==================================================================== */
+
+.gx-eleve{
+  --gx-densite-y: var(--gx-esp-4);
+  --gx-densite-x: var(--gx-esp-6);
+  --gx-densite-texte: var(--gx-t-moyen);
+  --gx-densite-touche: 52px;
+}
+
+.gx-enseignant{
+  --gx-densite-y: var(--gx-esp-2);
+  --gx-densite-x: var(--gx-esp-3);
+  --gx-densite-texte: var(--gx-t-petit);
+  --gx-densite-touche: var(--gx-touche);
+}
+
+/* ====================================================================
+   BOITE DE MESURE, LIMITEE AUX COMPOSANTS
+   Bootstrap impose box-sizing:border-box a toute la page de Fast Eval ;
+   School Monsters, lui, ne le fait pas. Sans cette regle, le meme
+   composant serait plus large de la valeur de ses marges interieures
+   sur un site et pas sur l'autre. On la pose donc sur les classes
+   « gx- » et sur elles seules, pour ne rien changer au reste de la page.
+
+   04/09/2026 : incomplet en pratique. Le cartouche de compte partage
+   (.user-menu, son bouton <summary>, l'avatar, le bloc de texte) ne
+   porte pas le prefixe gx- dans son nom : il gardait donc content-box
+   et rendait une boite de 62px la ou la meme cartouche, sur les pages
+   propres a Fast Eval (qui posent un border-box universel), rendait
+   50px. Mesure et signale par le responsable technique. La ligne suivante etend donc la
+   regle a tout l'interieur de .gx-entete, le bandeau partage lui-meme -
+   pas au reste de la page, qui garde le comportement voulu ci-dessus.
+   ==================================================================== */
+[class*="gx-"],[class*="gx-"]::before,[class*="gx-"]::after{box-sizing:border-box;}
+.gx-entete,.gx-entete *,.gx-entete *::before,.gx-entete *::after{box-sizing:border-box;}
+
+/* LE BANDEAU RESTE EN LEXEND, QUOI QUE FASSE LA PAGE HOTE. 06/09/2026.
+   Mesure en session reelle sur une page de matiere School Monsters : 16 des 24
+   textes visibles s'affichaient en Arial, dont le cartouche de compte lui-meme
+   - celui-la meme qui avait ete uniformise "pixel perfect" le 04/09. Le
+   bandeau partage par les quatre applications ne ressemblait donc pas au meme
+   bandeau selon le site.
+   LA CAUSE N'EST PAS UNE CLASSE MAIS UN `:has()` HISTORIQUE de css/style1.css,
+   `body:has(.container_12 > .grid_2:first-child + :is(.text4, .text4bis))`,
+   dont la specificite (0,4,1) ecrase le `body.gx-app-schoolmonsters` (0,1,1)
+   que matiere.css pose justement pour retablir Lexend. Aucune regle raisonnable
+   posee sur le body ne peut gagner contre elle.
+   D'ou ce choix : ne pas se battre sur le body, mais poser la police
+   DIRECTEMENT sur le bandeau et ses descendants. Une declaration directe bat
+   l'heritage quelle que soit la specificite de la regle heritee.
+   PORTEE VOLONTAIREMENT LIMITEE AU BANDEAU : le contenu pedagogique des pages
+   historiques garde sa police. Le changer reflowerait des fiches concues avec,
+   et l'assainissement de School Monsters se fait page par page (decision du
+   01/09/2026). Verifie par injection avant ecriture : bandeau 12 Arial + 8
+   Lexend -> 20 Lexend, corps de page inchange. */
+.gx-entete,.gx-entete *{font-family:var(--gx-police, "Lexend", system-ui, "Segoe UI", Arial, sans-serif);}
+
+
+/* ====================================================================
+   COMPOSANTS
+   Tous prefixes « gx- ». Aucun ne s'active tant qu'une page ne le
+   demande pas nommement.
+   ==================================================================== */
+
+/* ---- Typographie commune -------------------------------------------
+   Une page qui veut Lexend le demande en posant « gx-typo » sur son <body>.
+   La classe l'emporte sur les « body{font-family:...} » historiques de Fast
+   Eval et de School Monsters (une classe pese plus qu'un selecteur de
+   balise), et il suffit de la retirer pour rendre a la page sa police
+   d'origine. C'est le seul endroit ou le socle touche a du texte existant,
+   et il ne le fait que sur demande.
+   Le <link> vers Google Fonts doit accompagner cette classe ; sans lui, la
+   pile de repli prend le relais et la page reste lisible. */
+.gx-typo{font-family:var(--gx-police);}
+
+/* ---- Coque de page ------------------------------------------------ */
+.gx-page{
+  width:min(var(--gx-largeur), calc(100% - 32px));
+  margin:0 auto;
+  padding:var(--gx-esp-8) 0 var(--gx-esp-12);
+}
+
+/* ---- En-tete d'application ----------------------------------------
+   Le 03/09/2026, les anciennes pages affichaient encore une carte arrondie
+   centree alors que Fast Eval et Clic & Mots utilisaient deja le bandeau V2
+   pleine largeur. Ce composant garde l'ancien HTML pour ne pas dupliquer 180
+   gabarits, mais reprend desormais exactement sa geometrie : 86 px, logo de
+   40 px, portail puis navigation, apercu et compte. */
+/* La largeur de la page ne doit pas dependre de la presence d'un ascenseur.
+   Sans ceci, une page assez longue pour defiler (clientWidth amputee de la
+   largeur de l'ascenseur, 15px mesures) rendait le bandeau et le cartouche
+   15px plus a gauche qu'une page courte qui ne defile pas - le responsable technique l'a
+   repere le 04/09/2026 en comparant deux pages du meme bandeau. La reserve
+   de gouttiere est desormais permanente, que la page defile ou non. */
+html{scrollbar-gutter:stable;overflow-y:auto;}
+/* body.dashboard-page ajoute le 06/09/2026 : le tableau de bord connecte du
+   portail n'a jamais porte de classe gx-app-*, ce n'est pas une application.
+   Sans le contexte de container-query que cette regle etablit, son bandeau
+   (.topbar, staging-portail-v2/style.css) ne pouvait pas utiliser la meme
+   astuce 100cqw que .gx-entete pour s'etendre plein largeur - son fond
+   s'arretait avant le bord droit reel de la fenetre, laissant apparaitre le
+   fond de page (--v2-bg) dans l'espace reserve par scrollbar-gutter:stable
+   ci-dessus. Trouve par le responsable technique en comparant le rendu reel apres le
+   resserrement du vide vertical du tableau de bord, qui rendait la page
+   assez courte pour ne quasiment jamais montrer un vrai ascenseur. */
+html:has(body[class*="gx-app-"], body.dashboard-page){container-type:inline-size;}
+body[class*="gx-app-"]{margin:0;overflow-x:clip;}
+/* Meme garde-fou que ci-dessus, pour le meme bandeau plein largeur : sans
+   elle, .topbar en 100cqw pourrait ouvrir un ascenseur horizontal fantome
+   sur un ecran ou le calcul cqw et la vraie largeur divergent d'un pixel. */
+body.dashboard-page{overflow-x:clip;}
+body[class*="gx-app-"]:has(> .gx-entete),
+body[class*="gx-app-"] > *:has(> .gx-entete){padding-top:0 !important;}
+body[class*="gx-app-"] > *:has(> .gx-entete){margin-top:0 !important;}
+.gx-entete{
+  position:relative;
+  /* backdrop-filter (juste en dessous) forme malgre lui son propre contexte
+     d'empilement, comme le ferait un z-index : le popover du cartouche de
+     compte (z-index:30, gx-entete .user-popover) restait donc PIEGE dans ce
+     contexte, incapable de depasser le moindre element de page porteur d'un
+     z-index positif (un ::after decoratif, une carte hero...). Trouve le
+     05/09/2026 sur Fast Games (le nouveau menu eleve passait derriere le
+     cartouche « Choisis une matiere ! »), mais le meme piege existait sur
+     toute la galaxie des qu'un contenu de page posait un z-index positif pres
+     du bandeau - juste jamais remarque avant. Un z-index explicite ici, plus
+     eleve que tout ce que posent les pages (au plus 2 aujourd'hui), fait
+     gagner tout le bandeau - popover compris - sans toucher au bandeau
+     lui-meme ni au popover. */
+  z-index:5;
+  left:50%;
+  display:flex;
+  box-sizing:border-box;
+  width:100cqw !important;
+  max-width:none !important;
+  /* 107px, pas 100 : aligne sur le bandeau du portail, qui atteint deja
+     cette hauteur depuis que son logo est passe a 76px (06/09/2026).
+     Mesure en local plutot que suppose - le responsable technique avait raison, le portail
+     paraissait "plus large" alors que seule sa hauteur differait. Aligner
+     les quatre applications sur lui plutot que l'inverse, a sa demande. */
+  min-height:var(--gx-bandeau-hauteur);
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+  padding:12px max(24px,calc((100vw - 1440px) / 2));
+  margin:0 0 24px -50cqw !important;
+  background:rgba(255,255,255,.9);
+  border:0 !important;
+  /* Le filet : 3 px a la couleur de l aplication, au lieu d un simple trait
+     gris. Chaque application pose --gx-filet sur son body (voir plus bas) ;
+     le portail, qui n a pas d application, garde le trait neutre. */
+  border-bottom:3px solid var(--gx-filet, var(--gx-bordure)) !important;
+  border-radius:0 !important;
+  box-shadow:0 3px 14px rgba(79,65,22,.06) !important;
+  backdrop-filter:blur(12px);
+}
+.gx-entete-logo{
+  display:block;
+  max-width:190px;
+  width:auto;
+  height:var(--gx-logo-hauteur) !important;
+  max-height:var(--gx-logo-hauteur) !important;
+  object-fit:contain;
+  order:0;
+}
+/* Le logo School Monsters est plus haut que les trois autres identités. A
+   hauteur commune il ne faisait que 104 px de large dans le bandeau, donc
+   paraissait visiblement plus petit. 130 px reprend la largeur de Fast Éval
+   sans augmenter le gabarit partagé du bandeau. */
+.gx-app-schoolmonsters .gx-entete-logo{
+  width:130px;
+  max-width:130px;
+  height:var(--gx-logo-hauteur) !important;
+  max-height:var(--gx-logo-hauteur) !important;
+}
+/* Fil d'Ariane commun. Remplace le bouton Portail : un seul chemin de
+   retour au lieu de deux elements qui menaient au meme endroit. Le premier
+   maillon EST le retour au portail ; order:1 lui donne la meme position que
+   tenait le bouton. */
+.gx-entete .fil{
+  order:1;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  min-width:140px;
+  flex:1;
+  gap:7px;
+  color:var(--gx-encre-douce);
+  font-family:"Lexend", "Segoe UI", sans-serif;
+  font-size:.92rem;
+}
+.gx-entete .fil a{color:var(--gx-encre-douce);font-weight:600;text-decoration:none;}
+.gx-entete .fil a:hover,
+.gx-entete .fil a:focus-visible{color:color-mix(in srgb,var(--gx-filet, var(--gx-action)) 64%,black);text-decoration:underline;}
+.gx-entete .fil .actuel{color:color-mix(in srgb,var(--gx-filet, var(--gx-action)) 64%,black);font-weight:700;}
+.gx-entete .fil span[aria-hidden]{color:var(--gx-encre-douce);}
+
+.gx-entete-portail{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  min-height:var(--gx-touche);
+  padding:9px 16px;
+  border:1px solid #eadcae;
+  border-radius:12px;
+  color:var(--gx-encre);
+  font-size:.92rem;
+  font-weight:600;
+  text-decoration:none;
+  /* Ces trois-la ne servent qu'aux <button> : un lien n'a ni fond ni police
+     propres, un bouton si. Sur Clic & Mots le « Retour » est un bouton, parce
+     qu'il agit sur l'historique au lieu de mener a une adresse - et il portait
+     donc le gris par defaut du navigateur au milieu de liens transparents.
+     Constate a la capture le 31/08/2026. */
+  background:#fffdfa;
+  font-family:"Lexend", "Segoe UI", sans-serif;
+  cursor:pointer;
+  order:2;
+}
+/* Selecteur rendu INDEPENDANT DU CHEMIN le 06/09/2026. Il valait
+   [href="/v2/portail/"] : le jour ou les liens du portail sont passes a
+   /portail/, cette regle d'ordre serait tombee en silence, sans erreur
+   nulle part - le bouton aurait simplement change de place. La forme
+   « se termine par » couvre les deux adresses et survivra a la suivante. */
+.gx-entete-portail[href$="/portail/"]{
+  order:1;
+}
+.gx-entete-portail:hover{border-color:var(--gx-marque);background:#f2fbf9;}
+/* La V2 est la production officielle. Les rares anciens gabarits encore
+   générés avec ce noeud ne doivent plus afficher de marqueur de préversion. */
+.preview-badge{display:none !important;}
+/* Cartouche de compte : source unique depuis le 04/09/2026. Ces regles
+   n'etaient jusque-la que le comportement de School Monsters et Fast Games,
+   qui heritent du socle via .gx-entete ; Fast Eval, Clic & Mots et le
+   portail en gardaient chacun leur propre copie (style-v2.css, index.css,
+   portail/style.css), do'u des ecarts de bordure, de graisse, de taille de
+   badge et de z-index de popover decouverts et corriges un par un dans les
+   lots precedents du meme jour. Retirer le prefixe .gx-entete les rend
+   utilisables par les trois copies, qui chargent toutes galaxie-tokens.css
+   mais n'utilisent pas la classe .gx-entete sur leur propre bandeau
+   (.v2-app-header, .topbar). Les trois fichiers ne gardent plus que ce qui
+   leur est reellement propre : leurs points de rupture mobiles, la
+   recherche de Clic & Mots, le decoupage prenom/nom du portail. */
+.user-menu{
+  position:relative;
+  /* auto, et non 0 : le margin-left:auto vivait sur .preview-badge, qui
+     est passe en display:none quand la V2 est devenue la production. Le
+     cartouche de compte est reste colle a gauche sur les 171 pages en
+     .gx-entete. La marge revient ici, sur le dernier element du bandeau. */
+  margin-left:auto;
+  order:9;
+}
+.user-menu summary{
+  display:flex;
+  min-height:44px;
+  align-items:center;
+  gap:10px;
+  padding:5px 12px 5px 6px;
+  border:1px solid var(--gx-bordure);
+  border-radius:9px;
+  background:#fffdfa;
+  color:var(--gx-encre);
+  cursor:pointer;
+  list-style:none;
+}
+.user-menu summary::-webkit-details-marker{display:none;}
+.user-avatar{
+  display:grid;
+  width:30px;
+  height:30px;
+  place-items:center;
+  border-radius:50%;
+  background:#fff0b7;
+  color:var(--gx-action);
+  flex:none;
+  font-weight:700;
+}
+.user-texte{
+  display:flex;
+  min-width:0;
+  flex-direction:column;
+  align-items:flex-start;
+  line-height:1.25;
+}
+.user-texte strong{
+  display:block;
+  max-width:200px;
+  overflow:hidden;
+  font-size:.9rem;
+  font-weight:600;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+/* Le role, quand le compte n'est pas celui d'un eleve. Il prend la place du
+   nom du site sous l'identite : le site, le logo et le lisere le disent deja
+   trois fois, alors que le role, lui, n'est ecrit nulle part ailleurs - et
+   c'est justement ce qu'il faut voir d'un coup d'oeil avant d'agir sur les
+   comptes d'une classe. Texte simple depuis le 04/09/2026 (lot 4bis) : la
+   pastille jaune et les capitales etaient l'element le plus criant du
+   bandeau pour une information secondaire. */
+.gx-entete-role{
+  display:inline-block;
+  margin-top:0;
+  font-size:.7rem;
+  font-weight:600;
+  color:var(--gx-encre-douce);
+}
+.user-popover{
+  position:absolute;
+  top:calc(100% + 8px);
+  right:0;
+  z-index:30;
+  display:grid;
+  min-width:220px;
+  overflow:hidden;
+  border:1px solid var(--gx-bordure);
+  border-radius:14px;
+  background:#fff;
+  box-shadow:0 8px 24px rgba(79,65,22,.1);
+}
+/* Ligne d'information non cliquable dans le popover (« Espace enseignant »
+   sur le portail) : seul le portail en a besoin, les trois autres n'ont que
+   des liens, mais la regle est ici pour que personne n'ait a la redefinir. */
+.user-popover span{
+  padding:12px 15px;
+  color:var(--gx-encre-douce);
+  background:#fffaf0;
+  font-size:.78rem;
+}
+/* min-height:44px ajoute le 06/09/2026. Mesure au clavier et au doigt en
+   session enseignante : ces liens faisaient 42px sur les QUATRE applications,
+   deux pixels sous la cible tactile minimale que la decision n7 des maquettes
+   pose pour toute la galaxie. Clic & Mots portait deja ce reglage EN LOCAL, et
+   AGENTS.md notait qu'il etait "absent du socle" - c'etait exactement ce trou,
+   jamais comble. Le padding de 12px donnait 42px avec une ligne de .88rem :
+   il s'en fallait de tres peu, ce qui explique que personne ne l'ait vu. */
+.user-popover a{
+  display:flex;
+  align-items:center;
+  min-height:44px;
+  padding:12px 15px;
+  color:var(--gx-encre);
+  font-size:.88rem;
+  text-decoration:none;
+}
+.user-popover a:hover,
+.user-popover a:focus-visible{background:#f5f5ef;}
+/* La pastille peut etre un lien : sur Clic & Mots elle mene a l'espace
+   enseignant, a la place du bouton qui doublonnait avec elle. Le survol se
+   voit sans changer la couleur du role, qui est justement ce qui la fait
+   reconnaitre - d'ou l'assombrissement plutot qu'une autre teinte. */
+a.gx-entete-role{text-decoration:none;cursor:pointer;}
+a.gx-entete-role:hover,
+a.gx-entete-role:focus-visible{filter:brightness(.92);text-decoration:underline;}
+.gx-entete-sortie{
+  min-height:var(--gx-touche);
+  display:inline-flex;
+  align-items:center;
+  padding:0 var(--gx-esp-3);
+  color:var(--gx-erreur);
+  font-size:var(--gx-t-petit);
+  text-decoration:none;
+}
+.gx-entete-sortie:hover{text-decoration:underline;}
+
+/* Cadre la barre sur la meme largeur que le contenu de la page. Sans cela,
+   sur un grand ecran, l'en-tete s'etire d'un bord a l'autre pendant que le
+   contenu reste centre : les deux ne se lisent plus comme une seule page.
+   Sept fichiers declarent encore --gx-largeur-page, que plus personne ne
+   consomme depuis que la barre est en pleine largeur : ne pas s'y fier. */
+.gx-entete-cadree{max-width:none;}
+
+/* ---- Cartouche de titre -------------------------------------------
+   Le titre tient sur une ligne tant que la largeur le permet, et les
+   boutons passent SOUS lui plutot qu'a cote : c'est la regle qui evite
+   les cartouches casses sur deux lignes de School Monsters. */
+/* margin-bottom seul, et non le raccourci « margin » : le raccourci
+   remettrait margin-left a 0 et annulerait le centrage de
+   .gx-entete-cadree quand les deux classes cohabitent. Constate a la
+   mesure : le cartouche etait decale de 21 px par rapport a la barre. */
+.gx-cartouche{margin-bottom:var(--gx-esp-6);}
+.gx-cartouche h1{
+  margin:0;
+  color:var(--gx-titre);
+  font-size:var(--gx-t-titre-1);
+  font-weight:500;
+  line-height:1.2;
+  /* Le titre est centre sur la largeur du cartouche, comme celui du bandeau
+     des fiches de School Monsters. C'est la meme regle partout. */
+  text-align:center;
+  text-wrap:balance;
+}
+/* Un mot peut etre accentue en turquoise ; les apostrophes et les mots
+   de liaison restent en encre. */
+.gx-cartouche h1 em{font-style:normal;color:var(--gx-action-encre);}
+.gx-cartouche p{margin:var(--gx-esp-1) 0 0;color:var(--gx-encre-douce);font-size:var(--gx-t-petit);text-align:center;}
+.gx-cartouche-actions{display:flex;flex-wrap:wrap;gap:var(--gx-esp-2);margin-top:var(--gx-esp-3);}
+
+/* Cartouche d'accueil : un titre seul, cadre sur la meme largeur que le
+   contenu de la page. Sert aux pages d'entree des trois sites, ou le titre
+   ne dit pas le nom de l'ecran mais ce qu'on vient y faire. */
+.gx-cartouche-acceuil{
+  width:min(960px, calc(100% - 24px));
+  margin:0 auto var(--gx-esp-6);
+}
+
+/* ---- Boutons -------------------------------------------------------
+   Quatre roles, jamais plus. Meme hauteur minimale partout, pour que
+   deux boutons cote a cote ne soient jamais decales. */
+.gx-bouton{
+  text-decoration:none;
+  cursor:pointer;
+}
+@media print{
+.gx-bouton{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:var(--gx-esp-2);
+  min-height:var(--gx-densite-touche, var(--gx-touche));
+  padding:0 var(--gx-esp-4);
+  border:1px solid transparent;
+  border-radius:var(--gx-rayon-champ);
+  font:inherit;
+  font-size:var(--gx-t-petit);
+  font-weight:600;
+}
+}
+.gx-bouton-principal{background:var(--gx-action);color:#fff;}
+.gx-bouton-principal:hover{background:var(--gx-action-survol);color:#fff;}
+.gx-bouton-secondaire{background:var(--gx-surface);border-color:var(--gx-action);color:var(--gx-action-encre);}
+.gx-bouton-secondaire:hover{background:#fff;}
+.gx-bouton-discret{background:transparent;border-color:var(--gx-bordure);color:var(--gx-encre);}
+.gx-bouton-discret:hover{border-color:var(--gx-encre-douce);}
+.gx-bouton-danger{background:var(--gx-surface);border-color:var(--gx-erreur);color:var(--gx-erreur);}
+.gx-bouton-danger:hover{background:var(--gx-erreur);color:#fff;}
+
+/* Le focus clavier n'est pas un detail d'accessibilite abstrait : sans
+   lui, un eleve qui navigue au clavier ne sait pas ou il est. Regle par
+   defaut pour toute la galaxie ; une page peut la redefinir pour un
+   element precis (le portail le fait pour rester en marine), mais plus
+   aucun endroit ne doit rester sans reponse. */
+:focus-visible{
+  outline:3px solid var(--gx-focus-anneau);
+  outline-offset:2px;
+  box-shadow:0 0 0 5px var(--gx-focus-halo);
+}
+
+/* Le lien d'evitement : un seul composant, pour que les cinq surfaces
+   n'aient plus chacune leur variante. Le href="#contenu" et l'ancrage
+   restent a la charge de chaque gabarit. */
+.skip-link{
+  position:fixed;top:8px;left:8px;z-index:100;
+  display:inline-flex;align-items:center;min-height:44px;
+  padding:10px 14px;border-radius:10px;color:#fff;
+  background:var(--gx-action);
+  transform:translateY(-150%);
+  font-weight:600;text-decoration:none;
+}
+.skip-link:focus{transform:translateY(0);}
+
+/* ---- Champs de formulaire ------------------------------------------ */
+.gx-champ{display:grid;gap:var(--gx-esp-1);margin-bottom:var(--gx-esp-4);}
+.gx-champ label{font-size:var(--gx-t-petit);font-weight:600;color:var(--gx-encre);}
+.gx-champ input,
+.gx-champ select{
+  font:inherit;
+  min-height:var(--gx-densite-touche, var(--gx-touche));
+  padding:0 var(--gx-esp-3);
+  border:1px solid var(--gx-bordure);
+  border-radius:var(--gx-rayon-champ);
+  background:#fff;
+  color:var(--gx-encre);
+}
+/* L'aide et l'erreur occupent le meme emplacement sur les trois sites :
+   sous le champ, jamais a cote, jamais en infobulle. */
+.gx-champ-aide{font-size:var(--gx-t-micro);color:var(--gx-encre-douce);}
+.gx-champ-erreur{font-size:var(--gx-t-micro);color:var(--gx-erreur);font-weight:600;}
+.gx-champ.est-en-erreur input,
+.gx-champ.est-en-erreur select{border-color:var(--gx-erreur);}
+
+/* ---- Cartes -------------------------------------------------------- */
+.gx-carte{
+  display:flex;
+  flex-direction:column;
+  gap:var(--gx-esp-2);
+  padding:var(--gx-esp-4);
+  background:var(--gx-surface);
+  border:1px solid var(--gx-bordure);
+  border-radius:var(--gx-rayon-carte);
+  box-shadow:var(--gx-ombre-carte);
+  color:var(--gx-encre);
+  text-decoration:none;
+}
+a.gx-carte{transition:transform .16s, box-shadow .16s, border-color .16s;}
+a.gx-carte:hover{transform:translateY(-3px);box-shadow:var(--gx-ombre-relief);border-color:var(--gx-marque);}
+.gx-carte h3{margin:0;font-size:var(--gx-t-titre-2);font-weight:600;}
+.gx-carte p{margin:0;color:var(--gx-encre-douce);font-size:var(--gx-t-petit);line-height:1.45;}
+.gx-carte-liseree{border-left:6px solid var(--gx-marque);}
+@media print{
+.gx-grille{display:grid;gap:var(--gx-esp-4);grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+}
+
+/* ---- Accueil enseignant, lot 6 (04/09/2026) -------------------------
+   Un seul jeu de regles pour les quatre applications : la couleur vient
+   de --gx-filet, deja posee par app sur le body (body.gx-app-*). Remplace
+   le grand cartouche de 190px par une ligne de titre de 80px, et les
+   grandes cartes plates par un vocabulaire commun de tuile/carte avec
+   icone - decline en deux gabarits : la "journee" (tuiles + colonne de
+   contexte, pour Fast Eval, ou les donnees existent) et la "grille"
+   (cartes plus hautes seules, pour les trois autres, qui n'ont pas encore
+   de donnees a remonter). */
+/* Redessine en bandeau le 04/09/2026 (retour de le responsable technique sur la premiere
+   version, trop plate et au cadre trop petit) : degrade, liesere, ombre,
+   comme l'ancien cartouche de 190px (.v2-page-hero et ses copies par
+   app), mais a 132px de haut minimum plutot que 190. Meme mecanisme de
+   couleur : --gx-filet, deja pose par app, decline le degrade et le
+   liesere sans jeton supplementaire. */
+/* Le titre introduit le travail ; les surfaces sont réservées au contenu. */
+@media print{
+.gx-ligne-titre{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:20px;
+  min-height:0;max-width:var(--gx-large);margin:0 auto 26px;padding:0;
+  border:0;background:transparent;box-shadow:none;
+}
+}
+.gx-ligne-titre::before{content:none;}
+.gx-ligne-titre-surtitre{
+  text-transform:uppercase;
+}
+@media print{
+.gx-ligne-titre-surtitre{
+  margin:0;font-size:.78rem;font-weight:600;letter-spacing:.14em;color:var(--gx-encre-douce);
+}
+}
+@media print{
+.gx-ligne-titre-bonjour{
+  margin:5px 0 0;font-size:2.2rem;font-weight:600;letter-spacing:-.025em;
+  color:var(--gx-titre);
+}
+}
+@media print{
+.gx-ligne-titre-description{
+  max-width:58ch;margin:8px 0 0;color:var(--gx-encre-douce);
+  font-size:.95rem;line-height:1.45;
+}
+}
+@media (max-width:720px){
+  @media print{
+  .gx-ligne-titre{min-height:0;padding:0}
+  }
+  @media print{
+  .gx-ligne-titre-bonjour{font-size:1.5rem}
+  }
+  .gx-ligne-titre-description{margin-top:6px}
+  @media print{
+  .gx-ligne-titre-description{font-size:.88rem}
+  }
+}
+
+.gx-journee-corps{
+  display:grid;grid-template-columns:1.5fr 1fr;gap:24px;
+  max-width:var(--gx-large,1440px);margin:0 auto;padding:0 40px 48px;
+}
+@media (max-width:900px){.gx-journee-corps{grid-template-columns:1fr}}
+@media (max-width:720px){.gx-journee-corps{padding:0 20px 32px}}
+
+.gx-tuiles{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-content:start}
+
+/* Accueil enseignant Fast Eval : quatre entrees, sans perdre les deux listes. */
+.v2-enseignant .fe-referentiels { min-width:0; }
+.v2-enseignant .fe-referentiels summary { cursor:pointer; list-style:none; text-align:left; }
+.v2-enseignant .gx-journee-corps { grid-template-columns:minmax(0,1fr); }
+.v2-enseignant .gx-colonne-contexte { grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); }
+@media (min-width:1280px) { .v2-enseignant .gx-tuiles { grid-template-columns:repeat(4,minmax(0,1fr)); } }
+.v2-enseignant .fe-referentiels summary::-webkit-details-marker { display:none; }
+.v2-enseignant .fe-referentiels[open] summary::after { transform:translateY(-50%) rotate(90deg); }
+.v2-enseignant .fe-referentiels-liens { padding:8px 16px; }
+.v2-enseignant .gx-raccourci { min-height:44px; box-sizing:border-box; display:flex; align-items:center; }
+.v2-enseignant .gx-panneau { border-left:4px solid var(--gx-filet,var(--gx-marque)); }
+.v2-enseignant .gx-panneau h2 { color:var(--gx-titre,#1c246b); }
+.gx-app-fasteval .v2-section-entete h2 { color:var(--gx-titre,#1c246b); }
+.gx-app-fastgames.gx-enseignant main h2,
+.gx-app-fastgames.gx-enseignant main h3 { color:var(--gx-titre,#1c246b); }
+.v2-enseignant .fe-administration { border-left-color:var(--gx-role,#efa900); }
+/* --gx-focus N'EXISTE PAS. La variable du socle s'appelle --gx-focus-anneau
+   (ligne 138). Un var() non resolu SANS repli rend la declaration invalide au
+   calcul : `outline` retombe donc a `none`, et cette regle SUPPRIMAIT l'anneau
+   que la regle globale :focus-visible aurait pose. Resultat mesure en session
+   le 06/09/2026, au clavier : sur l'accueil School Monsters, les trois cartes
+   d'action n'avaient AUCUN indicateur de focus - ni contour ni halo. Sur celui
+   de Fast Eval, les six raccourcis n'avaient que le halo blanc, invisible sur
+   une carte blanche.
+   Le defaut datait du lot 6 du 04/09/2026, qui a cree ces composants ; il
+   etait invisible a la lecture du code (la regle a l'air juste) et
+   indetectable avec un .focus() en JavaScript, qui ne declenche pas
+   :focus-visible. Il fallait de vraies tabulations. */
+.v2-enseignant .gx-raccourci:focus-visible { outline:3px solid var(--gx-focus-anneau); outline-offset:3px; box-shadow:0 0 0 5px var(--gx-focus-halo); }
+@media (max-width:560px){.gx-tuiles{grid-template-columns:1fr}}
+.gx-tuile,
+.gx-carte-accueil{
+  position:relative;display:flex;gap:14px;align-items:center;
+  border:1px solid var(--gx-bordure);border-left:4px solid var(--gx-filet,var(--gx-marque));
+  border-radius:12px;background:var(--gx-surface);box-shadow:none;
+  text-decoration:none;color:inherit;
+  transition:box-shadow .16s ease,border-color .16s ease;
+}
+.gx-tuile,
+.gx-carte-accueil{min-height:92px;padding:15px 44px 15px 16px;}
+.gx-tuile::after,
+.gx-carte-accueil::after{
+  content:'\203A';position:absolute;right:16px;top:50%;transform:translateY(-50%);
+  color:var(--gx-filet,var(--gx-action));font-size:1.5rem;
+}
+.gx-tuile:hover,
+.gx-carte-accueil:hover{box-shadow:0 8px 20px #30343d0d;}
+.gx-tuile:focus-visible,
+.gx-carte-accueil:focus-visible{outline:3px solid var(--gx-focus-anneau);outline-offset:3px;box-shadow:0 0 0 5px var(--gx-focus-halo);}
+.gx-tuile .ic,
+.gx-carte-accueil .ic{
+  display:grid;place-items:center;flex:none;border-radius:11px;
+  background:color-mix(in srgb, var(--gx-filet,var(--gx-action)) 16%, #fff);
+  color:var(--gx-filet,var(--gx-action));
+}
+.gx-tuile .ic{width:52px;height:52px;border-radius:15px;font-size:1.2rem}
+.gx-tuile b{display:block;color:var(--gx-titre);font-size:1rem;font-weight:700;line-height:1.3}
+.gx-tuile small{display:block;margin-top:3px;font-size:.82rem;line-height:1.4;color:var(--gx-encre-douce)}
+.gx-tuile.gestion,
+.gx-carte-accueil.gestion{border-left-color:var(--gx-role,#efa900);}
+.gx-tuile.gestion .ic,
+.gx-carte-accueil.gestion .ic{
+  background:color-mix(in srgb, var(--gx-role,#efa900) 20%, #fff);color:#8a5a00;
+}
+
+.gx-colonne-contexte{display:grid;gap:16px;align-content:start}
+@media print{
+.gx-panneau{
+  border:1px solid var(--gx-bordure);border-radius:16px;background:var(--gx-surface,#fffdf6);
+  padding:20px 22px;box-shadow:0 6px 16px rgba(58,48,20,.05);
+}
+}
+.gx-panneau h2{
+  margin:0 0 14px;font-size:.72rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--gx-encre-douce);font-family:inherit;
+}
+.gx-chiffre{display:flex;align-items:baseline;gap:9px;padding:9px 0;border-bottom:1px solid var(--gx-bordure)}
+.gx-chiffre:last-of-type{border-bottom:0}
+.gx-chiffre b{font-size:1.7rem;font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums;min-width:34px;color:var(--gx-encre)}
+.gx-chiffre span{font-size:.85rem;color:var(--gx-encre-douce)}
+.gx-raccourci{
+  display:block;padding:9px 0;font-size:.88rem;font-weight:600;
+  color:color-mix(in srgb,var(--gx-filet,var(--gx-action)) 65%,black);border-bottom:1px dashed var(--gx-bordure);
+  text-decoration:none;
+}
+.gx-raccourci:last-child{border-bottom:0}
+
+.gx-grille-accueil{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+  max-width:var(--gx-large,1440px);margin:0 auto;padding:0 40px 44px;
+}
+@media (max-width:960px){.gx-grille-accueil{grid-template-columns:1fr 1fr}}
+@media (max-width:720px){.gx-grille-accueil{grid-template-columns:1fr;padding:0 20px 32px}}
+.gx-carte-accueil{
+  display:grid;grid-template-columns:52px minmax(0,1fr);grid-template-rows:auto auto;
+  column-gap:14px;row-gap:2px;align-items:center;
+}
+.gx-carte-accueil .ic{grid-column:1;grid-row:1 / span 2;width:52px;height:52px;border-radius:15px;font-size:1.2rem}
+.gx-carte-accueil b{grid-column:2;grid-row:1;align-self:end;color:var(--gx-titre);font-size:1rem;font-weight:700;line-height:1.3}
+.gx-carte-accueil small{grid-column:2;grid-row:2;align-self:start;font-size:.82rem;color:var(--gx-encre-douce);line-height:1.4}
+
+/* ---- Etat vide, lot 5 (04/09/2026) -----------------------------------
+   Planche 8 du releve du 05/09 : "un etat vide est une occasion
+   d'expliquer, pas un message d'absence". Un seul gabarit partage - un
+   symbole, une phrase qui dit comment remplir, un bouton qui y mene -
+   pour "aucun favori" (Clic & Mots), "aucune saisie aujourd'hui" (Fast
+   Eval) et les autres etats vides de meme nature. Modele repris de
+   .fg-dashboard-vide (Fast'Games), qui avait deja invente cette forme
+   sans la partager. Se colore par --gx-filet, comme le reste du lot 6/7. */
+.gx-etat-vide{align-items:center;
+}
+@media print{
+.gx-etat-vide{
+  display:grid;grid-template-columns:auto 1fr auto;gap:20px;
+  padding:24px 28px;border:1px solid var(--gx-bordure);border-radius:16px;
+  background:#fff;box-shadow:0 8px 20px rgba(58,48,20,.06);
+}
+}
+.gx-etat-vide-icone{
+  display:grid;place-items:center;width:56px;height:56px;border-radius:16px;flex:none;
+  background:color-mix(in srgb, var(--gx-filet,var(--gx-action)) 16%, #fff);
+  color:var(--gx-filet,var(--gx-action));font-size:1.6rem;
+}
+.gx-etat-vide-surtitre{
+  display:block;margin:0 0 2px;font-size:.7rem;font-weight:800;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--gx-filet,var(--gx-action));
+}
+.gx-etat-vide h2{margin:0 0 4px;font-size:1.1rem;font-weight:700;}
+.gx-etat-vide p{margin:0;color:var(--gx-encre-douce);font-size:.9rem;}
+@media (max-width:640px){
+  @media print{
+  .gx-etat-vide{grid-template-columns:1fr;text-align:center;padding:24px 20px;}
+  }
+  .gx-etat-vide-icone{justify-self:center;}
+  .gx-etat-vide a{justify-self:center;}
+}
+
+/* ---- Pastilles ----------------------------------------------------- */
+.gx-pastille{
+  display:inline-flex;
+  align-items:center;
+  padding:2px var(--gx-esp-2);
+  border-radius:var(--gx-rayon-pilule);
+  font-size:var(--gx-t-micro);
+  font-weight:600;
+}
+.gx-pastille-succes{background:var(--gx-succes-fond);color:var(--gx-succes);}
+.gx-pastille-alerte{background:var(--gx-alerte-fond);color:var(--gx-alerte);}
+.gx-pastille-erreur{background:var(--gx-erreur-fond);color:var(--gx-erreur);}
+.gx-pastille-info{background:var(--gx-info-fond);color:var(--gx-info);}
+
+/* ---- Tableau enseignant --------------------------------------------
+   Dense mais aere. L'alternance de fond est volontairement tres faible :
+   plus marquee, elle se lit comme une selection. */
+.gx-tableau-cadre{overflow-x:auto;border:1px solid var(--gx-bordure);border-radius:var(--gx-rayon-carte);background:var(--gx-surface);}
+.gx-tableau{width:100%;border-collapse:collapse;font-size:var(--gx-densite-texte, var(--gx-t-petit));}
+.gx-tableau th,
+.gx-tableau td{padding:var(--gx-densite-y,10px) var(--gx-densite-x,12px);text-align:left;}
+.gx-tableau thead th{
+  background:var(--gx-action);
+  color:#fff;
+  font-weight:600;
+  position:sticky;
+  top:0;
+}
+.gx-tableau tbody tr+tr td{border-top:1px solid var(--gx-bordure-douce);}
+.gx-tableau tbody tr:nth-child(even){background:rgba(48,52,61,.025);}
+/* Les colonnes de chiffres s'alignent : chiffres a chasse fixe. */
+.gx-tableau .gx-nombre{text-align:right;font-variant-numeric:tabular-nums;}
+.gx-tableau .gx-actions{text-align:right;white-space:nowrap;}
+
+/* ---- Messages d'etat ------------------------------------------------
+   Meme forme pour les cinq etats : un titre court, une explication, une
+   seule action. C'est la regle qui manque aujourd'hui aux trois sites. */
+.gx-etat{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:var(--gx-esp-2);
+  padding:var(--gx-esp-8) var(--gx-esp-4);
+  text-align:center;
+  background:var(--gx-surface);
+  border:1px dashed var(--gx-bordure);
+  border-radius:var(--gx-rayon-carte);
+}
+.gx-etat-signe{font-size:34px;line-height:1;}
+.gx-etat h3{margin:0;font-size:var(--gx-t-titre-2);font-weight:600;color:var(--gx-encre);}
+.gx-etat p{margin:0;max-width:44ch;color:var(--gx-encre-douce);font-size:var(--gx-t-petit);line-height:1.5;}
+
+.gx-bandeau{
+  display:flex;
+  align-items:flex-start;
+  gap:var(--gx-esp-3);
+  padding:var(--gx-esp-3) var(--gx-esp-4);
+  border-radius:var(--gx-rayon-champ);
+  font-size:var(--gx-t-petit);
+  line-height:1.45;
+}
+.gx-bandeau-succes{background:var(--gx-succes-fond);color:var(--gx-succes);}
+.gx-bandeau-alerte{background:var(--gx-alerte-fond);color:var(--gx-alerte);}
+.gx-bandeau-erreur{background:var(--gx-erreur-fond);color:var(--gx-erreur);}
+.gx-bandeau-info{background:var(--gx-info-fond);color:var(--gx-info);}
+
+/* ---- Chargement ------------------------------------------------------ */
+.gx-chargement{
+  display:inline-block;
+  width:22px;height:22px;
+  border:3px solid var(--gx-bordure);
+  border-top-color:var(--gx-action);
+  border-radius:50%;
+  animation:gx-tourne .8s linear infinite;
+}
+@keyframes gx-tourne{to{transform:rotate(360deg);}}
+
+/* Une animation qui tourne sans fin peut gener un eleve sensible au
+   mouvement, et le systeme sait le dire. */
+@media (prefers-reduced-motion: reduce){
+  .gx-chargement{animation-duration:3s;}
+  a.gx-carte{transition:none;}
+  a.gx-carte:hover{transform:none;}
+}
+
+/* ---- Telephone -------------------------------------------------------
+   Un seul point de rupture ici : le reste tient grace a auto-fit et aux
+   variables. Moins de requetes media, moins de regressions. */
+@media (max-width:720px){
+  /* Le fil reste accessible sur sa propre ligne, sans comprimer le compte. */
+  .gx-entete{min-height:56px;gap:10px;padding:9px 12px;}
+  .gx-entete-logo{max-width:112px;height:36px !important;max-height:36px !important;}
+  .gx-app-schoolmonsters .gx-entete-logo{width:auto;max-width:120px;height:36px !important;max-height:36px !important;}
+  .gx-entete .fil{order:10;flex-basis:100%;flex-wrap:wrap;font-size:.75rem;gap:6px;}
+  .gx-entete .fil a,.gx-entete .fil button{display:inline-flex;min-height:44px;align-items:center;}
+  .gx-entete .user-menu{width:auto;max-width:100%;}
+  .user-texte strong{max-width:90px;font-size:.75rem;}
+  .user-menu summary{gap:6px;padding-right:8px;}
+  .gx-entete-sortie{order:9;padding-left:0;}
+  .gx-cartouche h1{font-size:1.5rem;}
+  .gx-page{padding-top:var(--gx-esp-4);}
+  /* Liens de navigation d application, dupliques dans le menu de compte par
+     gxMenuIdentite() pour les pages qui en ont un (Fast Games). Visibles
+     seulement ici : au-dessus de 720px la navigation reste dans le bandeau. */
+  .gx-entete .user-popover a.popover-nav-mobile{display:block;}
+}
+@media (min-width:721px){
+  .gx-entete .user-popover a.popover-nav-mobile{display:none;}
+}
+
+.gx-largeur-lecture { --gx-page-largeur:var(--gx-focus); }
+.gx-largeur-grille { --gx-page-largeur:var(--gx-large); }
+.gx-largeur-riche { --gx-page-largeur:var(--gx-riche); }
+/* K01-K08, V17 (pile de police) : contrats de l'interface, hors documents imprimés. */
+@layer gx-contrats {
+ @media screen {
+  :where(.gx-typo,.gx-entete,.v2-app-header,.topbar),
+  :where(.gx-entete,.v2-app-header,.topbar) * { font-family:var(--gx-police)!important; }
+  body.gx-app-schoolmonsters { padding:0!important; }
+  :where(.gx-largeur-lecture,.gx-largeur-grille,.gx-largeur-riche) {
+   box-sizing:border-box!important; width:min(var(--gx-page-largeur),calc(100% - 32px))!important;
+   max-width:var(--gx-page-largeur)!important; margin:0 auto!important; padding:32px 0 48px!important;
+  }
+  :where(.gx-largeur-lecture,.gx-largeur-grille,.gx-largeur-riche) :where(.gx-largeur-lecture,.gx-largeur-grille,.gx-largeur-riche) { width:100%!important; padding:0!important; }
+  .dashboard { box-sizing:border-box!important; width:min(1160px,calc(100% - 32px))!important; margin:0 auto!important; padding:32px 0 48px!important; }
+  :where(.gx-entete,.v2-app-header,.topbar) {
+   box-sizing:border-box!important; min-height:76px!important; height:auto!important;
+   padding:12px max(24px,calc((100cqw - 1440px) / 2))!important;
+   margin-bottom:0!important; gap:14px!important; background:rgba(255,255,255,.9)!important;
+   border:0!important; border-bottom:3px solid var(--gx-filet,var(--gx-bordure))!important;
+   border-radius:0!important; box-shadow:0 3px 14px rgba(79,65,22,.06)!important;
+  }
+  :where(.gx-entete-logo,.v2-app-header>.logo,.v2-app-logo img,.brand-dashboard img) { height:45px!important; max-height:45px!important; object-fit:contain!important; }
+  :where(.gx-entete,.v2-app-header,.topbar) :where(.fil,.fil-navigation,.topbar-fil) {
+   font-size:14.72px!important; font-weight:400!important; line-height:22.08px!important; gap:7px!important; color:var(--gx-encre-douce)!important;
+  }
+  :where(.gx-entete,.v2-app-header,.topbar) :where(.fil,.fil-navigation,.topbar-fil) a { font-weight:600!important; }
+  :where(.gx-entete,.v2-app-header,.topbar) :where(.fil,.fil-navigation,.topbar-fil) .actuel { font-weight:700!important; }
+  .user-menu summary { font:400 16px/24px var(--gx-police)!important; box-sizing:border-box!important; min-height:44px!important; padding:5px 12px 5px 6px!important; gap:10px!important; border:1px solid var(--gx-bordure)!important; border-radius:9px!important; background:#fffdfa!important; }
+  .user-avatar { box-sizing:border-box!important; width:30px!important; height:30px!important; border-radius:50%!important; background:#fff0b7!important; color:var(--gx-encre)!important; font:700 16px/24px var(--gx-police)!important; }
+  :where(.gx-ligne-titre:not(.cm-introduction-mot),.cartes-intro,.dashboard-heading-copy,.jeu-conjugaison-entete) h1,
+  .sm-lecon-titre h1 {
+   font-family:var(--gx-police)!important; font-size:clamp(1.75rem,3vw,2.5rem)!important;
+   font-weight:600!important; line-height:1.2!important; color:var(--gx-titre)!important;
+   margin:0!important; padding:0!important; max-width:100%!important; text-align:left!important; letter-spacing:normal!important;
+  }
+  :where(.gx-ligne-titre-surtitre,.v2-page-hero-surtitre,.fe-surtitre,.cm-surtitre,.gx-ligne-titre .sm-surtitre,.dashboard-heading .eyebrow) {
+   font:600 .78rem/1.5 var(--gx-police)!important; letter-spacing:.14em!important;
+   text-transform:uppercase!important; margin:0!important; color:var(--gx-encre-douce)!important;
+  }
+  .gx-ligne-titre { box-sizing:border-box!important; position:relative!important; display:grid!important; grid-column:1/-1!important; grid-template-columns:minmax(0,1fr)!important; gap:0!important; align-items:center!important; justify-content:normal!important; width:100%!important; max-width:none!important; height:auto!important; min-height:0!important; margin:0 0 24px!important; padding:0!important; border:0!important; border-radius:0!important; background:transparent!important; box-shadow:none!important; overflow:visible!important; float:none!important; }
+  .gx-ligne-titre::before,.gx-ligne-titre::after { content:none!important; }
+  .gx-ligne-titre>* { min-width:0!important; grid-column:1!important; }
+  .gx-ligne-titre .sm-hero-contenu { padding-right:80px; grid-row:1/span 3; }
+  .gx-ligne-titre>.sm-hero-mascotte { position:static!important; grid-column:1!important; grid-row:1/span 3; justify-self:end; transform:none!important; }
+  .gx-ligne-titre>:where(a,button,form) { justify-self:start!important; max-width:100%!important; }
+  :where(.gx-ligne-titre-description,.cm-description,.ed-intro,.v2-page-hero>p,.fe-hero>p,.sm-hero-contenu>p:not(.sm-surtitre),.cartes-intro-texte>p,.dashboard-heading-copy>p:not(.eyebrow),.sm-lecon-intitule>p) {
+   font:400 .95rem/1.45 var(--gx-police)!important; color:var(--gx-encre-douce)!important;
+   margin:8px 0 0!important; max-width:68ch!important;
+  }
+  :where(.v2-section-entete,.section-header,.v2-groupes>section,.admin-section,.sm-actions-groupes>section,.admin-tab-content,.ed-periode,.fg-domaine>header,.photo-panneau,.sv-competences,.sv-inspecteur,.fg-passeport-suite,.fg-catalogue-contenu) h2 {
+   font:600 21px/1.5 var(--gx-police)!important; color:var(--gx-titre)!important;
+   margin:0 0 16px!important; padding:0!important;
+  }
+ }
+ @media screen and (min-width:1024px) {
+  :where(.gx-largeur-lecture,.gx-largeur-grille,.gx-largeur-riche) { width:min(var(--gx-page-largeur),calc(100% - 48px))!important; }
+  .dashboard { width:min(1160px,calc(100% - 48px))!important; }
+ }
+ @media screen and (max-width:720px) {
+  :where(.gx-entete,.v2-app-header,.topbar) { min-height:0!important; padding:9px 12px!important; gap:10px!important; }
+  :where(.gx-entete-logo,.v2-app-header>.logo,.v2-app-logo img,.brand-dashboard img) { height:36px!important; max-height:36px!important; }
+  :where(.gx-entete,.v2-app-header,.topbar) :where(.fil,.fil-navigation,.topbar-fil) { font-size:12px!important; line-height:18px!important; gap:6px!important; }
+  :where(.gx-entete,.v2-app-header,.topbar) :where(.fil,.fil-navigation,.topbar-fil) a { min-height:44px!important; display:inline-flex!important; align-items:center!important; }
+  .user-menu summary { padding-right:8px!important; gap:6px!important; }
+  :where(.gx-ligne-titre-description,.cm-description,.ed-intro,.v2-page-hero>p,.fe-hero>p,.sm-hero-contenu>p:not(.sm-surtitre),.cartes-intro-texte>p,.dashboard-heading-copy>p:not(.eyebrow),.sm-lecon-intitule>p) { font-size:.88rem!important; margin-top:6px!important; }
+ }
+}
+/* K09-K12 : surfaces et grilles, avec adaptateurs des structures historiques. */
+@layer gx-contrats {
+ @media screen {
+  :where(.gx-panneau,.admin-section,.section-encadree,.bulletin-card,.v2-groupes>section,.sm-actions-groupes>section,.sv-competences,.sv-inspecteur,.ed-periode,.ed-brique,.ed-mode-emploi,.cm-admin-lexique,.cm-admin-semaines,.cm-mot-principal,.cm-conjugaison,.cm-clavier,.cm-sequence,.cm-jeu,.cm-relation,.cm-apercu-mot,.fg-question,.fg-resultats,.photo-panneau,.fg-catalogue-contenu,.sm-lecon-pistes) {
+   box-sizing:border-box!important; font-family:var(--gx-police)!important;
+   background:var(--gx-surface)!important; background-image:none!important;
+   border:1px solid var(--gx-bordure)!important; border-top:3px solid var(--gx-filet,var(--gx-marque))!important;
+   border-radius:12px!important; padding:24px!important; gap:16px!important; box-shadow:none!important;
+   height:auto!important; min-height:0!important; max-height:none!important;
+  }
+  :where(.gx-tuile,.gx-carte-accueil,.app-card) {
+   box-sizing:border-box!important; position:relative!important; display:grid!important;
+   grid-template-columns:60px minmax(0,1fr)!important; grid-template-rows:auto auto!important;
+   align-items:center!important; gap:5px 16px!important; font-family:var(--gx-police)!important;
+   min-height:124px!important; height:auto!important; max-height:none!important; min-width:0!important;
+   padding:20px 40px 20px 20px!important; margin:0!important;
+   border:1px solid var(--gx-bordure)!important; border-left:4px solid var(--gx-filet,var(--gx-marque))!important;
+   border-radius:12px!important; background:var(--gx-surface)!important; box-shadow:none!important; text-decoration:none!important;
+  }
+  .app-card { --gx-filet:var(--app-accent); }
+  .gx-tuile>span:not(.ic),.app-card>span:not(.app-logo):not(.app-action) { display:contents!important; }
+  :where(.gx-tuile,.gx-carte-accueil) .ic,.app-card .app-logo {
+   grid-column:1!important; grid-row:1 / span 2!important; width:60px!important; height:60px!important;
+  }
+  .app-logo img { width:60px!important; height:60px!important; object-fit:contain!important; }
+  :where(.gx-tuile,.gx-carte-accueil) b,.app-card strong {
+   grid-column:2!important; grid-row:1!important; align-self:end!important;
+   font:700 18px/24.3px var(--gx-police)!important; color:var(--gx-titre)!important; margin:0!important;
+  }
+  :where(.gx-tuile,.gx-carte-accueil,.app-card) small {
+   grid-column:2!important; grid-row:2!important; align-self:start!important;
+   font:400 14px/20.3px var(--gx-police)!important; color:var(--gx-encre-douce)!important; margin:0!important;
+  }
+  .app-action { grid-column:2!important; grid-row:3!important; margin:0!important; padding:0!important; font:400 14px/20.3px var(--gx-police)!important; }
+  .app-action b { position:absolute!important; right:16px!important; top:50%!important; transform:translateY(-50%)!important; width:auto!important; height:auto!important; background:none!important; }
+  :where(.gx-grille,.gx-grille-accueil,.gx-tuiles,.app-list,.v2-groupe,.sm-actions-groupes>section>nav) {
+   display:grid!important; grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr))!important;
+   gap:16px!important; margin:0!important; padding:0!important;
+  }
+  /* K10 v2/B : seule la densité des grilles de navigation évolue. */
+  :where(.gx-grille,.gx-grille-accueil,.gx-tuiles,.app-list,.v2-groupe,.sm-actions-groupes>section>nav):has(:is(.gx-tuile,.gx-carte-accueil,.app-card)) { gap:20px!important; }
+  :where(.gx-tuile,.gx-carte-accueil) .ic { font-size:22.5px!important; }
+  .gx-journee-corps { width:100%!important; max-width:none!important; margin:0!important; padding:0!important; }
+ }
+ @media screen and (max-width:720px) {
+  :where(.gx-tuile,.gx-carte-accueil,.app-card) { min-height:112px!important; padding:18px 40px 18px 18px!important; grid-template-columns:56px minmax(0,1fr)!important; }
+  :where(.gx-tuile,.gx-carte-accueil) .ic,.app-card .app-logo,.app-card .app-logo img { width:56px!important; height:56px!important; }
+  :where(.gx-tuile,.gx-carte-accueil) .ic { font-size:21px!important; }
+  :where(.gx-tuile,.gx-carte-accueil) b,.app-card strong { font-size:17px!important; line-height:22.95px!important; }
+  :where(.gx-grille,.gx-grille-accueil,.gx-tuiles,.app-list,.v2-groupe,.sm-actions-groupes>section>nav):has(:is(.gx-tuile,.gx-carte-accueil,.app-card)) { gap:18px!important; }
+  :where(.gx-panneau,.admin-section,.section-encadree,.bulletin-card,.v2-groupes>section,.sm-actions-groupes>section,.sv-competences,.sv-inspecteur,.ed-periode,.ed-brique,.ed-mode-emploi,.cm-admin-lexique,.cm-admin-semaines,.cm-mot-principal,.cm-conjugaison,.cm-clavier,.cm-sequence,.cm-jeu,.cm-relation,.cm-apercu-mot,.fg-question,.fg-resultats,.photo-panneau,.fg-catalogue-contenu,.sm-lecon-pistes) { padding:16px!important; }
+ }
+}
+/* K13-K16 et K24 : commandes d'interface ; les touches pédagogiques sont distinctes. */
+@layer gx-contrats {
+ .gx-app-schoolmonsters { --gx-action:var(--gx-action-schoolmonsters); --gx-action-survol:#684393; --gx-action-encre:#684393; }
+ .gx-app-clicetmots,.cm-document { --gx-action:var(--gx-action-clicetmots); --gx-action-survol:#795100; --gx-action-encre:#795100; }
+ .gx-app-fastgames { --gx-action:var(--gx-action-fastgames); --gx-action-survol:color-mix(in srgb,var(--gx-app-fastgames) 64%,black); --gx-action-encre:var(--gx-action-survol); }
+ @media screen {
+  :where(.gx-bouton,.v2-bouton,.v2-bouton-principal,.v2-bouton-danger,.v2-btn-mini,.v2-afficher-code,.v2-code-form button,.fe-continuer,.fe-page .btn,.journal-bouton,.journal-vide-bouton,.bulletin-action,.cartes-bouton,.ed-bouton,.ed-retour,.fg-bouton,.admin-row-actions button,.admin-danger button,.cm-admin-lexique>form>button,.cm-admin-semaines button,.clicetmots-page .no-print button,.cm-page-fiches-imprimables>div>button,.gx-commande,.lecteur .barre button,.lecteur .barre a.bouton) {
+   box-sizing:border-box!important; display:inline-flex!important; align-items:center!important; justify-content:center!important;
+   font:600 14px/21px var(--gx-police)!important; min-height:44px!important; max-height:none!important;
+   padding:0 16px!important; gap:8px!important; border:1px solid var(--gx-action)!important; border-radius:10px!important;
+   background:var(--gx-surface)!important; color:var(--gx-action-encre)!important;
+   box-shadow:none!important; transform:none!important; opacity:1!important; text-decoration:none!important;
+  }
+  :where(.gx-bouton-principal,.v2-bouton-principal,.fe-continuer,.fe-page .btn-primary,.journal-bouton.principal,.journal-vide-bouton,.bulletin-action-primary,.cartes-bouton.principal,.ed-bouton.ed-fort,.fg-bouton-principal,.cm-admin-lexique>form>button,.gx-commande-principale,.lecteur .bouton-principal,.lecteur .bouton-audio.en-lecture) {
+   background:var(--gx-action)!important; border-color:transparent!important; color:white!important;
+  }
+  :where(.gx-bouton-principal,.v2-bouton-principal,.fe-continuer,.fe-page .btn-primary,.journal-bouton.principal,.journal-vide-bouton,.bulletin-action-primary,.cartes-bouton.principal,.ed-bouton.ed-fort,.fg-bouton-principal,.cm-admin-lexique>form>button,.gx-commande-principale,.lecteur .bouton-principal,.lecteur .bouton-audio.en-lecture):hover:not(:disabled):not([aria-disabled=true]) { background:var(--gx-action-survol)!important; }
+  :where(.gx-bouton-danger,.v2-bouton-danger,.fe-page .btn-danger,.admin-danger button) { color:var(--gx-erreur)!important; border-color:var(--gx-erreur)!important; }
+  :where(.gx-bouton,.v2-bouton,.v2-bouton-principal,.v2-bouton-danger,.v2-btn-mini,.v2-afficher-code,.v2-code-form button,.fe-continuer,.fe-page .btn,.journal-bouton,.journal-vide-bouton,.bulletin-action,.cartes-bouton,.ed-bouton,.ed-retour,.fg-bouton,.admin-row-actions button,.admin-danger button,.cm-admin-lexique>form>button,.cm-admin-semaines button,.clicetmots-page .no-print button,.cm-page-fiches-imprimables>div>button,.gx-commande,.lecteur .barre button,.lecteur .barre a.bouton):where(:disabled,[aria-disabled=true]) { opacity:.5!important; transform:none!important; cursor:not-allowed!important; }
+  :where(.gx-champ input,.gx-champ select,.v2-fasteval input,.v2-fasteval select,.fe-page input,.fe-page select,.admin-section input,.admin-section select,.ed-champ,.ed-recherche,.ed-libelle,.ed-zone,.fg-filtres input,.fg-filtres select,.mj-outils input,.mj-outils select,.fg-selecteur-programme select,.sv-filtres input,.sv-filtres select,.clicetmots-page input,.clicetmots-page select,.cm-document .no-print input,.cm-document .no-print select,.v2-app-header input,.lecteur .barre input,.lecteur .barre select):not([type=checkbox],[type=radio],[type=range],[type=hidden],.cm-jeu input) {
+   box-sizing:border-box!important; font:400 14px/21px var(--gx-police)!important;
+   min-height:44px!important; padding:0 12px!important; border:1px solid var(--gx-bordure)!important; border-radius:10px!important;
+   color:var(--gx-encre)!important; background-color:white!important; box-shadow:none!important;
+  }
+  textarea.ed-zone,.gx-champ textarea { font:400 14px/21px var(--gx-police)!important; padding:12px!important; border:1px solid var(--gx-bordure)!important; border-radius:10px!important; background:white!important; color:var(--gx-encre)!important; }
+  .gx-champ { gap:4px!important; margin-bottom:16px!important; }
+  :where(.gx-champ label,.ed-etiquette,.admin-section label,.v2-champ-bloc label,.fe-page label:not(.step-title),.cm-admin-lexique label,.cm-admin-semaines label,.v2-champ-outil label,.sv-filtres label,.mj-outils label,.fg-selecteur-programme label,.ed-ligne>label,.ed-corps>label.ed-bloc,.clicetmots-page label:not(.admin-switch),.cm-document .no-print label) { font:600 14px/21px var(--gx-police)!important; }
+  :where(.gx-champ-aide,.gx-champ-erreur) { font:400 13px/19.5px var(--gx-police)!important; color:var(--gx-encre-douce)!important; }
+  .gx-champ-erreur { color:var(--gx-erreur)!important; }
+
+ }
+}
+
+@layer gx-contrats { @media screen { .gx-bouton.gx-commande-eleve { min-height:52px!important; } } }
+
+@layer gx-etats { @media screen {
+ :focus-visible { outline:3px solid var(--gx-focus-anneau)!important; outline-offset:2px!important; box-shadow:0 0 0 5px var(--gx-focus-halo)!important; }
+} }
+@layer gx-contrats { @media screen {
+ /* Chromium ignore l'interligne du select avec appearance:auto. La flèche
+    occupe le padding existant, sans réduire la zone réservée au texte. */
+ :where(.gx-champ select,.v2-fasteval select,.fe-page select,.admin-section select,select.ed-champ,.fg-filtres select,.mj-outils select,.fg-selecteur-programme select,.sv-filtres select,.clicetmots-page select,.cm-document .no-print select,.lecteur .barre select) {
+  appearance:none!important;
+  background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%)!important;
+  background-position:right 8px center,right 4px center!important; background-size:4px 4px!important; background-repeat:no-repeat!important;
+ }
+} }
+@layer gx-contrats { @media screen {
+ :where(.gx-largeur-lecture,.gx-largeur-grille,.gx-largeur-riche) :where(.gx-largeur-lecture,.gx-largeur-grille,.gx-largeur-riche) { width:100%!important; padding:0!important; }
+} }
+/* K17-K21 : navigation, données de gestion et retours d'état. */
+@layer gx-contrats { @media screen {
+ :where(.admin-tabs,.fg-navigation) { display:flex!important; gap:8px!important; padding:0!important; margin:0 0 24px!important; border-bottom:1px solid var(--gx-bordure)!important; }
+ :where(.admin-tabs button,.fg-navigation a) { box-sizing:border-box!important; display:inline-flex!important; align-items:center!important; font:600 14px/21px var(--gx-police)!important; min-height:44px!important; padding:10px 16px!important; margin:0!important; border:0!important; border-bottom:3px solid transparent!important; border-radius:0!important; background:transparent!important; color:var(--gx-encre)!important; box-shadow:none!important; transform:none!important; }
+ :where(.admin-tabs button,.fg-navigation a)[aria-current=page] { border-bottom-color:var(--gx-filet)!important; color:var(--gx-action-encre)!important; }
+ :where(.admin-tabs button,.fg-navigation a):hover { color:var(--gx-action-encre)!important; }
+ :where(.gx-tableau,.v2-table,.fe-page .table,.journal-tableau,.admin-tab-content table) { width:100%!important; border-collapse:collapse!important; font:400 14px/21px var(--gx-police)!important; color:var(--gx-encre)!important; }
+ :where(.gx-tableau,.v2-table,.fe-page .table,.journal-tableau,.admin-tab-content table) :where(th,td) { font:400 14px/21px var(--gx-police)!important; padding:8px 12px!important; border:0!important; border-bottom:1px solid var(--gx-bordure-douce)!important; text-align:left!important; }
+ :where(.gx-tableau,.v2-table,.fe-page .table,.journal-tableau,.admin-tab-content table) th { font-weight:600!important; letter-spacing:normal!important; text-transform:none!important; }
+ :where(.gx-tableau,.v2-table,.fe-page .table,.journal-tableau,.admin-tab-content table) thead th { background:color-mix(in srgb,var(--gx-filet,var(--gx-marque)) 12%,var(--gx-surface))!important; color:var(--gx-encre)!important; }
+ :where(.gx-tableau,.v2-table,.fe-page .table,.journal-tableau,.admin-tab-content table) :where(.gx-nombre,.text-right,.text-end) { text-align:right!important; }
+ :where(.gx-tableau-cadre,.table-responsive-fasteval,.journal-tableau-wrap,.admin-liste-cadre,.v2-table-cadre) { border:1px solid var(--gx-bordure)!important; border-radius:12px!important; }
+ :where(.gx-pastille,.fg-pastille) { display:inline-flex!important; align-items:center!important; font:600 13px/19.5px var(--gx-police)!important; padding:2px 8px!important; border:0!important; border-radius:999px!important; box-shadow:none!important; }
+ :where(.gx-pastille-succes,.fg-pastille-succes) { background:var(--gx-succes-fond)!important; color:var(--gx-succes)!important; }
+ :where(.gx-pastille-alerte,.fg-pastille-ambre) { background:var(--gx-alerte-fond)!important; color:var(--gx-alerte)!important; }
+ .gx-pastille-erreur { background:var(--gx-erreur-fond)!important; color:var(--gx-erreur)!important; }
+ :where(.gx-pastille-info,.fg-pastille-info) { background:var(--gx-info-fond)!important; color:var(--gx-info)!important; }
+ .fg-pastille-neutre { background:var(--gx-surface)!important; color:var(--gx-encre-douce)!important; }
+ .gx-etat-vide { display:grid!important; grid-template-columns:auto minmax(0,1fr) auto!important; gap:16px!important; padding:24px!important; border:1px solid var(--gx-bordure)!important; border-top:3px solid var(--gx-filet,var(--gx-marque))!important; border-radius:12px!important; background:var(--gx-surface)!important; box-shadow:none!important; text-align:left!important; }
+ .gx-etat-vide h2 { font:600 21px/31.5px var(--gx-police)!important; color:var(--gx-titre)!important; margin:0 0 16px!important; }
+ .gx-etat-vide p { font:400 14px/21px var(--gx-police)!important; color:var(--gx-encre-douce)!important; margin:0!important; }
+ .gx-etat-vide-icone { width:56px!important; height:56px!important; }
+ :where(.gx-bandeau,.ed-avis,.fg-message-info,.v2-message,.message-admin,.message-bibliotheque) { box-sizing:border-box!important; font:400 14px/21px var(--gx-police)!important; padding:12px 16px!important; border:0!important; border-radius:10px!important; gap:8px!important; box-shadow:none!important; }
+ :where(.gx-bandeau-info,.ed-avis-info,.fg-message-info,.v2-message,.message-admin,.message-bibliotheque) { background:var(--gx-info-fond)!important; color:var(--gx-info)!important; }
+ :where(.gx-bandeau-succes,.ed-avis-ok) { background:var(--gx-succes-fond)!important; color:var(--gx-succes)!important; }
+ .gx-bandeau-alerte { background:var(--gx-alerte-fond)!important; color:var(--gx-alerte)!important; }
+ .gx-bandeau-erreur { background:var(--gx-erreur-fond)!important; color:var(--gx-erreur)!important; }
+ :where(.gx-bandeau,.ed-avis,.fg-message-info)>:where(svg,img) { width:20px!important; height:20px!important; }
+} @media screen and (max-width:720px) {
+ .gx-etat-vide { grid-template-columns:minmax(0,1fr)!important; padding:16px!important; }
+ .gx-etat-vide-icone,.gx-etat-vide a { justify-self:start!important; }
+} }
+
+/* Le support absorbe la blockification des enfants flex ; la pastille reste inline-flex. */
+.gx-pastille-support { font-size:0; line-height:0; }
+/* K23 : le même titre pédagogique pour les matières et les leçons. */
+@layer gx-contrats { @media screen {
+ .sm-lecon-titre {
+  box-sizing:border-box!important; position:relative!important; display:grid!important;
+  grid-template-columns:minmax(0,1fr) 72px!important; grid-template-rows:auto!important;
+  align-items:center!important; gap:16px!important; width:100%!important; max-width:none!important;
+  min-height:100px!important; height:auto!important; max-height:none!important; float:none!important;
+  padding:12px 16px 12px 20px!important; margin:0!important;
+  border:1px solid var(--gx-bordure)!important; border-top:3px solid var(--gx-filet)!important;
+  border-radius:12px!important; background:var(--gx-surface)!important; box-shadow:var(--gx-ombre-carte)!important;
+ }
+ .sm-lecon-titre>h1 { grid-column:1!important; grid-row:1!important; min-width:0!important; max-width:100%!important; }
+ .sm-lecon-titre h1 :where(span,em,b,strong) { font:inherit!important; color:inherit!important; }
+ .sm-lecon-titre>.sm-lecon-mascotte {
+  position:static!important; display:block!important; grid-column:2!important; grid-row:1!important;
+  align-self:center!important; justify-self:end!important; width:72px!important; height:72px!important;
+  min-height:0!important; max-height:72px!important; max-width:72px!important;
+  padding:0!important; margin:0!important; border:0!important; transform:none!important; object-fit:contain!important;
+ }
+ .sm-lecon-titre>.sm-lecon-mascotte img { display:block!important; width:100%!important; height:100%!important; max-width:none!important; max-height:none!important; object-fit:contain!important; margin:0!important; }
+} @media screen and (max-width:720px) {
+ .sm-lecon-titre { grid-template-columns:minmax(0,1fr) 56px!important; gap:10px!important; padding:10px 12px 10px 16px!important; min-height:80px!important; }
+ .sm-lecon-titre>.sm-lecon-mascotte { width:56px!important; height:56px!important; max-width:56px!important; max-height:56px!important; }
+} }
+
+@layer gx-contrats { @media screen {
+ .sm-lecon-intitule { grid-column:1!important; grid-row:1!important; min-width:0!important; }
+ .sm-liste-page #contenu.container_12 { display:grid!important; grid-template-columns:minmax(0,1fr)!important; gap:24px!important; }
+ .sm-liste-page #contenu.container_12>.clear { display:none!important; }
+ .sm-liste-page #contenu.container_12>.text7 { width:100%!important; margin:0!important; padding:24px!important; border:1px solid var(--gx-bordure)!important; border-top:3px solid var(--gx-filet)!important; border-radius:12px!important; background:var(--gx-surface)!important; box-shadow:none!important; }
+} @media screen and (max-width:720px) {
+ .sm-liste-page #contenu.container_12>.text7 { padding:16px!important; }
+} }
+
+/* K11 et K16 : cartes informatives et groupes de saisie, hors commandes pédagogiques. */
+@layer gx-contrats { @media screen {
+ :where(.gx-carte:not(.admin-section,.sm-lecon-titre),.admin-stats>div,.fg-indicateurs>article) { box-sizing:border-box!important; display:flex!important; flex-direction:column!important; gap:8px!important; padding:16px!important; border:1px solid var(--gx-bordure)!important; border-radius:12px!important; background:var(--gx-surface)!important; box-shadow:var(--gx-ombre-carte)!important; }
+ :where(.gx-champ,.v2-champ-bloc,.v2-champ-outil,.admin-section .champ,.date-field,.sv-filtres label,.mj-outils label,.fg-selecteur-programme label,.ed-ligne>label:has(>.ed-champ),.ed-corps>label.ed-bloc,.clicetmots-page label:has(>input:not([type=checkbox],[type=radio]),>select),.cm-document .no-print label:has(>input,>select)) { display:grid!important; gap:4px!important; margin-bottom:16px!important; }
+ :where(.gx-champ,.v2-champ-bloc,.v2-champ-outil,.admin-section .champ,.date-field,.sv-filtres label,.mj-outils label,.fg-selecteur-programme label,.ed-ligne>label,.ed-corps>label.ed-bloc,.clicetmots-page label,.cm-document .no-print label)>:where(input,select,label,span,textarea) { margin-top:0!important; margin-bottom:0!important; }
+ :where(.clicetmots-page label:not(.admin-switch)>span,.cm-document .no-print label>span,.date-field label) { font:600 14px/21px var(--gx-police)!important; }
+} }
+
+
+/* Composition B des accueils validée : les composants et les petits écrans gardent leurs contrats. */
+@layer gx-contrats {
+ @media screen and (min-width:1024px) {
+  .gx-accueil-compose { width:min(var(--gx-riche),calc(100% - 48px))!important; max-width:var(--gx-riche)!important; }
+  .gx-accueil-compose.dashboard .app-list { grid-template-columns:repeat(2,minmax(0,1fr))!important; }
+  .gx-accueil-compose :is(.v2-groupes,.sm-actions-groupes) { gap:32px!important; }
+ }
+ @media screen and (min-width:1280px) {
+  .gx-accueil-compose .sm-actions-groupes { grid-template-columns:minmax(0,2fr) minmax(0,1fr)!important; }
+  .gx-accueil-compose .gx-journee-corps { display:grid!important; grid-template-columns:minmax(0,1fr) 320px!important; gap:32px!important; align-items:start!important; }
+  .gx-accueil-compose .v2-groupes { grid-template-columns:minmax(0,1fr)!important; }
+  .gx-accueil-compose .v2-groupe { grid-template-columns:repeat(2,minmax(0,1fr))!important; }
+  .gx-accueil-compose .v2-groupe>.gx-raccourci { grid-column:1/-1!important; }
+  .gx-accueil-compose .gx-colonne-contexte { grid-template-columns:minmax(0,1fr)!important; margin-top:0!important; }
+  .gx-accueil-compose .fg-catalogue { grid-template-columns:240px minmax(0,1fr)!important; gap:32px!important; }
+  .gx-accueil-compose .fg-matieres { grid-template-columns:minmax(0,1fr)!important; }
+ }
+}

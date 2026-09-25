@@ -1,0 +1,687 @@
+/* Habillage commun des pages de matières School Monsters. */
+* { box-sizing: border-box; }
+
+html { min-height: 100%; }
+
+body,
+body.theme-clair {
+  min-height: 100vh;
+  margin: 0;
+  padding: 28px 18px 48px;
+  background: #f2ecc4 !important;
+  color: #2c2822;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container_12 {
+  position: relative;
+  width: min(1068px, 100%) !important;
+  margin: 0 auto !important;
+}
+
+/* En-tête : retour, titre et mascotte de la matière. */
+.container_12 > .grid_2:first-child,
+.container_12 > .text4,
+.container_12 > .text4 + .grid_2 {
+  min-height: 138px;
+  margin-bottom: 22px;
+  background: rgba(255, 255, 255, .68);
+  border-top: 1px solid rgba(184, 177, 138, .65);
+  border-bottom: 1px solid rgba(184, 177, 138, .65);
+}
+
+.container_12 > .grid_2:first-child {
+  width: 140px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 37px 12px;
+  border-left: 1px solid rgba(184, 177, 138, .65);
+  border-radius: 14px 0 0 14px;
+  text-align: center;
+}
+
+.container_12 > .grid_2:first-child a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 104px;
+  min-height: 42px;
+  padding: 9px 13px;
+  border-radius: 9px;
+  background: var(--gx-app-schoolmonsters, #7b4bb7);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: 0 3px 10px rgba(14, 151, 137, .18);
+}
+
+.container_12 > .grid_2:first-child a::after { content: "retour"; margin-left: 7px; }
+.container_12 > .grid_2:first-child img {
+  display: block;
+  max-width: 38px !important;
+  max-height: 38px !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+.container_12 > .grid_2:first-child .retour {
+  display: none;
+}
+
+.container_12 > .text4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 140px) !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 18px 190px 18px 22px;
+  border-right: 1px solid rgba(184, 177, 138, .65);
+  border-radius: 0 14px 14px 0;
+  text-align: center;
+}
+
+.container_12 > .text4 p {
+  margin: 0;
+  color: var(--gx-encre, #30343d);
+  /* Le titre est le texte le plus vu de la page : il passe a la police
+     commune, meme si le corps de la page reste sur l'ancienne feuille.
+     C'est la que la coherence se voit, et on ne touche pas au texte des
+     activites, que personne n'a relu depuis longtemps. */
+  font-family: 'Lexend', system-ui, Arial, sans-serif !important;
+  font-size: clamp(24px, 3.2vw, 36px) !important;
+  font-weight: 500;
+  line-height: 1.18;
+}
+
+.container_12 > .text4 span { color: #684393 !important; }
+
+.container_12 > .text4 + .grid_2 {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 168px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 10px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
+.container_12 > .text4 + .grid_2 img {
+  display: block;
+  /* Plus grande qu'avant (94 px), mais bornee en hauteur pour ne pas
+     depasser la bande : les monstres larges gagnent en largeur, les monstres
+     hauts restent dans la ligne. */
+  max-width: 148px !important;
+  max-height: 118px !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Listes d'activités. */
+.container_12 > .text7 {
+  float: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.container_12 > .text7 p { margin: 0 0 9px !important; }
+.container_12 > .text7 p:last-child { margin-bottom: 0 !important; }
+.container_12 > .text7 > br { display: none !important; }
+.container_12 > .text7 + .clear + .text7 { margin-top: 9px !important; }
+.container_12 > .text7 ~ .text7 { margin-top: 9px !important; }
+.container_12 > .liste-imagiers { margin-top: 9px !important; }
+.container_12 > .text7 > p:not(:has(a)) { display: none; }
+
+.titre-groupe-activites {
+  margin: 18px 0 8px;
+  padding-left: 11px;
+  border-left: 4px solid #12baa6;
+  color: #2c2822;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.titre-groupe-activites:first-child { margin-top: 0; }
+
+.container_12 > .text7 p > a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 58px;
+  padding: 9px 13px 9px 16px;
+  border: 1px solid #d8d1aa;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, .92);
+  color: #2c2822 !important;
+  font-size: 17px;
+  line-height: 1.35;
+  text-decoration: none !important;
+  transition: border-color .15s, background .15s, transform .15s;
+}
+
+.container_12 > .text7 p > a::after {
+  content: "Ouvrir l’activité";
+  flex: 0 0 auto;
+  margin-left: auto;
+  padding: 7px 12px;
+  border-radius: 8px;
+  background: var(--gx-app-schoolmonsters, #7b4bb7);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.container_12 > .text7 p > a:hover,
+.container_12 > .text7 p > a:focus-visible {
+  border-color: #12baa6;
+  background: #fff;
+  transform: translateX(3px);
+}
+
+@media(max-width:640px){
+  .container_12 > .text7 p > a { min-height:54px; padding:9px 11px; font-size:15px; }
+  .container_12 > .text7 p > a::after { content:"Ouvrir"; padding:6px 9px; font-size:12px; }
+}
+
+/* Les quelques pages multimédias conservent leur contenu, mais respirent mieux. */
+.jeux-vocabulaire {
+  clear: both;
+  display: grid;
+  grid-template-columns: minmax(190px, .72fr) minmax(420px, 1.6fr);
+  gap: 14px;
+  width: 100%;
+  margin: 20px 0 0;
+}
+
+.jeu-ecoute,
+.jeu-alphabet {
+  min-height: 176px;
+  border: 1px solid #d8d1aa;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .82);
+  box-shadow: 0 5px 16px rgba(55, 49, 36, .07);
+}
+
+.jeu-ecoute {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 18px;
+  color: #2c2822 !important;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+.jeu-ecoute img { display: block; width: auto; max-width: 118px; max-height: 118px; }
+.jeu-alphabet { display: flex; align-items: center; justify-content: center; gap: 26px; padding: 20px 28px; }
+.jeu-alphabet > img { width: auto; max-width: 105px; max-height: 122px; }
+
+.jeu-alphabet h2 {
+  margin: 0 0 14px;
+  color: #2c2822;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.niveaux-jeu { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+
+.niveau-jeu {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 92px;
+  min-height: 44px;
+  padding: 7px 12px;
+  border: 1px solid #b8b18a;
+  border-radius: 8px;
+  background: #fff;
+  color: #2c2822 !important;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none !important;
+  box-sizing: border-box;
+}
+
+.niveau-jeu:hover,
+.niveau-jeu:focus-visible,
+.jeu-ecoute:hover,
+.jeu-ecoute:focus-visible { border-color: #12baa6; background: #f8fffd; }
+
+.niveau-1 { border-left: 5px solid #53aa64; }
+.niveau-2 { border-left: 5px solid #e1b929; }
+.niveau-3 { border-left: 5px solid #df4755; }
+
+.lien-jeu-calcul {
+  clear: both;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: min(720px, calc(100% - 40px));
+  margin: 24px auto 8px;
+  padding: 14px 18px;
+  border: 1px solid #d8d1aa;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .9);
+  color: #2c2822 !important;
+  text-decoration: none !important;
+  box-shadow: 0 5px 16px rgba(55, 49, 36, .08);
+  box-sizing: border-box;
+  transition: border-color .15s, transform .15s, box-shadow .15s;
+}
+
+.lien-jeu-calcul:hover,
+.lien-jeu-calcul:focus-visible {
+  border-color: #12baa6;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(14, 151, 137, .13);
+}
+
+.lien-jeu-calcul > img { width: auto !important; max-width: 82px; max-height: 70px; }
+.lien-jeu-calcul span { flex: 1; }
+.lien-jeu-calcul strong,
+.lien-jeu-calcul small { display: block; }
+.lien-jeu-calcul strong { margin-bottom: 4px; color: #0e9789; font-size: 20px; }
+.lien-jeu-calcul small { color: #575143; font-size: 15px; line-height: 1.3; }
+.lien-jeu-calcul b {
+  padding: 9px 13px;
+  border-radius: 8px;
+  background: var(--gx-app-schoolmonsters, #7b4bb7);
+  color: #fff;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.lien-jeu-marchande {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 24px auto 8px;
+  padding: 15px 18px;
+  border: 1px solid #d8d1aa;
+  border-radius: 12px;
+  background: rgba(255,255,255,.82);
+  color: #2c2822 !important;
+  text-decoration: none !important;
+  box-shadow: 0 5px 16px rgba(55,49,36,.08);
+  transition: border-color .15s, box-shadow .15s, transform .15s;
+}
+.lien-jeu-marchande:hover { border-color:#12baa6; box-shadow:0 8px 20px rgba(14,151,137,.13); transform:translateY(-2px); }
+.lien-jeu-marchande img { width:auto !important; max-width:80px; max-height:70px; }
+.lien-jeu-marchande span { flex:1; }
+.lien-jeu-marchande strong,.lien-jeu-marchande small { display:block; }
+.lien-jeu-marchande strong { margin-bottom:4px; color:#0e9789; font-size:20px; }
+.lien-jeu-marchande small { color:#575143; font-size:15px; line-height:1.35; }
+.lien-jeu-marchande b { padding:9px 16px; border-radius:8px; background:#12baa6; color:#fff; white-space:nowrap; }
+
+.lien-jeu-conjugaison {
+  display:flex; align-items:center; gap:18px; margin:24px auto 8px; padding:15px 18px;
+  border:1px solid #d8d1aa; border-radius:12px; background:rgba(255,255,255,.9);
+  color:#2c2822 !important; text-decoration:none !important; box-shadow:0 5px 16px rgba(55,49,36,.08);
+  transition:border-color .15s,box-shadow .15s,transform .15s;
+}
+.lien-jeu-conjugaison:hover { border-color:#12baa6; box-shadow:0 8px 20px rgba(14,151,137,.13); transform:translateY(-2px); }
+.lien-jeu-conjugaison img { width:auto !important; max-width:82px; max-height:72px; }
+.lien-jeu-conjugaison span { flex:1; }
+.lien-jeu-conjugaison strong,.lien-jeu-conjugaison small { display:block; }
+.lien-jeu-conjugaison strong { margin-bottom:4px; color:#0e9789; font-size:20px; }
+.lien-jeu-conjugaison small { color:#575143; font-size:15px; line-height:1.35; }
+.lien-jeu-conjugaison b { padding:9px 16px; border-radius:8px; background:#12baa6; color:#fff; white-space:nowrap; }
+
+.container_12 video,
+.container_12 iframe {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+@media (max-width: 700px) {
+  body, body.theme-clair { padding: 14px 10px 32px; }
+
+  .container_12 > .grid_2:first-child,
+  .container_12 > .text4,
+  .container_12 > .text4 + .grid_2 {
+    min-height: 106px;
+  }
+
+  .container_12 > .grid_2:first-child { width: 105px !important; padding: 32px 8px; }
+  .container_12 > .grid_2:first-child a { min-width: 88px; padding: 8px; font-size: 13px; }
+  .container_12 > .text4 { width: calc(100% - 105px) !important; padding: 12px 88px 12px 8px; }
+  .container_12 > .text4 + .grid_2 { right: 2px; width: 82px !important; }
+  .container_12 > .text4 + .grid_2 img { max-width: 70px !important; max-height: 70px !important; }
+  .container_12 > .text7 { padding: 0; }
+  .container_12 > .text7 p > a { padding: 11px 12px; font-size: 15px; }
+  .jeux-vocabulaire { grid-template-columns: 1fr; }
+  .jeu-ecoute, .jeu-alphabet { min-height: 0; }
+  .jeu-ecoute { flex-direction: row; padding: 14px; }
+  .jeu-ecoute img { max-width: 76px; max-height: 76px; }
+  .jeu-alphabet { gap: 14px; padding: 16px 12px; }
+  .jeu-alphabet > img { max-width: 76px; max-height: 90px; }
+  .jeu-alphabet h2 { font-size: 17px; }
+  .niveau-jeu { min-width: 82px; padding: 6px 9px; font-size: 14px; }
+  .lien-jeu-calcul { gap: 10px; padding: 12px; }
+  .lien-jeu-calcul > img { max-width: 60px; max-height: 54px; }
+  .lien-jeu-calcul strong { font-size: 17px; }
+  .lien-jeu-calcul small { font-size: 13px; }
+  .lien-jeu-calcul b { padding: 8px 10px; font-size: 13px; }
+}
+
+/* Prototype réutilisable : choix d'activités sous forme de cartes. */
+.page-cartes-activites .grille-cartes-activites { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; max-width:780px; margin:22px auto 0; float:none; }
+.page-cartes-activites .carte-activite { position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:9px; min-height:185px; padding:24px 22px; border:1px solid #d8d1aa; border-radius:14px; background:rgba(255,255,255,.86); color:#2c2822 !important; text-align:center; text-decoration:none !important; box-shadow:0 6px 17px rgba(55,49,36,.08); box-sizing:border-box; transition:transform .15s,border-color .15s,box-shadow .15s; }
+.page-cartes-activites .carte-activite .code-activite { display:inline-flex; align-items:center; justify-content:center; min-width:58px; min-height:30px; padding:4px 10px; border-radius:16px; background:#e6f8f5; color:#0e9789; font-size:13px; font-weight:800; letter-spacing:.04em; }
+.page-cartes-activites .carte-activite strong { max-width:25ch; color:#30343d; font-size:20px; line-height:1.25; }
+.page-cartes-activites .carte-activite small { color:#6c675b; font-size:14px; line-height:1.35; }
+.page-cartes-activites .carte-activite .action-activite { margin-top:5px; padding:8px 14px; border-radius:8px; background:#12baa6; color:#fff; font-size:14px; font-weight:700; }
+.page-cartes-activites .carte-activite:hover,.page-cartes-activites .carte-activite:focus-visible { border-color:#12baa6; outline:none; transform:translateY(-3px); box-shadow:0 10px 22px rgba(14,151,137,.16); }
+.page-cartes-activites .cartes-compactes { grid-template-columns:1fr; max-width:960px; gap:10px; }
+.page-cartes-activites .cartes-compactes .carte-activite { display:grid; grid-template-columns:76px minmax(0,1fr) 142px; min-height:58px; padding:8px 13px; gap:13px; text-align:left; }
+.page-cartes-activites .cartes-compactes .carte-activite strong { max-width:none; font-size:17px; }
+.page-cartes-activites .cartes-compactes .action-activite { justify-self:end; margin-top:0; padding:7px 12px; font-size:13px; }
+.page-cartes-activites .cartes-compactes .code-activite { justify-self:start; }
+@media(max-width:760px){ .page-cartes-activites .grille-cartes-activites { grid-template-columns:1fr; max-width:520px; gap:13px; } .page-cartes-activites .carte-activite { min-height:155px; } }
+@media(max-width:760px){ .page-cartes-activites .cartes-compactes .carte-activite { grid-template-columns:62px minmax(0,1fr); min-height:64px; padding:8px 10px; } .page-cartes-activites .cartes-compactes .action-activite { display:none; } .page-cartes-activites .cartes-compactes .carte-activite strong { font-size:15px; } }
+
+/* Vidéos pédagogiques : titre fortement contrasté et lecteur bien cadré. */
+.page-videos-geometrie .container_12 > .text4 { flex-direction:column; }
+.page-videos-geometrie .container_12 > .text4 > p { width:100%; margin:0 !important; }
+/* Cadree sur le bandeau : la grille lui donne 10 px de marge de chaque
+   cote, que le bandeau n'a plus depuis qu'il est d'un seul tenant. */
+.page-videos-geometrie .grille-videos-geometrie { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; width:100%; margin:20px 0 0; float:none; }
+.page-videos-geometrie .carte-video-geometrie { overflow:hidden; display:grid; grid-template-rows:1fr auto; border:1px solid rgba(184,177,138,.72); border-radius:14px; background:rgba(255,255,255,.72); box-shadow:none; }
+.page-videos-geometrie .carte-video-geometrie video { grid-row:2; }
+.page-videos-geometrie .carte-video-geometrie h2 { grid-row:1; display:flex; align-items:center; justify-content:center; gap:10px; min-height:0; margin:0; padding:11px 14px; border-bottom:1px solid rgba(184,177,138,.5); background:transparent; color:#30343d; font:600 15px/1.3 Lexend,Arial,sans-serif; text-align:center; }
+.page-videos-geometrie .carte-video-geometrie h2::before { content:""; flex:0 0 auto; width:0; height:0; border-style:solid; border-width:6px 0 6px 10px; border-color:transparent transparent transparent #0b756a; }
+.page-videos-geometrie .carte-video-geometrie video { display:block; width:100%; height:auto; aspect-ratio:3/2; background:#1f1f1f; object-fit:contain; }
+@media(max-width:800px){ .page-videos-geometrie .grille-videos-geometrie { grid-template-columns:1fr; max-width:620px; margin-left:auto; margin-right:auto; } }
+
+/* Parcours Informatique : missions lisibles et homogènes avec les autres matières. */
+.page-informatique .introduction-informatique { display:block; float:none; width:calc(100% - 20px); margin:20px 10px 18px; padding:20px; border:1px solid #d8d1aa; border-radius:14px; background:rgba(255,255,255,.88); text-align:center; box-sizing:border-box; }
+.page-informatique .introduction-informatique h1 { margin:0 0 7px; color:#0e9789; font:700 27px/1.2 Arial,sans-serif; }
+.page-informatique .introduction-informatique p { margin:0; color:#4e493e; font:16px/1.45 Arial,sans-serif; }
+.page-informatique .bouton-consigne-informatique { flex:0 0 auto; margin:0; padding:11px 18px; border:0; border-radius:9px; background:#0b756a; color:#fff; font-weight:700; cursor:pointer; box-shadow:0 4px 10px rgba(14,151,137,.18); }
+.page-informatique .audio-consigne-informatique { display:flex; float:none; align-items:center; justify-content:center; gap:14px; width:calc(100% - 20px); margin:0 10px 22px; padding:13px 16px; border:1px solid #d8d1aa; border-radius:12px; background:rgba(255,255,255,.78); text-align:center; box-sizing:border-box; }
+.page-informatique .audio-consigne-informatique audio { display:block; width:min(520px,100%); }
+.page-informatique .grille-missions-video { float:none; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; width:auto; margin:0 10px 24px; }
+.page-informatique .carte-mission-video { overflow:hidden; display:grid; grid-template-rows:1fr auto; border:1px solid rgba(184,177,138,.72); border-radius:14px; background:rgba(255,255,255,.72); box-shadow:none; }
+.page-informatique .carte-mission-video video { grid-row:2; }
+.page-informatique .carte-mission-video h2 { grid-row:1; display:flex; align-items:center; justify-content:center; gap:10px; min-height:0; margin:0; padding:11px 14px; border-bottom:1px solid rgba(184,177,138,.5); background:transparent; color:#30343d; font:600 17px/1.3 Lexend,Arial,sans-serif; text-align:center; }
+.page-informatique .carte-mission-video h2::before { content:""; flex:0 0 auto; width:0; height:0; border-style:solid; border-width:6px 0 6px 10px; border-color:transparent transparent transparent #0b756a; }
+.page-informatique .carte-mission-video video { display:block; width:100%; height:auto; aspect-ratio:16/9; border-radius:0; background:#222; object-fit:contain; }
+.page-informatique .grille-cartes-missions { float:none; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; width:auto; margin:0 10px 24px; }
+.page-informatique .carte-mission { overflow:hidden; display:flex; flex-direction:column; align-items:center; gap:8px; padding:0 0 14px; border:1px solid #d8d1aa; border-radius:13px; background:#fff; color:#2c2822 !important; text-decoration:none !important; box-shadow:0 5px 16px rgba(55,49,36,.08); transition:transform .15s,border-color .15s; }
+.page-informatique .carte-mission:hover,.page-informatique .carte-mission:focus-visible { border-color:#12baa6; outline:none; transform:translateY(-2px); }
+.page-informatique .carte-mission img { display:block; width:100%; height:125px; object-fit:cover; }
+.page-informatique .carte-mission span { color:#0e9789; font:700 19px Arial,sans-serif; }
+.page-informatique .carte-mission strong { padding:7px 12px; border-radius:8px; background:#0b756a; color:#fff; font:700 13px Arial,sans-serif; }
+.page-informatique .feuille-route-informatique { display:block; float:none; width:calc(100% - 20px); margin:0 10px 25px; }
+.page-informatique .feuille-route-informatique h2 { margin:0 0 10px; color:#2c2822; font:700 22px Arial,sans-serif; text-align:center; }
+@media(max-width:760px){ .page-informatique .grille-missions-video,.page-informatique .grille-cartes-missions { grid-template-columns:1fr; } .page-informatique .carte-mission img { height:auto; max-height:220px; } .page-informatique .audio-consigne-informatique { flex-direction:column; } }
+
+/* Vidéos du cycle de vie : même présentation que les missions Informatique. */
+.page-cycle-vie .entete-cycle-vie { display:flex; flex-direction:column; align-items:center; justify-content:center; box-sizing:border-box; }
+.page-cycle-vie .titre-cycle-vie { width:100%; margin:0 0 14px; white-space:nowrap; text-align:center; }
+.page-cycle-vie .navigation-cycle-vie > .btn-audio-quiz { margin:4px; }
+.page-cycle-vie .grille-videos-cycle-vie { float:none; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; width:100%; margin:10px 0 28px; }
+.page-cycle-vie .carte-video-cycle-vie { overflow:hidden; display:grid; grid-template-rows:1fr auto; border:1px solid rgba(184,177,138,.72); border-radius:14px; background:rgba(255,255,255,.72); box-shadow:none; }
+.page-cycle-vie .carte-video-cycle-vie video { grid-row:2; }
+.page-cycle-vie .carte-video-cycle-vie h2 { grid-row:1; display:flex; align-items:center; justify-content:center; gap:10px; min-height:0; margin:0; padding:11px 14px; border-bottom:1px solid rgba(184,177,138,.5); background:transparent; color:#30343d; font:600 16px/1.3 Lexend,Arial,sans-serif; text-align:center; }
+.page-cycle-vie .carte-video-cycle-vie h2::before { content:""; flex:0 0 auto; width:0; height:0; border-style:solid; border-width:6px 0 6px 10px; border-color:transparent transparent transparent #0b756a; }
+.page-cycle-vie .carte-video-cycle-vie h2 span { margin-left:.35em; font-size:.86em; font-weight:600; }
+.page-cycle-vie .carte-video-cycle-vie video { display:block; width:100%; height:auto; aspect-ratio:16/9; border:0; border-radius:0; background:#222; object-fit:contain; }
+@media(max-width:760px){ .page-cycle-vie .titre-cycle-vie { white-space:normal; } .page-cycle-vie .grille-videos-cycle-vie { grid-template-columns:1fr; } }
+
+/* ======================================================================== */
+/* Refonte générale des pages de matière — V2                               */
+/* ======================================================================== */
+body.gx-app-schoolmonsters,
+body.gx-app-schoolmonsters.theme-clair{
+  --gx-largeur-page:1440px;
+  padding:0 18px 56px;
+  color:#4b4f59;
+  --gx-halo-teinte: rgba(123,75,183,.10);
+    background: var(--gx-halo), var(--gx-fond) !important;
+  font-family:Lexend,system-ui,"Segoe UI",Arial,sans-serif;
+}
+body.gx-app-schoolmonsters>.gx-entete{width:min(1440px,100%);}
+body.gx-app-schoolmonsters .container_12{display:block!important;width:min(1440px,100%)!important;max-width:none!important;}
+body.sm-liste-page .container_12{display:block!important;width:min(1440px,100%)!important;max-width:none!important;}
+body.sm-liste-page .container_12>.grid_2:first-child{display:none!important;width:0!important;height:0!important;margin:0!important;border:0!important;}
+body.sm-liste-page .container_12>.text4{
+  position:relative!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  width:100%!important;
+  height:108px!important;
+  min-height:108px!important;
+  margin:0 0 22px!important;
+  padding:20px 144px 16px 30px!important;
+  overflow:hidden;
+  border:1px solid #dacfa1!important;
+  border-radius:24px!important;
+  background:linear-gradient(106deg,#fffdf8 0%,#fffdf8 62%,#eee4fb 100%)!important;
+  box-shadow:0 12px 32px rgba(58,48,20,.08)!important;
+  text-align:left!important;
+}
+.container_12>.text4::before{content:"Matière";display:block;position:absolute;left:30px;top:20px;color:#664097;font-size:.76rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;}
+/* Emprunt scope : P1-Ce1-Voca-loto.php ("Lotos des sons") reprend ce cartouche
+   sans etre une page de matiere - c'est un sous-menu de choix. Le mot
+   "Matiere" y etait inexact ; "Activite" convient a tout sous-menu de ce
+   genre. Ne change rien pour les pages de matiere reelles, qui n'ont pas
+   cette classe. Demande de le responsable technique, 07/09/2026. */
+.container_12>.text4.text4-sous-menu::before{content:"Activité";}
+.container_12>.text4::after{content:"";position:absolute;inset:0 auto 0 0;width:7px;background:#7b4bb7;}
+body.sm-liste-page .container_12>.text4 p{width:auto!important;margin-top:20px!important;color:#1c246b!important;font-size:clamp(1.85rem,3.4vw,2.75rem)!important;font-weight:600!important;line-height:1.08!important;letter-spacing:-.04em;text-align:left!important;}
+body.sm-liste-page .container_12>.text4 span{color:#1c246b!important;}
+body.sm-liste-page .container_12>.text4+.grid_2{position:absolute!important;top:0!important;right:22px!important;width:100px!important;height:108px!important;min-height:108px!important;margin:0!important;border:0!important;background:transparent!important;}
+body.sm-liste-page .container_12>.text4+.grid_2::before{content:"";position:absolute;width:78px;height:78px;border:2px solid rgba(123,75,183,.28);border-radius:24px;background:rgba(255,255,255,.52);transform:rotate(4deg);}
+body.sm-liste-page .container_12>.text4+.grid_2 img{position:relative;z-index:1;max-width:76px!important;max-height:76px!important;filter:drop-shadow(0 9px 8px rgba(48,52,61,.12));}
+.container_12>.text7{
+  padding:22px 24px 24px;
+  border:1px solid #dacfa1;
+  border-left:4px solid #7b4bb7;
+  border-radius:19px;
+  background:#fffdf8;
+  box-shadow:0 8px 22px rgba(58,48,20,.07);
+}
+.container_12>.text7:has(>p>a){display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 12px;}
+.container_12>.text7:has(>p>a)>.titre-groupe-activites{grid-column:1/-1;}
+.container_12>.text7+.clear+.text7,.container_12>.text7~.text7{margin-top:16px!important;}
+.titre-groupe-activites{margin-top:16px;padding-left:0;border:0;color:#1c246b;font-family:Lexend,Arial,sans-serif;font-size:1.28rem;}
+.container_12>.text7 p{display:block;width:auto;margin:0!important;vertical-align:top;}
+.container_12>.text7 p>a{min-height:78px;padding:14px 16px;border-color:#e2d9b7;border-left:4px solid #7b4bb7;border-radius:14px;background:#fff;color:#1c246b!important;font-size:.96rem;font-weight:600;box-shadow:none;}
+.container_12>.text7 p>a::after{content:"→";display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;padding:0;border-radius:50%;background:#f1eafb;color:#60359a;font-size:1.25rem;}
+.container_12>.text7 p>a:hover,.container_12>.text7 p>a:focus-visible{border-color:#7b4bb7;box-shadow:0 9px 18px rgba(76,48,112,.10);transform:translateY(-2px);}
+.jeux-vocabulaire,.lien-jeu-calcul,.lien-jeu-marchande,.lien-jeu-conjugaison{border-color:#dacfa1;border-radius:18px;background:#fffdf8;}
+
+@media(max-width:760px){
+  body.gx-app-schoolmonsters,body.gx-app-schoolmonsters.theme-clair{padding:0 10px 36px;}
+  .container_12>.text4{min-height:0;padding:28px 22px;border-radius:19px;}
+  .container_12>.text4::before{position:static;margin-bottom:8px;}
+  .container_12>.text4{display:block;}
+  .container_12>.text4 p{margin-top:0;font-size:clamp(1.9rem,9vw,2.7rem)!important;}
+  .container_12>.text4+.grid_2{display:none;}
+  .container_12>.text7{padding:18px 14px;}
+  .container_12>.text7:has(>p>a){grid-template-columns:1fr;}
+  .container_12>.text7 p,.container_12>.text7 p:nth-of-type(even){display:block;width:100%;margin:0!important;}
+  .container_12>.text7 p>a{min-height:68px;}
+}
+
+/* Les pages de matière ne disposent pas toutes d'un jeu associé. Quand il
+   existe, les deux familles sont pourtant deux intentions différentes : on
+   découvre une notion avant de s'y entraîner. Cette composition reprend la
+   maquette sans inventer une reprise ou une progression que le serveur ne
+   fournit pas. */
+.container_12>.text7:has(>p>a)::before{
+  content:"Découvrir";
+  grid-column:1/-1;
+  display:block;
+  margin:0 0 2px;
+  color:#1c246b;
+  font-family:Lexend,Arial,sans-serif;
+  font-size:1.24rem;
+  font-weight:600;
+  line-height:1.2;
+}
+
+body.gx-app-schoolmonsters:has(.jeux-vocabulaire) .container_12{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:18px 20px;
+  align-items:start;
+}
+body.gx-app-schoolmonsters:has(.jeux-vocabulaire) .container_12>.text4,
+body.gx-app-schoolmonsters:has(.jeux-vocabulaire) .container_12>.text4+.grid_2,
+body.gx-app-schoolmonsters:has(.jeux-vocabulaire) .container_12>.clear{
+  grid-column:1/-1;
+}
+body.gx-app-schoolmonsters:has(.jeux-vocabulaire) .container_12>.clear{display:none!important;}
+body.gx-app-schoolmonsters:has(.jeux-vocabulaire) .container_12>.text7,
+body.gx-app-schoolmonsters:has(.jeux-vocabulaire) .container_12>.jeux-vocabulaire{
+  min-height:100%;
+  margin:0!important;
+  padding:20px;
+  border:1px solid #dacfa1;
+  border-radius:19px;
+  background:#fffdf8;
+  box-shadow:0 8px 22px rgba(58,48,20,.07);
+}
+body.gx-app-schoolmonsters:has(.jeux-vocabulaire) .container_12>.text7{grid-column:1;}
+body.gx-app-schoolmonsters:has(.jeux-vocabulaire) .container_12>.jeux-vocabulaire{
+  grid-column:2;
+  grid-template-columns:1fr;
+  align-content:start;
+}
+body.gx-app-schoolmonsters:has(.jeux-vocabulaire) .jeux-vocabulaire::before{
+  content:"S'entraîner";
+  display:block;
+  margin:0 0 2px;
+  color:#1c246b;
+  font-family:Lexend,Arial,sans-serif;
+  font-size:1.24rem;
+  font-weight:600;
+  line-height:1.2;
+}
+body.gx-app-schoolmonsters:has(.jeux-vocabulaire) .jeu-ecoute,
+body.gx-app-schoolmonsters:has(.jeux-vocabulaire) .jeu-alphabet{
+  min-height:0;
+  border-color:#e2d9b7;
+  border-radius:14px;
+  box-shadow:none;
+}
+@media(max-width:860px){
+  body.gx-app-schoolmonsters:has(.jeux-vocabulaire) .container_12{display:block!important;}
+  body.gx-app-schoolmonsters:has(.jeux-vocabulaire) .container_12>.text7,
+  body.gx-app-schoolmonsters:has(.jeux-vocabulaire) .container_12>.jeux-vocabulaire{margin:0 0 16px!important;}
+}
+
+/* Variante compacte du contrat commun : meme forme et meme typographie que
+   les autres cartouches, sans agrandir les 101 pages de matiere. */
+body.sm-liste-page .container_12>.text4{
+  align-items:flex-start!important;
+  border-radius:22px!important;
+}
+body.sm-liste-page .container_12>.text4::after{
+  width:6px!important;
+}
+body.sm-liste-page .container_12>.text4::before{
+  font-size:.78rem!important;
+  font-weight:800!important;
+  letter-spacing:.14em!important;
+}
+body.sm-liste-page .container_12>.text4 p,
+body.sm-liste-page .container_12>.text4 p span{
+  margin:20px 0 0!important;
+  font-size:2.2rem!important;
+  font-weight:800!important;
+  line-height:1.15!important;
+  letter-spacing:-.025em!important;
+  text-align:left!important;
+}
+@media(max-width:720px){
+  body.sm-liste-page .container_12>.text4{
+    border-radius:22px!important;
+  }
+  body.sm-liste-page .container_12>.text4 p,
+  body.sm-liste-page .container_12>.text4 p span{
+    font-size:1.5rem!important;
+  }
+}
+
+/* LE CODE DE LA LECON DANS SON PROPRE CARTOUCHE, 07/09/2026.
+   Demande de le responsable technique, capture a l'appui : « GM 4 » etait du texte brut au debut
+   du lien, colle au titre par un tiret. C'est un repere que l’enseignante utilise
+   pour s'orienter dans sa progression - il merite d'etre lu d'un coup d'oeil,
+   pas dechiffre au milieu d'une phrase.
+
+   Violet clair sur violet fonce plutot que violet plein : le lien porte DEJA un
+   bloc violet plein a droite (« Ouvrir l'activite » / la fleche), deux aplats
+   pleins dans la meme ligne se seraient disputes le regard. Les deux valeurs
+   sont celles que la page utilise deja pour le rond de la fleche - rien de neuf
+   a decliner. Contraste mesure : 7,2:1.
+
+   `min-width` aligne les titres entre eux : les codes vont de « C1 » a
+   « Conj 15 », sans elle la liste partait en dents de scie. Le lien etant deja
+   un flex avec `gap:14px`, la pastille se pose sans autre reglage. */
+.container_12 > .text7 p > a > .code-lecon{
+  flex:0 0 auto;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:72px;
+  padding:5px 10px;
+  border-radius:9px;
+  background:#f1eafb;
+  color:#60359a;
+  font-size:.82rem;
+  font-weight:700;
+  line-height:1.2;
+  white-space:nowrap;
+}
+
+@media(max-width:640px){
+  /* Sur telephone le titre a besoin de toute la largeur : la pastille garde sa
+     forme mais cesse de reserver une colonne. */
+  .container_12 > .text7 p > a > .code-lecon{
+    min-width:0;
+    padding:4px 8px;
+    font-size:.76rem;
+  }
+}
+
+/* Listes fg3 : un titre, puis les codes et les leçons dans leur ordre pédagogique. */
+html body.gx-app-schoolmonsters.sm-liste-page .container_12 { width:min(1160px,100%)!important; }
+html body.sm-liste-page .container_12>.text4 { height:auto!important; min-height:72px!important; padding:0 90px 0 0!important; margin:28px 0 24px!important; border:0!important; border-radius:0!important; background:none!important; box-shadow:none!important; align-items:center!important; }
+html body.sm-liste-page .container_12>.text4::before,html body.sm-liste-page .container_12>.text4::after { display:none!important; }
+html body.sm-liste-page .container_12>.text4 h1 { margin:0; font:600 clamp(1.75rem,3vw,2.5rem)/1.2 var(--gx-police,Lexend,sans-serif); color:var(--gx-titre); text-align:left; }
+html body.sm-liste-page .container_12>.text4+.grid_2 { top:0!important; right:0!important; width:72px!important; height:72px!important; min-height:72px!important; }
+html body.sm-liste-page .container_12>.text4+.grid_2::before { display:none!important; }
+html body.sm-liste-page .container_12>.text4+.grid_2 img { max-width:64px!important; max-height:64px!important; filter:none; }
+html body.sm-liste-page .container_12>.text7 { border-radius:12px!important; border-top:3px solid var(--gx-filet); box-shadow:none; }
+html body.sm-liste-page .container_12>.text7:has(>p>a) { grid-template-columns:1fr; }
+html body.sm-liste-page .container_12>.text7 p>a { min-height:64px; border:0; border-bottom:1px solid var(--gx-bordure); border-radius:0; background:transparent; box-shadow:none; }
+html body.sm-liste-page .container_12>.text7 p>a:hover { transform:none; background:#f5f0fa; }
+@media(max-width:720px) { html body.sm-liste-page .container_12>.text4 { padding-right:0!important; min-height:0!important; } html body.sm-liste-page .container_12>.text4+.grid_2 { display:none!important; } }

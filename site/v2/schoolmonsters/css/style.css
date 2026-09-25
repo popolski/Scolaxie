@@ -1,0 +1,56 @@
+*{box-sizing:border-box;}
+
+body{margin:0;min-height:100vh;background:#f2ecc4;font-family:Arial,sans-serif;color:#30343d;}
+.page-connexion{width:min(940px,calc(100% - 32px));margin:0 auto;padding:42px 0 55px;}
+.zone-retour-portail{text-align:center;margin-bottom:10px;}
+.retour-portail-site{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 14px;border:1px solid rgba(48,52,61,.14);border-radius:9px;background:rgba(255,255,255,.58);color:#30343d;font-size:13px;text-decoration:none;transition:background .18s,border-color .18s,transform .18s;}
+.retour-portail-site:hover{background:rgba(255,255,255,.86);border-color:rgba(22,184,170,.55);color:#30343d;transform:translateY(-2px);}
+.entete-connexion{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;margin-bottom:30px;text-align:center;}
+.logo-connexion{display:block;width:min(620px,100%);height:auto;}
+.entete-connexion p{margin:0;color:#666;font-size:1rem;}
+.grille-connexion{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start;}
+.carte-connexion{position:relative;min-height:390px;padding:28px 30px 30px;background:rgba(255,255,255,.58);border:1px solid rgba(48,52,61,.12);border-radius:14px;box-shadow:0 5px 14px rgba(0,0,0,.07);overflow:hidden;}
+.carte-accent{position:absolute;left:0;top:25px;bottom:25px;width:5px;background:#16b8aa;border-radius:0 5px 5px 0;}
+.carte-enseignant .carte-accent{background:#efa900;}
+.carte-entete{margin-bottom:24px;}
+.badge-acces{display:inline-block;margin-bottom:10px;padding:4px 9px;border-radius:999px;background:rgba(22,184,170,.14);color:#08796d;font-size:.76rem;font-weight:bold;text-transform:uppercase;letter-spacing:.06em;}
+.carte-enseignant .badge-acces{background:rgba(239,169,0,.16);color:#9b6b00;}
+.carte-entete h2{margin:0 0 6px;font-size:1.4rem;}
+.carte-entete p{margin:0;color:#777;font-size:.92rem;line-height:1.4;}
+.champ-connexion{margin-bottom:17px;}
+.champ-connexion label{display:block;margin-bottom:6px;font-size:.9rem;font-weight:bold;}
+.champ-connexion input{width:100%;height:44px;padding:9px 12px;border:1px solid #c9c3ae;border-radius:9px;background:#fff;color:#30343d;font-size:1rem;outline:none;}
+.champ-connexion input:focus{border-color:#16b8aa;box-shadow:0 0 0 3px rgba(22,184,170,.18);background:#fff;}
+.btn-connexion{width:100%;min-height:44px;margin-top:5px;border:0;border-radius:9px;background:#12baa6;color:#fff;font-size:1rem;font-weight:bold;cursor:pointer;transition:background .18s,transform .18s,box-shadow .18s;}
+.btn-connexion:hover{background:#0d8f80;transform:translateY(-2px);box-shadow:0 5px 12px rgba(0,0,0,.14);}
+.carte-enseignant .btn-connexion{background:#d99a00;}
+.carte-enseignant .btn-connexion:hover{background:#b98000;}
+.message-erreur{margin:12px 0 0;padding:10px 12px;border-radius:8px;background:#ffe4df;color:#9c2e24;text-align:center;font-size:.9rem;}
+
+@media(max-width:720px){
+	.page-connexion{padding-top:25px;}
+	.entete-connexion{margin-bottom:25px;}
+	.grille-connexion{grid-template-columns:1fr;}
+	.carte-connexion{min-height:0;padding:25px 24px 27px;}
+}
+
+/* Refonte de la connexion School Monsters — V2. */
+body{--gx-halo-teinte:rgba(123,75,183,.11);background:var(--gx-halo),var(--gx-fond);font-family:Lexend,system-ui,"Segoe UI",Arial,sans-serif;color:#172238;}
+.page-connexion{width:min(1200px,calc(100% - 48px));padding:28px 0 56px;}
+.zone-retour-portail{text-align:left;margin-bottom:18px;}
+.retour-portail-site{border-color:#dacfa1;border-radius:11px;background:#fffdf8;box-shadow:0 4px 12px rgba(58,48,20,.05);}
+.entete-connexion{position:relative;min-height:210px;align-items:flex-start;margin-bottom:20px;padding:30px 42px;overflow:hidden;border:1px solid #dacfa1;border-radius:24px;background:linear-gradient(106deg,#fffdf8 0%,#fffdf8 62%,#eee4fb 100%);box-shadow:0 12px 32px rgba(58,48,20,.08);text-align:left;}
+.entete-connexion::before{content:"";position:absolute;inset:0 auto 0 0;width:7px;background:#7b4bb7;}
+.logo-connexion{width:min(410px,70%);}
+.entete-connexion p{color:#5f636b;font-size:1.02rem;}
+.grille-connexion{gap:18px;}
+.carte-connexion{min-height:410px;padding:30px 32px;border-color:#dacfa1;border-radius:19px;background:#fffdf8;box-shadow:0 8px 22px rgba(58,48,20,.07);}
+.carte-accent{width:6px;}
+.carte-entete h2{color:#172238;font-size:1.55rem;}
+.carte-entete p{color:#5f636b;}
+.champ-connexion input{height:48px;border-color:#cfc5a0;border-radius:11px;}
+.btn-connexion{min-height:48px;border-radius:11px;background:#0b756a;}
+.btn-connexion:hover{background:#095f57;}
+.carte-enseignant .btn-connexion{background:#684393;}
+.carte-enseignant .btn-connexion:hover{background:#56357c;}
+@media(max-width:720px){.page-connexion{width:calc(100% - 24px);padding-top:18px}.entete-connexion{min-height:0;padding:25px 22px;border-radius:19px}.logo-connexion{width:min(360px,100%)}.carte-connexion{min-height:0;padding:24px 20px}}

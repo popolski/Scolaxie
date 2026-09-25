@@ -1,0 +1,57 @@
+/* Le modèle commun est indépendant de la grille des fiches historiques. */
+.sm-lecon-contenu { box-sizing:border-box; position:relative; width:min(1160px,calc(100% - 32px)); margin:28px auto 48px; display:grid; grid-template-columns:minmax(0,1fr); gap:24px; font-family:var(--gx-police); color:var(--gx-texte); }
+.sm-lecon-contenu * { box-sizing:border-box; }
+.sm-lecon-contenu>div,.sm-lecon-contenu>aside { float:none; width:auto; min-width:0; margin:0; grid-column:1/-1; }
+.sm-lecon-contenu>.clear { display:none; }
+.sm-lecon-titre { border-top:3px solid var(--gx-filet); }
+@media print {
+.sm-lecon-titre { min-height:96px; display:grid; grid-template-columns:minmax(0,1fr) 72px; align-items:center; gap:16px; padding:12px 16px 12px 20px; } }
+@media print {
+.sm-lecon-titre h1 { margin:0; font:600 clamp(1.75rem,3vw,2.5rem)/1.2 var(--gx-police); text-align:left; } }
+/* Le titre d'une lecon reste de l'encre commune, meme quand la donnee porte
+   des couleurs de matiere ou d'unite : demande de le responsable technique le 09/09. */
+.sm-lecon-titre h1,.sm-lecon-titre h1 span { color:#1c246b; }
+.sm-lecon-contenu>.sm-lecon-mascotte { position:absolute; right:0; top:0; width:72px; height:72px; }
+@media print {
+.sm-lecon-titre>.sm-lecon-mascotte { width:72px; height:72px; } }
+.sm-lecon-mascotte img { width:100%; height:100%; object-fit:contain; }
+.sm-lecon-titre>img.sm-lecon-mascotte { object-fit:contain; }
+.sm-lecon-pistes { align-self:start; background:var(--gx-carte,#fffdf8); border:1px solid var(--gx-bordure); border-top:3px solid var(--gx-filet); border-radius:12px; padding:20px; }
+.sm-lecon-pistes h2 { margin:0 0 16px; font:600 1.1rem/1.4 var(--gx-police); color:var(--gx-titre); }
+.sm-lecon-pistes .gx-pistes p { display:grid; gap:8px; margin:0; }
+.sm-lecon-pistes .btn-audio-quiz { width:100%; min-height:44px; margin:0; padding:12px; border:1px solid var(--gx-bordure); border-radius:8px; background:white; color:var(--gx-texte); font:500 .9rem/1.4 var(--gx-police); text-align:left; cursor:pointer; }
+.sm-lecon-pistes .btn-audio-quiz.actif { background:#eee4fb; border-color:var(--gx-filet); color:#603a8f; }
+.sm-lecon-pistes label { display:grid; gap:8px; margin-top:16px; font-size:.85rem; }
+.sm-lecon-pistes select { width:100%; min-height:44px; font:inherit; border:1px solid var(--gx-bordure); border-radius:8px; padding:8px; background:white; }
+.sm-lecon-pistes audio { width:100%; }
+.sm-lecon-pistes #LaQuestion { font-size:.85rem; }
+.sm-avec-pdf:has(.sm-lecon-pistes) { grid-template-columns:235px minmax(0,1fr); }
+.sm-avec-pdf>.sm-lecon-pistes { grid-column:1; order:2; }
+/* Les videos passent au-dessus, pleine largeur. Le cartouche audio sert de
+   secours jusqu'au chargement du PDF, puis ses commandes vivent dans le lecteur. */
+.sm-avec-pdf:has(.sm-lecon-pistes)>.gx-videos { order:1; }
+.sm-avec-pdf:has(.sm-lecon-pistes)>.sm-lecon-document { grid-column:2; order:2; }
+.sm-lecon-document { border:1px solid var(--gx-bordure); border-top:3px solid var(--gx-filet); border-radius:12px; overflow:hidden; background:white; }
+.sm-lecon-document iframe { display:block; min-height:600px; width:100%; max-width:100%; }
+.sm-pdf-pret .sm-avec-pdf:has(.sm-lecon-pistes) { grid-template-columns:minmax(0,1fr); }
+.sm-pdf-pret .sm-avec-pdf>.sm-lecon-pistes { display:none; }
+.sm-pdf-pret .sm-avec-pdf>.sm-lecon-document { grid-column:1; }
+.sm-lecon-contenu .gx-videos,.sm-lecon-contenu .gx-images { align-items:start; }
+.sm-lecon-contenu .gx-videos-1 { width:min(720px,100%); margin-inline:auto; }
+.sm-lecon-contenu video,.sm-lecon-contenu .gx-images img { max-width:100%; height:auto; }
+.sm-lecon-contenu :focus-visible { outline:3px solid var(--gx-filet); outline-offset:3px; }
+.sm-lecon-contenu [hidden] { display:none!important; }
+@media(max-width:720px) {
+ .sm-lecon-contenu { grid-template-columns:minmax(0,1fr); gap:16px; margin-top:24px; }
+ @media print {
+ .sm-lecon-titre { min-height:80px; grid-template-columns:minmax(0,1fr) 56px; gap:10px; padding:10px 12px 10px 16px; } }
+ @media print {
+ .sm-lecon-titre>.sm-lecon-mascotte { width:56px; height:56px; } }
+ .sm-lecon-contenu>.sm-lecon-mascotte { display:none; }
+ .sm-avec-pdf:has(.sm-lecon-pistes) { grid-template-columns:minmax(0,1fr); }
+ .sm-avec-pdf:has(.sm-lecon-pistes)>.sm-lecon-pistes,
+ .sm-avec-pdf:has(.sm-lecon-pistes)>*:not(.sm-lecon-titre):not(.sm-lecon-mascotte):not(.sm-lecon-pistes) { grid-column:1; grid-row:auto; }
+ .sm-pdf-pret .sm-lecon-pistes { display:none; }
+ .sm-lecon-document iframe { min-height:680px; }
+ .sm-lecon-contenu .gx-videos,.sm-lecon-contenu .gx-images { grid-template-columns:minmax(0,1fr); }
+}

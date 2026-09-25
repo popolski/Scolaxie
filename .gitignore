@@ -1,0 +1,48 @@
+# Configuration locale et secrets
+.env*
+!.env.example
+**/sso-secret.php
+**/*secret*.php
+**/*credentials*
+**/*.pem
+**/*.key
+**/*.p12
+**/*.ppk
+
+# Dépendances, builds et caches
+node_modules/
+vendor/
+dist/
+build/
+.cache/
+*.tsbuildinfo
+__pycache__/
+
+# Journaux, temporaires et sauvegardes
+*.log
+*.tmp
+*.bak
+*.backup
+*.sql.gz
+*.dump
+*.sqlite*
+tmp/
+output/
+backups/
+snapshots/
+site/v2/schoolmonsters/lecons/
+site/v2/fastgames/assets/son/
+RETOUR-ARRIERE/
+
+# Données privées et recette
+.env.local
+recette-privee/
+captures-privees/
+deploiement-local/
+*.winscp
+
+# Éditeurs
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

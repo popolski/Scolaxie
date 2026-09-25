@@ -1,0 +1,387 @@
+body{font-size:15px;}
+.ligne-code-barre td{background:#fff;text-align:center;padding:15px;}
+.ligne-code-barre canvas{max-width:100%;}
+.btn-code-barre{background:#413f3b;color:#fff;border:none;padding:4px 10px;border-radius:4px;font-size:0.85em;}
+.btn-copier-barre{background:#12baa6;color:#fff;border:none;padding:6px 14px;border-radius:4px;margin-top:8px;cursor:pointer;}
+.section-encadree{border:1px solid #b8b18a;border-radius:8px;background:#f2ecc4;padding:20px;margin-bottom:25px;}
+.section-encadree h3{margin-top:0;}
+.table{background:#fff;font-size:0.92em;}
+.table td,.table th{vertical-align:middle;border:1px solid #999;padding:6px 8px;}
+.table thead th{background:#12baa6;color:#fff;border-color:#0d8f80;}
+.table tbody tr:nth-child(even){background:#f5f5f0;}
+.table td.centre{text-align:center;}
+.cellule-actions{display:flex;gap:4px;flex-wrap:wrap;justify-content:center;}
+.cellule-actions .btn,.btn-code-barre,.btn-supprimer{padding:3px 8px;font-size:0.85em;}
+.form-recherche label{display:block;margin-top:8px;font-size:0.85em;}
+.form-recherche input,.form-recherche select{width:100%;box-sizing:border-box;}
+.form-ajout label{display:block;margin-top:10px;}
+.form-ajout input,.form-ajout select{width:100%;box-sizing:border-box;}
+.form-ajout .champ{margin-bottom:12px;}
+.badge-utilisation{background:#12baa6;color:#fff;padding:2px 8px;border-radius:10px;font-size:0.85em;}
+.badge-utilisation.zero{background:#999;}
+.btn-supprimer{background:#fff;color:#697079;border:1px solid #c8c9cc;padding:4px 10px;border-radius:4px;font-size:0.85em;}
+.btn-supprimer:hover,.btn-supprimer:focus{background:#c0392b;border-color:#c0392b;color:#fff;}
+.legende-utilisation{margin:12px 0 0;padding:9px 12px;border-left:4px solid #16b8aa;background:#f7f6ef;color:#555;font-size:13px;}
+.alerte-doublons{max-width:1068px;margin:0 auto 17px;padding:12px 15px;border:1px solid #e1ad52;border-radius:9px;background:#fff7df;color:#6e4b0b;font-size:13px;}
+.alerte-doublons ul{margin:7px 0 0;padding-left:22px;}
+.tri-tableau{color:#fff!important;text-decoration:none!important;display:flex;align-items:center;min-width:44px;min-height:44px;}
+.tri-tableau:hover{text-decoration:underline!important;}
+.symboles-maths{margin-top:10px;padding:10px 14px;background:#f9f6ea;border:1px solid #e3d8bf;border-radius:8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.symboles-maths span{font-weight:600;color:#6b6355;font-size:0.85em;margin-right:2px;}
+.btn-symbole{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;margin:0;line-height:1;background:#fff;border:1px solid #b8b18a;border-radius:6px;font-size:15px;color:#2c2822;cursor:pointer;transition:background .15s,color .15s;}
+.btn-symbole:hover{background:#12baa6;border-color:#0d8f80;color:#fff;}
+.btn-symbole:active{transform:scale(0.95);}
+.form-renommer{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;margin-bottom:20px;}
+.form-renommer .champ{flex:1;min-width:160px;margin-bottom:0;}
+.form-renommer label{display:block;margin-bottom:4px;font-size:0.85em;}
+.form-renommer select,.form-renommer input{width:100%;box-sizing:border-box;}
+
+html{scroll-behavior:smooth;}
+.bibliotheque-page{padding-bottom:55px;}
+.page-header-fasteval{position:relative;max-width:1068px;margin:0 auto 22px;padding-top:4px;text-align:center;}
+.page-header-fasteval .logo{display:block;width:100%;max-width:600px;height:auto;margin:0 auto;}
+.retour-fasteval{position:absolute;left:0;top:24px;display:flex;flex-direction:column;align-items:center;color:#596068;font-size:13px;text-decoration:none!important;}
+.retour-fasteval img{width:62px;height:auto;margin-bottom:3px;transition:transform .15s ease;}
+.retour-fasteval:hover{color:#30343d;}
+.retour-fasteval:hover img{transform:translateX(-3px);}
+.bibliotheque-title{margin:8px 0 5px;color:#30343d;font-size:28px;font-weight:500;}
+.bibliotheque-subtitle{margin:0;color:#6c7078;font-size:14px;}
+.message-bibliotheque{max-width:1068px;margin:0 auto 17px;padding:11px 15px;border:1px solid rgba(22,184,170,.35);border-radius:9px;background:rgba(255,255,255,.68);color:#28756e;font-size:14px;}
+.raccourcis-page{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;max-width:1068px;margin:0 auto 18px;}
+.raccourcis-page a{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;padding:7px 14px;border:1px solid rgba(22,184,170,.48);border-radius:8px;background:rgba(255,255,255,.62);color:#168f84;font-size:13px;font-weight:600;text-decoration:none!important;}
+.raccourcis-page a:hover{background:#fff;border-color:#16b8aa;color:#10776f;}
+.section-encadree{max-width:1068px;margin:0 auto 24px;padding:23px;background:rgba(255,255,255,.62);border:1px solid rgba(48,52,61,.12);border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.05);}
+.section-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:17px;}
+.section-encadree h2,.section-encadree h3{margin:0;color:#30343d;font-size:21px;font-weight:600;}
+.section-description{margin:5px 0 0;color:#74777d;font-size:13px;line-height:1.45;}
+.result-count{display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:29px;padding:0 11px;border-radius:15px;background:#16b8aa;color:#fff;font-size:13px;font-weight:600;}
+.form-recherche label,.form-ajout label,.form-renommer label{display:block;margin:0 0 6px;color:#3a3a3c;font-size:13px;font-weight:600;}
+.form-recherche input,.form-recherche select,.form-ajout input,.form-ajout select,.form-renommer input,.form-renommer select{width:100%;height:44px;box-sizing:border-box;border:1px solid #c9c5ae;border-radius:7px;background:#fff;font-size:14px;box-shadow:none;}
+.form-recherche input:focus,.form-recherche select:focus,.form-ajout input:focus,.form-ajout select:focus,.form-renommer input:focus,.form-renommer select:focus{border-color:#16b8aa;outline:0;box-shadow:0 0 0 3px rgba(22,184,170,.13);}
+.form-recherche .row+.row{margin-top:11px;}
+.form-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+.form-ajout .champ{margin-bottom:14px;}
+.table-responsive-fasteval{width:100%;overflow-x:auto;border-radius:9px;}
+/* Matière et catégorie ne sont plus des colonnes (elles regroupent les
+   lignes) : le tableau est nettement plus étroit qu'avant, donc beaucoup
+   moins de défilement horizontal sur petit écran. */
+.table{min-width:620px;margin-bottom:0;background:#fff;font-size:13px;}
+.table td,.table th{vertical-align:middle!important;border:1px solid #d2d0c5!important;padding:7px 8px!important;line-height:1.35;}
+.table thead th{position:sticky;top:0;z-index:2;background:#12baa6;color:#fff;border-color:#0d9889!important;font-weight:600;white-space:nowrap;}
+.table tbody tr:nth-child(4n+3),.table tbody tr:nth-child(4n+4){background:#f7f6ef;}
+.table tbody tr:not(.ligne-code-barre):hover{background:#f0f8f6;}
+.table td:nth-child(2){min-width:260px;}
+
+/* --- Repliage matière > catégorie --- */
+[hidden]{display:none!important;}
+/* Le zébrage une ligne sur deux devient illisible une fois les lignes
+   d'en-tête de groupe intercalées : les groupes suffisent à structurer. */
+.tableau-groupe tbody tr:nth-child(4n+3),
+.tableau-groupe tbody tr:nth-child(4n+4){background:transparent;}
+.tableau-groupe .ligne-donnee:nth-of-type(even){background:#f7f6ef;}
+.barre-depliage{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 12px;}
+.aide-depliage{color:#74777d;font-size:12px;}
+.tableau-groupe tbody.groupe-matiere+tbody.groupe-matiere{border-top:3px solid #e6e2cd;}
+.ligne-matiere th,.ligne-categorie th{padding:0!important;background:#fff;border-color:#d2d0c5!important;}
+.ligne-matiere th{background:#eef7f5;}
+.ligne-categorie th{background:#fbfaf4;}
+.bascule{display:flex;align-items:center;gap:9px;width:100%;min-height:44px;padding:9px 12px;border:0;background:none;color:#30343d;font-family:inherit;text-align:left;cursor:pointer;}
+.bascule:hover{background:rgba(22,184,170,.09);}
+.bascule:focus-visible{outline:2px solid #16b8aa;outline-offset:-2px;}
+.bascule-matiere{font-size:15px;font-weight:700;}
+.bascule-categorie{padding-left:30px;font-size:13px;font-weight:600;color:#4a4d53;}
+.chevron{flex:none;width:11px;color:#16b8aa;font-size:11px;line-height:1;transition:transform .15s ease;}
+.chevron::before{content:"\25B6";}
+.bascule[aria-expanded="true"] .chevron{transform:rotate(90deg);}
+.nom-groupe{flex:1;min-width:0;}
+.compteur-groupe{flex:none;padding:2px 9px;border-radius:11px;background:#16b8aa;color:#fff;font-size:12px;font-weight:600;}
+.bascule-categorie .compteur-groupe{background:#8d9096;}
+.cellule-actions{gap:5px;}
+.badge-utilisation{display:inline-block;padding:3px 8px;border-radius:11px;font-size:12px;white-space:nowrap;}
+/* Compétence reprise mot pour mot des programmes officiels : ni modifiable
+   ni supprimable, d'où le picto et la mention à la place des boutons. */
+.picto-officiel{margin-right:3px;font-size:14px;cursor:help;}
+/* Niveau affiché sous le cycle plutôt qu'en colonne : le tableau vient
+   d'être resserré, inutile de le réélargir pour une information courte. */
+.badge-niveau{display:block;margin-top:2px;color:#6c7078;font-size:11px;white-space:nowrap;}
+.mention-officielle{display:inline-block;padding:3px 9px;border:1px solid #d8c9a4;border-radius:11px;background:#fbf6e8;color:#7a6a45;font-size:11px;font-weight:600;white-space:nowrap;}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;box-sizing:border-box;border-radius:7px;font-size:12px;transition:background .15s ease,border-color .15s ease,transform .15s ease;}
+.btn:hover,.btn:focus{transform:translateY(-1px);}
+.btn-color{background:#16b8aa;border-color:#16a899;color:#fff;}
+.btn-color:hover,.btn-color:focus{background:#10998d;border-color:#10998d;color:#fff;}
+.btn-secondary{background:#697079;border-color:#697079;color:#fff;}
+.btn-secondary:hover,.btn-secondary:focus{background:#555b63;border-color:#555b63;color:#fff;}
+.btn-code-barre,.btn-supprimer{min-height:44px;padding:7px 10px;border-radius:7px;font-size:12px;cursor:pointer;}
+.form-renommer{margin:0;padding:16px;border:1px solid #ded9c7;border-radius:9px;background:rgba(255,255,255,.5);}
+.form-renommer+.form-renommer{margin-top:14px!important;}
+.form-renommer label{margin-bottom:6px;}
+.form-renommer .btn{min-height:40px;}
+.retour-haut{position:fixed;right:20px;bottom:18px;z-index:20;display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;padding:8px 12px;border:1px solid rgba(22,184,170,.55);border-radius:22px;background:rgba(255,255,255,.92);color:#168f84;font-size:12px;font-weight:600;text-decoration:none!important;box-shadow:0 3px 10px rgba(0,0,0,.1);}
+.retour-haut:hover{background:#16b8aa;color:#fff;}
+@media(max-width:767px){
+    .page-header-fasteval{padding-top:58px;}
+    .retour-fasteval{top:10px;left:8px;flex-direction:row;gap:7px;}
+    .retour-fasteval img{width:46px;margin:0;}
+    .bibliotheque-title{font-size:24px;}
+    .section-encadree{padding:18px 14px;}
+    .form-recherche .row+.row{margin-top:0;}
+    .form-recherche [class*="col-"]{margin-bottom:11px;}
+    .form-actions .btn{flex:1;}
+    .retour-haut{right:10px;bottom:10px;}
+    .table-responsive-fasteval{overflow:visible;border-radius:0;}
+    .tableau-groupe{display:block;min-width:0;background:transparent;}
+    .tableau-groupe thead{
+        position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+        overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+    }
+    .tableau-groupe tbody{display:block;margin-bottom:12px;}
+    .tableau-groupe tbody.groupe-matiere+tbody.groupe-matiere{border-top:0;}
+    .tableau-groupe .ligne-matiere,.tableau-groupe .ligne-categorie{display:block;}
+    .tableau-groupe .ligne-matiere th,.tableau-groupe .ligne-categorie th{display:block;width:100%;box-sizing:border-box;}
+    .tableau-groupe .ligne-donnee{
+        display:block;overflow:hidden;margin:8px 0 12px;border:1px solid #d2d0c5;
+        border-radius:11px;background:#fff!important;box-shadow:0 4px 12px rgba(0,0,0,.05);
+    }
+    .tableau-groupe .ligne-donnee td{
+        display:grid;grid-template-columns:minmax(92px,.72fr) minmax(0,1.28fr);
+        gap:12px;align-items:center;width:100%;min-width:0!important;box-sizing:border-box;
+        padding:11px 12px!important;border:0!important;border-bottom:1px solid #ece9de!important;
+    }
+    .tableau-groupe .ligne-donnee td:last-child{border-bottom:0!important;}
+    .tableau-groupe .ligne-donnee td::before{
+        content:attr(data-intitule);color:#74777d;font-size:10px;font-weight:700;
+        letter-spacing:.05em;text-transform:uppercase;
+    }
+    .tableau-groupe .cellule-actions{justify-content:flex-start;}
+    .tableau-groupe .cellule-actions .btn,.tableau-groupe .cellule-actions form,.tableau-groupe .cellule-actions button{min-width:0;}
+    .tableau-groupe .ligne-code-barre{display:block;margin:-12px 0 12px;}
+    .tableau-groupe .ligne-code-barre td{display:block;width:100%;box-sizing:border-box;}
+    .tableau-groupe tbody:not(.groupe-matiere) tr{display:block;}
+    .tableau-groupe tbody:not(.groupe-matiere) td{display:block;width:100%;box-sizing:border-box;}
+}
+
+/* --------------------------------------------------------------------
+   Rangement manuel des compétences par glisser-déposer
+   Visible uniquement pour un compte administrateur, sur le tri manuel.
+   -------------------------------------------------------------------- */
+
+.poignee-rangement{
+	cursor:grab;
+	color:#999;
+	/* Un seul caractere, sans resserrement : deux points de suspension
+	   verticaux colles l'un a l'autre se chevauchaient et dessinaient un
+	   trait, qu'on prenait pour un separateur. */
+	font-size:16px;
+	line-height:1;
+	user-select:none;
+	align-self:center;
+	padding:0 2px;
+	/* Elle ne doit jamais se retrouver SOUS le cartouche « Programmes
+	   officiels » : d'où le flex-shrink à 0, qui l'empêche d'être comprimée
+	   puis rejetée à la ligne. */
+	flex:0 0 auto;
+}
+
+/* La poignée reste dans le groupe de boutons, mais ce groupe cesse de se
+   replier : sinon elle passait à la ligne, sous le cartouche. Elle est
+   poussée à droite, et le contenu peut se comprimer plutôt que déborder de
+   la cellule. */
+.cellule-rangeable .cellule-actions{
+	flex-wrap:nowrap;
+	min-width:0;
+}
+.cellule-rangeable .poignee-rangement{ margin-left:auto; }
+
+/* Poignée d'une CATÉGORIE : à droite de sa bande, alignée sur celles des
+   compétences. La bande est un <th> qui contient déjà un bouton en bloc,
+   d'où le positionnement absolu plutôt qu'un flex qui casserait le repli.
+   La pastille du compteur occupe déjà ce coin : on lui fait de la place en
+   allongeant le bouton, sinon la poignée se dessine PAR-DESSUS et devient
+   invisible sur le gris de la pastille. */
+.ligne-categorie > th{ position:relative; }
+.ligne-categorie > th.avec-poignee .bascule{ padding-right:34px; }
+.poignee-categorie{
+	position:absolute;
+	right:10px;
+	top:50%;
+	transform:translateY(-50%);
+	margin:0;
+}
+.ligne-categorie.en-deplacement{ opacity:.35; }
+.ligne-categorie.cible-avant > th{ box-shadow:inset 0 2px 0 0 #2b7a78; }
+.ligne-categorie.cible-apres > th{ box-shadow:inset 0 -2px 0 0 #2b7a78; }
+.poignee-rangement:active{ cursor:grabbing; }
+
+/* La ligne en cours de déplacement s'efface, pour que l'œil suive le trou
+   plutôt que la ligne. */
+.ligne-donnee.en-deplacement{ opacity:.35; }
+
+/* Le trait marque l'endroit où la ligne se posera. */
+.ligne-donnee.cible-avant > td{ box-shadow:inset 0 2px 0 0 #2b7a78; }
+.ligne-donnee.cible-apres > td{ box-shadow:inset 0 -2px 0 0 #2b7a78; }
+
+.bandeau-rangement{
+	display:flex;
+	align-items:center;
+	gap:12px;
+	flex-wrap:wrap;
+	margin:0 0 10px;
+	padding:8px 12px;
+	border-radius:8px;
+	background:#f4f1e8;
+	border:1px solid #e0dac7;
+	font-size:13px;
+}
+.bandeau-rangement .etat-rangement{ margin-left:auto; }
+.bandeau-rangement .etat-rangement.succes{ color:#2b7a78; }
+.bandeau-rangement .etat-rangement.echec{ color:#a33; font-weight:bold; }
+
+/* Les quatre actions d'organisation, depliables (06/09/2026). Avant, quatre
+   formulaires empiles faisaient 762 px : il fallait tout parcourir pour trouver
+   le bon, et la suppression definitive se trouvait au bas d'un bloc intitule
+   « Renommer ». Un <details> natif suffit - pas de script, et le clavier marche
+   tout seul. */
+.bloc-action{
+	border:1px solid #ded9c7;
+	border-radius:9px;
+	background:rgba(255,255,255,.5);
+	overflow:hidden;
+}
+.bloc-action+.bloc-action{ margin-top:10px; }
+/* 44 px comme toutes les cibles de la galaxie : c'est un bouton, meme si c'est
+   un <summary>. */
+.bloc-action>summary{
+	display:flex;
+	align-items:center;
+	gap:10px;
+	min-height:44px;
+	padding:10px 14px;
+	color:#172238;
+	font-size:14px;
+	font-weight:600;
+	cursor:pointer;
+	list-style:none;
+}
+/* Le triangle par defaut differe d'un navigateur a l'autre et se place mal dans
+   un flex : on le retire des deux facons connues, et on dessine le notre. */
+.bloc-action>summary::-webkit-details-marker{ display:none; }
+.bloc-action>summary::marker{ content:""; }
+.bloc-action>summary::before{
+	content:"\25B8";
+	flex:0 0 auto;
+	color:#7c8390;
+	font-size:12px;
+}
+.bloc-action[open]>summary::before{ content:"\25BE"; }
+.bloc-action>summary:hover{ background:rgba(22,184,170,.06); }
+/* Le formulaire porte deja un cadre pour son usage historique hors accordeon :
+   dedans, il ferait un cadre dans un cadre. */
+.bloc-action .form-renommer{
+	margin:0;
+	border:0;
+	border-top:1px solid #ece7d8;
+	border-radius:0;
+	background:none;
+}
+.bloc-action .form-renommer+.form-renommer{ margin-top:0!important; }
+.bloc-action>p{ margin:0; padding:0 14px 12px; }
+/* La note dit ce que l'action coute AVANT de la deplier : reversible pour
+   l'archivage, irreversible pour la suppression. */
+.bloc-action-note{
+	margin-left:auto;
+	padding:3px 9px;
+	border-radius:999px;
+	background:#eef1f4;
+	color:#5f636b;
+	font-size:11px;
+	font-weight:600;
+	letter-spacing:.03em;
+	text-transform:uppercase;
+}
+/* Le geste destructeur ne ressemble pas aux trois autres. */
+.bloc-action.est-dangereux{ border-color:#e3bdb6; background:rgba(255,250,249,.7); }
+.bloc-action.est-dangereux>summary{ color:#9c3a24; }
+.bloc-action.est-dangereux>summary:hover{ background:rgba(192,57,43,.06); }
+.bloc-action.est-dangereux .bloc-action-note{ background:#fbe3de; color:#9c3a24; }
+.bloc-action.est-dangereux .form-renommer{ border-top-color:#f0d8d3; }
+
+/* Le bloc « Plus de filtres » reprend l'accordeon des actions, mais dans un
+   formulaire : il ne porte donc pas de fond propre, et sa marge le detache de
+   la ligne de recherche au-dessus. */
+.bloc-filtres{ margin-top:12px; }
+.bloc-filtres .row{ padding:0 14px 12px; }
+.bloc-filtres>summary{ border-bottom:0; }
+.bloc-filtres[open]>summary{ border-bottom:1px solid #ece7d8; }
+
+/* Un formulaire replie (creation, modification) : meme accordeon, mais son
+   contenu garde les marges du formulaire, pas celles d'une action courte. */
+.bloc-formulaire>.section-header,
+.bloc-formulaire>.form-ajout{ padding:0 14px; }
+.bloc-formulaire>.section-header{ padding-top:12px; border-top:1px solid #ece7d8; }
+.bloc-formulaire>.form-ajout{ padding-bottom:14px; }
+.bloc-formulaire>summary{ font-size:1.05rem; }
+
+/* La pastille « Programmes officiels » etait etiree sur toute la hauteur de la
+   rangee : .cellule-actions est un flex sans align-items, donc `stretch` par
+   defaut, et un bloc etire garde son texte en haut. A cote de boutons de 44 px
+   la pastille faisait 44 px avec son texte colle en haut - signale par le responsable technique,
+   capture a l'appui, en session administratrice (c'est la seule ou la mention
+   cotoie des boutons).
+   align-items:center rend a chaque element sa hauteur propre et les aligne sur
+   un meme axe ; l'inline-flex de la pastille centre en plus son texte si on lui
+   donne un jour une hauteur. */
+.cellule-actions{ align-items:center; }
+.mention-officielle{ display:inline-flex; align-items:center; }
+
+/* La ligne qu'on vient d'enregistrer, au retour. Un liseré et un fond très
+   légers : assez pour que l'oeil la trouve dans une liste de mille lignes, pas
+   assez pour qu'elle ait l'air en erreur. L'animation s'efface d'elle-meme -
+   c'est un repere d'arrivee, pas un etat durable. */
+.ligne-donnee.est-mise-en-avant > td{ background:#e6f7f4; }
+.ligne-donnee.est-mise-en-avant > td:first-child{ box-shadow:inset 3px 0 0 #16b8aa; }
+@media (prefers-reduced-motion: no-preference){
+	.ligne-donnee.est-mise-en-avant > td{ animation:fg-arrivee 2.4s ease-out 1; }
+	@keyframes fg-arrivee{ 0%{ background:#c9efe8; } 100%{ background:#e6f7f4; } }
+}
+
+/* APRES UNE SUPPRESSION il n'y a plus de ligne a montrer : c'est la CATEGORIE
+   d'ou la competence a ete retiree qu'on rouvre et qu'on ramene a l'ecran.
+   Meme repere visuel que la ligne, sur l'en-tete du groupe (06/09/2026). */
+.ligne-categorie.est-mise-en-avant > th{ background:#e6f7f4; box-shadow:inset 3px 0 0 #16b8aa; }
+@media (prefers-reduced-motion: no-preference){
+	.ligne-categorie.est-mise-en-avant > th{ animation:fg-arrivee 2.4s ease-out 1; }
+}
+
+/* Le champ libre des menus « Autre matière… » / « Autre catégorie… », qui ne
+   s'affiche que sur ce choix, et la ligne d'aide sous un champ du formulaire. */
+.champ-autre{ margin-top:8px; }
+.aide-champ{ display:block; margin-top:6px; color:#6d6a5f; font-size:.78rem; line-height:1.35; }
+.champ-officiel label{ display:inline-flex; align-items:center; gap:8px; font-weight:600; cursor:pointer; }
+.champ-officiel input[type="checkbox"]{ width:18px; height:18px; }
+
+/* « Déplacer vers » : le petit panneau qui s'ouvre au clic sur la poignée
+   (06/09/2026). Le glisser reste le geste court ; celui-ci sert à traverser une
+   longue catégorie, et il fonctionne au clavier - ce que le glisser natif ne
+   fait pas. */
+.cellule-actions{ position:relative; }
+.poignee-rangement{ cursor:grab; }
+.poignee-rangement:active{ cursor:grabbing; }
+.menu-position{
+	position:absolute; right:0; top:100%; z-index:40;
+	min-width:230px; margin-top:6px; padding:12px 13px;
+	border:1px solid #dacfa1; border-radius:11px; background:#fffdf8;
+	box-shadow:0 10px 26px rgba(58,48,20,.16);
+	text-align:left; white-space:normal;
+}
+.menu-position-titre{ margin:0 0 9px; color:#697079; font-size:12px; }
+.menu-position-rapide{ display:flex; gap:6px; margin-bottom:9px; }
+.menu-position-rapide button{
+	flex:1; min-height:36px; padding:6px 8px;
+	border:1px solid #c9c5ae; border-radius:7px; background:#fff;
+	color:#172238; font-size:12px; font-weight:600; cursor:pointer;
+}
+.menu-position-rapide button:hover{ border-color:#16b8aa; background:#eaf8f5; }
+.menu-position-champ{ display:flex; align-items:center; gap:8px; margin:0 0 10px; font-size:12px; font-weight:600; color:#3a3a3c; }
+.menu-position-champ input{ width:74px; height:36px; box-sizing:border-box; border:1px solid #c9c5ae; border-radius:7px; padding:0 8px; font-size:14px; }
+.menu-position-actions{ display:flex; gap:6px; }
+.menu-position-actions .btn{ min-height:36px; }

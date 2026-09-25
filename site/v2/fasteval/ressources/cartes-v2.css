@@ -1,0 +1,292 @@
+/* Interface V2 des cartes élèves. Le document imprimé conserve volontairement
+   ses dimensions physiques et ses polices historiques. */
+
+.cartes-page {
+    width: min(1440px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: clamp(28px, 4vw, 48px) 0 60px;
+}
+
+.cartes-intro {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    min-height: 176px;
+    margin-bottom: 22px;
+    padding: clamp(26px, 3vw, 34px);
+    overflow: hidden;
+    border: 1px solid var(--v2-border);
+    border-radius: var(--v2-radius-lg);
+    background: linear-gradient(112deg, rgba(255, 253, 250, 0.98) 0 63%, rgba(225, 248, 244, 0.96));
+    box-shadow: var(--v2-shadow-soft);
+}
+
+.cartes-intro::before {
+    content: "";
+    position: absolute;
+    inset: 18px auto 18px 0;
+    width: 5px;
+    border-radius: 0 6px 6px 0;
+    background: var(--v2-teal-bright);
+}
+
+.cartes-intro-texte { position: relative; z-index: 1; }
+.cartes-sur-titre {
+    margin: 0 0 10px;
+    color: var(--v2-teal);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+.cartes-intro h1 {
+    margin: 0 0 8px;
+    color: var(--v2-ink);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+    text-wrap: balance;
+}
+.cartes-intro p:last-child {
+    max-width: 62ch;
+    margin: 0;
+    color: var(--v2-muted);
+    font-size: clamp(0.96rem, 1.5vw, 1.08rem);
+}
+.cartes-intro-logo {
+    display: grid;
+    width: 112px;
+    height: 112px;
+    flex: none;
+    place-items: center;
+    padding: 18px;
+    border: 2px solid rgba(18, 169, 151, 0.28);
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.72);
+    transform: rotate(3deg);
+}
+.cartes-intro-logo img { width: 100%; transform: rotate(-3deg); }
+
+.cartes-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 22px;
+    padding: 16px 18px;
+    border: 1px solid var(--v2-border);
+    border-radius: var(--v2-radius-md);
+    background: var(--v2-paper);
+    box-shadow: var(--v2-shadow-soft);
+}
+.cartes-toolbar-texte { min-width: 0; }
+.cartes-toolbar strong { display: block; margin-bottom: 3px; }
+.cartes-toolbar p { margin: 0; color: var(--v2-muted); font-size: 0.86rem; }
+.cartes-toolbar-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+
+.cartes-bouton {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: 1px solid var(--v2-border);
+    border-radius: 12px;
+    color: var(--v2-ink);
+    background: #fffdfa;
+    font: 600 0.9rem/1.2 Lexend, sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+}
+.cartes-bouton:hover { border-color: var(--v2-teal-bright); background: #f2fbf9; text-decoration: none; }
+.cartes-bouton.principal { border-color: var(--v2-teal); color: #fff; background: var(--v2-teal); }
+.cartes-bouton.principal:hover { border-color: #075f57; background: #075f57; }
+
+.cartes-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    border: 1px solid #cbe7e1;
+    border-radius: 14px;
+    color: #315c56;
+    background: #f1faf8;
+    font-size: 0.88rem;
+}
+.cartes-info span:first-child { font-size: 1.05rem; }
+.cartes-info p { margin: 0; }
+
+.grille-cartes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 680px), 1fr));
+    gap: 18px;
+    justify-items: center;
+}
+.carte-document {
+    width: 100%;
+    padding: 18px;
+    overflow-x: auto;
+    border: 1px solid var(--v2-border);
+    border-radius: var(--v2-radius-lg);
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: var(--v2-shadow-soft);
+}
+.carte-document .carte { margin: 0 auto; }
+.cartes-vide {
+    padding: 34px;
+    border: 1px dashed var(--v2-border);
+    border-radius: var(--v2-radius-lg);
+    background: rgba(255, 255, 255, 0.75);
+    text-align: center;
+}
+.cartes-vide h2 { margin: 0 0 8px; font-size: 1.25rem; }
+.cartes-vide p { margin: 0 0 18px; color: var(--v2-muted); }
+
+/* Carte physique ISO/CEI 7810, doublée pour être pliée en deux. */
+.carte {
+    position: relative;
+    display: flex;
+    width: 17.12cm;
+    height: 5.398cm;
+    flex: none;
+    overflow: hidden;
+    border: 2px solid #413f3b;
+    border-radius: 6px;
+    background: #fff;
+    color: #30343d;
+}
+.col-a { display: flex; width: 8.56cm; flex-direction: column; align-items: center; padding: 0.19cm 0.9cm 0.19cm 0.33cm; }
+.col-a .titre { margin: 0 0 0.12cm; color: #f33; font: 700 17pt/1.1 "Dancing Script", cursive; }
+.col-a .logo { width: 3.75cm; margin-bottom: 0.15cm; }
+.col-a .champs { align-self: stretch; margin-top: 0.08cm; font: 600 10pt/1.5 Lexend, sans-serif; }
+.col-a .champs .valeur { color: #1f4e9c; }
+.pli {
+    position: absolute;
+    top: 0;
+    left: 8.56cm;
+    z-index: 2;
+    display: flex;
+    width: 0.65cm;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background: #ffdf80;
+    font: 600 8pt/1.2 Lexend, sans-serif;
+    text-align: center;
+    text-orientation: mixed;
+    white-space: nowrap;
+    writing-mode: vertical-rl;
+}
+.ligne-pliage { position: absolute; top: 0; left: 8.56cm; z-index: 3; width: 0; height: 100%; border-left: 1px dashed #413f3b; }
+.col-b { position: relative; width: 5.24cm; }
+.col-b .cadre-img { position: absolute; top: 0.15cm; left: 0.82cm; z-index: 1; width: 4.25cm; height: 5.1cm; }
+.zone-photo {
+    position: absolute;
+    top: 0.957cm;
+    left: 1.493cm;
+    z-index: 2;
+    width: 2.886cm;
+    height: 3.464cm;
+    overflow: hidden;
+    background-color: #eee;
+    background-repeat: no-repeat;
+}
+.zone-photo .vide { display: grid; width: 100%; height: 100%; place-items: center; padding: 4px; color: #777; font: 500 8pt/1.25 Lexend, sans-serif; text-align: center; }
+.col-c { display: flex; width: 3.32cm; align-items: center; justify-content: center; overflow: hidden; border-left: 2px solid #413f3b; }
+.col-c .rotation-code-barre { transform: rotate(90deg); }
+
+.photo-espace-travail {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 20px;
+    align-items: start;
+}
+.photo-apercu,
+.photo-panneau {
+    border: 1px solid var(--v2-border);
+    border-radius: var(--v2-radius-lg);
+    background: var(--v2-paper);
+    box-shadow: var(--v2-shadow-soft);
+}
+.photo-apercu { min-width: 0; padding: 22px; overflow: hidden; }
+.photo-apercu-entete { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+.photo-apercu h2,
+.photo-panneau h2 { margin: 0; font-size: 1.15rem; }
+.photo-apercu-entete span { color: var(--v2-muted); font-size: 0.82rem; }
+.photo-carte-scroll { overflow-x: auto; padding: 6px 4px 12px; }
+.photo-carte-scroll .carte { margin: 0 auto; }
+
+.photo-panneau { position: relative; padding: 24px 24px 26px 29px; overflow: hidden; }
+.photo-panneau::before { content: ""; position: absolute; inset: 24px auto 24px 0; width: 5px; border-radius: 0 6px 6px 0; background: var(--v2-teal-bright); }
+.photo-panneau .aide { margin: 7px 0 20px; color: var(--v2-muted); font-size: 0.86rem; line-height: 1.5; }
+.photo-etape { margin-top: 19px; padding-top: 19px; border-top: 1px solid var(--v2-border); }
+.photo-etape:first-of-type { margin-top: 0; padding-top: 0; border-top: 0; }
+.photo-etape-titre { display: flex; align-items: center; gap: 9px; margin-bottom: 10px; font-size: 0.9rem; font-weight: 700; }
+.photo-numero { display: grid; width: 25px; height: 25px; flex: none; place-items: center; border-radius: 50%; color: #fff; background: var(--v2-teal); font-size: 0.76rem; }
+.photo-panneau label { display: flex; justify-content: space-between; gap: 12px; margin: 13px 0 6px; color: var(--v2-ink); font-size: 0.84rem; font-weight: 600; }
+.photo-panneau input[type="file"] { width: 100%; padding: 10px; border: 1px dashed #9bcfc7; border-radius: 12px; color: var(--v2-muted); background: #f5fbfa; font: 500 0.78rem/1.3 Lexend, sans-serif; }
+.photo-panneau input[type="file"]::file-selector-button { margin-right: 9px; padding: 8px 10px; border: 0; border-radius: 8px; color: #fff; background: var(--v2-teal); font: 600 0.78rem/1.2 Lexend, sans-serif; cursor: pointer; }
+.photo-panneau input[type="range"] { width: 100%; accent-color: var(--v2-teal-bright); }
+.valeur-reglage { color: var(--v2-teal); font-weight: 700; }
+.actions-reglage { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
+.btn-secondaire,
+.btn-danger { min-height: 42px; padding: 8px; border: 1px solid var(--v2-border); border-radius: 10px; color: var(--v2-ink); background: #fffdfa; font: 600 0.78rem/1.2 Lexend, sans-serif; cursor: pointer; }
+.btn-secondaire:hover { border-color: var(--v2-teal-bright); background: #f2fbf9; }
+.btn-danger { color: var(--v2-danger); border-color: rgba(138, 47, 42, 0.3); }
+.btn-danger:hover { border-color: var(--v2-danger); background: #fff2ef; }
+.btn-danger:disabled { opacity: 0.45; cursor: not-allowed; }
+.photo-panneau .statut { min-height: 21px; margin-top: 12px; color: var(--v2-teal); font-size: 0.82rem; font-weight: 600; }
+.photo-actions-finales { display: grid; gap: 9px; margin-top: 7px; }
+.photo-actions-finales .cartes-bouton { width: 100%; }
+.zone-photo { cursor: grab; touch-action: none; user-select: none; }
+.zone-photo.en-deplacement { cursor: grabbing; }
+
+@media (max-width: 980px) {
+    .photo-espace-travail { grid-template-columns: 1fr; }
+    .photo-panneau { width: 100%; }
+}
+
+@media (max-width: 700px) {
+    .cartes-page { width: min(100% - 24px, 560px); padding-top: 24px; }
+    .cartes-intro { min-height: 0; padding: 26px 24px; }
+    .cartes-intro-logo { display: none; }
+    .cartes-toolbar { align-items: stretch; flex-direction: column; }
+    .cartes-toolbar-actions { justify-content: stretch; }
+    .cartes-toolbar-actions .cartes-bouton { flex: 1 1 100%; }
+    .carte-document,
+    .photo-apercu { padding: 12px; }
+    .carte-document .carte,
+    .photo-carte-scroll .carte { margin-left: 0; }
+    .photo-apercu-entete { align-items: flex-start; flex-direction: column; }
+    .actions-reglage { grid-template-columns: 1fr; }
+}
+
+@page { margin: 1cm; }
+
+@media print {
+    body.v2-fasteval { background: #fff !important; }
+    .v2-app-header,
+    .cartes-intro,
+    .cartes-toolbar,
+    .cartes-info { display: none !important; }
+    .cartes-page { width: auto; margin: 0; padding: 0; }
+    .grille-cartes { display: flex; flex-wrap: wrap; gap: 0.4cm; }
+    .carte-document { width: auto; padding: 0; overflow: visible; border: 0; border-radius: 0; background: transparent; box-shadow: none; break-inside: avoid; page-break-inside: avoid; }
+    .carte { break-inside: avoid; page-break-inside: avoid; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* Préparation fg3 ; les cartes conservent leur format physique à l'impression. */
+@media screen {
+  .cartes-page { width: min(1160px, calc(100% - 32px)); padding-top: 28px; }
+  .cartes-intro { min-height: 0; padding: 0; border: 0; background: none; box-shadow: none; overflow: visible; }
+  .cartes-intro::before, .cartes-intro-logo { display: none; }
+  .cartes-intro h1 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+  .photo-apercu, .photo-panneau, .carte-document { border-radius: 12px; border-left: 3px solid var(--v2-teal); background: white; box-shadow: none; }
+  .photo-panneau::before { display: none; }
+  .btn-secondaire, .btn-danger, .cartes-bouton { min-height: 44px; }
+}
+@media print { .skip-link { display: none !important; } }

@@ -1,0 +1,47 @@
+.fg-passeport-eleve { display: grid; gap: 20px; max-width: 1080px; margin: 22px auto 48px; color: var(--fg-encre); }
+.fg-passeport-eleve * { min-width: 0; }
+.fg-passeport-identite, .fg-passeport-section { border: 1px solid var(--fg-bordure); border-radius: 14px; background: var(--fg-papier); padding: 24px; }
+.fg-passeport-identite { display: grid; grid-template-columns: 68px minmax(0, 1fr); align-items: center; gap: 12px 18px; border-top: 3px solid var(--fg-corail); }
+.fg-passeport-initiale { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: #fbe5dc; color: var(--fg-encre); font-size: 1.7rem; font-weight: 800; }
+.fg-passeport-surtitre { margin: 0 0 3px; font-size: .85rem; font-weight: 700; }
+.fg-passeport-identite h2 { margin: 0; font-size: clamp(1.5rem, 3vw, 2rem); }
+.fg-passeport-identite p:last-child { margin: 4px 0 0; }
+.fg-passeport-faits { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 12px 0 0; }
+.fg-passeport-faits div { padding: 14px; border-radius: 10px; background: #f8f4e6; }
+.fg-passeport-faits dt { font-size: .83rem; }
+.fg-passeport-faits dd { margin: 4px 0 0; font-size: 1.15rem; font-weight: 800; }
+.fg-passeport-section h2 { margin: 0 0 16px; font-size: clamp(1.2rem, 2vw, 1.5rem); }
+.fg-passeport-section h3 { margin: 0; font-size: 1.03rem; }
+.fg-passeport-section p { line-height: 1.5; }
+.fg-passeport-recents { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.fg-passeport-jeu { display: grid; align-content: start; justify-items: start; gap: 8px; padding: 17px; border: 1px solid var(--fg-bordure); border-radius: 12px; }
+.fg-passeport-jeu.est-recent { border-color: var(--fg-corail); background: #fff8f3; }
+.fg-passeport-jeu p { margin: 0; }
+.fg-passeport-jeu .fg-bouton { margin-top: 4px; }
+.fg-passeport-eleve .fg-bouton, .fg-passeport-apercu .fg-bouton { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; }
+.fg-passeport-reussites, .fg-passeport-historique ol { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+.fg-passeport-reussites li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: 4px 16px; padding: 8px 0; border-top: 1px solid var(--fg-bordure); }
+.fg-passeport-reussites span, .fg-passeport-historique span { line-height: 1.5; }
+.fg-passeport-reussites span { font-weight: 600; }
+.fg-passeport-parcours { display: block; padding-block: 16px; }
+.fg-passeport-parcours h2 { margin-bottom: 6px; }
+.fg-passeport-jours { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.fg-passeport-jours li { padding: 8px 12px; border: 1px solid var(--fg-bordure); border-radius: 10px; font-weight: 700; }
+.fg-passeport-historique { margin-top: 10px; border-top: 1px solid var(--fg-bordure); }
+.fg-passeport-historique li { display: grid; gap: 4px; padding: 12px 0; border-top: 1px solid var(--fg-bordure); }
+.fg-passeport-historique summary { min-height: 44px; padding: 10px 0; cursor: pointer; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; list-style: none; }
+.fg-passeport-historique summary::-webkit-details-marker { display: none; }
+.fg-passeport-historique ol { margin-top: 10px; }
+.fg-passeport-commentaire { white-space: normal; }
+.fg-passeport-liens-matieres { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.fg-passeport-liens-matieres a { display: flex; align-items: center; min-height: 48px; padding: 10px 14px; border: 1px solid var(--fg-bordure); border-radius: 10px; color: inherit; font-weight: 700; text-decoration: none; }
+.fg-passeport-liens-matieres a:hover { border-color: var(--fg-corail); }
+.fg-passeport-apercu { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; max-width: 1080px; margin: 20px auto 0; padding: 14px 18px; border: 1px solid var(--fg-corail); border-radius: 12px; background: var(--fg-papier); }
+.fg-passeport-eleve a:focus-visible, .fg-passeport-eleve summary:focus-visible, .fg-passeport-apercu a:focus-visible { outline: 3px solid var(--fg-corail); outline-offset: 3px; }
+@media (max-width: 719px) {
+    .fg-passeport-eleve { gap: 14px; margin-top: 16px; }
+    .fg-passeport-identite, .fg-passeport-section { padding: 18px; }
+    .fg-passeport-faits { grid-template-columns: 1fr; }
+    .fg-passeport-recents, .fg-passeport-liens-matieres { grid-template-columns: 1fr; }
+    .fg-passeport-reussites li { grid-template-columns: 1fr; }
+}

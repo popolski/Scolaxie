@@ -1,0 +1,38 @@
+/* Surcharge limitee a la gestion des niveaux ; aucune regle des lecons ne change. */
+body.sm-admin-page { color: #30343d; }
+body.sm-admin-page > .gx-cartouche {
+  min-height: 0; padding: 16px 22px; border-radius: 18px; box-shadow: none;
+}
+body.sm-admin-page > .gx-cartouche::after { display: none; }
+body.sm-admin-page > .gx-cartouche h1 {
+  max-width: none; font-size: clamp(1.4rem,2.5vw,2rem); line-height: 1.25;
+}
+body.sm-admin-page > .gx-cartouche p { margin-top: 6px; }
+body.sm-admin-page > .gx-cartouche h1,
+body.sm-admin-page > .gx-cartouche h1 em,
+body.sm-admin-page .admin-tete :is(h2,h3) { color: #1c246b; }
+.sm-admin-page .admin-section { padding: 18px 22px; border-left: 4px solid #7b4bb7; }
+.sm-admin-page .admin-section:first-of-type { border-left-width: 4px; }
+.sm-admin-page .sm-recherche { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 16px 0; }
+.sm-admin-page .sm-recherche input {
+  min-height: 44px; min-width: 0; padding: 10px 12px; border: 1px solid #dacfa1;
+  border-radius: 10px; background: #fff; font: inherit;
+}
+.sm-admin-page [hidden] { display: none !important; }
+.sm-admin-page :is(a,button,input,select,summary):focus-visible { outline: 3px solid #1c246b; outline-offset: 3px; }
+@media (max-width: 720px) {
+  .sm-admin-page .admin-tableau { min-width: 0; width: 100%; }
+  .sm-admin-page .admin-tableau thead {
+    position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%);
+  }
+  .sm-admin-page .admin-tableau tbody { display: block; }
+  .sm-admin-page .admin-tableau tr { display: grid; padding: 12px 0; border-bottom: 1px solid #dacfa1; }
+  .sm-admin-page .admin-tableau td { display: block; border: 0; overflow-wrap: anywhere; }
+  .sm-admin-page .admin-tableau td[data-label]::before {
+    content: attr(data-label); display: block; color: #5f636b; font-size: .8rem; margin-bottom: 4px;
+  }
+  .sm-admin-page .admin-ligne { flex-wrap: wrap; }
+  .sm-admin-page .admin-ligne select { min-width: 0; width: 100%; flex: 1 1 100%; }
+  .sm-admin-page .sm-recherche input { width: 100%; }
+  .sm-admin-page .admin-section { padding: 16px 12px; }
+}

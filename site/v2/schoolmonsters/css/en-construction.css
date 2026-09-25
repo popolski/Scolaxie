@@ -1,0 +1,69 @@
+/* Lot 5 (04/09/2026) : ce fichier n'existait pas - la page qui l'appelait
+   (page-en-construction.php) etait donc entierement nue, hors du bandeau
+   commun herite de galaxie-tokens.css. C'est une page que des eleves de
+   CE1 ouvrent pour de bon quand une lecon n'est pas encore ecrite, pas un
+   ecran d'erreur technique : voir le releve UI/UX du 05/09/2026, planche 8. */
+
+.page-en-construction{
+  max-width:var(--gx-large,1440px);
+  margin:0 auto;
+  padding:0 40px 48px;
+}
+
+/* ---- L'entete de matiere : logo, titre, mascotte de la matiere ------- */
+.entete-matiere{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:26px 0 22px;
+  flex-wrap:wrap;
+}
+.bouton-retour{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  min-height:44px;
+  padding:9px 16px;
+  border:1px solid var(--gx-bordure);
+  border-radius:12px;
+  background:#fffdfa;
+  color:var(--gx-encre);
+  font-weight:600;
+  text-decoration:none;
+}
+.bouton-retour:hover{border-color:var(--gx-app-schoolmonsters,#7b4bb7);}
+.bouton-retour img{width:20px;height:20px;object-fit:contain;}
+.titre-matiere{display:flex;flex-direction:column;line-height:1.3;}
+.titre-matiere span{font-size:.8rem;color:var(--gx-encre-douce);}
+.titre-matiere strong{font-size:1.5rem;font-weight:700;color:var(--gx-encre);}
+.mascotte-matiere{width:64px;height:64px;object-fit:contain;margin-left:auto;flex:none;}
+
+/* ---- La leçon en préparation : la mascotte de la période, pas une image
+   cassée ------------------------------------------------------------- */
+.cartouche-travaux{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:18px;
+  padding:56px 32px;
+  text-align:center;
+  border:1px solid var(--gx-bordure);
+  border-radius:24px;
+  background:linear-gradient(106deg,#fffdf8 0%,#fffdf8 60%,color-mix(in srgb, var(--gx-app-schoolmonsters,#7b4bb7) 12%, #fffdf8) 100%);
+  box-shadow:0 12px 28px rgba(58,48,20,.07);
+}
+.cartouche-travaux img{
+  width:150px;
+  height:150px;
+  object-fit:contain;
+  filter:drop-shadow(0 13px 12px rgba(48,52,61,.12));
+}
+.cartouche-travaux h2{margin:0;font-size:1.6rem;font-weight:700;color:var(--gx-encre);}
+.cartouche-travaux p{margin:0;max-width:38ch;color:var(--gx-encre-douce);font-size:1rem;}
+
+@media (max-width:720px){
+  .page-en-construction{padding:0 20px 32px;}
+  .mascotte-matiere{display:none;}
+  .cartouche-travaux{padding:40px 24px;}
+  .cartouche-travaux img{width:120px;height:120px;}
+}

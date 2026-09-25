@@ -1,0 +1,26 @@
+* { box-sizing:border-box; }
+html,body { width:100%; height:100%; margin:0; overflow:hidden; background:#eeeade; color:var(--gx-texte,#30343d); font-family:var(--gx-police,Lexend,Arial,sans-serif); }
+.lecteur { display:flex; flex-direction:column; width:100%; height:100%; }
+.barre { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; padding:10px; background:#fffdf8; border-bottom:1px solid #ddd6bf; }
+.groupe { display:flex; align-items:center; flex-wrap:wrap; gap:6px; min-width:0; }
+.outils-droite { margin-left:auto; justify-content:flex-end; }
+button,.bouton,select,input { font:500 .85rem/1.3 var(--gx-police,Lexend,Arial,sans-serif); }
+button,.bouton { display:inline-flex; align-items:center; justify-content:center; min-width:44px; min-height:44px; padding:8px 12px; border:1px solid #d8d0b7; border-radius:8px; background:white; color:#30343d; text-decoration:none; cursor:pointer; }
+button:hover,.bouton:hover { border-color:#8054ad; background:#f4eefb; }
+button:disabled { opacity:.45; cursor:default; }
+.bouton-principal,.bouton-audio.en-lecture { color:white; background:#7344a0; border-color:#7344a0; }
+.bouton-principal:hover,.bouton-audio.en-lecture:hover { color:white; background:#60358e; }
+.numero-page { display:flex; align-items:center; gap:6px; font-size:.85rem; white-space:nowrap; }
+.numero-page input { width:52px; min-height:44px; border:1px solid #d8d0b7; border-radius:8px; text-align:center; }
+#choixAudio { min-height:44px; max-width:240px; min-width:0; padding:8px; border:1px solid #d8d0b7; border-radius:8px; background:white; }
+[hidden] { display:none!important; }
+.pagination { justify-content:flex-end; }
+.zone-document { position:relative; flex:1; overflow:auto; scrollbar-gutter:stable; padding:18px; text-align:center; }
+.feuille { display:inline-block; min-width:120px; min-height:160px; background:white; box-shadow:0 2px 8px #0002; }
+canvas { display:block; margin:auto; background:white; }
+.etat { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:max-content; max-width:90%; padding:16px; background:#fffdf8; border:1px solid #ddd6bf; border-radius:8px; font-size:.9rem; }
+.etat.erreur { color:#a32e25; }
+:focus-visible { outline:3px solid #7344a0; outline-offset:2px; }
+@media(max-width:720px) { .masquable-mobile { display:none; } .barre { gap:6px; padding:8px; } .outils-droite { width:100%; } #groupeAudio { flex:1; flex-wrap:nowrap; justify-content:flex-end; } #choixAudio { flex:1; max-width:none; width:0; } .numero-page label { display:none; } }
+@media print { .barre { display:none; } .zone-document { padding:0; overflow:visible; background:white; } .feuille { box-shadow:none; } }
+@media(max-width:720px) { .barre a.masquable-mobile { display:inline-flex; } }

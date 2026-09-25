@@ -1,0 +1,11 @@
+.fg-rapport-document { display: grid; gap: 24px; margin-block: 24px; }
+.fg-rapport-filtres { display: flex; flex-wrap: wrap; align-items: end; gap: 16px; }
+.fg-rapport-filtres .gx-champ { flex: 1 1 240px; min-width: 0; }
+.fg-rapport-document > *, .fg-rapport-document th, .fg-rapport-document td { min-width: 0; overflow-wrap: anywhere; }
+.fg-rapport-document .gx-tableau { width: 100%; min-width: 720px; table-layout: fixed; }
+.fg-rapport-document .gx-tableau td { vertical-align: top; }
+.fg-rapport-texte { white-space: pre-wrap; overflow-wrap: anywhere; }
+/* Le résumé natif ne mesurait que sa ligne (20 px) : cible tactile portée à 44 px, marqueur natif conservé. */
+.fg-rapport-periodes > summary { box-sizing: border-box; min-height: 44px; padding-block: 12px; cursor: pointer; }
+/* Le bouton de suppression reste sous le nom du jeu, séparé du lien de compétence. */
+.fg-rapport-supprimer { margin-top: 8px; }

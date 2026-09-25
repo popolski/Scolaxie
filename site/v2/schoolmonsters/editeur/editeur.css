@@ -1,0 +1,662 @@
+/* L'editeur de lecons. Il reprend les jetons de la galaxie : meme sable,
+   meme encre, meme turquoise d'action, meme Lexend. L'enseignante ne doit pas
+   avoir l'impression de changer de maison en passant de Fast Eval a ici.
+
+   Regle de nommage, apprise a ses depens : un nom de classe = un role, sur
+   TOUT l'editeur. « .ed-page » a d'abord servi au conteneur de la liste ET au
+   groupe « numero de page » d'une piste ; la seconde regle passait la liste en
+   display:flex et etalait les tuiles hors de l'ecran. Le groupe s'appelle
+   maintenant « .ed-saut », et le conteneur « .ed-liste-page ». */
+
+:root {
+  /* Deux jaunes a ne pas confondre. --ed-fond est le fond de la page ; sa
+     valeur est celle de --gx-fond dans galaxie-tokens.css, le creme commun aux
+     trois sites - l'editeur ne s'invente donc pas une couleur, il rejoint
+     celle de la maison. --ed-papier, plus clair, reste le fond des creux poses
+     DANS une carte : champs de saisie, zones de depot, vignettes. Teindre les
+     champs du jaune de la page les ferait disparaitre. */
+  --ed-fond:var(--gx-fond);
+  --ed-papier:var(--gx-surface);
+  --ed-carte:var(--gx-surface);
+  --ed-creux: #f5f0d8;
+  --ed-filet:var(--gx-bordure);
+  --ed-filet-fin:var(--gx-bordure-douce);
+  --ed-encre:var(--gx-encre);
+  --ed-douce:var(--gx-encre-douce);
+  --ed-action:var(--gx-action-schoolmonsters);
+  --ed-action-clair: #e3f0ec;
+  --ed-ambre:var(--gx-alerte);
+  --ed-ambre-fond:var(--gx-alerte-fond);
+  --ed-ombre: 0 1px 2px rgba(55, 49, 36, .06);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--ed-fond);
+  color: var(--ed-encre);
+  font-family:var(--gx-police);
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+button, input, select { font: inherit; color: inherit; }
+:is(a, button, input, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--ed-action); outline-offset: 2px;
+}
+
+/* ----------------------------------------------------------- la tete */
+/* Le bandeau reprend celui des trois sites : la carte .gx-entete du socle
+   commun, posee dans le HTML. Il ne reste ici que ce que le socle ne fait pas.
+
+   Le sticky n'est pas cosmetique : dans un formulaire de leçon qui descend sur
+   plusieurs ecrans, le bouton Enregistrer doit rester sous la main. Le socle,
+   lui, ne prevoit pas de bandeau collant - c'est le seul ecart assume avec les
+   pages eleves. */
+.ed-tete {
+  position: sticky; top: 12px; z-index: 20;
+  /* Le bandeau se cadre sur la largeur de SA page, et non sur les 1068 px du
+     socle : l'atelier d'une leçon fait 1500 px, parce qu'il pose le document à
+     côté du formulaire, et les listes 1080. Cadré à 1068 au-dessus d'un atelier
+     de 1400, la barre paraissait posée de travers. Même formule que les
+     conteneurs ci-dessous, au pixel près. */
+  width: min(var(--ed-largeur, 1080px), 100% - 40px);
+  margin-left: auto; margin-right: auto;
+}
+body:has(.ed-atelier) { --ed-largeur: 1500px; }
+
+/* Le bloc d'identite du socle se pousse a droite tout seul, par une marge
+   automatique. Dans l'editeur il y a DEUX blocs a droite, l'identite et les
+   actions : deux marges automatiques se partagent alors l'espace et l'identite
+   se retrouve au milieu. On rend donc sa marge a zero, et c'est le groupe
+   d'actions qui pousse. */
+.ed-tete .gx-entete-identite { margin-left: 0; }
+
+/* Les boutons d'action partent a droite, comme le bloc d'identite du socle.
+   Sans cela ils se collent au fil d'ariane et la barre parait desequilibree. */
+.ed-tete .ed-actions { margin-left: auto; }
+.ed-retour, .ed-bouton {
+  padding: 7px 15px; background: var(--ed-carte); border: 1px solid var(--ed-filet);
+  border-radius: 999px; color: var(--ed-encre);
+  font-size: 13.5px; font-weight: 500; text-decoration: none; cursor: pointer;
+  white-space: nowrap;
+}
+.ed-retour:hover, .ed-bouton:hover { border-color: var(--ed-action); }
+.ed-fort { background: var(--ed-action); border-color: var(--ed-action); color: #fff; }
+.ed-fort:hover { background: #095f57; }
+
+/* Lot 5 (04/09/2026) : .gx-etat-vide (galaxie-tokens.css) se colore par
+   defaut en violet (--gx-filet de School Monsters), mais l'editeur garde
+   sa propre identite turquoise (--ed-action) depuis toujours, separee du
+   reste de l'application - un seul ecran qui basculerait au violet
+   detonnerait au milieu du bandeau et des boutons turquoise autour de lui. */
+.ed-etat-vide { --gx-filet: var(--ed-action); }
+.ed-marque { display: flex; align-items: baseline; gap: 9px; }
+.ed-marque b { font-size: 16px; font-weight: 600; }
+.ed-marque span {
+  color: var(--ed-douce); font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+}
+
+/* Le titre de la page, au milieu du bandeau. Il occupait auparavant le bloc
+   d'identite du socle, ce qui lui donnait l'alignement a droite prevu pour un
+   nom - et surtout ce qui mettait la pastille de role sous le titre de la
+   page, alors qu'elle qualifie la personne connectee. */
+.ed-titre { line-height: 1.3; }
+.ed-titre strong { display: block; font-size: 15px; font-weight: 600; }
+.ed-titre span {
+  color: var(--ed-douce); font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+}
+.ed-fil {
+  display: flex; align-items: baseline; gap: 7px; min-width: 0;
+  color: var(--ed-douce); font-size: 13px;
+}
+.ed-fil i { font-style: normal; opacity: .5; }
+.ed-fil b {
+  overflow: hidden; max-width: 42ch; color: var(--ed-encre); font-weight: 600;
+  text-overflow: ellipsis; white-space: nowrap;
+}
+.ed-actions { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+.ed-etat { color: var(--ed-ambre); font-size: 12.5px; }
+
+/* ------------------------------------------------------- les avis */
+.ed-avis { margin: 0 0 4px; padding: 11px 15px; border-radius: 10px; font-size: 13.5px; }
+.ed-avis-ok { background: #dff0ea; border: 1px solid rgba(20, 112, 95, .3); color: #14705f; }
+.ed-avis-info {
+  background: var(--ed-ambre-fond); border: 1px solid rgba(154, 100, 19, .3); color: var(--ed-ambre);
+}
+.ed-avis b { font-weight: 600; }
+
+/* ------------------------------------------------- la page de liste */
+.ed-liste-page { width: min(1080px, 100% - 40px); margin: 0 auto; padding: 26px 0 80px; }
+
+.ed-accueil { margin-bottom: 18px; }
+.ed-accueil h1 { margin: 0; font-size: clamp(25px, 3vw, 34px); font-weight: 600; text-wrap: balance; }
+.ed-intro { max-width: 62ch; margin: 8px 0 0; color: var(--ed-douce); }
+
+/* Le mode d'emploi prend toute la largeur, sur deux colonnes : pose a droite
+   d'un titre court il laissait 200 px de vide sous les compteurs. */
+.ed-mode-emploi {
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 18px 28px;
+  padding: 15px 20px; background: var(--ed-carte);
+  border: 1px solid var(--ed-filet); border-radius: 12px; box-shadow: var(--ed-ombre);
+  font-size: 13px;
+}
+.ed-me-titre {
+  margin: 0 0 8px; color: var(--ed-action);
+  font-size: 11.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+}
+.ed-mode-emploi ul { margin: 0; padding-left: 17px; }
+.ed-mode-emploi li { margin-bottom: 3px; color: var(--ed-douce); }
+.ed-mode-emploi li b { color: var(--ed-encre); font-weight: 500; }
+.ed-me-reste { color: var(--ed-douce); border-left: 1px solid var(--ed-filet-fin); padding-left: 28px; }
+.ed-me-reste p { margin: 0 0 7px; }
+.ed-me-reste .ed-me-titre { color: var(--ed-douce); }
+.ed-me-filet { margin: 10px 0 0 !important; padding-top: 9px; border-top: 1px solid var(--ed-filet-fin); }
+
+.ed-bilan { display: flex; flex-wrap: wrap; gap: 9px; margin: 16px 0 0; }
+.ed-jeton {
+  padding: 6px 14px; background: var(--ed-carte);
+  border: 1px solid var(--ed-filet); border-radius: 999px; font-size: 13px;
+}
+.ed-jeton b { font-weight: 600; font-variant-numeric: tabular-nums; }
+.ed-jeton-attention {
+  background: var(--ed-ambre-fond); border-color: rgba(154, 100, 19, .3); color: var(--ed-ambre);
+}
+
+/* La barre de filtres colle en haut : avec dix periodes, on ne veut pas
+   remonter la page pour changer de filtre. */
+.ed-filtres {
+  position: sticky; top: 53px; z-index: 10;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px;
+  margin: 18px -10px 0; padding: 12px 10px;
+  background: var(--ed-fond); border-bottom: 1px solid var(--ed-filet-fin);
+}
+.ed-recherche {
+  width: 260px; padding: 8px 15px;
+  background: var(--ed-carte); border: 1px solid var(--ed-filet); border-radius: 999px;
+}
+.ed-puces { display: flex; flex-wrap: wrap; gap: 5px; }
+.ed-puce {
+  padding: 5px 12px; background: transparent; border: 1px solid var(--ed-filet-fin);
+  border-radius: 999px; font-size: 12.5px; cursor: pointer;
+}
+.ed-puce i { font-style: normal; color: var(--ed-douce); font-variant-numeric: tabular-nums; }
+.ed-puce:hover { border-color: var(--ed-action); }
+.ed-puce.active {
+  background: var(--ed-action); border-color: var(--ed-action); color: #fff; font-weight: 500;
+}
+.ed-puce.active i { color: rgba(255, 255, 255, .75); }
+.ed-coche { display: flex; align-items: center; gap: 7px; font-size: 12.5px; cursor: pointer; }
+.ed-coche input { width: 15px; height: 15px; accent-color: var(--ed-action); }
+.ed-coche i { font-style: normal; color: var(--ed-ambre); font-weight: 600; }
+.ed-compte { margin-left: auto; color: var(--ed-douce); font-size: 13px; }
+
+.ed-periode { margin-top: 30px; }
+.ed-periode > h2 {
+  display: flex; align-items: baseline; gap: 10px;
+  margin: 0 0 14px; padding-bottom: 7px;
+  border-bottom: 2px solid var(--ed-filet);
+  font-size: 15px; font-weight: 600; letter-spacing: .04em;
+}
+.ed-periode > h2 i {
+  font-style: normal; color: var(--ed-douce);
+  font-size: 12px; font-weight: 400; font-variant-numeric: tabular-nums;
+}
+.ed-matiere { margin-bottom: 20px; }
+.ed-matiere h3 {
+  display: flex; align-items: baseline; gap: 7px; margin: 0 0 8px;
+  color: var(--ed-douce); font-size: 12px; font-weight: 600;
+  letter-spacing: .11em; text-transform: uppercase;
+}
+.ed-matiere h3 span {
+  padding: 0 6px; background: var(--ed-creux); border-radius: 999px;
+  font-size: 11px; font-weight: 500; letter-spacing: 0;
+}
+.ed-cartes {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(248px, 1fr));
+  gap: 8px; margin: 0; padding: 0; list-style: none;
+}
+.ed-cartes a {
+  display: flex; flex-direction: column; gap: 4px; height: 100%; padding: 11px 14px;
+  background: var(--ed-carte); border: 1px solid var(--ed-filet); border-radius: 10px;
+  color: inherit; text-decoration: none; box-shadow: var(--ed-ombre);
+}
+.ed-cartes a:hover { border-color: var(--ed-action); background: #fff; }
+.ed-titre-lecon { font-weight: 500; line-height: 1.3; text-wrap: balance; }
+.ed-detail {
+  display: flex; flex-wrap: wrap; gap: 4px 9px; margin-top: auto;
+  color: var(--ed-douce); font-size: 12.5px; font-variant-numeric: tabular-nums;
+}
+.ed-manque { color: var(--ed-ambre); font-weight: 600; }
+.ed-vide { padding: 40px 0; color: var(--ed-douce); text-align: center; }
+
+/* --------------------------------------------------------- l'atelier */
+.ed-atelier {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 520px);
+  gap: 20px; align-items: start;
+  width: min(1500px, 100% - 40px); margin: 0 auto; padding: 20px 0 90px;
+}
+.ed-colonne { display: flex; flex-direction: column; gap: 12px; }
+.ed-colonne-titre {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; margin: 0 0 10px;
+  color: var(--ed-douce); font-size: 12px; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+}
+.ed-colonne-titre span { font-weight: 400; letter-spacing: 0; text-transform: none; font-size: 12.5px; }
+
+.ed-brique {
+  background: var(--ed-carte); border: 1px solid var(--ed-filet);
+  border-radius: 12px; box-shadow: var(--ed-ombre); overflow: hidden;
+}
+.ed-brique > header {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; padding: 9px 13px;
+  background: var(--ed-creux); border-bottom: 1px solid var(--ed-filet-fin);
+}
+.ed-nom { font-size: 13px; font-weight: 600; }
+.ed-compte-brique { color: var(--ed-douce); font-size: 12px; }
+.ed-corps { padding: 13px; }
+
+.ed-ligne { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+.ed-champ-large { flex: 1; min-width: 220px; }
+.ed-bloc { display: block; margin-top: 11px; }
+.ed-bloc-premier { margin-top: 0; }
+.ed-etiquette { display: block; margin-bottom: 4px; color: var(--ed-douce); font-size: 12px; }
+.ed-champ {
+  width: 100%; padding: 8px 11px; background: var(--ed-papier);
+  border: 1px solid var(--ed-filet); border-radius: 8px;
+}
+.ed-champ-court { width: 148px; }
+.ed-champ:focus { border-color: var(--ed-action); }
+.ed-note { margin: 10px 0 0; color: var(--ed-douce); font-size: 12.5px; }
+.ed-note code { font-size: 11.5px; overflow-wrap: anywhere; }
+.ed-apercu-titre {
+  margin: 8px 0 0; padding: 12px; background: var(--ed-papier);
+  border: 1px dashed var(--ed-filet); border-radius: 9px;
+  font-size: 22px; text-align: center;
+}
+
+/* -------------------------------------------------------- mascottes */
+.ed-mascottes { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 8px; }
+.ed-mascotte {
+  display: flex; flex-direction: column; align-items: center; gap: 5px;
+  padding: 8px 5px; background: var(--ed-papier);
+  border: 1px solid var(--ed-filet-fin); border-radius: 10px; cursor: pointer;
+}
+.ed-mascotte:hover { border-color: var(--ed-action); background: var(--ed-action-clair); }
+.ed-mascotte.choisie { border-color: var(--ed-action); background: var(--ed-action-clair); }
+.ed-mascotte input { position: absolute; opacity: 0; pointer-events: none; }
+.ed-cadre { display: flex; align-items: center; justify-content: center; width: 100%; height: 58px; }
+.ed-cadre img { max-width: 100%; max-height: 100%; }
+.ed-legende { color: var(--ed-douce); font-size: 11px; line-height: 1.25; text-align: center; }
+.ed-mascotte.choisie .ed-legende { color: var(--ed-action); font-weight: 500; }
+.ed-legende b { display: block; color: var(--ed-action); font-size: 9.5px; letter-spacing: .05em; text-transform: uppercase; }
+
+/* ----------------------------------------------------------- pistes */
+/* Une piste tient sur une ligne : poignee, nom (avec son fichier dessous),
+   page, interrupteur, retrait. Les en-tetes disent quelle colonne fait quoi,
+   parce que « 4 » tout seul dans une case ne veut rien dire. */
+.ed-entetes {
+  display: grid; grid-template-columns: 22px minmax(0, 1fr) 186px 38px 26px; gap: 10px;
+  margin: 14px 0 5px; padding: 0 8px;
+  color: var(--ed-douce); font-size: 11px; letter-spacing: .05em;
+}
+.ed-pistes { display: flex; flex-direction: column; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.ed-piste {
+  display: grid; grid-template-columns: 22px minmax(0, 1fr) 186px 38px 26px;
+  gap: 10px; align-items: center;
+  padding: 7px 8px; background: var(--ed-papier);
+  border: 1px solid var(--ed-filet-fin); border-radius: 9px;
+}
+.ed-piste.eteinte { opacity: .55; }
+.ed-piste.eteinte .ed-libelle { text-decoration: line-through; }
+.ed-piste.survol { border-color: var(--ed-action); }
+.ed-poignee { color: var(--ed-douce); cursor: grab; text-align: center; letter-spacing: -2px; }
+.ed-nommage { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.ed-libelle {
+  width: 100%; padding: 4px 8px; background: transparent;
+  border: 1px solid transparent; border-radius: 6px;
+}
+.ed-libelle:hover { background: var(--ed-carte); border-color: var(--ed-filet-fin); }
+.ed-libelle:focus { background: #fff; border-color: var(--ed-action); }
+.ed-son {
+  overflow: hidden; padding-left: 9px; color: var(--ed-douce);
+  font-family: ui-monospace, Consolas, monospace; font-size: 10.5px;
+  text-overflow: ellipsis; white-space: nowrap;
+}
+.ed-saut { display: flex; align-items: center; gap: 6px; }
+.ed-num {
+  width: 54px; padding: 5px 6px; background: var(--ed-carte);
+  border: 1px solid var(--ed-filet); border-radius: 7px;
+  text-align: center; font-variant-numeric: tabular-nums;
+}
+.ed-prendre {
+  padding: 5px 9px; background: var(--ed-action-clair); border: 1px solid transparent;
+  border-radius: 999px; color: var(--ed-action);
+  font-size: 11.5px; font-weight: 500; white-space: nowrap; cursor: pointer;
+}
+.ed-prendre:hover { border-color: var(--ed-action); }
+.ed-bascule { position: relative; display: block; width: 38px; height: 21px; cursor: pointer; }
+.ed-bascule input { position: absolute; opacity: 0; pointer-events: none; }
+.ed-bascule span {
+  position: absolute; inset: 0; background: var(--ed-filet); border-radius: 999px;
+}
+.ed-bascule span::after {
+  content: ''; position: absolute; top: 3px; left: 3px; width: 15px; height: 15px;
+  background: #fff; border-radius: 50%; transition: left .14s;
+}
+.ed-bascule input:checked + span { background: var(--ed-action); }
+.ed-bascule input:checked + span::after { left: 20px; }
+.ed-supprimer {
+  width: 24px; height: 24px; padding: 0; background: none;
+  border: 1px solid transparent; border-radius: 6px; color: var(--ed-douce); cursor: pointer;
+}
+.ed-supprimer:hover { background: #fff; border-color: var(--ed-filet); color: #9c3b23; }
+
+/* ------------------------------------------------ depot de fichiers */
+/* Le champ natif est masque, pas supprime : c'est lui qui porte l'etat et le
+   focus clavier, le label ne fait que l'habiller. */
+.ed-depot {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+  padding: 14px 16px; background: var(--ed-papier);
+  border: 1px dashed var(--ed-filet); border-radius: 10px; cursor: pointer;
+}
+.ed-depot:hover { border-color: var(--ed-action); background: var(--ed-action-clair); }
+.ed-depot input[type="file"] { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.ed-depot input[type="file"]:focus-visible + .ed-depot-mot {
+  outline: 2px solid var(--ed-action); outline-offset: 4px;
+}
+.ed-depot-mot { display: flex; flex-direction: column; gap: 2px; }
+.ed-depot-mot b { font-size: 13.5px; font-weight: 500; }
+.ed-depot-mot i { color: var(--ed-douce); font-size: 12px; font-style: normal; }
+.ed-depot-choix {
+  flex: 1; min-width: 140px; color: var(--ed-action);
+  font-size: 12.5px; font-weight: 500; text-align: right;
+}
+.ed-depot-mince { padding: 11px 14px; margin-top: 12px; }
+
+.ed-etiquette-espacee { margin-top: 16px; }
+.ed-libres { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 5px; }
+.ed-libre {
+  display: flex; align-items: center; gap: 8px; min-width: 0;
+  padding: 6px 10px; background: var(--ed-papier);
+  border: 1px solid var(--ed-filet-fin); border-radius: 8px; cursor: pointer;
+}
+.ed-libre:hover { border-color: var(--ed-action); }
+.ed-libre input { width: 15px; height: 15px; accent-color: var(--ed-action); flex: none; }
+.ed-libre span {
+  overflow: hidden; font-family: ui-monospace, Consolas, monospace; font-size: 11.5px;
+  text-overflow: ellipsis; white-space: nowrap;
+}
+.ed-libre:has(input:checked) { border-color: var(--ed-action); background: var(--ed-action-clair); }
+
+/* ------------------------------------------ formulaire de creation */
+.ed-deux-colonnes {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 12px; margin-bottom: 12px;
+}
+.ed-brique-large { margin-bottom: 12px; }
+
+/* ---------------------------------- liste d'une matiere, versions, menage */
+.ed-etroit { width: min(760px, 100% - 40px); }
+
+.ed-suite { margin-top: 22px; }
+.ed-suite-titre {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; margin: 0 0 9px;
+  color: var(--ed-douce); font-size: 12px; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase;
+}
+.ed-suite-titre span {
+  font-weight: 400; letter-spacing: 0; text-transform: none; font-size: 12.5px;
+}
+
+.ed-rangs { display: flex; flex-direction: column; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.ed-rang {
+  display: grid; grid-template-columns: 22px minmax(0, 1fr) auto 38px;
+  gap: 12px; align-items: center;
+  padding: 8px 10px; background: var(--ed-carte);
+  border: 1px solid var(--ed-filet); border-radius: 9px; box-shadow: var(--ed-ombre);
+}
+.ed-rang.eteinte { opacity: .55; }
+.ed-rang.eteinte .ed-libelle { text-decoration: line-through; }
+.ed-rang.survol { border-color: var(--ed-action); }
+.ed-lien-modifier {
+  color: var(--ed-action); font-size: 12.5px; font-weight: 500;
+  text-decoration: none; white-space: nowrap;
+}
+.ed-lien-modifier:hover { text-decoration: underline; }
+
+.ed-versions { display: flex; flex-direction: column; gap: 7px; margin: 18px 0 0; padding: 0; list-style: none; }
+.ed-version {
+  display: grid; grid-template-columns: minmax(0, 200px) minmax(0, 1fr) auto;
+  gap: 14px; align-items: center;
+  padding: 11px 14px; background: var(--ed-carte);
+  border: 1px solid var(--ed-filet); border-radius: 10px; box-shadow: var(--ed-ombre);
+}
+.ed-version-quand { color: var(--ed-douce); font-size: 12.5px; }
+.ed-version-quoi { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.ed-version-quoi b { font-weight: 500; }
+.ed-version-quoi i { color: var(--ed-douce); font-size: 12px; font-style: normal; }
+.ed-version-titre { margin: 0; font-size: 17px; font-weight: 500; }
+.ed-version-action { margin: 0; }
+
+.ed-libre em {
+  margin-left: auto; color: var(--ed-douce); font-size: 11px; font-style: normal;
+  font-variant-numeric: tabular-nums;
+}
+
+.ed-boutons { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 0; }
+.ed-danger { background: #9c3b23; border-color: #9c3b23; color: #fff; }
+.ed-danger:hover { background: #83301c; border-color: #83301c; }
+.ed-lien-danger { color: #9c3b23; font-size: 13px; font-weight: 500; }
+.ed-pied {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px;
+  margin: 6px 0 0; padding: 0 4px;
+}
+.ed-pied span { color: var(--ed-douce); font-size: 12px; }
+
+/* ---------------------------------------------------------- lecteur */
+.ed-lecteur { position: sticky; top: 74px; }
+.ed-lecteur iframe {
+  width: 100%; height: min(74vh, 780px);
+  background: var(--ed-carte); border: 1px solid var(--ed-filet);
+  border-radius: 12px;
+}
+
+@media (max-width: 1100px) {
+  .ed-atelier { grid-template-columns: 1fr; }
+  .ed-lecteur { position: static; }
+  .ed-entetes { display: none; }
+  .ed-piste { grid-template-columns: 22px minmax(0, 1fr) 38px 26px; }
+  .ed-saut { grid-column: 2 / -1; }
+}
+@media (max-width: 860px) {
+  .ed-mode-emploi { grid-template-columns: 1fr; }
+  .ed-version { grid-template-columns: 1fr; gap: 6px; }
+  .ed-me-reste {
+    padding: 14px 0 0; border-left: 0; border-top: 1px solid var(--ed-filet-fin);
+  }
+  .ed-filtres { position: static; }
+  .ed-recherche { width: 100%; }
+  .ed-compte { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* ----------------------------------------------------------- videos */
+/* Une video tient sur une ligne, comme une piste, mais avec deux colonnes de
+   moins : elle n'a ni page de document ni interrupteur. Le nom du fichier et
+   son poids vont sous le titre, la ou une piste met son nom de son : c'est le
+   poids qui dit a l'enseignante si l'envoi va prendre une minute ou dix. */
+.ed-entetes-video { grid-template-columns: 22px minmax(0, 1fr) 26px; }
+.ed-videos { display: flex; flex-direction: column; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.ed-video-ligne {
+  display: grid; grid-template-columns: 22px minmax(0, 1fr) 26px;
+  gap: 10px; align-items: center;
+  padding: 7px 8px; background: var(--ed-papier);
+  border: 1px solid var(--ed-filet-fin); border-radius: 9px;
+}
+.ed-video-ligne.survol { border-color: var(--ed-action); }
+
+/* ---- Les textes libres ----------------------------------------------
+   Reglages en haut, contenu en dessous : un intertitre tient sur une ligne,
+   une legende sur deux ou trois, et le champ doit pouvoir respirer. */
+.ed-textes { display: flex; flex-direction: column; gap: 10px; margin: 0 0 4px; padding: 0; list-style: none; }
+.ed-texte-ligne {
+  display: flex; flex-direction: column; gap: 7px;
+  padding: 9px 10px; background: var(--ed-papier);
+  border: 1px solid var(--ed-filet-fin); border-radius: 9px;
+}
+.ed-texte-reglages { display: flex; flex-wrap: wrap; gap: 14px; }
+.ed-zone { width: 100%; resize: vertical; font-family: inherit; line-height: 1.4; }
+
+/* ---- Les images ------------------------------------------------------
+   Meme dessin que les videos, avec une vignette a la place de la poignee :
+   sur une image, ce qu'on reconnait est l'image elle-meme, pas son nom de
+   fichier. Les series ne se reordonnent pas entre elles, il n'y a donc pas de
+   poignee a saisir. */
+.ed-serie {
+  margin: 0 0 14px; padding: 10px 12px 12px;
+  border: 1px solid var(--ed-filet-fin); border-radius: 11px;
+}
+.ed-serie legend {
+  padding: 0 6px; color: var(--ed-douce);
+  font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
+}
+.ed-images { display: flex; flex-direction: column; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.ed-image-ligne {
+  display: grid; grid-template-columns: 54px minmax(0, 1fr) 26px;
+  gap: 10px; align-items: center;
+  padding: 7px 8px; background: var(--ed-papier);
+  border: 1px solid var(--ed-filet-fin); border-radius: 9px;
+}
+/* La vignette est bornee en hauteur ET en largeur : une image tres haute
+   etirerait la ligne, une tres large la deformerait. Le fond damier se voit
+   au travers d'un PNG transparent, qui sinon disparaitrait sur le papier. */
+.ed-vignette {
+  width: 54px; height: 40px; object-fit: contain;
+  border-radius: 5px; background: #fff;
+  border: 1px solid var(--ed-filet-fin);
+}
+
+/* La remarque qui accompagne le choix du nombre de colonnes : elle se met a
+   cote du menu, pas dessous, sinon la ligne parait vide a droite. */
+.ed-note-cote { flex: 1 1 260px; margin: 0; align-self: center; }
+
+.ed-libre span i {
+  color: var(--ed-douce); font-style: normal; font-size: 10.5px;
+}
+
+/* ======================================================================== */
+/* Refonte visuelle de tout l’éditeur School Monsters — V2                  */
+/* ======================================================================== */
+body.gx-app-schoolmonsters{
+  --gx-largeur-page:1440px;
+  --gx-halo-teinte: rgba(123,75,183,.10);
+    background: var(--gx-halo), var(--gx-fond);
+}
+.ed-tete{--ed-largeur:1440px;top:10px;width:min(var(--ed-largeur),100% - 48px);border-radius:16px;background:#fffdf8;box-shadow:0 9px 24px rgba(58,48,20,.09);}
+body:has(.ed-atelier){--ed-largeur:1500px;}
+.ed-liste-page{width:min(1440px,100% - 48px);padding-top:18px;}
+.ed-accueil{
+  position:relative;
+  min-height:190px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  margin:0 0 20px;
+  padding:32px 42px;
+  overflow:hidden;
+  border:1px solid #dacfa1;
+  border-radius:24px;
+  background:linear-gradient(106deg,#fffdf8 0%,#fffdf8 62%,#eee4fb 100%);
+  box-shadow:0 12px 32px rgba(58,48,20,.08);
+}
+.ed-accueil::before{content:"";position:absolute;inset:0 auto 0 0;width:7px;background:#7b4bb7;}
+.ed-accueil::after{content:"";position:absolute;right:58px;top:50%;display:grid;width:106px;height:106px;place-items:center;border:2px solid rgba(123,75,183,.35);border-radius:33px;background-color:rgba(255,255,255,.54);background-image:url("../img-140/logo_school_monsters.png?v=20260906-01");background-repeat:no-repeat;background-position:center;background-size:98px auto;transform:translateY(-50%) rotate(5deg);}
+.ed-accueil h1{max-width:calc(100% - 160px);color:#172238;font-size:clamp(2.1rem,4.2vw,3.65rem);line-height:1.05;letter-spacing:-.04em;}
+.ed-intro{max-width:66ch;color:#5f636b;font-size:.95rem;}
+.ed-mode-emploi,.ed-brique,.ed-cartes a,.ed-jeton{border-color:#dacfa1;background:#fffdf8;box-shadow:0 7px 20px rgba(58,48,20,.06);}
+.ed-mode-emploi{padding:22px 25px;border-radius:17px;}
+.ed-filtres{top:78px;margin-top:16px;padding:14px;border:1px solid #dacfa1;border-radius:15px;background:rgba(255,248,220,.96);backdrop-filter:blur(8px);}
+.ed-recherche{min-height:44px;border-color:#cfc5a0;background:#fff;}
+.ed-puce{min-height:38px;padding:7px 13px;border-color:#cfc5a0;background:#fff;}
+.ed-periode{margin-top:34px;padding:23px 25px;border:1px solid #dacfa1;border-radius:18px;background:#fffdf8;box-shadow:0 8px 22px rgba(58,48,20,.07);}
+.ed-periode>h2{font-size:1.15rem;border-bottom-color:#e5ddc0;}
+.ed-cartes{grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:12px;}
+.ed-cartes a{min-height:94px;padding:15px 17px;border-radius:14px;}
+.ed-titre-lecon{font-size:.96rem;}
+.ed-brique{border-radius:16px;}
+.ed-brique>header{padding:12px 15px;background:#f5f0df;}
+.ed-corps{padding:16px;}
+.ed-champ{min-height:44px;border-color:#cfc5a0;border-radius:10px;background:#fff;}
+.ed-bouton,.ed-retour{min-height:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:11px;}
+
+@media(max-width:760px){
+  .ed-tete,.ed-liste-page{width:calc(100% - 20px);}
+  .ed-accueil{min-height:0;padding:27px 22px;border-radius:19px;}
+  .ed-accueil::after{display:none;}
+  .ed-accueil h1{max-width:none;font-size:clamp(1.9rem,9vw,2.65rem);}
+  .ed-mode-emploi{grid-template-columns:1fr;padding:18px;}
+  .ed-me-reste{padding-left:0;border-left:0;border-top:1px solid var(--ed-filet-fin);padding-top:15px;}
+  .ed-periode{padding:18px 15px;}
+}
+/* Direction fg3 : les commandes métier restent distinctes du bandeau commun. */
+body.gx-app-schoolmonsters { --ed-action:var(--gx-action-schoolmonsters); --ed-action-clair:#eee4fb; }
+html body.gx-app-schoolmonsters .ed-tete { position:relative; top:0; width:100%; margin:0; border-radius:0; box-shadow:none; }
+html body.gx-app-schoolmonsters .ed-liste-page,html body.gx-app-schoolmonsters .ed-atelier,html body.gx-app-schoolmonsters .ed-titre-page,html body.gx-app-schoolmonsters .ed-commandes-page { width:min(1160px,calc(100% - 32px)); margin-left:auto; margin-right:auto; }
+html body.gx-app-schoolmonsters .ed-liste-page { padding-top:28px; }
+html body.gx-app-schoolmonsters .ed-etroit { max-width:880px; }
+html body.gx-app-schoolmonsters .ed-accueil { min-height:0; margin:0 0 24px; padding:0; border:0; border-radius:0; background:none; box-shadow:none; }
+html body.gx-app-schoolmonsters .ed-accueil::before,html body.gx-app-schoolmonsters .ed-accueil::after { display:none; }
+html body.gx-app-schoolmonsters .ed-accueil h1,html body.gx-app-schoolmonsters .ed-titre-page h1 { max-width:none; color:var(--gx-titre); font:600 clamp(1.75rem,3vw,2.5rem)/1.2 var(--gx-police); letter-spacing:normal; }
+html body.gx-app-schoolmonsters .ed-commandes-page { position:sticky; top:0; z-index:15; display:flex; align-items:center; justify-content:flex-end; flex-wrap:wrap; gap:10px; padding:12px 0; background:var(--gx-fond); }
+html body.gx-app-schoolmonsters .ed-filtres { position:static; margin:16px 0; padding:16px; border:1px solid var(--gx-bordure); border-top:3px solid var(--gx-filet); border-radius:12px; background:#fffdf8; }
+html body.gx-app-schoolmonsters .ed-periode,html body.gx-app-schoolmonsters .ed-brique { border:1px solid var(--gx-bordure); border-top:3px solid var(--gx-filet); border-radius:12px; box-shadow:none; background:#fffdf8; }
+html body.gx-app-schoolmonsters .ed-periode { margin-top:24px; padding:24px; }
+html body.gx-app-schoolmonsters .ed-cartes { display:grid; grid-template-columns:minmax(0,1fr); gap:0; }
+html body.gx-app-schoolmonsters .ed-cartes a { display:flex; flex-direction:row; justify-content:space-between; align-items:center; gap:16px; min-height:64px; padding:14px 0; border:0; border-bottom:1px solid var(--gx-bordure); border-radius:0; box-shadow:none; background:transparent; }
+html body.gx-app-schoolmonsters .ed-detail { flex-shrink:0; }
+html body.gx-app-schoolmonsters .ed-brique>summary,html body.gx-app-schoolmonsters .ed-options-danger>summary { min-height:44px; padding:14px 16px; cursor:pointer; color:var(--gx-titre); font-weight:600; }
+html body.gx-app-schoolmonsters .ed-brique>header { background:transparent; }
+html body.gx-app-schoolmonsters .ed-corps { padding:16px; }
+html body.gx-app-schoolmonsters .ed-atelier { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:24px; padding-top:0; }
+html body.gx-app-schoolmonsters .ed-colonne,html body.gx-app-schoolmonsters .ed-lecteur { min-width:0; }
+html body.gx-app-schoolmonsters .ed-lecteur { top:78px; }
+html body.gx-app-schoolmonsters .ed-bouton,html body.gx-app-schoolmonsters .ed-puce,html body.gx-app-schoolmonsters .ed-prendre,html body.gx-app-schoolmonsters .ed-supprimer,html body.gx-app-schoolmonsters .ed-num,html body.gx-app-schoolmonsters .ed-libelle { min-height:44px; }
+html body.gx-app-schoolmonsters .ed-supprimer { min-width:44px; }
+html body.gx-app-schoolmonsters .ed-piste,html body.gx-app-schoolmonsters .ed-entetes { grid-template-columns:22px minmax(0,1fr) 82px 44px 44px; }
+html body.gx-app-schoolmonsters .ed-video-ligne { grid-template-columns:22px minmax(0,1fr) 44px; }
+html body.gx-app-schoolmonsters .ed-image-ligne { grid-template-columns:54px minmax(0,1fr) 44px; }
+html body.gx-app-schoolmonsters .ed-champ,html body.gx-app-schoolmonsters .ed-libelle { max-width:100%; min-width:0; }
+html body.gx-app-schoolmonsters .ed-commandes-page .ed-etat { margin-right:auto; }
+html body.gx-app-schoolmonsters .ed-options-danger { border:1px solid var(--gx-bordure); border-radius:12px; background:#fffdf8; }
+@media(max-width:1000px) { html body.gx-app-schoolmonsters .ed-atelier { grid-template-columns:minmax(0,1fr); } html body.gx-app-schoolmonsters .ed-lecteur { position:static; } }
+@media(max-width:600px) { html body.gx-app-schoolmonsters .ed-periode { padding:16px; } html body.gx-app-schoolmonsters .ed-cartes a { align-items:flex-start; flex-direction:column; gap:6px; } html body.gx-app-schoolmonsters .ed-piste { grid-template-columns:22px minmax(0,1fr) 44px; } html body.gx-app-schoolmonsters .ed-saut { grid-column:2; grid-row:2; } html body.gx-app-schoolmonsters .ed-bascule { grid-column:3; grid-row:2; } html body.gx-app-schoolmonsters .ed-entetes { display:none; } html body.gx-app-schoolmonsters .ed-lecteur iframe { height:620px; } }
+
+/* Menu d'actions d'une ligne de la liste de matiere (Modifier, Supprimer). */
+.ed-menu-rang { position: relative; }
+.ed-menu-rang > summary {
+  display: grid; place-items: center; width: 44px; height: 44px; border-radius: 10px;
+  cursor: pointer; list-style: none; color: var(--gx-titre, #1c246b); font-size: 22px; line-height: 1;
+}
+.ed-menu-rang > summary::-webkit-details-marker { display: none; }
+.ed-menu-rang > summary:hover,
+.ed-menu-rang[open] > summary { background: #efe8f8; }
+.ed-menu-rang > summary:focus-visible { outline: 3px solid #1c246b; outline-offset: 2px; }
+.ed-menu-liste {
+  position: absolute; z-index: 20; top: calc(100% + 4px); right: 0; min-width: 160px;
+  display: flex; flex-direction: column; padding: 6px;
+  border: 1px solid var(--gx-bordure, #dacfa1); border-radius: 10px; background: #fffdf8;
+  box-shadow: 0 10px 24px rgba(58,48,20,.14);
+}
+.ed-menu-liste a {
+  display: flex; align-items: center; min-height: 44px; padding: 0 12px; border-radius: 8px;
+  color: var(--gx-titre, #1c246b); font-size: 14px; font-weight: 500; text-decoration: none;
+}
+.ed-menu-liste a:hover,
+.ed-menu-liste a:focus-visible { background: #f5f0fa; }
+.ed-menu-liste a.ed-menu-danger { color: #9c3b23; }
+.ed-menu-liste a.ed-menu-danger:hover,
+.ed-menu-liste a.ed-menu-danger:focus-visible { background: #fbeee9; }
+/* Une ligne retiree (opacite) forme son propre empilement : sans cela le menu
+   ouvert passerait sous la ligne suivante. */
+.ed-rang:has(.ed-menu-rang[open]) { position: relative; z-index: 30; }

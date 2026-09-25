@@ -1,0 +1,225 @@
+/* Refonte complète des écrans de gestion Fast Eval — V2 uniquement. */
+body.fe-page{
+  --gx-largeur-page:1440px;
+  min-height:100vh;
+  color:#172238;
+  background: var(--gx-halo), var(--gx-fond);
+}
+.fe-page.container,
+.fe-page .container{max-width:none;}
+.container.admin-page,
+.container.bibliotheque-page,
+.container.bulletin-page{
+  width:min(1440px,calc(100% - 48px));
+  max-width:none;
+  padding-right:0;
+  padding-left:0;
+}
+.fe-page .gx-entete{width:100%;margin-bottom:22px;}
+.fe-page .gx-cartouche.fe-hero{
+  position:relative;
+  width:100%;
+  min-height:190px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  margin:0 0 22px;
+  padding:32px 42px;
+  overflow:hidden;
+  border:1px solid #dacfa1;
+  border-radius:24px;
+  background:linear-gradient(106deg,#fffdf8 0%,#fffdf8 62%,#dff6f1 100%);
+  box-shadow:0 12px 32px rgba(58,48,20,.08);
+}
+.fe-page .gx-cartouche.fe-hero::before{
+  content:"";
+  position:absolute;
+  inset:0 auto 0 0;
+  width:7px;
+  background:#12baa6;
+}
+.fe-page .gx-cartouche.fe-hero::after{
+  content:"";
+  position:absolute;
+  right:52px;
+  top:50%;
+  display:grid;
+  width:104px;
+  height:104px;
+  place-items:center;
+  border:2px solid rgba(11,117,106,.34);
+  border-radius:32px;
+  background-color:rgba(255,255,255,.62);
+  background-image:url("img/logofasteval.png");
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:86px auto;
+  transform:translateY(-50%) rotate(4deg);
+}
+.fe-page .gx-cartouche.fe-hero h1{
+  max-width:calc(100% - 150px);
+  text-wrap:balance;
+}
+@media print{
+.fe-page .gx-cartouche.fe-hero h1{
+  color:#172238;
+  font-size:clamp(2rem,4.1vw,3.55rem);
+  line-height:1.06;
+  letter-spacing:-.04em;
+  text-align:left;
+}
+}
+.fe-page .gx-cartouche.fe-hero p{
+  max-width:68ch;
+  margin-top:12px;
+  color:#555e6c;
+  font-size:1rem;
+  line-height:1.5;
+  text-align:left;
+}
+.fe-page .fe-surtitre{
+  display:block;
+  text-transform:uppercase;
+}
+@media print{
+.fe-page .fe-surtitre{
+  margin:0 0 8px;
+  color:#0b756a;
+  font-size:.75rem;
+  font-weight:600;
+  letter-spacing:.11em;
+}
+}
+.fe-page .message-admin,
+.fe-page .message-bibliotheque,
+.fe-page .alerte-doublons{max-width:none;border-radius:13px;}
+.fe-page .raccourcis-page{justify-content:flex-start;max-width:none;margin-bottom:18px;}
+.fe-page .raccourcis-page a{
+  padding:8px 16px;
+  border-color:#cfc5a0;
+  border-radius:999px;
+  background:#fff;
+  color:#334155;
+  box-shadow:0 4px 11px rgba(58,48,20,.04);
+}
+.fe-page .raccourcis-page a:hover{border-color:#12baa6;color:#0b756a;}
+.fe-page .section-encadree,
+.fe-page .bulletin-card{
+  max-width:none;
+  margin-right:0;
+  margin-left:0;
+  padding:27px 29px;
+  border:1px solid #dacfa1;
+  border-radius:19px;
+  background:#fffdf8;
+  box-shadow:0 8px 22px rgba(58,48,20,.07);
+}
+.fe-page .section-admin-accent{border-top:1px solid #dacfa1;border-left:7px solid #efa900;}
+.fe-page .section-header{align-items:center;margin-bottom:20px;}
+.fe-page .section-encadree h2,
+.fe-page .section-encadree h3{color:#172238;font-size:1.35rem;}
+.fe-page .section-description{margin-top:6px;color:#5f636b;font-size:.84rem;}
+.fe-page .result-count{min-width:42px;height:32px;background:#0b756a;}
+.fe-page .table-responsive-fasteval{overflow:auto;border:1px solid #e1d8b6;border-radius:14px;background:#fff;}
+.fe-page .table{border-collapse:separate;border-spacing:0;}
+.fe-page .table td,
+.fe-page .table th{border-width:0 0 1px!important;border-color:#ece6d0!important;padding:11px 12px!important;}
+.fe-page .table thead th{background:#0b756a;border-color:#0b756a!important;color:#fff;}
+.fe-page .table tbody tr:last-child td{border-bottom:0!important;}
+.fe-page .table tbody tr:nth-child(even){background:#faf8f0;}
+.fe-page .table tbody tr:hover{background:#eef9f7;}
+.fe-page .ligne-matiere th{background:#e6f4f2!important;}
+.fe-page .ligne-categorie th{background:#faf7eb!important;}
+.fe-page .form-recherche,
+.fe-page .form-ajout,
+.fe-page .form-admin{
+  max-width:none;
+  padding:20px;
+  border:1px solid #e1d8b6;
+  border-radius:15px;
+  background:#faf8f0;
+}
+.fe-page .form-admin{max-width:920px;}
+.fe-page .form-recherche input,
+.fe-page .form-recherche select,
+.fe-page .form-ajout input,
+.fe-page .form-ajout select,
+.fe-page .form-admin input,
+.fe-page .form-admin select,
+.fe-page .bulletin-card .form-control,
+.fe-page .bulletin-card input[type="date"]{
+  border-color:#cfc5a0;
+  border-radius:11px;
+  background:#fff;
+}
+.fe-page .btn{border-radius:10px;}
+.fe-page .btn-color{background:#0b756a;border-color:#0b756a;}
+.fe-page .btn-color:hover,.fe-page .btn-color:focus{background:#095f57;border-color:#095f57;}
+.fe-page .bulletin-card{max-width:1100px;margin:0 auto;}
+.fe-page .bulletin-step{padding:24px 0;grid-template-columns:50px minmax(0,1fr);gap:18px;}
+.fe-page .step-number{width:42px;height:42px;background:#0b756a;}
+.fe-page .step-title{color:#172238;font-size:1.05rem;}
+.fe-page .step-description{color:#5f636b;font-size:.83rem;}
+.fe-page .bulletin-actions{gap:14px;}
+.fe-page .bulletin-action{min-height:112px;padding:20px;border-color:#b9d8d3;border-radius:15px;background:#f8fffd;}
+.fe-page .bulletin-action-title{color:#0b756a;font-size:1.05rem;}
+.fe-page .bulletin-action-description{color:#5f636b;}
+.fe-page .bulletin-action:focus-visible,
+.fe-page .btn:focus-visible,
+.fe-page input:focus-visible,
+.fe-page select:focus-visible{outline:3px solid #12baa6;outline-offset:2px;}
+
+@media(max-width:767px){
+  .container.admin-page,.container.bibliotheque-page,.container.bulletin-page{width:min(100% - 24px,1440px);}
+  .fe-page .gx-cartouche.fe-hero{min-height:0;padding:26px 22px;border-radius:19px;}
+  .fe-page .gx-cartouche.fe-hero::after{display:none;}
+  .fe-page .gx-cartouche.fe-hero h1{max-width:none;}
+  @media print{
+  .fe-page .gx-cartouche.fe-hero h1{font-size:clamp(1.85rem,9vw,2.55rem);}
+  }
+  .fe-page .section-encadree,.fe-page .bulletin-card{padding:20px 16px;}
+  .fe-page .form-recherche,.fe-page .form-ajout,.fe-page .form-admin{padding:16px 13px;}
+  .fe-page .section-header{align-items:flex-start;}
+}
+
+/* Les gabarits historiques partagent la densité et les surfaces fg3. */
+.fe-page .gx-cartouche.fe-hero { min-height:0; padding:0; border:0; border-radius:0; background:none; box-shadow:none; overflow:visible; }
+.fe-page .gx-cartouche.fe-hero::before,.fe-page .gx-cartouche.fe-hero::after { display:none; }
+/* Meme titre que les pages v2-page-hero : taille, graisse et interlettrage
+   communs, sinon deux pages voisines n'ont pas le meme titre. */
+.fe-page .gx-cartouche.fe-hero h1 { max-width:none; }
+@media print{
+.fe-page .gx-cartouche.fe-hero h1 { color:var(--gx-titre); font-size:clamp(1.75rem,3vw,2.5rem); font-weight:800; line-height:1.15; letter-spacing:-.025em; }
+}
+@media print{
+.fe-page .fe-surtitre { font-size:.78rem; font-weight:800; letter-spacing:.14em; }
+}
+.fe-page .section-encadree,.fe-page .bulletin-card { padding:24px; border-top:3px solid var(--gx-filet,#12baa6); border-radius:12px; box-shadow:none; }
+.fe-page .section-admin-accent { border-left:1px solid #dacfa1; }
+.fe-page .form-recherche,.fe-page .form-ajout,.fe-page .form-admin { padding:0; border:0; background:none; }
+.fe-page input:not([type=checkbox]):not([type=hidden]),.fe-page select,.fe-page .btn,.fe-page summary { min-height:44px; }
+.fe-page .table thead th { background:#e6f4f2; color:#174d47; }
+.fe-page .ligne-matiere th,.fe-page .ligne-categorie th { color:#174d47; }
+.fe-page .form-recherche>.row { margin-bottom:14px; }
+.fe-page .table-responsive-fasteval { border-radius:10px; }
+.fe-admin-comptes { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,1fr); gap:24px; align-items:start; }
+.fe-admin-comptes>div { min-width:0; }
+.fe-admin-etablissements>summary { cursor:pointer; font-size:1.2rem; font-weight:600; align-content:center; }
+@media(max-width:1000px) { .fe-admin-comptes { grid-template-columns:1fr; } }
+@media(max-width:720px) { .fe-page .section-encadree { padding:20px 16px; } }
+
+.fe-admin-comptes td small { display:block; margin-top:5px; color:#555e6c; }
+.fe-admin-comptes .table { min-width:0; }
+.fe-page .btn-supprimer { min-height:44px; }
+
+.fe-filtres-principaux { display:grid; grid-template-columns:minmax(220px,2fr) repeat(3,minmax(0,1fr)); gap:16px; align-items:start; }
+.fe-filtres-principaux>.row { display:contents; }
+.fe-filtres-principaux>.row>div { float:none; width:auto; padding:0; min-width:0; }
+.fe-symboles-recherche { margin-top:8px; font-size:.8rem; }
+.fe-symboles-recherche summary { cursor:pointer; align-content:center; }
+.fe-page .form-recherche .bloc-filtres { margin-top:14px; }
+@media(max-width:1000px) { .fe-filtres-principaux { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:600px) { .fe-filtres-principaux { grid-template-columns:1fr; } }
+
+.fe-page textarea.form-control { height:auto; min-height:120px; resize:vertical; font:inherit; line-height:1.5; }

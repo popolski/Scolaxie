@@ -1,0 +1,57 @@
+body.sm-admin-page{
+  --gx-largeur-page:1440px;
+  min-height:100vh;
+  color:#172238;
+  --gx-halo-teinte: rgba(123,75,183,.10);
+    background: var(--gx-halo), var(--gx-fond);
+}
+.sm-admin-page>.gx-entete{width:min(1440px,calc(100% - 48px));}
+/* Le menu de compte est le noeud .user-menu du socle commun : il doit
+   occuper l’espace libre du bandeau et rester aligné à droite. */
+body.sm-admin-page>.gx-entete .user-menu{margin-left:auto!important;}
+.sm-admin-page>.gx-cartouche{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  width:min(1440px,calc(100% - 48px));
+  min-height:190px;
+  margin:0 auto 22px;
+  padding:32px 42px;
+  overflow:hidden;
+  border:1px solid #dacfa1;
+  border-radius:24px;
+  background:linear-gradient(106deg,#fffdf8 0%,#fffdf8 62%,#eee4fb 100%);
+  box-shadow:0 12px 32px rgba(58,48,20,.08);
+}
+.sm-admin-page>.gx-cartouche::before{content:"";position:absolute;inset:0 auto 0 0;width:7px;background:#7b4bb7;}
+.sm-admin-page>.gx-cartouche::after{content:"";position:absolute;right:58px;top:50%;display:grid;width:106px;height:106px;place-items:center;border:2px solid rgba(123,75,183,.35);border-radius:33px;background-color:rgba(255,255,255,.54);background-image:url("../img-140/logo_school_monsters.png?v=20260906-01");background-repeat:no-repeat;background-position:center;background-size:98px auto;transform:translateY(-50%) rotate(5deg);}
+.sm-admin-page>.gx-cartouche h1{max-width:calc(100% - 160px);color:#172238;font-size:clamp(2rem,4.2vw,3.55rem);line-height:1.05;letter-spacing:-.04em;text-align:left;text-wrap:balance;}
+.sm-admin-page>.gx-cartouche p{max-width:66ch;margin-top:12px;color:#5f636b;font-size:1rem;text-align:left;}
+.sm-admin-page .sm-surtitre{margin:0 0 8px;color:#664097;font-size:.76rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;}
+.sm-admin-page .gx-page{width:min(1440px,calc(100% - 48px));padding-top:0;}
+.sm-admin-page .admin-section{padding:27px 29px;border-color:#dacfa1;border-radius:19px;background:#fffdf8;box-shadow:0 8px 22px rgba(58,48,20,.07);}
+.sm-admin-page .admin-section:first-of-type{border-left:7px solid var(--gx-app-schoolmonsters,#7b4bb7);}
+.sm-admin-page .admin-tete{align-items:center;}
+.sm-admin-page .admin-tete h2{color:#172238;font-size:1.35rem;}
+.sm-admin-page .gx-tableau-cadre{border:1px solid #e2d9b7;border-radius:14px;background:#fff;}
+.sm-admin-page .gx-tableau th{background:var(--gx-app-schoolmonsters,#7b4bb7);color:#fff;}
+.sm-admin-page .gx-tableau td{padding:11px 13px;border-color:#ece6d0;}
+.sm-admin-page .admin-ligne select{border-color:#cfc5a0;background:#fff;}
+.sm-admin-page .gx-bouton{border-radius:10px;}
+/* Lot 5 (04/09/2026) : .gx-bouton-principal/-secondaire du socle codent
+   encore en dur var(--gx-action), le turquoise de Fast Eval - un residu
+   que le lot 7 (couleur d'action) n'avait pas vu, faute d'un vrai bouton
+   qui les utilisait a l'epoque. Les 14 boutons "Mettre a jour" du tableau
+   des eleves en dependent directement. */
+.sm-admin-page .gx-bouton-principal{background:var(--gx-app-schoolmonsters,#7b4bb7);}
+.sm-admin-page .gx-bouton-principal:hover{background:#684393;}
+.sm-admin-page .gx-bouton-secondaire{border-color:var(--gx-app-schoolmonsters,#7b4bb7);color:#684393;}
+@media(max-width:720px){
+  .sm-admin-page>.gx-entete,.sm-admin-page>.gx-cartouche,.sm-admin-page .gx-page{width:calc(100% - 24px);}
+  .sm-admin-page>.gx-cartouche{min-height:0;padding:26px 22px;border-radius:19px;}
+  .sm-admin-page>.gx-cartouche::after{display:none;}
+  .sm-admin-page>.gx-cartouche h1{max-width:none;font-size:clamp(1.8rem,9vw,2.55rem);}
+  .sm-admin-page .admin-section{padding:20px 15px;}
+}
